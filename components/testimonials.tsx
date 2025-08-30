@@ -12,21 +12,15 @@ const testimonials = [
     role: "Client",
     company: "Upwork",
     rating: 5
-  },
-  {
-    content: "The RAG assistant answers like our best support agent—only faster. Customer satisfaction went up 25% since deployment.",
-    author: "Zoé O.",
-    role: "Customer Success Manager",
-    company: "CloudScale",
-    rating: 5
-  },
-  {
-    content: "Our quote processing went from 2 days to 2 hours. The automation handles complex pricing rules flawlessly and integrates perfectly with our CRM.",
-    author: "Alex Chen",
-    role: "Operations Director",
-    company: "IndustrialTech",
-    rating: 5
+  // },
+  // {
+  //   content: "The RAG assistant answers like our best support agent—only faster. Customer satisfaction went up 25% since deployment.",
+  //   author: "Zoé O.",
+  //   role: "Customer Success Manager",
+  //   company: "CloudScale",
+  //   rating: 5
   }
+
 ]
 
 export function Testimonials() {

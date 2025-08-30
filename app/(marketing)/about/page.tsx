@@ -25,12 +25,6 @@ export const metadata: Metadata = createMetadata({
 
 const team = [
   {
-    name: 'Alex Chen',
-    role: 'Founder & Lead Engineer',
-    bio: 'Former Stripe engineer with 8 years building scalable systems. Passionate about helping businesses automate growth.',
-    location: 'San Francisco, US'
-  },
-  {
     name: 'Sophie Laurent',
     role: 'AI Solutions Architect',
     bio: 'PhD in Machine Learning, ex-DeepMind. Specializes in RAG systems and conversational AI for business applications.',
@@ -105,7 +99,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-zinc-400 leading-relaxed">
                 <p>
-                  MonoClick started when our founder Alex was helping his friend's real estate
+                  MonoClick started when we were helping a friend's real estate
                   company automate their lead qualification process. What began as a weekend
                   project turned into a 40% increase in conversion rates.
                 </p>

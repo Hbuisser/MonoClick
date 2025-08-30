@@ -18,8 +18,8 @@ import { Badge } from '@/components/ui/badge'
 import { CTABanner } from '@/components/cta-banner'
 
 export const metadata: Metadata = createMetadata({
-  title: 'About Us',
-  description: 'Learn about MonoClick\'s mission to help businesses automate workflows and generate revenue with custom AI solutions, n8n automations, and SaaS tools.',
+  title: 'About Our AI Automation Agency',
+  description: 'MonoClick is an AI automation agency specializing in custom business process automation with AI. We deliver lead generation automation, AI workflows, and done-for-you automations.',
   path: '/about'
 })
 
@@ -27,7 +27,7 @@ const team = [
   {
     name: 'Henry Buisseret',
     role: 'Founder & AI Automation Engineer',
-    bio: 'Belgian software engineer with background in finance (KBC) and payments (Worldline). Built multiple SaaS products and specializes in custom AI automations using Next.js, n8n, and modern tech stack.',
+    bio: 'Belgian software engineer specializing in AI automation agency services. Background in finance (KBC) and payments (Worldline). Expert in building custom business process automation with AI using n8n, OpenAI, and modern tech stack.',
     location: 'Belgium'
   }
 ]
@@ -35,18 +35,18 @@ const team = [
 const values = [
   {
     icon: Target,
-    title: 'Custom Solutions',
-    description: 'We build tailored automations that fit your specific tech stack and workflows. No generic tools—every solution is designed for your unique business needs.'
+    title: 'Custom AI Automation Solutions',
+    description: 'We build custom business automation tailored to your specific workflows and tech stack. Every AI automation is designed for your unique business requirements, not generic one-size-fits-all tools.'
   },
   {
     icon: Users,
-    title: 'AI-First Approach',
-    description: 'We leverage AI agents, intelligent workflows, and automation tools like n8n to create systems that learn and adapt to your business processes.'
+    title: 'AI-First Business Process Automation',
+    description: 'We leverage AI agents, intelligent workflows, and automation tools like n8n to create business process automation with AI that learns and adapts to your operations.'
   },
   {
     icon: Lightbulb,
-    title: 'ROI-Driven Results',
-    description: 'Every automation is built to save time, reduce costs, or generate revenue. We focus on delivering measurable business impact, not just technical achievements.'
+    title: 'ROI-Driven AI Automation Services',
+    description: 'Every done-for-you AI automation is built to save time, reduce costs, or generate revenue. We focus on delivering measurable business impact through custom AI workflows.'
   }
 ]
 
@@ -65,11 +65,11 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-zinc-100 mb-6">
-              About MonoClick
+              About Our AI Automation Agency
             </h1>
             <p className="text-lg text-zinc-400 max-w-3xl mx-auto mb-8">
-              An AI automations agency helping businesses save time and generate revenue through
-              custom workflow automation, AI agents, and tailored SaaS solutions.
+              MonoClick is a specialized AI automation agency delivering custom business process automation with AI.
+              We build done-for-you AI automations, lead generation automation, and custom AI workflows for business growth.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto">
               {stats.map((stat, index) => (
@@ -89,23 +89,20 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl font-heading font-bold text-zinc-100 mb-6">
-                Our mission
+                Leading AI Automation Agency for Custom Business Workflows
               </h2>
               <div className="space-y-4 text-zinc-400 leading-relaxed">
                 <p>
-                  MonoClick was founded to help businesses automate repetitive workflows and unlock
-                  revenue potential through custom AI solutions. We believe every company should focus
-                  on growth, not manual tasks.
+                  MonoClick is an AI automation agency founded to help businesses implement custom business process automation with AI.
+                  We specialize in done-for-you AI automations that eliminate manual workflows and drive predictable revenue growth.
                 </p>
                 <p>
-                  From lead generation and email automation to CRM integration and payment flows,
-                  we build tailored automations using tools like n8n, AI agents, and custom SaaS
-                  solutions that fit your existing tech stack.
+                  From lead generation automation and AI email outreach systems to RAG automation with n8n and CRM integrations,
+                  we build custom AI workflows for business that integrate seamlessly with your existing tech stack.
                 </p>
                 <p>
-                  Our clients range from small business owners to growing teams who want to scale
-                  efficiently. Instead of selling generic tools, we deliver custom automations
-                  that solve real problems and generate measurable results.
+                  Our clients include SMBs, agencies, and growing teams across Europe and globally who need AI automation services
+                  that deliver measurable ROI. We don't sell generic software—every automation is custom-built for your specific needs.
                 </p>
               </div>
             </div>
@@ -128,10 +125,10 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-zinc-100 mb-4">
-              Our approach
+              Why Choose Our AI Automation Agency
             </h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
-              How we deliver custom AI automations that actually drive business results.
+              How we deliver custom business process automation with AI that actually drives measurable business results.
             </p>
           </div>
 
@@ -284,7 +281,7 @@ export default function AboutPage() {
           <div className="mt-12 text-center">
             <Button asChild variant="gradient" size="lg">
               <Link href="/contact">
-                Get your custom automation
+                Get Custom AI Automation for Your Business
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

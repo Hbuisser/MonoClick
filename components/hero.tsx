@@ -39,8 +39,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl sm:text-6xl lg:text-7xl font-heading font-bold tracking-tight mb-6"
           >
-            <span className="block text-zinc-100">Growth systems</span>
-            <span className="block text-gradient">for B2B companies.</span>
+            <span className="block text-zinc-100">AI-powered growth systems</span>
+            <span className="block text-gradient">for B2B companies</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -50,8 +50,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mx-auto max-w-3xl text-lg sm:text-xl text-zinc-300 leading-relaxed mb-10"
           >
-            We design AI-powered automations that turn manual workflows into
-            predictable pipelines—lead gen, ops, and customer success included.
+                        Henry & his team have helped B2B companies like yours
+            with custom AI automations that eliminate manual work and scale revenue.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -63,15 +63,15 @@ export function Hero() {
           >
             <Button asChild variant="gradient" size="xl" className="group">
               <Link href="/contact" className="flex items-center">
-                Book a discovery call
+                Get Custom AI Automation
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
 
             <Button asChild variant="outline" size="xl" className="group border-zinc-700 bg-transparent text-zinc-100 hover:bg-zinc-800 hover:text-white">
-              <Link href="/work" className="flex items-center">
+              <Link href="/services" className="flex items-center">
                 <PlayCircle className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
-                See case studies
+                View AI Automation Services
               </Link>
             </Button>
           </motion.div>

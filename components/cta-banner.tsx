@@ -30,9 +30,9 @@ export function CTABanner() {
               viewport={{ once: true }}
               className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-6"
             >
-              Turn your manual work into
+              Ready for Custom AI Automation?
               <br />
-              <span className="text-cyan-200">a growth system.</span>
+              <span className="text-cyan-200">Let's Build Your Growth System</span>
             </motion.h2>
 
             <motion.p
@@ -42,8 +42,8 @@ export function CTABanner() {
               viewport={{ once: true }}
               className="text-lg text-indigo-100 max-w-2xl mx-auto mb-8 leading-relaxed"
             >
-              Stop losing hours to repetitive tasks. Let's build AI-powered automations
-              that scale your business while you focus on what matters most.
+              Stop losing hours to repetitive tasks. Let's build custom business process automation with AI
+              that scales your revenue while you focus on growth.
             </motion.p>
 
             <motion.div
@@ -60,7 +60,7 @@ export function CTABanner() {
                 className="bg-white text-indigo-600 hover:bg-indigo-50 group"
               >
                 <Link href="/contact" className="flex items-center">
-                  Book a discovery call
+                  Get Custom AI Automation Quote
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

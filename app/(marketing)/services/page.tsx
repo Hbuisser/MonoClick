@@ -19,16 +19,16 @@ import { Badge } from '@/components/ui/badge'
 import { CTABanner } from '@/components/cta-banner'
 
 export const metadata: Metadata = createMetadata({
-  title: 'Services',
-  description: 'Custom AI automation services: lead scraping & enrichment, personalized cold emails, RAG systems, CRM integrations, payment flows, and SaaS prototypes.',
+  title: 'AI Automation Services - Custom Business Process Automation',
+  description: 'Professional AI automation services: lead generation automation, AI email outreach systems, RAG automation with n8n, CRM integrations, and custom AI SaaS prototypes.',
   path: '/services'
 })
 
 const services = [
   {
     icon: Users,
-    title: 'Lead Scraping & Enrichment',
-    description: 'Struggling to find quality prospects? We build systems that scrape leads from LinkedIn and websites, then enrich them with emails, phone numbers, and company data for your sales team.',
+    title: 'AI-Powered Lead Generation Automation',
+    description: 'Struggling to find quality prospects? We build custom lead scraping automation systems that extract prospects from LinkedIn and websites, then enrich them with emails, phone numbers, and company data.',
     features: [
       'LinkedIn prospect scraping',
       'Website visitor identification',
@@ -48,8 +48,8 @@ const services = [
   },
   {
     icon: Zap,
-    title: 'Personalized Cold Emails at Scale',
-    description: 'Tired of generic outreach that gets ignored? We create AI-driven systems that write and send natural, personalized emails daily, turning cold prospects into warm conversations.',
+    title: 'AI Email Outreach System',
+    description: 'Tired of generic outreach that gets ignored? We create personalized cold email automation with AI that writes and sends natural, customized emails daily, turning prospects into conversations.',
     features: [
       'AI-powered personalization',
       'Dynamic email sequences',
@@ -69,8 +69,8 @@ const services = [
   },
   {
     icon: Brain,
-    title: 'RAG Knowledge Systems',
-    description: 'Need instant access to your company knowledge? We connect AI to your documents, CRM, and databases to provide accurate, context-aware answers for your team and customers.',
+    title: 'RAG Automation with n8n',
+    description: 'Need instant access to your company knowledge? We build RAG automation systems that connect AI to your documents, CRM, and databases to provide accurate, context-aware answers automatically.',
     features: [
       'Document processing & indexing',
       'Custom knowledge bases',
@@ -90,8 +90,8 @@ const services = [
   },
   {
     icon: Cog,
-    title: 'CRM & Database Integrations',
-    description: 'Drowning in manual data entry? We automate data movement and cleaning between your tools, keeping Google Sheets, Supabase, Airtable, and ClickUp perfectly synced.',
+    title: 'CRM Automation Integration',
+    description: 'Drowning in manual data entry? We build custom business automation to sync data between your CRM, Google Sheets, Supabase, Airtable, and ClickUp with automated data cleaning.',
     features: [
       'Real-time data synchronization',
       'Automated data cleaning',
@@ -111,8 +111,8 @@ const services = [
   },
   {
     icon: BarChart3,
-    title: 'Payment & Subscription Flows',
-    description: 'Complex billing holding you back? We integrate Stripe with VAT handling and commission tracking, creating seamless payment experiences that scale with your business.',
+    title: 'Payment Flow Automation',
+    description: 'Complex billing holding you back? We build payment flow automation with Stripe integration, VAT handling, and commission tracking that scales with your business growth.',
     features: [
       'Stripe integration & setup',
       'VAT compliance automation',
@@ -132,8 +132,8 @@ const services = [
   },
   {
     icon: Shield,
-    title: 'Custom SaaS Prototypes',
-    description: 'Want to turn your automation into a product? We transform your workflows into SaaS-like applications with authentication, dashboards, and subscription billing.',
+    title: 'Custom AI SaaS Prototypes',
+    description: 'Want to turn your automation into a product? We build custom AI SaaS prototypes that transform your workflows into scalable applications with authentication and billing.',
     features: [
       'User authentication & management',
       'Custom dashboards',
@@ -185,16 +185,16 @@ export default function ServicesPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-zinc-100 mb-6">
-              What We Do
+              AI Automation Services
             </h1>
             <p className="text-lg text-zinc-400 max-w-3xl mx-auto mb-8">
-              We design custom AI automations that connect your existing tools and workflows.
-              No one-size-fits-all software — just smart systems that cut repetitive tasks,
-              enrich leads, and generate predictable growth for your business.
+              Professional AI automation agency delivering custom business process automation with AI.
+              We build done-for-you AI automations, lead generation automation, AI email outreach systems,
+              and custom AI workflows that eliminate manual tasks and drive revenue growth.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-2xl font-bold text-gradient mb-1">4-8 weeks</div>
+                <div className="text-2xl font-bold text-gradient mb-1">1-4 weeks</div>
                 <div className="text-sm text-zinc-400">Typical delivery</div>
               </div>
               <div className="text-center">
@@ -301,10 +301,10 @@ export default function ServicesPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-zinc-100 mb-4">
-              Why MonoClick
+              Why Choose Our AI Automation Agency
             </h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
-              We don't sell generic software. Every automation is custom-built for your specific workflows,
+              We don't sell generic software. Every business process automation with AI is custom-built for your specific workflows,
               designed for maximum ROI, and deployed fast so you see results quickly.
             </p>
           </div>
@@ -403,7 +403,7 @@ export default function ServicesPage() {
           <div className="mt-16 text-center">
             <Button asChild variant="gradient" size="lg">
               <Link href="/contact">
-                Book your free discovery call
+                Get Custom AI Automation Quote
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

@@ -11,28 +11,28 @@ import {
 
 const faqs = [
   {
-    question: 'How fast can we start?',
-    answer: 'We can typically begin discovery within 1-2 business days of our initial conversation. Most automations are live within 4-6 weeks, depending on complexity. For urgent projects, we offer accelerated timelines.'
+    question: 'What is an AI automation agency and how can it help my business?',
+    answer: 'An AI automation agency specializes in building custom business process automation with AI. We help businesses implement done-for-you AI automations like lead generation automation, AI email outreach systems, and custom AI workflows that eliminate manual tasks and increase revenue.'
   },
   {
-    question: 'How do you keep data secure?',
-    answer: 'Security is our top priority. We use enterprise-grade encryption, follow SOC 2 compliance standards, and can work within your existing security frameworks. All data processing happens in secure, GDPR-compliant environments.'
+    question: 'How quickly can you implement custom AI automation for my business?',
+    answer: 'We can typically begin discovery within 1-2 business days. Most custom AI automations are live within 4-6 weeks, depending on complexity. Our business process automation with AI projects include full testing and optimization before launch.'
   },
   {
-    question: 'What tools do you use?',
-    answer: 'We primarily work with n8n for workflow automation, OpenAI for AI capabilities, Apify for data extraction, and Stripe for payments. We also integrate with popular tools like HubSpot, Salesforce, Slack, and most modern SaaS platforms.'
+    question: 'What types of AI automation services do you provide?',
+    answer: 'We provide comprehensive AI automation services including lead generation automation, AI email outreach systems, RAG automation with n8n, CRM automation integration, payment flow automation, and custom AI SaaS prototypes tailored to your business needs.'
   },
   {
-    question: 'What\'s your pricing & engagement model?',
-    answer: 'We offer both project-based and retainer models. Projects typically range from $5K-$25K depending on complexity. Retainers start at $3K/month for ongoing optimization and support. We always provide fixed-price quotes after discovery.'
+    question: 'How much do custom AI automation projects cost?',
+    answer: 'Our AI automation services typically range from $5K-$25K depending on complexity. We offer both project-based pricing and retainer models starting at $3K/month for ongoing optimization. Every custom business automation includes fixed-price quotes with no surprises.'
   },
   {
-    question: 'Do you provide ongoing support?',
-    answer: 'Yes! Every automation includes 30 days of free support. After that, we offer maintenance retainers starting at $500/month, which include monitoring, updates, and minor enhancements to keep your systems running smoothly.'
+    question: 'Do you provide ongoing support for AI automation systems?',
+    answer: 'Yes! Every done-for-you AI automation includes 30 days of free support. We also offer maintenance retainers starting at $500/month for monitoring, updates, and enhancements to keep your custom AI workflows running optimally.'
   },
   {
-    question: 'What if the automation doesn\'t work as expected?',
-    answer: 'We guarantee our work. If an automation doesn\'t meet the agreed specifications, we\'ll fix it at no cost. We also provide detailed testing and a 2-week optimization period to ensure everything works perfectly.'
+    question: 'How secure are your AI automation solutions?',
+    answer: 'Security is our top priority for all AI automation services. We use enterprise-grade encryption, follow SOC 2 compliance standards, and work within your existing security frameworks. All business process automation with AI happens in secure, GDPR-compliant environments.'
   }
 ]
 
@@ -48,10 +48,10 @@ export function FAQ() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-zinc-100 mb-4">
-            Frequently asked questions
+            AI Automation Agency FAQ
           </h2>
           <p className="text-lg text-zinc-400">
-            Everything you need to know about working with MonoClick.
+            Everything you need to know about our custom AI automation services and business process automation with AI.
           </p>
         </motion.div>
 

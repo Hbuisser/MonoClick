@@ -16,79 +16,79 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 const services = [
   {
     icon: Users,
-    title: 'Lead Scraping & Enrichment',
-    description: 'Struggling to find quality prospects? We build systems that scrape leads from LinkedIn and websites, then enrich them with emails, phone numbers, and company data for your sales team.',
+    title: 'AI-Powered Lead Generation Automation',
+    description: 'Struggling to find quality prospects? We build custom lead scraping automation systems that extract prospects from LinkedIn and websites, then enrich them with emails, phone numbers, and company data.',
     features: [
-      'LinkedIn prospect scraping',
+      'LinkedIn prospect scraping automation',
       'Website visitor identification',
-      'Email & phone enrichment',
-      'Company data collection',
-      'CRM integration',
-      'Automated list building'
+      'AI-powered email & phone enrichment',
+      'Company data collection automation',
+      'CRM integration & sync',
+      'Automated lead list building'
     ]
   },
   {
     icon: Zap,
-    title: 'Personalized Cold Emails at Scale',
-    description: 'Tired of generic outreach that gets ignored? We create AI-driven systems that write and send natural, personalized emails daily, turning cold prospects into warm conversations.',
+    title: 'AI Email Outreach System',
+    description: 'Tired of generic outreach that gets ignored? We create personalized cold email automation with AI that writes and sends natural, customized emails daily, turning prospects into conversations.',
     features: [
-      'AI-powered personalization',
-      'Dynamic email sequences',
+      'AI-powered email personalization',
+      'Dynamic email sequence automation',
       'A/B testing automation',
       'Deliverability optimization',
-      'Reply tracking & routing',
-      'Performance analytics'
+      'Automated reply tracking & routing',
+      'Performance analytics dashboard'
     ]
   },
   {
     icon: Brain,
-    title: 'RAG Knowledge Systems',
-    description: 'Need instant access to your company knowledge? We connect AI to your documents, CRM, and databases to provide accurate, context-aware answers for your team and customers.',
+    title: 'RAG Automation with n8n',
+    description: 'Need instant access to your company knowledge? We build RAG automation systems that connect AI to your documents, CRM, and databases to provide accurate, context-aware answers automatically.',
     features: [
-      'Document processing & indexing',
-      'Custom knowledge bases',
-      'AI-powered Q&A systems',
+      'Document processing & indexing automation',
+      'Custom AI knowledge bases',
+      'AI-powered Q&A automation',
       'Multi-source data integration',
-      'Slack/Teams integration',
+      'Slack/Teams bot integration',
       'Customer support automation'
     ]
   },
   {
     icon: Cog,
-    title: 'CRM & Database Integrations',
-    description: 'Drowning in manual data entry? We automate data movement and cleaning between your tools, keeping Google Sheets, Supabase, Airtable, and ClickUp perfectly synced.',
+    title: 'CRM Automation Integration',
+    description: 'Drowning in manual data entry? We build custom business automation to sync data between your CRM, Google Sheets, Supabase, Airtable, and ClickUp with automated data cleaning.',
     features: [
-      'Real-time data synchronization',
-      'Automated data cleaning',
-      'Custom field mapping',
+      'Real-time CRM data synchronization',
+      'Automated data cleaning workflows',
+      'Custom field mapping automation',
       'Duplicate detection & merging',
-      'Workflow triggers',
-      'Error handling & alerts'
+      'Automated workflow triggers',
+      'Error handling & alert systems'
     ]
   },
   {
     icon: BarChart3,
-    title: 'Payment & Subscription Flows',
-    description: 'Complex billing holding you back? We integrate Stripe with VAT handling and commission tracking, creating seamless payment experiences that scale with your business.',
+    title: 'Payment Flow Automation',
+    description: 'Complex billing holding you back? We build payment flow automation with Stripe integration, VAT handling, and commission tracking that scales with your business growth.',
     features: [
-      'Stripe integration & setup',
+      'Stripe payment automation setup',
       'VAT compliance automation',
-      'Commission tracking',
-      'Subscription management',
-      'Invoice automation',
-      'Payment analytics'
+      'Automated commission tracking',
+      'Subscription management automation',
+      'Invoice automation systems',
+      'Payment analytics dashboards'
     ]
   },
   {
     icon: Shield,
-    title: 'Custom SaaS Prototypes',
-    description: 'Want to turn your automation into a product? We transform your workflows into SaaS-like applications with authentication, dashboards, and subscription billing.',
+    title: 'Custom AI SaaS Prototypes',
+    description: 'Want to turn your automation into a product? We build custom AI SaaS prototypes that transform your workflows into scalable applications with authentication and billing.',
     features: [
       'User authentication & management',
-      'Custom dashboards',
-      'Subscription billing',
-      'API development',
-      'Admin panels',
+      'Custom AI-powered dashboards',
+      'Subscription billing automation',
+      'API development & integration',
+      'Admin panel automation',
       'Multi-tenant architecture'
     ]
   }
@@ -106,11 +106,11 @@ export function ServicesGrid() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-zinc-100 mb-4">
-            What we build
+            Custom AI Automation Services
           </h2>
           <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
-            AI-powered systems that handle your most time-consuming workflows,
-            so you can focus on growing your business.
+            Done-for-you AI automations and business process automation with AI that eliminate manual tasks,
+            generate qualified leads, and scale your revenue operations.
           </p>
         </motion.div>
 

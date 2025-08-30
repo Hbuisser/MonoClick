@@ -51,11 +51,11 @@ export function ProcessSteps() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-zinc-100 mb-4">
-            Our proven process
+            How We Deliver Custom AI Automation
           </h2>
           <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
-            From idea to implementation, we follow a systematic approach that
-            ensures your automation delivers measurable results.
+            From discovery to deployment, we follow a proven process for implementing
+            business process automation with AI that delivers measurable ROI.
           </p>
         </motion.div>
 
@@ -114,7 +114,8 @@ export function ProcessSteps() {
           className="text-center mt-16"
         >
           <p className="text-zinc-400 mb-4">
-            Ready to automate your workflows?
+            Ready for <a href="/services" className="text-indigo-400 hover:text-indigo-300 transition-colors">custom AI automation services</a>?
+            Learn more about our <a href="/about" className="text-indigo-400 hover:text-indigo-300 transition-colors">AI automation agency</a>.
           </p>
           <div className="inline-flex items-center space-x-2 text-sm text-zinc-300">
             <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />

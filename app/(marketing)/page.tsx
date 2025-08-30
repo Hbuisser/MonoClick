@@ -16,7 +16,7 @@ export default function HomePage() {
       {/* <PoweredBy /> */}
       <Testimonials />
       <ProcessSteps />
-      <CaseHighlights />
+      {/* <CaseHighlights /> */}
       <FAQ />
       <CTABanner />
     </>

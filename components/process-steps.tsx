@@ -13,22 +13,22 @@ const steps = [
     icon: Search,
     number: '01',
     title: 'Discovery',
-    description: 'We analyze your workflows, pain points, and growth goals to identify automation opportunities.',
-    duration: '1-2 weeks'
+    description: 'We analyze your business, pain points, and growth goals to identify automation opportunities.',
+    duration: '30 min call'
   },
   {
     icon: Lightbulb,
     number: '02',
-    title: 'Design Sprint',
-    description: 'Our team designs and prototypes your custom automation system with clear ROI projections.',
-    duration: '2-3 weeks'
+    title: 'Design',
+    description: 'We design and prototype your custom automation system with clear ROI projections.',
+    duration: '1-3 weeks'
   },
   {
     icon: Rocket,
     number: '03',
     title: 'Go-Live',
     description: 'We build, test, and deploy your automation with comprehensive training for your team.',
-    duration: '3-4 weeks'
+    duration: '1 week'
   },
   {
     icon: TrendingUp,

@@ -12,6 +12,11 @@ export const contentType = 'image/png'
 
 // Image generation
 export default async function Image() {
+  // Fetch the logo from the public folder
+  const logoData = await fetch(new URL('/logo.png', 'https://monoclick.ai')).then(
+    (res) => res.arrayBuffer(),
+  )
+
   return new ImageResponse(
     (
       <div
@@ -48,20 +53,16 @@ export default async function Image() {
             marginBottom: '40px',
           }}
         >
-          <div
+          <img
+            src={`data:image/png;base64,${Buffer.from(logoData).toString('base64')}`}
+            alt="MonoClick Logo"
             style={{
               width: '80px',
               height: '80px',
               borderRadius: '20px',
-              background: 'linear-gradient(135deg, #4f46e5 0%, #22d3ee 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
               marginRight: '20px',
             }}
-          >
-            <span style={{ fontSize: '36px', fontWeight: 'bold', color: 'white' }}>M</span>
-          </div>
+          />
           <span style={{ fontSize: '48px', fontWeight: 'bold' }}>MonoClick</span>
         </div>
 

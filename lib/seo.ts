@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     'AI-powered automations that turn manual workflows into predictable pipelines for B2B companies. Lead gen, ops, and customer success included.',
   url: 'https://monoclick.ai',
-  ogImage: 'https://monoclick.ai/og.jpg',
+  ogImage: 'https://monoclick.ai/logo.png',
   creator: '@monoclick_ai',
   keywords: [
     'AI automation',

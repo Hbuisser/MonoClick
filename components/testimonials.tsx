@@ -100,7 +100,7 @@ export function Testimonials() {
           <div className="inline-flex items-center space-x-6 px-6 py-3 rounded-full bg-zinc-800/30 border border-zinc-800">
             <div className="flex items-center space-x-2">
               <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-              <span className="text-sm text-zinc-300">4.9/5 average rating</span>
+              <span className="text-sm text-zinc-300">5/5 average rating</span>
             </div>
             <div className="h-4 w-px bg-zinc-700" />
             <div className="flex items-center space-x-2">

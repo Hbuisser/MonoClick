@@ -6,56 +6,92 @@ import {
   Brain,
   Cog,
   BarChart3,
-  ArrowUpRight
+  ArrowUpRight,
+  Users,
+  Shield
 } from 'lucide-react'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 const services = [
   {
-    icon: Zap,
-    title: 'AI Lead Engines',
-    description: 'Multi-channel outreach with enrichment & smart follow-ups',
+    icon: Users,
+    title: 'Lead Scraping & Enrichment',
+    description: 'Struggling to find quality prospects? We build systems that scrape leads from LinkedIn and websites, then enrich them with emails, phone numbers, and company data for your sales team.',
     features: [
-      'LinkedIn + Email sequences',
-      'Lead enrichment & scoring',
-      'Smart follow-up triggers',
-      'CRM integration'
+      'LinkedIn prospect scraping',
+      'Website visitor identification',
+      'Email & phone enrichment',
+      'Company data collection',
+      'CRM integration',
+      'Automated list building'
+    ]
+  },
+  {
+    icon: Zap,
+    title: 'Personalized Cold Emails at Scale',
+    description: 'Tired of generic outreach that gets ignored? We create AI-driven systems that write and send natural, personalized emails daily, turning cold prospects into warm conversations.',
+    features: [
+      'AI-powered personalization',
+      'Dynamic email sequences',
+      'A/B testing automation',
+      'Deliverability optimization',
+      'Reply tracking & routing',
+      'Performance analytics'
     ]
   },
   {
     icon: Brain,
-    title: 'RAG Knowledge Assistants',
-    description: 'Secure GPTs trained on docs/CRM',
+    title: 'RAG Knowledge Systems',
+    description: 'Need instant access to your company knowledge? We connect AI to your documents, CRM, and databases to provide accurate, context-aware answers for your team and customers.',
     features: [
+      'Document processing & indexing',
       'Custom knowledge bases',
-      'Document Q&A systems',
-      'Customer support bots',
-      'Internal team assistants'
+      'AI-powered Q&A systems',
+      'Multi-source data integration',
+      'Slack/Teams integration',
+      'Customer support automation'
     ]
   },
   {
     icon: Cog,
-    title: 'Ops Automations',
-    description: 'Inbox triage to order ops—saving hours daily',
+    title: 'CRM & Database Integrations',
+    description: 'Drowning in manual data entry? We automate data movement and cleaning between your tools, keeping Google Sheets, Supabase, Airtable, and ClickUp perfectly synced.',
     features: [
-      'Email classification',
-      'Order processing',
-      'Inventory management',
-      'Customer onboarding'
+      'Real-time data synchronization',
+      'Automated data cleaning',
+      'Custom field mapping',
+      'Duplicate detection & merging',
+      'Workflow triggers',
+      'Error handling & alerts'
     ]
   },
   {
     icon: BarChart3,
-    title: 'Revenue Dashboards',
-    description: 'Real-time ads, email, CRM & billing visibility',
+    title: 'Payment & Subscription Flows',
+    description: 'Complex billing holding you back? We integrate Stripe with VAT handling and commission tracking, creating seamless payment experiences that scale with your business.',
     features: [
-      'Multi-platform reporting',
-      'Custom KPI tracking',
-      'Automated alerts',
-      'Executive summaries'
+      'Stripe integration & setup',
+      'VAT compliance automation',
+      'Commission tracking',
+      'Subscription management',
+      'Invoice automation',
+      'Payment analytics'
     ]
   },
+  {
+    icon: Shield,
+    title: 'Custom SaaS Prototypes',
+    description: 'Want to turn your automation into a product? We transform your workflows into SaaS-like applications with authentication, dashboards, and subscription billing.',
+    features: [
+      'User authentication & management',
+      'Custom dashboards',
+      'Subscription billing',
+      'API development',
+      'Admin panels',
+      'Multi-tenant architecture'
+    ]
+  }
 ]
 
 export function ServicesGrid() {
@@ -78,7 +114,7 @@ export function ServicesGrid() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon
             return (

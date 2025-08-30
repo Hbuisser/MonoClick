@@ -4,7 +4,7 @@ import { Mail, MapPin, Twitter, Linkedin } from 'lucide-react'
 const navigation = {
   company: [
     { name: 'About', href: '/about' },
-    { name: 'Work', href: '/work' },
+    // { name: 'Work', href: '/work' },
     { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' },
   ],

@@ -20,116 +20,158 @@ import { CTABanner } from '@/components/cta-banner'
 
 export const metadata: Metadata = createMetadata({
   title: 'Services',
-  description: 'AI-powered automation services for B2B companies: lead engines, knowledge assistants, operations automation, and revenue dashboards.',
+  description: 'Custom AI automation services: lead scraping & enrichment, personalized cold emails, RAG systems, CRM integrations, payment flows, and SaaS prototypes.',
   path: '/services'
 })
 
 const services = [
   {
-    icon: Zap,
-    title: 'AI Lead Engines',
-    description: 'Multi-channel outreach systems with intelligent enrichment and follow-ups',
+    icon: Users,
+    title: 'Lead Scraping & Enrichment',
+    description: 'Struggling to find quality prospects? We build systems that scrape leads from LinkedIn and websites, then enrich them with emails, phone numbers, and company data for your sales team.',
     features: [
-      'LinkedIn + Email sequences',
-      'Lead scoring & qualification',
-      'Smart follow-up triggers',
-      'CRM integration & sync',
-      'A/B testing & optimization',
-      'Compliance & deliverability'
+      'LinkedIn prospect scraping',
+      'Website visitor identification',
+      'Email & phone enrichment',
+      'Company data collection',
+      'CRM integration',
+      'Automated list building'
     ],
     benefits: [
-      '40% faster lead response',
-      '35% higher conversion rates',
-      '10x time savings on outreach'
+      '10x more qualified leads',
+      '80% data accuracy',
+      '5 hours saved per day'
+    ],
+    pricing: 'Starting at $6K',
+    timeline: '3-4 weeks',
+    technologies: ['n8n', 'Apollo', 'Clay', 'LinkedIn API', 'HubSpot', 'Supabase']
+  },
+  {
+    icon: Zap,
+    title: 'Personalized Cold Emails at Scale',
+    description: 'Tired of generic outreach that gets ignored? We create AI-driven systems that write and send natural, personalized emails daily, turning cold prospects into warm conversations.',
+    features: [
+      'AI-powered personalization',
+      'Dynamic email sequences',
+      'A/B testing automation',
+      'Deliverability optimization',
+      'Reply tracking & routing',
+      'Performance analytics'
+    ],
+    benefits: [
+      '40% higher open rates',
+      '25% more replies',
+      'Scale to 1000+ emails daily'
     ],
     pricing: 'Starting at $8K',
-    timeline: '4-6 weeks',
-    technologies: ['n8n', 'OpenAI', 'Clay', 'Apollo', 'HubSpot', 'Calendly']
+    timeline: '4-5 weeks',
+    technologies: ['OpenAI', 'n8n', 'Lemlist', 'Clay', 'Instantly', 'Google Workspace']
   },
   {
     icon: Brain,
-    title: 'RAG Knowledge Assistants',
-    description: 'Secure AI assistants trained on your docs, CRM, and knowledge base',
+    title: 'RAG Knowledge Systems',
+    description: 'Need instant access to your company knowledge? We connect AI to your documents, CRM, and databases to provide accurate, context-aware answers for your team and customers.',
     features: [
+      'Document processing & indexing',
       'Custom knowledge bases',
-      'Document Q&A systems',
-      'Customer support bots',
-      'Internal team assistants',
-      'Multi-language support',
-      'Real-time learning'
+      'AI-powered Q&A systems',
+      'Multi-source data integration',
+      'Slack/Teams integration',
+      'Customer support automation'
     ],
     benefits: [
-      '60% support deflection',
-      '25% higher satisfaction',
-      '80% faster query resolution'
+      '60% faster information retrieval',
+      '80% reduction in support tickets',
+      '24/7 knowledge availability'
     ],
-    pricing: 'Starting at $6K',
-    timeline: '3-5 weeks',
-    technologies: ['OpenAI', 'Pinecone', 'LangChain', 'n8n', 'Intercom', 'Slack']
+    pricing: 'Starting at $7K',
+    timeline: '4-6 weeks',
+    technologies: ['OpenAI', 'Pinecone', 'MongoDB', 'n8n', 'Slack API', 'Intercom']
   },
   {
     icon: Cog,
-    title: 'Operations Automations',
-    description: 'End-to-end workflow automation from inbox triage to order fulfillment',
+    title: 'CRM & Database Integrations',
+    description: 'Drowning in manual data entry? We automate data movement and cleaning between your tools, keeping Google Sheets, Supabase, Airtable, and ClickUp perfectly synced.',
     features: [
-      'Email classification & routing',
-      'Order processing automation',
-      'Inventory management',
-      'Customer onboarding flows',
-      'Document processing',
-      'Approval workflows'
+      'Real-time data synchronization',
+      'Automated data cleaning',
+      'Custom field mapping',
+      'Duplicate detection & merging',
+      'Workflow triggers',
+      'Error handling & alerts'
     ],
     benefits: [
-      '10x faster processing',
-      '80% error reduction',
-      '5 hours saved daily per team'
+      '95% reduction in data entry',
+      '99% data accuracy',
+      'Real-time insights'
     ],
-    pricing: 'Starting at $10K',
-    timeline: '6-8 weeks',
-    technologies: ['n8n', 'Zapier', 'Airtable', 'Notion', 'DocuSign', 'Stripe']
+    pricing: 'Starting at $5K',
+    timeline: '2-3 weeks',
+    technologies: ['n8n', 'Zapier', 'Supabase', 'Airtable', 'Google Sheets', 'ClickUp']
   },
   {
     icon: BarChart3,
-    title: 'Revenue Dashboards',
-    description: 'Real-time visibility into ads, email, CRM, and billing performance',
+    title: 'Payment & Subscription Flows',
+    description: 'Complex billing holding you back? We integrate Stripe with VAT handling and commission tracking, creating seamless payment experiences that scale with your business.',
     features: [
-      'Multi-platform data sync',
-      'Custom KPI tracking',
-      'Automated reporting',
-      'Alert systems',
-      'Executive summaries',
-      'Forecasting models'
+      'Stripe integration & setup',
+      'VAT compliance automation',
+      'Commission tracking',
+      'Subscription management',
+      'Invoice automation',
+      'Payment analytics'
     ],
     benefits: [
-      'Real-time insights',
-      '90% faster reporting',
-      'Data-driven decisions'
+      'Seamless payment experience',
+      'Automated tax compliance',
+      'Transparent commission tracking'
     ],
-    pricing: 'Starting at $5K',
-    timeline: '2-4 weeks',
-    technologies: ['n8n', 'Google Sheets', 'Looker', 'HubSpot', 'Stripe', 'Meta Ads']
+    pricing: 'Starting at $6K',
+    timeline: '3-4 weeks',
+    technologies: ['Stripe', 'n8n', 'Supabase', 'TaxJar', 'Xero', 'Google Sheets']
+  },
+  {
+    icon: Shield,
+    title: 'Custom SaaS Prototypes',
+    description: 'Want to turn your automation into a product? We transform your workflows into SaaS-like applications with authentication, dashboards, and subscription billing.',
+    features: [
+      'User authentication & management',
+      'Custom dashboards',
+      'Subscription billing',
+      'API development',
+      'Admin panels',
+      'Multi-tenant architecture'
+    ],
+    benefits: [
+      'New revenue streams',
+      'Scalable user management',
+      'Professional product experience'
+    ],
+    pricing: 'Starting at $12K',
+    timeline: '6-8 weeks',
+    technologies: ['Next.js', 'Supabase', 'Stripe', 'NextAuth', 'Tailwind CSS', 'n8n']
   }
 ]
 
 const addOns = [
   {
-    title: 'Training & Documentation',
-    description: 'Comprehensive team training and system documentation',
+    title: 'Custom-Built Solutions',
+    description: 'Every automation designed specifically for your workflows and tools',
     included: true
   },
   {
-    title: 'Data Migration',
-    description: 'Safe migration of existing data and configurations',
+    title: 'ROI-Focused Design',
+    description: 'We prioritize automations that deliver measurable business impact',
     included: true
   },
   {
-    title: '30-Day Support',
-    description: 'Free monitoring and adjustments post-launch',
+    title: 'Fast Deployment',
+    description: 'Most projects delivered in 2-8 weeks with immediate results',
     included: true
   },
   {
-    title: 'Ongoing Maintenance',
-    description: 'Monthly retainer for updates and optimizations',
+    title: 'Ongoing Support',
+    description: 'Monthly retainer for updates, optimizations, and new features',
     included: false,
     price: 'From $500/month'
   }
@@ -143,11 +185,12 @@ export default function ServicesPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-zinc-100 mb-6">
-              AI Automation Services
+              What We Do
             </h1>
             <p className="text-lg text-zinc-400 max-w-3xl mx-auto mb-8">
-              We build custom AI-powered systems that automate your most time-consuming
-              workflows, from lead generation to customer success operations.
+              We design custom AI automations that connect your existing tools and workflows.
+              No one-size-fits-all software — just smart systems that cut repetitive tasks,
+              enrich leads, and generate predictable growth for your business.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
               <div className="text-center">
@@ -258,10 +301,11 @@ export default function ServicesPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-zinc-100 mb-4">
-              What's included with every project
+              Why MonoClick
             </h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
-              We provide end-to-end support to ensure your automation succeeds from day one.
+              We don't sell generic software. Every automation is custom-built for your specific workflows,
+              designed for maximum ROI, and deployed fast so you see results quickly.
             </p>
           </div>
 
@@ -314,26 +358,26 @@ export default function ServicesPage() {
             {[
               {
                 step: '01',
-                title: 'Discovery Call',
-                description: 'We analyze your workflows, pain points, and goals to identify the best automation opportunities.',
-                duration: '1 hour'
+                title: 'Free Discovery Call',
+                description: 'We chat about your biggest time-wasters and growth bottlenecks. No sales pitch — just an honest conversation about what automation could do for your business.',
+                duration: '30-45 minutes'
               },
               {
                 step: '02',
-                title: 'Proposal & Planning',
-                description: 'Detailed project scope, timeline, and fixed-price quote with clear deliverables and ROI projections.',
+                title: 'Custom Proposal',
+                description: 'You get a detailed plan with fixed pricing, clear timelines, and projected ROI. No surprises, no hourly billing.',
                 duration: '2-3 days'
               },
               {
                 step: '03',
-                title: 'Design & Build',
-                description: 'We design, prototype, and build your automation with regular check-ins and feedback loops.',
-                duration: '4-8 weeks'
+                title: 'Build & Test',
+                description: 'We build your automation with weekly check-ins so you can see progress and give feedback. Everything is tested before launch.',
+                duration: '2-8 weeks'
               },
               {
                 step: '04',
-                title: 'Testing & Launch',
-                description: 'Comprehensive testing, team training, and smooth deployment with 30 days of included support.',
+                title: 'Launch & Support',
+                description: 'We train your team, launch the system, and provide 30 days of free support to ensure everything runs smoothly.',
                 duration: '1 week'
               }
             ].map((phase, index) => (
@@ -359,7 +403,7 @@ export default function ServicesPage() {
           <div className="mt-16 text-center">
             <Button asChild variant="gradient" size="lg">
               <Link href="/contact">
-                Start your project
+                Book your free discovery call
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

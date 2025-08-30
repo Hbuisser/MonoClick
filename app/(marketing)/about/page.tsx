@@ -19,48 +19,42 @@ import { CTABanner } from '@/components/cta-banner'
 
 export const metadata: Metadata = createMetadata({
   title: 'About Us',
-  description: 'Learn about MonoClick\'s mission to help B2B companies scale through AI-powered automation. Meet our team and discover our story.',
+  description: 'Learn about MonoClick\'s mission to help businesses automate workflows and generate revenue with custom AI solutions, n8n automations, and SaaS tools.',
   path: '/about'
 })
 
 const team = [
   {
-    name: 'Sophie Laurent',
-    role: 'AI Solutions Architect',
-    bio: 'PhD in Machine Learning, ex-DeepMind. Specializes in RAG systems and conversational AI for business applications.',
-    location: 'Paris, FR'
-  },
-  {
-    name: 'Marcus Weber',
-    role: 'Operations Lead',
-    bio: 'Former McKinsey consultant focused on business process optimization. Expert in workflow analysis and automation strategy.',
-    location: 'Berlin, DE'
+    name: 'Henry Buisseret',
+    role: 'Founder & AI Automation Engineer',
+    bio: 'Belgian software engineer with background in finance (KBC) and payments (Worldline). Built multiple SaaS products and specializes in custom AI automations using Next.js, n8n, and modern tech stack.',
+    location: 'Belgium'
   }
 ]
 
 const values = [
   {
     icon: Target,
-    title: 'Results-Focused',
-    description: 'Every automation we build must deliver measurable business value. We track ROI and optimize for real outcomes, not just cool technology.'
+    title: 'Custom Solutions',
+    description: 'We build tailored automations that fit your specific tech stack and workflows. No generic tools—every solution is designed for your unique business needs.'
   },
   {
     icon: Users,
-    title: 'Human-Centric',
-    description: 'AI should augment human capability, not replace it. We design systems that make teams more effective and work more enjoyable.'
+    title: 'AI-First Approach',
+    description: 'We leverage AI agents, intelligent workflows, and automation tools like n8n to create systems that learn and adapt to your business processes.'
   },
   {
     icon: Lightbulb,
-    title: 'Pragmatic Innovation',
-    description: 'We use proven technologies in smart ways rather than chasing the latest trends. Reliability and effectiveness over novelty.'
+    title: 'ROI-Driven Results',
+    description: 'Every automation is built to save time, reduce costs, or generate revenue. We focus on delivering measurable business impact, not just technical achievements.'
   }
 ]
 
 const stats = [
-  { label: 'Companies helped', value: '50+' },
-  { label: 'Automations built', value: '100+' },
-  { label: 'Hours saved monthly', value: '50K+' },
-  { label: 'Countries served', value: '12' }
+  { label: 'Clients served', value: '25+' },
+  { label: 'Custom automations', value: '50+' },
+  { label: 'Hours saved weekly', value: '200+' },
+  { label: 'Revenue generated', value: '€100K+' }
 ]
 
 export default function AboutPage() {
@@ -74,8 +68,8 @@ export default function AboutPage() {
               About MonoClick
             </h1>
             <p className="text-lg text-zinc-400 max-w-3xl mx-auto mb-8">
-              We're a team of engineers and automation experts helping B2B companies
-              scale through AI-powered systems that actually work.
+              An AI automations agency helping businesses save time and generate revenue through
+              custom workflow automation, AI agents, and tailored SaaS solutions.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto">
               {stats.map((stat, index) => (
@@ -95,33 +89,33 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl font-heading font-bold text-zinc-100 mb-6">
-                Our story
+                Our mission
               </h2>
               <div className="space-y-4 text-zinc-400 leading-relaxed">
                 <p>
-                  MonoClick started when we were helping a friend's real estate
-                  company automate their lead qualification process. What began as a weekend
-                  project turned into a 40% increase in conversion rates.
+                  MonoClick was founded to help businesses automate repetitive workflows and unlock
+                  revenue potential through custom AI solutions. We believe every company should focus
+                  on growth, not manual tasks.
                 </p>
                 <p>
-                  Word spread quickly. Soon, we were helping SaaS companies deflect support
-                  tickets, manufacturers speed up quote generation, and agencies automate
-                  their entire client onboarding flow.
+                  From lead generation and email automation to CRM integration and payment flows,
+                  we build tailored automations using tools like n8n, AI agents, and custom SaaS
+                  solutions that fit your existing tech stack.
                 </p>
                 <p>
-                  Today, we're a team of automation experts working with B2B companies across
-                  the US and EU. Our focus remains the same: building AI-powered systems that
-                  deliver measurable business results.
+                  Our clients range from small business owners to growing teams who want to scale
+                  efficiently. Instead of selling generic tools, we deliver custom automations
+                  that solve real problems and generate measurable results.
                 </p>
               </div>
             </div>
             <div className="bg-zinc-800/30 rounded-2xl p-8 flex items-center justify-center">
               <div className="text-center">
                 <div className="h-48 w-full rounded-xl bg-zinc-800/50 flex items-center justify-center mb-4">
-                  <span className="text-zinc-500">Team Photo</span>
+                  <span className="text-zinc-500">Automation Workflow</span>
                 </div>
                 <p className="text-sm text-zinc-400">
-                  The MonoClick team at our annual retreat
+                  Example of a custom automation we built for a client
                 </p>
               </div>
             </div>
@@ -134,10 +128,10 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-zinc-100 mb-4">
-              Our values
+              Our approach
             </h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
-              These principles guide how we build automations and work with our clients.
+              How we deliver custom AI automations that actually drive business results.
             </p>
           </div>
 
@@ -169,15 +163,15 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-zinc-100 mb-4">
-              Meet the team
+              About the founder
             </h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
-              A diverse team of engineers, AI specialists, and business process experts
-              united by a passion for automation.
+              Henry Buisseret combines engineering expertise with real-world business experience
+              to deliver automations that drive measurable results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-2xl mx-auto">
             {team.map((member, index) => (
               <Card key={member.name} className="bg-zinc-900/50 border-zinc-800">
                 <CardContent className="p-8 text-center">
@@ -200,9 +194,15 @@ export default function AboutPage() {
                     {member.bio}
                   </p>
 
-                  <div className="flex items-center justify-center space-x-2 text-xs text-zinc-500">
+                  <div className="flex items-center justify-center space-x-2 text-xs text-zinc-500 mb-4">
                     <MapPin className="h-3 w-3" />
                     <span>{member.location}</span>
+                  </div>
+
+                  <div className="space-y-2 text-xs text-zinc-400">
+                    <p>Previous experience: Finance (KBC), Payments (Worldline)</p>
+                    <p>Built SaaS products: CartoonAI.io, VideoPro.studio</p>
+                    <p>Active on X (@HBuisseret) and LinkedIn</p>
                   </div>
                 </CardContent>
               </Card>
@@ -216,10 +216,10 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-zinc-100 mb-4">
-              Working with MonoClick
+              Why choose MonoClick
             </h2>
             <p className="text-zinc-400">
-              What you can expect when partnering with us.
+              What makes our custom automation approach different.
             </p>
           </div>
 
@@ -229,11 +229,11 @@ export default function AboutPage() {
                 <Clock className="h-6 w-6 text-indigo-400 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-zinc-100 mb-2">
-                    Fast delivery
+                    No generic tools
                   </h3>
                   <p className="text-zinc-400 text-sm">
-                    Most automations are live within 4-8 weeks. We work in short sprints
-                    with regular check-ins to ensure we're on track.
+                    We build custom automations that fit your specific workflows and tech stack.
+                    Every solution is tailored to your business needs.
                   </p>
                 </div>
               </div>
@@ -242,11 +242,11 @@ export default function AboutPage() {
                 <Award className="h-6 w-6 text-indigo-400 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-zinc-100 mb-2">
-                    Quality guarantee
+                    Proven results
                   </h3>
                   <p className="text-zinc-400 text-sm">
-                    Every automation comes with comprehensive testing, documentation, and
-                    30 days of free support to ensure success.
+                    Our automations save time, reduce costs, and generate revenue.
+                    We focus on delivering measurable ROI for your business.
                   </p>
                 </div>
               </div>
@@ -257,11 +257,11 @@ export default function AboutPage() {
                 <Users className="h-6 w-6 text-indigo-400 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-zinc-100 mb-2">
-                    Collaborative approach
+                    AI-powered solutions
                   </h3>
                   <p className="text-zinc-400 text-sm">
-                    We work closely with your team to understand your unique workflows
-                    and ensure the automation fits perfectly.
+                    We leverage cutting-edge AI agents and intelligent workflows to create
+                    automations that learn and adapt to your business.
                   </p>
                 </div>
               </div>
@@ -270,11 +270,11 @@ export default function AboutPage() {
                 <Target className="h-6 w-6 text-indigo-400 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-zinc-100 mb-2">
-                    ROI focused
+                    End-to-end service
                   </h3>
                   <p className="text-zinc-400 text-sm">
-                    We track metrics and optimize for business results, not just technical
-                    achievements. Your success is our success.
+                    From strategy and development to deployment and support, we handle
+                    everything so you can focus on growing your business.
                   </p>
                 </div>
               </div>
@@ -284,7 +284,7 @@ export default function AboutPage() {
           <div className="mt-12 text-center">
             <Button asChild variant="gradient" size="lg">
               <Link href="/contact">
-                Start a conversation
+                Get your custom automation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

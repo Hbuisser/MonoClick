@@ -181,10 +181,10 @@ export default function LegalPage() {
                 For questions about these Terms, please contact us at:
               </p>
               <p className="mb-2">
-                Email: <a href="mailto:legal@monoclick.ai" className="text-indigo-400 hover:text-indigo-300">legal@monoclick.ai</a>
+                Email: <a href="mailto:henry@monoclick.ai" className="text-indigo-400 hover:text-indigo-300">henry@monoclick.ai</a>
               </p>
               <p>
-                General inquiries: <a href="mailto:hello@monoclick.ai" className="text-indigo-400 hover:text-indigo-300">hello@monoclick.ai</a>
+                General inquiries: <a href="mailto:henry@monoclick.ai" className="text-indigo-400 hover:text-indigo-300">henry@monoclick.ai</a>
               </p>
             </section>
           </div>

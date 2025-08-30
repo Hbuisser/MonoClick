@@ -15,7 +15,7 @@ export function generateOrganizationSchema() {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      email: 'hello@monoclick.ai',
+      email: 'henry@monoclick.ai',
     },
     address: {
       '@type': 'PostalAddress',

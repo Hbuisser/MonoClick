@@ -87,10 +87,10 @@ export function FAQ() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
             <a
-              href="mailto:hello@monoclick.ai"
+              href="mailto:henry@monoclick.ai"
               className="text-indigo-400 hover:text-indigo-300 transition-colors"
             >
-              hello@monoclick.ai
+              henry@monoclick.ai
             </a>
             <span className="hidden sm:block text-zinc-600">•</span>
             <a

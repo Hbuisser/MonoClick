@@ -33,8 +33,8 @@ const contactMethods = [
     icon: Mail,
     title: 'Send us an Email',
     description: 'Prefer email? Drop us a line with your project details',
-    action: 'hello@monoclick.ai',
-    href: 'mailto:hello@monoclick.ai',
+    action: 'henry@monoclick.ai',
+    href: 'mailto:henry@monoclick.ai',
     primary: false
   },
   {
@@ -217,10 +217,10 @@ export default function ContactPage() {
                     <div className="flex items-center space-x-3 text-sm">
                       <Mail className="h-4 w-4 text-zinc-400" />
                       <a
-                        href="mailto:hello@monoclick.ai"
+                        href="mailto:henry@monoclick.ai"
                         className="text-zinc-300 hover:text-indigo-400 transition-colors"
                       >
-                        hello@monoclick.ai
+                        henry@monoclick.ai
                       </a>
                     </div>
                     <div className="flex items-center space-x-3 text-sm">

@@ -7,10 +7,10 @@ import { Card, CardContent } from '@/components/ui/card'
 
 const testimonials = [
   {
-    content: "MonoClick shipped an automation in a week that saved our SDRs 10+ hours/month. The lead qualification system they built is incredibly accurate.",
-    author: "Martin W.",
-    role: "VP of Sales",
-    company: "TechFlow",
+    content: "Henry has done a great job. Technically he is capable but more than that he has been very patient and very customer service and customer support oriented. I thought he would give up but never did. More freelancers like him are needed on the platform. I highly recommend him.",
+    author: "Chris O.",
+    role: "Client",
+    company: "Upwork",
     rating: 5
   },
   {

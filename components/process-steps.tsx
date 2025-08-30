@@ -59,7 +59,7 @@ export function ProcessSteps() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
           {steps.map((step, index) => {
             const Icon = step.icon
             return (
@@ -72,31 +72,28 @@ export function ProcessSteps() {
                 className="relative"
               >
                 {/* Connection line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-400 opacity-30 z-0" />
-                )}
+                <div className="hidden lg:block absolute top-6 left-1/2 w-1/2 h-0.5 bg-gradient-to-r from-indigo-600 to-cyan-400 opacity-30 z-0" />
 
-                <div className="relative z-10 text-center lg:text-left">
+                <div className="relative z-10 text-center lg:text-left pb-8">
                   {/* Step number */}
                   <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-brand text-white font-bold text-lg mb-4 mx-auto lg:mx-0"
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-brand text-white font-bold text-lg mb-6 mx-auto lg:mx-0 relative z-10"
                   >
                     {step.number}
                   </motion.div>
 
-                  {/* Icon */}
-                  <div className="flex justify-center lg:justify-start mb-4">
-                    <div className="h-16 w-16 rounded-2xl bg-zinc-800/50 flex items-center justify-center">
-                      <Icon className="h-8 w-8 text-indigo-400" />
+                  {/* Content */}
+                  <div className="flex items-center justify-center lg:justify-start gap-3 mb-3">
+                    <h3 className="text-xl font-heading font-semibold text-zinc-100">
+                      {step.title}
+                    </h3>
+                    {/* Icon */}
+                    <div className="h-8 w-8 rounded-lg bg-zinc-800/50 flex items-center justify-center">
+                      <Icon className="h-5 w-5 text-indigo-400" />
                     </div>
                   </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl font-heading font-semibold text-zinc-100 mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-3">
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-4">
                     {step.description}
                   </p>
                   <div className="inline-flex items-center px-3 py-1 rounded-full bg-zinc-800/50 text-xs text-zinc-300">

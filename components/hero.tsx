@@ -28,7 +28,7 @@ export function Hero() {
           >
             <div className="inline-flex items-center rounded-full border border-zinc-800 bg-zinc-900/50 px-4 py-2 text-sm text-zinc-300 backdrop-blur-sm">
               <span className="mr-2 h-2 w-2 rounded-full bg-green-400 animate-pulse" />
-              Made with n8n • OpenAI • Apify • Stripe
+              Made with n8n • OpenAI • Apify • Stripe • Cursor
             </div>
           </motion.div>
 
@@ -68,7 +68,7 @@ export function Hero() {
               </Link>
             </Button>
 
-            <Button asChild variant="outline" size="xl" className="group border-zinc-700 hover:bg-zinc-800">
+            <Button asChild variant="outline" size="xl" className="group border-zinc-700 bg-transparent text-zinc-100 hover:bg-zinc-800 hover:text-white">
               <Link href="/work" className="flex items-center">
                 <PlayCircle className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
                 See case studies

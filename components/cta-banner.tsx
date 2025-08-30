@@ -71,7 +71,7 @@ export function CTABanner() {
                 size="xl"
                 className="text-white border-white/30 hover:bg-white/10 group"
               >
-                <Link href="mailto:hello@monoclick.ai" className="flex items-center">
+                <Link href="mailto:henry@monoclick.ai" className="flex items-center">
                   <Mail className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
                   Email us
                 </Link>

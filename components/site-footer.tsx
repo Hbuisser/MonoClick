@@ -15,12 +15,12 @@ const navigation = {
   social: [
     {
       name: 'Twitter',
-      href: 'https://twitter.com/monoclick_ai',
+      href: 'https://x.com/HBuisser',
       icon: Twitter,
     },
     {
       name: 'LinkedIn',
-      href: 'https://linkedin.com/company/monoclick-ai',
+      href: 'https://www.linkedin.com/in/henry-buisseret-86525668/',
       icon: Linkedin,
     },
   ],
@@ -49,8 +49,8 @@ export function SiteFooter() {
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-zinc-400 text-sm">
                   <Mail className="h-4 w-4" />
-                  <a href="mailto:hello@monoclick.ai" className="hover:text-zinc-200 transition-colors">
-                    hello@monoclick.ai
+                  <a href="mailto:henry@monoclick.ai" className="hover:text-zinc-200 transition-colors">
+                    henry@monoclick.ai
                   </a>
                 </div>
                 <div className="flex items-center space-x-2 text-zinc-400 text-sm">

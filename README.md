@@ -166,7 +166,7 @@ To connect the contact form to your services:
 import { sendEmail } from '@/lib/email'
 
 await sendEmail({
-  to: 'hello@monoclick.ai',
+  to: 'henry@monoclick.ai',
   subject: 'New Contact Form Submission',
   data: formData
 })
@@ -257,7 +257,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🆘 Support
 
 For questions or support:
-- Email: hello@monoclick.ai
+- Email: henry@monoclick.ai
 - Documentation: This README
 - Issues: GitHub Issues tab
 

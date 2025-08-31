@@ -51,10 +51,10 @@ const values = [
 ]
 
 const stats = [
-  { label: 'Clients served', value: '25+' },
-  { label: 'Custom automations', value: '50+' },
-  { label: 'Hours saved weekly', value: '200+' },
-  { label: 'Revenue generated', value: '€100K+' }
+  { label: 'Clients served', value: '5+' },
+  { label: 'Custom automations', value: '10+' },
+  { label: 'Hours saved weekly', value: '50+' },
+  { label: 'Revenue generated', value: '€20K+' }
 ]
 
 export default function AboutPage() {
@@ -94,7 +94,7 @@ export default function AboutPage() {
               <div className="space-y-4 text-zinc-400 leading-relaxed">
                 <p>
                   MonoClick is an AI automation agency founded to help businesses implement custom business process automation with AI.
-                  We specialize in done-for-you AI automations that eliminate manual workflows and drive predictable revenue growth.
+                  We specialize in done-for-you AI automations that save time and drive predictable revenue growth.
                 </p>
                 <p>
                   From lead generation automation and AI email outreach systems to RAG automation with n8n and CRM integrations,
@@ -108,11 +108,16 @@ export default function AboutPage() {
             </div>
             <div className="bg-zinc-800/30 rounded-2xl p-8 flex items-center justify-center">
               <div className="text-center">
-                <div className="h-48 w-full rounded-xl bg-zinc-800/50 flex items-center justify-center mb-4">
-                  <span className="text-zinc-500">Automation Workflow</span>
+                <div className="relative h-48 w-full rounded-xl overflow-hidden mb-4">
+                  <Image
+                    src="/auto_ex.png"
+                    alt="AI automation workflow for generating personalized emails based on prospect website data"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
                 <p className="text-sm text-zinc-400">
-                  Example of a custom automation we built for a client
+                  AI automation to generate personalized emails based on website info of prospects
                 </p>
               </div>
             </div>

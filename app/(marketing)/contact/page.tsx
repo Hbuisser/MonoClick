@@ -37,14 +37,14 @@ const contactMethods = [
     href: 'mailto:henry@monoclick.ai',
     primary: false
   },
-  {
-    icon: MessageCircle,
-    title: 'Live Chat',
-    description: 'Quick questions? Chat with us during business hours',
-    action: 'Start chat',
-    href: '#',
-    primary: false
-  }
+  // {
+  //   icon: MessageCircle,
+  //   title: 'Live Chat',
+  //   description: 'Quick questions? Chat with us during business hours',
+  //   action: 'Start chat',
+  //   href: '#',
+  //   primary: false
+  // }
 ]
 
 const faqs = [
@@ -73,7 +73,7 @@ export default function ContactPage() {
               Let's automate your workflows
             </h1>
             <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-8">
-              Ready to turn your manual processes into AI-powered systems?
+              Ready to turn your processes into AI-powered systems?
               Let's discuss your project and explore the possibilities.
             </p>
             <div className="flex items-center justify-center space-x-8 text-sm text-zinc-300">
@@ -83,7 +83,7 @@ export default function ContactPage() {
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-indigo-400" />
-                <span>EU & US timezones</span>
+                <span>EU timezone</span>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
       {/* Contact Methods */}
       <section className="py-16 border-b border-zinc-800">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {contactMethods.map((method, index) => {
               const Icon = method.icon
               return (
@@ -140,10 +140,10 @@ export default function ContactPage() {
       {/* Contact Form Section */}
       <section className="py-24">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
             {/* Form */}
             <div>
-              <ContactForm />
+              {/* <ContactForm /> */}
             </div>
 
             {/* Info sidebar */}

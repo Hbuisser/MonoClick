@@ -51,7 +51,7 @@ export function Hero() {
             className="mx-auto max-w-3xl text-lg sm:text-xl text-zinc-300 leading-relaxed mb-10"
           >
                         Henry & his team have helped B2B companies like yours
-            with custom AI automations that eliminate manual work and scale revenue.
+            with custom AI automations that save time and scale revenue.
           </motion.p>
 
           {/* CTA Buttons */}

@@ -25,7 +25,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-8 flex justify-center"
+            className="mt-8 sm:mt-4 md:mt-0 mb-8 flex justify-center"
           >
             <div className="relative">
               <Image

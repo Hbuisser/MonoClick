@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, PlayCircle } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
@@ -19,24 +20,44 @@ export function Hero() {
 
       <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          {/* Animated badge */}
+          {/* Profile Picture */}
           <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="mb-8 flex justify-center"
+          >
+            <div className="relative">
+              <Image
+                src="/pp.jpg"
+                alt="Henry Buisseret - AI Automation Expert"
+                width={128}
+                height={128}
+                className="rounded-full border-4 border-zinc-700/50 shadow-2xl ring-4 ring-indigo-500/20 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-cover"
+                priority
+              />
+              <div className="absolute -bottom-1 -right-1 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-green-400 rounded-full border-2 border-zinc-950 animate-pulse" />
+            </div>
+          </motion.div>
+
+          {/* Animated badge */}
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-8"
           >
             <div className="inline-flex items-center rounded-full border border-zinc-800 bg-zinc-900/50 px-4 py-2 text-sm text-zinc-300 backdrop-blur-sm">
               <span className="mr-2 h-2 w-2 rounded-full bg-green-400 animate-pulse" />
               Made with n8n • OpenAI • Apify • Stripe • Cursor
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Main heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl sm:text-6xl lg:text-7xl font-heading font-bold tracking-tight mb-6"
           >
             <span className="block text-zinc-100">AI-powered growth systems</span>
@@ -44,21 +65,28 @@ export function Hero() {
           </motion.h1>
 
           {/* Subheading */}
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className="mx-auto max-w-3xl text-lg sm:text-xl text-zinc-300 leading-relaxed mb-10"
           >
                         Henry & his team have helped B2B companies like yours
             with custom AI automations that save time and scale revenue.
+          </motion.p> */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mx-auto max-w-3xl text-lg sm:text-xl text-zinc-300 leading-relaxed mb-10"
+          >
+            I help you scale your revenue.
           </motion.p>
-
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button asChild variant="gradient" size="xl" className="group">
@@ -80,7 +108,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
             className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto"
           >
             <div className="text-center">

@@ -10,8 +10,8 @@ import { CTABanner } from '@/components/cta-banner'
 import { createMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = createMetadata({
-  title: 'AI Automation Agency - Custom Business Process Automation with AI',
-  description: 'Leading AI automation agency delivering custom business process automation with AI. We build lead generation automation, AI email outreach systems, and done-for-you AI workflows.',
+  title: 'AI Automation Agency - Lead Generation, Support Agents & Custom SaaS',
+  description: 'Leading AI automation agency delivering cutting-edge solutions. We build lead generation systems with Apollo & Instantly, AI support agents with knowledge base, content creation automation, and custom SaaS MVPs.',
 })
 
 export default function HomePage() {

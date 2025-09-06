@@ -1,15 +1,14 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
-  Zap,
-  Brain,
-  Cog,
-  BarChart3,
+  Users,
+  MessageSquare,
+  Video,
+  Code,
   ArrowRight,
   CheckCircle,
-  Clock,
-  Users,
-  Shield
+  Clock
 } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
@@ -19,137 +18,99 @@ import { Badge } from '@/components/ui/badge'
 import { CTABanner } from '@/components/cta-banner'
 
 export const metadata: Metadata = createMetadata({
-  title: 'AI Automation Services - Custom Business Process Automation',
-  description: 'Professional AI automation services: lead generation automation, AI email outreach systems, RAG automation with n8n, CRM integrations, and custom AI SaaS prototypes.',
+  title: 'AI Automation Services - Lead Generation, Support Agents & Custom SaaS',
+  description: 'Professional AI automation services: lead generation systems with Apollo & Instantly, AI support agents with knowledge base, content creation automation, and custom SaaS MVP development.',
   path: '/services'
 })
 
 const services = [
   {
     icon: Users,
-    title: 'AI-Powered Lead Generation Automation',
-    description: 'Struggling to find quality prospects? We build custom lead scraping automation systems that extract prospects from LinkedIn and websites, then enrich them with emails, phone numbers, and company data.',
+    title: 'Lead Generation System',
+    description: 'Transform your sales pipeline with our complete lead generation automation. We scrape prospects using Apollo and Apify, analyze their websites with AI to craft personalized messages, then launch targeted cold email campaigns through Instantly.',
+    image: '/lead.png',
     features: [
-      'LinkedIn prospect scraping',
-      'Website visitor identification',
-      'Email & phone enrichment',
-      'Company data collection',
-      'CRM integration',
-      'Automated list building'
+      'Automated prospect scraping with Apollo & Apify',
+      'AI website analysis for personalization',
+      'Smart lead enrichment & data validation',
+      'Personalized cold email campaigns',
+      'Instantly integration for email delivery',
+      'CRM integration & automated follow-ups'
     ],
     benefits: [
       '10x more qualified leads',
-      '80% data accuracy',
+      '85% higher response rates',
       '5 hours saved per day'
     ],
-    pricing: 'Starting at $6K',
-    timeline: '3-4 weeks',
-    technologies: ['n8n', 'Apollo', 'Clay', 'LinkedIn API', 'HubSpot', 'Supabase']
-  },
-  {
-    icon: Zap,
-    title: 'AI Email Outreach System',
-    description: 'Tired of generic outreach that gets ignored? We create personalized cold email automation with AI that writes and sends natural, customized emails daily, turning prospects into conversations.',
-    features: [
-      'AI-powered personalization',
-      'Dynamic email sequences',
-      'A/B testing automation',
-      'Deliverability optimization',
-      'Reply tracking & routing',
-      'Performance analytics'
-    ],
-    benefits: [
-      '40% higher open rates',
-      '25% more replies',
-      'Scale to 1000+ emails daily'
-    ],
     pricing: 'Starting at $8K',
-    timeline: '4-5 weeks',
-    technologies: ['OpenAI', 'n8n', 'Lemlist', 'Clay', 'Instantly', 'Google Workspace']
+    timeline: '3-4 weeks',
+    technologies: ['Apollo', 'Apify', 'OpenAI', 'Instantly', 'n8n', 'HubSpot']
   },
   {
-    icon: Brain,
-    title: 'RAG Automation with n8n',
-    description: 'Need instant access to your company knowledge? We build RAG automation systems that connect AI to your documents, CRM, and databases to provide accurate, context-aware answers automatically.',
+    icon: MessageSquare,
+    title: 'AI Support Agent with Knowledge Base',
+    description: 'Deploy intelligent AI support agents that know your business inside out. Powered by your data, FAQs, and documentation to provide instant, accurate responses across chat, WhatsApp, and email.',
+    image: '/support.png',
     features: [
-      'Document processing & indexing',
-      'Custom knowledge bases',
-      'AI-powered Q&A systems',
-      'Multi-source data integration',
-      'Slack/Teams integration',
-      'Customer support automation'
+      'Custom knowledge base integration',
+      'Multi-channel support (chat, WhatsApp, email)',
+      'AI-powered response generation',
+      'Internal team support automation',
+      'Email draft assistance',
+      'Escalation management & routing'
     ],
     benefits: [
-      '60% faster information retrieval',
       '80% reduction in support tickets',
-      '24/7 knowledge availability'
+      '24/7 instant customer support',
+      '60% faster response times'
     ],
     pricing: 'Starting at $7K',
-    timeline: '4-6 weeks',
-    technologies: ['OpenAI', 'Pinecone', 'MongoDB', 'n8n', 'Slack API', 'Intercom']
+    timeline: '4-5 weeks',
+    technologies: ['OpenAI', 'Pinecone', 'WhatsApp API', 'n8n', 'Intercom', 'Slack']
   },
   {
-    icon: Cog,
-    title: 'CRM Automation Integration',
-    description: 'Drowning in manual data entry? We build custom business automation to sync data between your CRM, Google Sheets, Supabase, Airtable, and ClickUp with automated data cleaning.',
+    icon: Video,
+    title: 'Content Creation',
+    description: 'Scale your content production with AI-generated visuals, videos, and marketing materials. From social media posts to product demos, create engaging content at unprecedented speed and consistency.',
+    image: '/content.png',
     features: [
-      'Real-time data synchronization',
-      'Automated data cleaning',
-      'Custom field mapping',
-      'Duplicate detection & merging',
-      'Workflow triggers',
-      'Error handling & alerts'
+      'AI-generated images & graphics',
+      'Automated video creation',
+      'Social media content automation',
+      'Product demo generation',
+      'Brand-consistent visual assets',
+      'Multi-platform content optimization'
     ],
     benefits: [
-      '95% reduction in data entry',
-      '99% data accuracy',
-      'Real-time insights'
-    ],
-    pricing: 'Starting at $5K',
-    timeline: '2-3 weeks',
-    technologies: ['n8n', 'Zapier', 'Supabase', 'Airtable', 'Google Sheets', 'ClickUp']
-  },
-  {
-    icon: BarChart3,
-    title: 'Payment Flow Automation',
-    description: 'Complex billing holding you back? We build payment flow automation with Stripe integration, VAT handling, and commission tracking that scales with your business growth.',
-    features: [
-      'Stripe integration & setup',
-      'VAT compliance automation',
-      'Commission tracking',
-      'Subscription management',
-      'Invoice automation',
-      'Payment analytics'
-    ],
-    benefits: [
-      'Seamless payment experience',
-      'Automated tax compliance',
-      'Transparent commission tracking'
+      '10x faster content production',
+      'Consistent brand messaging',
+      '70% reduction in content costs'
     ],
     pricing: 'Starting at $6K',
     timeline: '3-4 weeks',
-    technologies: ['Stripe', 'n8n', 'Supabase', 'TaxJar', 'Xero', 'Google Sheets']
+    technologies: ['DALL-E', 'Midjourney', 'RunwayML', 'n8n', 'Figma API', 'Buffer']
   },
   {
-    icon: Shield,
-    title: 'Custom AI SaaS Prototypes',
-    description: 'Want to turn your automation into a product? We build custom AI SaaS prototypes that transform your workflows into scalable applications with authentication and billing.',
+    icon: Code,
+    title: 'Custom SaaS MVP',
+    description: 'Transform your automation ideas into market-ready SaaS products. We build custom MVPs with user authentication, billing systems, and scalable architecture to validate and launch your concept quickly.',
+    image: '/mvp.png',
     features: [
+      'Full-stack MVP development',
       'User authentication & management',
-      'Custom dashboards',
-      'Subscription billing',
-      'API development',
-      'Admin panels',
-      'Multi-tenant architecture'
+      'Subscription billing integration',
+      'Admin dashboard & analytics',
+      'API development & documentation',
+      'Scalable cloud deployment'
     ],
     benefits: [
-      'New revenue streams',
-      'Scalable user management',
-      'Professional product experience'
+      'Market-ready product in weeks',
+      'Scalable architecture from day one',
+      'Professional user experience'
     ],
-    pricing: 'Starting at $12K',
+    pricing: 'Starting at $15K',
     timeline: '6-8 weeks',
-    technologies: ['Next.js', 'Supabase', 'Stripe', 'NextAuth', 'Tailwind CSS', 'n8n']
+    technologies: ['Next.js', 'Supabase', 'Stripe', 'NextAuth', 'Tailwind CSS', 'Vercel']
   }
 ]
 
@@ -188,9 +149,9 @@ export default function ServicesPage() {
               AI Automation Services
             </h1>
             <p className="text-lg text-zinc-400 max-w-3xl mx-auto mb-8">
-              Professional AI automation agency delivering custom business process automation with AI.
-              We build done-for-you AI automations, lead generation automation, AI email outreach systems,
-              and custom AI workflows that eliminate manual tasks and drive revenue growth.
+              Professional AI automation agency delivering cutting-edge solutions for modern businesses.
+              We build lead generation systems, AI support agents, content creation automation,
+              and custom SaaS MVPs that eliminate manual tasks and drive revenue growth.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
               <div className="text-center">
@@ -218,75 +179,94 @@ export default function ServicesPage() {
               const Icon = service.icon
               return (
                 <Card key={service.title} className="overflow-hidden bg-zinc-900/50 border-zinc-800">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8 lg:p-12">
-                    {/* Header */}
-                    <div className="lg:col-span-3">
-                      <div className="flex items-center space-x-4 mb-6">
-                        <div className="h-16 w-16 rounded-2xl bg-gradient-brand flex items-center justify-center">
-                          <Icon className="h-8 w-8 text-white" />
-                        </div>
-                        <div>
-                          <h2 className="text-2xl lg:text-3xl font-heading font-bold text-zinc-100">
-                            {service.title}
-                          </h2>
-                          <p className="text-zinc-400 mt-1">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 lg:p-12">
+                    {/* Content Area */}
+                    <div className="lg:col-span-8">
+                      {/* Header */}
+                      <div className="mb-8">
+                        <div className="mb-6">
+                          <div className="flex items-center space-x-3 mb-4">
+                            <div className="h-14 w-14 rounded-xl bg-gradient-brand flex items-center justify-center shadow-lg">
+                              <Icon className="h-7 w-7 text-white" />
+                            </div>
+                            <h2 className="text-2xl lg:text-3xl font-heading font-bold text-zinc-100">
+                              {service.title}
+                            </h2>
+                          </div>
+                          <p className="text-zinc-400 text-base leading-relaxed">
                             {service.description}
                           </p>
                         </div>
                       </div>
-                    </div>
 
-                    {/* Features */}
-                    <div>
-                      <h3 className="text-lg font-semibold text-zinc-100 mb-4">What's included</h3>
-                      <ul className="space-y-3">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start space-x-2">
-                            <CheckCircle className="h-4 w-4 text-green-400 mt-0.5 flex-shrink-0" />
-                            <span className="text-zinc-300 text-sm">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Benefits */}
-                    <div>
-                      <h3 className="text-lg font-semibold text-zinc-100 mb-4">Expected results</h3>
-                      <ul className="space-y-3 mb-6">
-                        {service.benefits.map((benefit, benefitIndex) => (
-                          <li key={benefitIndex} className="flex items-start space-x-2">
-                            <div className="h-1.5 w-1.5 rounded-full bg-indigo-400 mt-2 flex-shrink-0" />
-                            <span className="text-zinc-300 text-sm">{benefit}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <div className="grid grid-cols-2 gap-4 text-sm">
-                        <div className="flex items-center space-x-2 text-zinc-400">
-                          <Clock className="h-4 w-4" />
-                          <span>{service.timeline}</span>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* Features */}
+                        <div>
+                          <h3 className="text-lg font-semibold text-zinc-100 mb-4">What's included</h3>
+                          <ul className="space-y-3">
+                            {service.features.map((feature, featureIndex) => (
+                              <li key={featureIndex} className="flex items-start space-x-2">
+                                <CheckCircle className="h-4 w-4 text-green-400 mt-0.5 flex-shrink-0" />
+                                <span className="text-zinc-300 text-sm">{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <div className="flex items-center space-x-2 text-zinc-400">
-                          <span className="font-semibold text-zinc-300">{service.pricing}</span>
+
+                        {/* Benefits */}
+                        <div>
+                          <h3 className="text-lg font-semibold text-zinc-100 mb-4">Expected results</h3>
+                          <ul className="space-y-3 mb-6">
+                            {service.benefits.map((benefit, benefitIndex) => (
+                              <li key={benefitIndex} className="flex items-start space-x-2">
+                                <div className="h-1.5 w-1.5 rounded-full bg-indigo-400 mt-2 flex-shrink-0" />
+                                <span className="text-zinc-300 text-sm">{benefit}</span>
+                              </li>
+                            ))}
+                          </ul>
+
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-6">
+                            <div className="flex items-center space-x-2 text-zinc-400">
+                              <Clock className="h-4 w-4" />
+                              <span>{service.timeline}</span>
+                            </div>
+                            <div className="flex items-center space-x-2 text-zinc-400">
+                              <span className="font-semibold text-zinc-300">{service.pricing}</span>
+                            </div>
+                          </div>
                         </div>
+                      </div>
+
+                      {/* Technologies */}
+                      <div className="mt-8">
+                        <h3 className="text-lg font-semibold text-zinc-100 mb-4">Technologies</h3>
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {service.technologies.map((tech, techIndex) => (
+                            <Badge key={techIndex} variant="secondary" className="bg-zinc-800 text-zinc-300">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+
+                        <Button variant="gradient" size="sm">
+                          Get started
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
                       </div>
                     </div>
 
-                    {/* Technologies */}
-                    <div>
-                      <h3 className="text-lg font-semibold text-zinc-100 mb-4">Technologies</h3>
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {service.technologies.map((tech, techIndex) => (
-                          <Badge key={techIndex} variant="secondary" className="bg-zinc-800 text-zinc-300">
-                            {tech}
-                          </Badge>
-                        ))}
+                    {/* Image Area - Top Right */}
+                    <div className="lg:col-span-4">
+                      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900" style={{ aspectRatio: '3/2' }}>
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          width={1536}
+                          height={1024}
+                          className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/40 via-transparent to-transparent" />
                       </div>
-
-                      <Button variant="gradient" size="sm">
-                        Get started
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
                     </div>
                   </div>
                 </Card>
@@ -304,7 +284,7 @@ export default function ServicesPage() {
               Why Choose Our AI Automation Agency
             </h2>
             <p className="text-zinc-400 max-w-2xl mx-auto">
-              We don't sell generic software. Every business process automation with AI is custom-built for your specific workflows,
+              We don't sell generic software. Every AI automation solution is custom-built for your specific workflows,
               designed for maximum ROI, and deployed fast so you see results quickly.
             </p>
           </div>

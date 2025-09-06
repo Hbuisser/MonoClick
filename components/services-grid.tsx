@@ -1,14 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import {
-  Zap,
-  Brain,
-  Cog,
-  BarChart3,
-  ArrowUpRight,
   Users,
-  Shield
+  MessageSquare,
+  Video,
+  Code,
+  ArrowUpRight
 } from 'lucide-react'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -16,80 +15,58 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 const services = [
   {
     icon: Users,
-    title: 'AI-Powered Lead Generation Automation',
-    description: 'Struggling to find quality prospects? We build custom lead scraping automation systems that extract prospects from LinkedIn and websites, then enrich them with emails, phone numbers, and company data.',
+    title: 'Lead Generation System',
+    description: 'Automate your entire lead generation process with AI-powered prospect scraping from Apollo and Apify, personalized messaging based on website analysis, and cold email campaigns through Instantly.',
+    image: '/lead.png',
     features: [
-      'LinkedIn prospect scraping automation',
-      'Website visitor identification',
-      'AI-powered email & phone enrichment',
-      'Company data collection automation',
-      'CRM integration & sync',
-      'Automated lead list building'
+      'Automated prospect scraping with Apollo & Apify',
+      'AI website analysis for personalization',
+      'Smart lead enrichment & data validation',
+      'Personalized cold email campaigns',
+      'Instantly integration for email delivery',
+      'CRM integration & automated follow-ups'
     ]
   },
   {
-    icon: Zap,
-    title: 'AI Email Outreach System',
-    description: 'Tired of generic outreach that gets ignored? We create personalized cold email automation with AI that writes and sends natural, customized emails daily, turning prospects into conversations.',
+    icon: MessageSquare,
+    title: 'AI Support Agent with Knowledge Base',
+    description: 'Deploy intelligent AI support agents that know your business inside out. Powered by your data, FAQs, and documentation to provide instant, accurate responses across chat, WhatsApp, and email.',
+    image: '/support.png',
     features: [
-      'AI-powered email personalization',
-      'Dynamic email sequence automation',
-      'A/B testing automation',
-      'Deliverability optimization',
-      'Automated reply tracking & routing',
-      'Performance analytics dashboard'
+      'Custom knowledge base integration',
+      'Multi-channel support (chat, WhatsApp, email)',
+      'AI-powered response generation',
+      'Internal team support automation',
+      'Email draft assistance',
+      'Escalation management & routing'
     ]
   },
   {
-    icon: Brain,
-    title: 'RAG Automation with n8n',
-    description: 'Need instant access to your company knowledge? We build RAG automation systems that connect AI to your documents, CRM, and databases to provide accurate, context-aware answers automatically.',
+    icon: Video,
+    title: 'Content Creation',
+    description: 'Scale your content production with AI-generated visuals, videos, and marketing materials. From social media posts to product demos, create engaging content at unprecedented speed.',
+    image: '/content.png',
     features: [
-      'Document processing & indexing automation',
-      'Custom AI knowledge bases',
-      'AI-powered Q&A automation',
-      'Multi-source data integration',
-      'Slack/Teams bot integration',
-      'Customer support automation'
+      'AI-generated images & graphics',
+      'Automated video creation',
+      'Social media content automation',
+      'Product demo generation',
+      'Brand-consistent visual assets',
+      'Multi-platform content optimization'
     ]
   },
   {
-    icon: Cog,
-    title: 'CRM Automation Integration',
-    description: 'Drowning in manual data entry? We build custom business automation to sync data between your CRM, Google Sheets, Supabase, Airtable, and ClickUp with automated data cleaning.',
+    icon: Code,
+    title: 'Custom SaaS MVP',
+    description: 'Transform your automation ideas into market-ready SaaS products. We build custom MVPs with user authentication, billing systems, and scalable architecture to validate and launch your concept.',
+    image: '/mvp.png',
     features: [
-      'Real-time CRM data synchronization',
-      'Automated data cleaning workflows',
-      'Custom field mapping automation',
-      'Duplicate detection & merging',
-      'Automated workflow triggers',
-      'Error handling & alert systems'
-    ]
-  },
-  {
-    icon: BarChart3,
-    title: 'Payment Flow Automation',
-    description: 'Complex billing holding you back? We build payment flow automation with Stripe integration, VAT handling, and commission tracking that scales with your business growth.',
-    features: [
-      'Stripe payment automation setup',
-      'VAT compliance automation',
-      'Automated commission tracking',
-      'Subscription management automation',
-      'Invoice automation systems',
-      'Payment analytics dashboards'
-    ]
-  },
-  {
-    icon: Shield,
-    title: 'Custom AI SaaS Prototypes',
-    description: 'Want to turn your automation into a product? We build custom AI SaaS prototypes that transform your workflows into scalable applications with authentication and billing.',
-    features: [
+      'Full-stack MVP development',
       'User authentication & management',
-      'Custom AI-powered dashboards',
-      'Subscription billing automation',
-      'API development & integration',
-      'Admin panel automation',
-      'Multi-tenant architecture'
+      'Subscription billing integration',
+      'Admin dashboard & analytics',
+      'API development & documentation',
+      'Scalable cloud deployment'
     ]
   }
 ]
@@ -114,7 +91,7 @@ export function ServicesGrid() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
@@ -127,30 +104,53 @@ export function ServicesGrid() {
                 whileHover={{ y: -5 }}
                 className="group"
               >
-                <Card className="h-full bg-zinc-900/50 border-zinc-800 hover:border-zinc-700 transition-colors duration-300">
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="h-12 w-12 rounded-xl bg-gradient-brand flex items-center justify-center">
+                <Card className="h-full bg-zinc-900/50 border-zinc-800 hover:border-zinc-700 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 overflow-hidden">
+                  {/* Image Header */}
+                  <div className="relative h-96 bg-gradient-to-br from-zinc-800 to-zinc-900 overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={1536}
+                      height={1024}
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 via-transparent to-transparent" />
+                    <div className="absolute top-4 right-4 z-10">
+                      <ArrowUpRight className="h-5 w-5 text-white/80 group-hover:text-white transition-colors drop-shadow-sm" />
+                    </div>
+                  </div>
+
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center mb-4">
+                      <div className="h-12 w-12 rounded-xl bg-gradient-brand flex items-center justify-center mr-4 shadow-lg">
                         <Icon className="h-6 w-6 text-white" />
                       </div>
-                      <ArrowUpRight className="h-5 w-5 text-zinc-500 group-hover:text-indigo-400 transition-colors" />
+                      <CardTitle className="text-2xl font-bold text-zinc-100 leading-tight">
+                        {service.title}
+                      </CardTitle>
                     </div>
-                    <CardTitle className="text-xl text-zinc-100 mb-2">
-                      {service.title}
-                    </CardTitle>
-                    <CardDescription className="text-zinc-400">
+                    <CardDescription className="text-zinc-400 text-base leading-relaxed">
                       {service.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-sm text-zinc-300">
-                          <div className="h-1.5 w-1.5 rounded-full bg-indigo-400 mr-3 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+
+                  <CardContent className="pt-0 pb-6">
+                    <div className="space-y-3">
+                      <h4 className="text-sm font-semibold text-zinc-300 uppercase tracking-wide">Key Features</h4>
+                      <ul className="space-y-3">
+                        {service.features.slice(0, 5).map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-start text-sm text-zinc-300">
+                            <div className="h-2 w-2 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 mr-3 mt-2 flex-shrink-0" />
+                            <span className="leading-relaxed">{feature}</span>
+                          </li>
+                        ))}
+                        {service.features.length > 5 && (
+                          <li className="text-sm text-zinc-500 italic pl-5">
+                            +{service.features.length - 5} more features
+                          </li>
+                        )}
+                      </ul>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -161,3 +161,4 @@ export function ServicesGrid() {
     </section>
   )
 }
+

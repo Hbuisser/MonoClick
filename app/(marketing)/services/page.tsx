@@ -248,9 +248,15 @@ export default function ServicesPage() {
                           ))}
                         </div>
 
-                        <Button variant="gradient" size="sm">
-                          Get started
-                          <ArrowRight className="ml-2 h-4 w-4" />
+                        <Button asChild variant="gradient" size="sm">
+                          <Link
+                            href="https://calendly.com/henrybuisseret/30min"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Book a Free Call
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
                         </Button>
                       </div>
                     </div>
@@ -382,8 +388,12 @@ export default function ServicesPage() {
 
           <div className="mt-16 text-center">
             <Button asChild variant="gradient" size="lg">
-              <Link href="/contact">
-                Get Custom AI Automation Quote
+              <Link
+                href="https://calendly.com/henrybuisseret/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a Free Call
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

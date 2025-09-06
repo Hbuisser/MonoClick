@@ -77,7 +77,13 @@ export function SiteHeader() {
         {/* CTA Button */}
         <div className="hidden md:flex items-center space-x-4">
           <Button asChild variant="gradient" size="sm">
-            <Link href="/contact">Book a discovery call</Link>
+            <Link
+              href="https://calendly.com/henrybuisseret/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a discovery call
+            </Link>
           </Button>
         </div>
 

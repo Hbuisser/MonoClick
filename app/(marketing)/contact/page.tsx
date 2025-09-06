@@ -26,7 +26,7 @@ const contactMethods = [
     title: 'Book a Discovery Call',
     description: 'Schedule a 30-minute call to discuss your automation needs',
     action: 'Book now',
-    href: 'https://calendly.com/monoclick-ai/discovery',
+    href: 'https://calendly.com/henrybuisseret/30min',
     primary: true
   },
   {

@@ -17,7 +17,7 @@ const services = [
     icon: Users,
     title: 'Lead Generation System',
     description: 'Automate your entire lead generation process with AI-powered prospect scraping from Apollo and Apify, personalized messaging based on website analysis, and cold email campaigns through Instantly.',
-    image: '/worldwide.png',
+    image: '/lead.jpg',
     features: [
       'Automated prospect scraping with Apollo & Apify',
       'AI website analysis for personalization',
@@ -31,7 +31,7 @@ const services = [
     icon: MessageSquare,
     title: 'AI Support Agent with Knowledge Base',
     description: 'Deploy intelligent AI support agents that know your business inside out. Powered by your data, FAQs, and documentation to provide instant, accurate responses across chat, WhatsApp, and email.',
-    image: '/openai.png',
+    image: '/support.jpg',
     features: [
       'Custom knowledge base integration',
       'Multi-channel support (chat, WhatsApp, email)',
@@ -45,7 +45,7 @@ const services = [
     icon: Video,
     title: 'Content Creation',
     description: 'Scale your content production with AI-generated visuals, videos, and marketing materials. From social media posts to product demos, create engaging content at unprecedented speed.',
-    image: '/auto_ex.png',
+    image: '/content.jpg',
     features: [
       'AI-generated images & graphics',
       'Automated video creation',
@@ -59,7 +59,7 @@ const services = [
     icon: Code,
     title: 'Custom SaaS MVP',
     description: 'Transform your automation ideas into market-ready SaaS products. We build custom MVPs with user authentication, billing systems, and scalable architecture to validate and launch your concept.',
-    image: '/n8n.png',
+    image: '/mvp.jpg',
     features: [
       'Full-stack MVP development',
       'User authentication & management',

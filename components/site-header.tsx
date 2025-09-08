@@ -4,14 +4,13 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Calculator } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  // { name: 'Work', href: '/work' },
   { name: 'Services', href: '/services' },
   { name: 'About', href: '/about' },
 ]
@@ -74,8 +73,14 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden md:flex items-center space-x-4">
+        {/* CTA Buttons */}
+        <div className="hidden md:flex items-center space-x-3">
+          <Button asChild variant="outline" size="sm" className="border-indigo-500/30 bg-indigo-500/10 text-indigo-300 hover:bg-indigo-500/20 hover:text-indigo-200 hover:border-indigo-400/50">
+            <Link href="/valuation" className="flex items-center">
+              <Calculator className="mr-1.5 h-3.5 w-3.5" />
+              Free SaaS Valuation
+            </Link>
+          </Button>
           <Button asChild variant="gradient" size="sm">
             <Link
               href="https://calendly.com/henrybuisseret/30min"
@@ -125,9 +130,22 @@ export function SiteHeader() {
                 {item.name}
               </Link>
             ))}
-            <div className="pt-4 border-t border-zinc-800/50">
+            <div className="pt-4 border-t border-zinc-800/50 space-y-3">
+              <Button asChild variant="outline" size="sm" className="w-full border-indigo-500/30 bg-indigo-500/10 text-indigo-300 hover:bg-indigo-500/20 hover:text-indigo-200 hover:border-indigo-400/50">
+                <Link href="/valuation" className="flex items-center justify-center" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Calculator className="mr-2 h-4 w-4" />
+                  FREE SaaS Valuation
+                </Link>
+              </Button>
               <Button asChild variant="gradient" size="sm" className="w-full">
-                <Link href="/contact">Book a discovery call</Link>
+                <Link
+                  href="https://calendly.com/henrybuisseret/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Book a discovery call
+                </Link>
               </Button>
             </div>
           </div>

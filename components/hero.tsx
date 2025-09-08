@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, PlayCircle } from 'lucide-react'
+import { ArrowRight, PlayCircle, Calculator } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 
@@ -101,12 +101,13 @@ export function Hero() {
               </Link>
             </Button>
 
-            <Button asChild variant="outline" size="xl" className="group border-zinc-700 bg-transparent text-zinc-100 hover:bg-zinc-800 hover:text-white">
-              <Link href="/services" className="flex items-center">
-                <PlayCircle className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
-                View AI Automation Services
+            <Button asChild variant="outline" size="xl" className="group border-indigo-500/30 bg-indigo-500/10 text-indigo-300 hover:bg-indigo-500/20 hover:text-indigo-200 hover:border-indigo-400/50">
+              <Link href="/valuation" className="flex items-center">
+                <Calculator className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
+                FREE SaaS Valuation
               </Link>
             </Button>
+
           </motion.div>
 
           {/* Metrics */}

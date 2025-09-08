@@ -6,7 +6,8 @@ export async function POST(request: NextRequest) {
     // Send to n8n webhook
     try {
       const webhookPayload = {
-        name: body.fullName,
+        firstName: body.firstName,
+        lastName: body.lastName,
         email: body.email,
         website: body.website || '',
         valuation: {

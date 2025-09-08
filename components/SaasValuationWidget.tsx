@@ -34,7 +34,8 @@ const step2Schema = z.object({
 })
 
 const step3Schema = z.object({
-  fullName: z.string().min(2, 'Full name is required'),
+  firstName: z.string().min(1, 'First name is required'),
+  lastName: z.string().min(1, 'Last name is required'),
   email: z.string().email('Valid email is required'),
   phone: z.string().optional(),
   company: z.string().optional(),
@@ -137,7 +138,8 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
   const step3Form = useForm<Step3Data>({
     resolver: zodResolver(step3Schema),
     defaultValues: {
-      fullName: '',
+      firstName: '',
+      lastName: '',
       email: '',
       phone: '',
       company: '',
@@ -494,18 +496,34 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-zinc-200 mb-2">
-                        Full Name *
+                        First Name *
                       </label>
                       <Input
-                        placeholder="John Smith"
+                        placeholder="John"
                         className="bg-zinc-800 border-zinc-700 text-zinc-100"
-                        {...step3Form.register('fullName')}
+                        {...step3Form.register('firstName')}
                       />
-                      {step3Form.formState.errors.fullName && (
-                        <p className="text-red-400 text-sm mt-1">{step3Form.formState.errors.fullName.message}</p>
+                      {step3Form.formState.errors.firstName && (
+                        <p className="text-red-400 text-sm mt-1">{step3Form.formState.errors.firstName.message}</p>
                       )}
                     </div>
 
+                    <div>
+                      <label className="block text-sm font-medium text-zinc-200 mb-2">
+                        Last Name *
+                      </label>
+                      <Input
+                        placeholder="Smith"
+                        className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                        {...step3Form.register('lastName')}
+                      />
+                      {step3Form.formState.errors.lastName && (
+                        <p className="text-red-400 text-sm mt-1">{step3Form.formState.errors.lastName.message}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-zinc-200 mb-2">
                         Email *

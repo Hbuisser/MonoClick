@@ -7,6 +7,7 @@ import {
   MessageSquare,
   Video,
   Code,
+  Magnet,
   ArrowUpRight
 } from 'lucide-react'
 
@@ -67,6 +68,20 @@ const services = [
       'Admin dashboard & analytics',
       'API development & documentation',
       'Scalable cloud deployment'
+    ]
+  },
+  {
+    icon: Magnet,
+    title: 'Lead Magnet Creation',
+    description: 'Generate qualified leads with custom mini-SaaS tools that provide genuine value to your prospects. We build small SaaS applications like this SaaS valuation tool on our website - functional tools that solve real problems while capturing leads.',
+    image: '/magnet.png',
+    features: [
+      'Custom mini-SaaS tools & web applications',
+      'Interactive business calculators & assessments',
+      'Industry-specific utility tools',
+      'Lead capture with valuable tool usage',
+      'Professional UI/UX design',
+      'Mobile-responsive SaaS widgets'
     ]
   }
 ]

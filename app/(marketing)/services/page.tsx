@@ -6,6 +6,7 @@ import {
   MessageSquare,
   Video,
   Code,
+  Magnet,
   ArrowRight,
   CheckCircle,
   Clock
@@ -18,8 +19,8 @@ import { Badge } from '@/components/ui/badge'
 import { CTABanner } from '@/components/cta-banner'
 
 export const metadata: Metadata = createMetadata({
-  title: 'AI Automation Services - Lead Generation, Support Agents & Custom SaaS',
-  description: 'Professional AI automation services: lead generation systems with Apollo & Instantly, AI support agents with knowledge base, content creation automation, and custom SaaS MVP development.',
+  title: 'AI Automation Services - Lead Generation, Support Agents, Lead Magnets & Custom SaaS',
+  description: 'Professional AI automation services: lead generation systems with Apollo & Instantly, AI support agents with knowledge base, high-converting lead magnets, content creation automation, and custom SaaS MVP development.',
   path: '/services'
 })
 
@@ -111,6 +112,28 @@ const services = [
     pricing: 'Starting at $15K',
     timeline: '6-8 weeks',
     technologies: ['Next.js', 'Supabase', 'Stripe', 'NextAuth', 'Tailwind CSS', 'Vercel']
+  },
+  {
+    icon: Magnet,
+    title: 'Lead Magnet Creation',
+    description: 'Generate qualified leads with custom mini-SaaS tools that provide genuine value to your prospects. We build small, functional SaaS applications like this SaaS valuation tool on our website - real utility tools that solve problems while capturing high-quality leads naturally.',
+    image: '/magnet.png',
+    features: [
+      'Custom mini-SaaS tools & web applications',
+      'Interactive business calculators & assessments',
+      'Industry-specific utility tools',
+      'Professional UI/UX with lead capture',
+      'Mobile-responsive SaaS widgets',
+      'Integration with CRM & email marketing'
+    ],
+    benefits: [
+      '500% increase in qualified lead capture',
+      'Higher perceived value than traditional magnets',
+      'Better lead quality through tool engagement'
+    ],
+    pricing: 'Starting at $6K',
+    timeline: '3-4 weeks',
+    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HubSpot', 'Mailchimp']
   }
 ]
 
@@ -150,7 +173,7 @@ export default function ServicesPage() {
             </h1>
             <p className="text-lg text-zinc-400 max-w-3xl mx-auto mb-8">
               Professional AI automation agency delivering cutting-edge solutions for modern businesses.
-              We build lead generation systems, AI support agents, content creation automation,
+              We build lead generation systems, AI support agents, high-converting lead magnets, content creation automation,
               and custom SaaS MVPs that eliminate manual tasks and drive revenue growth.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">

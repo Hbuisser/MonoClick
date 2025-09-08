@@ -80,7 +80,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mx-auto max-w-3xl text-lg sm:text-xl text-zinc-300 leading-relaxed mb-10"
           >
-            I help you scale your revenue.
+            I help you scale your Business with the last AI tools on the market.
           </motion.p>
           {/* CTA Buttons */}
           <motion.div

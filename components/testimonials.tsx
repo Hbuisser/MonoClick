@@ -10,7 +10,7 @@ const testimonials = [
     content: "Henry has done a great job. Technically he is capable but more than that he has been very patient and very customer service and customer support oriented. I thought he would give up but never did. More freelancers like him are needed on the platform. I highly recommend him.",
     author: "Chris O.",
     role: "Client",
-    company: "Upwork",
+    company: "Worldwide Quality Control",
     rating: 5
   // },
   // {
@@ -79,7 +79,7 @@ export function Testimonials() {
                         {testimonial.author}
                       </div>
                       <div className="text-zinc-400 text-xs">
-                        {testimonial.role} at {testimonial.company}
+                        {testimonial.company}
                       </div>
                     </div>
                   </div>

@@ -116,15 +116,15 @@ const services = [
   {
     icon: Magnet,
     title: 'Lead Magnet Creation',
-    description: 'Generate qualified leads with custom mini-SaaS tools that provide genuine value to your prospects. We build small, functional SaaS applications like this SaaS valuation tool on our website - real utility tools that solve problems while capturing high-quality leads naturally.',
+    description: 'Generate qualified leads with custom mini-SaaS tools that provide genuine value to your prospects. We build small, functional SaaS applications like this SaaS valuation tool on our website, then connect them to SpreadToLead AI automation for personalized follow-up emails based on tool results.',
     image: '/magnet.png',
     features: [
       'Custom mini-SaaS tools & web applications',
       'Interactive business calculators & assessments',
       'Industry-specific utility tools',
       'Professional UI/UX with lead capture',
-      'Mobile-responsive SaaS widgets',
-      'Integration with CRM & email marketing'
+      'SpreadToLead AI automation integration',
+      'Custom email follow-ups based on tool results'
     ],
     benefits: [
       '500% increase in qualified lead capture',
@@ -133,7 +133,7 @@ const services = [
     ],
     pricing: 'Starting at $6K',
     timeline: '3-4 weeks',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HubSpot', 'Mailchimp']
+    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'SpreadToLead', 'n8n']
   }
 ]
 

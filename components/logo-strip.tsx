@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 const trustedLogos = [
-  { name: 'Vexa', src: '/vexa.png', width: 180, height: 72 },
-  { name: 'Worldwide Quality Control', src: '/worldwide.png', width: 210, height: 72 },
+  { name: 'Vexa', src: '/vexa.png', width: 280, height: 72 },
+  { name: 'Worldwide Quality Control', src: '/worldwide2.png', width: 310, height: 72 },
 ]
 
 const serviceLogos = [

@@ -117,7 +117,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
     defaultValues: {
       businessType: '',
       geography: '',
-      arr: 0,
+      arr: undefined,
       grossMargin: 75,
     },
   })
@@ -125,8 +125,8 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
   const step2Form = useForm<Step2Data>({
     resolver: zodResolver(step2Schema),
     defaultValues: {
-      mrrGrowth: 5,
-      logoChurn: 3,
+      mrrGrowth: undefined,
+      logoChurn: undefined,
       nrr: undefined,
       arpu: undefined,
       customers: undefined,
@@ -234,21 +234,21 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
       )}
 
       <Card className="w-full max-w-2xl mx-auto bg-zinc-900/50 border-zinc-800 backdrop-blur-sm">
-        <CardHeader className="text-center pb-4">
-          <CardTitle className="text-2xl lg:text-3xl font-heading font-bold text-zinc-100 mb-2">
-            <Calculator className="inline-block w-8 h-8 mr-3 text-indigo-400" />
+        <CardHeader className="text-center pb-4 px-4 sm:px-6">
+          <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-zinc-100 mb-2">
+            <Calculator className="inline-block w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-indigo-400" />
             SaaS Valuation Calculator
           </CardTitle>
-          <CardDescription className="text-zinc-400">
+          <CardDescription className="text-sm sm:text-base text-zinc-400">
             Get an instant estimate of your SaaS company's valuation
           </CardDescription>
           <div className="mt-4">
             <Progress value={progress} className="h-2" />
-            <p className="text-sm text-zinc-500 mt-2">Step {currentStep} of 4</p>
+            <p className="text-xs sm:text-sm text-zinc-500 mt-2">Step {currentStep} of 4</p>
           </div>
         </CardHeader>
 
-        <CardContent className="p-6">
+        <CardContent className="p-4 sm:p-6">
           <AnimatePresence mode="wait">
             {currentStep === 1 && (
               <motion.div
@@ -259,7 +259,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 transition={{ duration: 0.3 }}
               >
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold text-zinc-100 mb-2">Business Basics</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-zinc-100 mb-2">Business Basics</h3>
                   <p className="text-zinc-400 text-sm">Tell us about your SaaS business</p>
                 </div>
 
@@ -350,7 +350,8 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                   </div>
 
                   <Button type="submit" className="w-full bg-gradient-brand hover:opacity-90">
-                    Continue to Growth Metrics
+                    <span className="hidden sm:inline">Continue to Growth Metrics</span>
+                    <span className="sm:hidden">Continue</span>
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </form>
@@ -366,7 +367,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 transition={{ duration: 0.3 }}
               >
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold text-zinc-100 mb-2">Growth & Retention</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-zinc-100 mb-2">Growth & Retention</h3>
                   <p className="text-zinc-400 text-sm">Optional metrics to improve accuracy - you can skip this step</p>
                 </div>
 
@@ -461,13 +462,14 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                     </div>
                   </div>
 
-                  <div className="flex space-x-3">
-                    <Button type="button" variant="outline" onClick={goBack} className="flex-1">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button type="button" variant="outline" onClick={goBack} className="flex-1 order-2 sm:order-1">
                       <ArrowLeft className="mr-2 h-4 w-4" />
                       Back
                     </Button>
-                    <Button type="submit" className="flex-1 bg-gradient-brand hover:opacity-90">
-                      Continue to Contact Info
+                    <Button type="submit" className="flex-1 bg-gradient-brand hover:opacity-90 order-1 sm:order-2">
+                      <span className="hidden sm:inline">Continue to Contact Info</span>
+                      <span className="sm:hidden">Continue</span>
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </div>
@@ -484,7 +486,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 transition={{ duration: 0.3 }}
               >
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold text-zinc-100 mb-2">Get Your Valuation</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-zinc-100 mb-2">Get Your Valuation</h3>
                   <p className="text-zinc-400 text-sm">Almost done! Just your contact info and we'll show your results.</p>
                 </div>
 
@@ -579,12 +581,12 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                     </div>
                   </div>
 
-                  <div className="flex space-x-3">
-                    <Button type="button" variant="outline" onClick={goBack} className="flex-1">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button type="button" variant="outline" onClick={goBack} className="flex-1 order-2 sm:order-1">
                       <ArrowLeft className="mr-2 h-4 w-4" />
                       Back
                     </Button>
-                    <Button type="submit" disabled={isLoading} className="flex-1 bg-gradient-brand hover:opacity-90">
+                    <Button type="submit" disabled={isLoading} className="flex-1 bg-gradient-brand hover:opacity-90 order-1 sm:order-2">
                       {isLoading ? 'Calculating...' : 'Get My Valuation'}
                       {!isLoading && <TrendingUp className="ml-2 h-4 w-4" />}
                     </Button>
@@ -604,7 +606,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-brand rounded-full mb-4">
                     <CheckCircle2 className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-heading font-bold text-zinc-100 mb-2">
+                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-100 mb-2">
                     Your SaaS Valuation
                   </h3>
                   <p className="text-zinc-400">Based on current market conditions and your metrics</p>
@@ -614,7 +616,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                   <div className="text-center mb-4">
                     <div className="text-sm text-zinc-400 mb-2">Estimated Valuation Range</div>
                     <motion.div
-                      className="text-3xl font-heading font-bold text-gradient mb-1"
+                      className="text-2xl sm:text-3xl font-heading font-bold text-gradient mb-1"
                       initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
@@ -622,7 +624,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       {formatCurrency(animatedValuation.low)} - {formatCurrency(animatedValuation.high)}
                     </motion.div>
                     <motion.div
-                      className="text-lg text-zinc-300"
+                      className="text-base sm:text-lg text-zinc-300"
                       initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 0.5, delay: 0.4 }}
@@ -663,11 +665,11 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 </div>
 
                 <div className="text-center">
-                  <div className="mb-4 p-3 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-lg border border-red-500/20">
-                    <p className="text-sm text-orange-300 font-medium">
+                  <div className="mb-4 p-3 sm:p-4 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-lg border border-red-500/20">
+                    <p className="text-sm sm:text-base text-orange-300 font-medium">
                       Want to discover how AI can 10x your SaaS valuation?
                     </p>
-                    <p className="text-xs text-red-300 mt-1">
+                    <p className="text-xs sm:text-sm text-red-300 mt-1">
                       Only <span className="font-bold">3 spots left</span> for scaling projects this month (September 2025)
                     </p>
                   </div>
@@ -675,40 +677,41 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                   <Button
                     asChild
                     size="lg"
-                    className="bg-gradient-brand hover:opacity-90 text-lg px-8 py-6 h-auto shadow-lg shadow-indigo-500/25 animate-pulse"
+                    className="bg-gradient-brand hover:opacity-90 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 h-auto shadow-lg shadow-indigo-500/25 animate-pulse w-full sm:w-auto"
                   >
                     <a
                       href="https://calendly.com/henrybuisseret/30min"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center"
+                      className="flex items-center justify-center"
                     >
-                      <Calendar className="mr-3 h-5 w-5" />
-                      Claim Your FREE Strategy Call
-                      <ExternalLink className="ml-3 h-4 w-4" />
+                      <Calendar className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
+                      <span className="hidden sm:inline">Claim Your FREE Strategy Call</span>
+                      <span className="sm:hidden">Claim FREE Strategy Call</span>
+                      <ExternalLink className="ml-2 sm:ml-3 h-3 w-3 sm:h-4 sm:w-4" />
                     </a>
                   </Button>
 
-                  <div className="mt-4 space-y-2">
-                    <p className="text-sm text-zinc-300 font-medium flex items-center">
-                      <span className="mr-2 flex-shrink-0 w-4 h-4 rounded-full bg-white flex items-center justify-center">
-                        <svg className="w-2.5 h-2.5 text-zinc-900" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="mt-4 space-y-2 sm:space-y-3">
+                    <p className="text-xs sm:text-sm text-zinc-300 font-medium flex items-center justify-center sm:justify-start">
+                      <span className="mr-2 flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white flex items-center justify-center">
+                        <svg className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-zinc-900" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </span>
                       30-minute personalized AI roadmap
                     </p>
-                    <p className="text-sm text-zinc-300 font-medium flex items-center">
-                      <span className="mr-2 flex-shrink-0 w-4 h-4 rounded-full bg-white flex items-center justify-center">
-                        <svg className="w-2.5 h-2.5 text-zinc-900" fill="currentColor" viewBox="0 0 20 20">
+                    <p className="text-xs sm:text-sm text-zinc-300 font-medium flex items-center justify-center sm:justify-start">
+                      <span className="mr-2 flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white flex items-center justify-center">
+                        <svg className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-zinc-900" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </span>
                       Identify your biggest automation opportunities
                     </p>
-                    <p className="text-sm text-zinc-300 font-medium flex items-center">
-                      <span className="mr-2 flex-shrink-0 w-4 h-4 rounded-full bg-white flex items-center justify-center">
-                        <svg className="w-2.5 h-2.5 text-zinc-900" fill="currentColor" viewBox="0 0 20 20">
+                    <p className="text-xs sm:text-sm text-zinc-300 font-medium flex items-center justify-center sm:justify-start">
+                      <span className="mr-2 flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white flex items-center justify-center">
+                        <svg className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-zinc-900" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </span>

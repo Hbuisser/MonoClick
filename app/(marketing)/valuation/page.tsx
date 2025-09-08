@@ -23,7 +23,7 @@ export default function ValuationPage() {
             </h1>
             <p className="text-lg text-zinc-400 max-w-3xl mx-auto mb-8">
               Get an instant estimate of your SaaS company's valuation based on current market conditions,
-              your revenue metrics, and growth indicators. Trusted by 500+ SaaS founders.
+              your revenue metrics, and growth indicators.
             </p>
 
             {/* Trust indicators */}

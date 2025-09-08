@@ -690,14 +690,29 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                   </Button>
 
                   <div className="mt-4 space-y-2">
-                    <p className="text-sm text-zinc-300 font-medium">
-                      ✅ 30-minute personalized AI roadmap
+                    <p className="text-sm text-zinc-300 font-medium flex items-center">
+                      <span className="mr-2 flex-shrink-0 w-4 h-4 rounded-full bg-white flex items-center justify-center">
+                        <svg className="w-2.5 h-2.5 text-zinc-900" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                      30-minute personalized AI roadmap
                     </p>
-                    <p className="text-sm text-zinc-300 font-medium">
-                      ✅ Identify your biggest automation opportunities
+                    <p className="text-sm text-zinc-300 font-medium flex items-center">
+                      <span className="mr-2 flex-shrink-0 w-4 h-4 rounded-full bg-white flex items-center justify-center">
+                        <svg className="w-2.5 h-2.5 text-zinc-900" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                      Identify your biggest automation opportunities
                     </p>
-                    <p className="text-sm text-zinc-300 font-medium">
-                      ✅ Get exact steps to increase your multiple by 2-3x
+                    <p className="text-sm text-zinc-300 font-medium flex items-center">
+                      <span className="mr-2 flex-shrink-0 w-4 h-4 rounded-full bg-white flex items-center justify-center">
+                        <svg className="w-2.5 h-2.5 text-zinc-900" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                      Get exact steps to increase your multiple by 2-3x
                     </p>
                     {/* <p className="text-xs text-zinc-500 mt-3">
                       No pitch, no pressure - just actionable insights for your business

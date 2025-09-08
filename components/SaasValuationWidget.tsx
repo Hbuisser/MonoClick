@@ -6,7 +6,7 @@ import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import Confetti from 'react-confetti'
-import { ArrowRight, ArrowLeft, Calculator, TrendingUp, Users, DollarSign, Calendar, ExternalLink, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, ArrowLeft, Calculator, TrendingUp, Users, DollarSign, Calendar, ExternalLink, CheckCircle2, Info } from 'lucide-react'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -15,6 +15,62 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox'
 import { Progress } from '@/components/ui/progress'
 import { estimateValuation, formatCurrency, type ValuationParams } from '@/lib/valuation'
+
+// Tooltip definitions for metrics
+const metricTooltips = {
+  mrrGrowth: {
+    title: "MRR Growth Rate",
+    description: "Monthly Recurring Revenue growth rate measures how fast your revenue is growing month-over-month.",
+    calculation: "Formula: ((Current Month MRR - Previous Month MRR) / Previous Month MRR) × 100"
+  },
+  logoChurn: {
+    title: "Logo Churn Rate",
+    description: "The percentage of customers that cancel their subscription each month. Lower is better.",
+    calculation: "Formula: (Customers Lost in Month / Total Customers at Start of Month) × 100"
+  },
+  nrr: {
+    title: "Net Revenue Retention",
+    description: "Measures revenue growth from existing customers through upsells, cross-sells, minus churn.",
+    calculation: "Formula: ((Starting MRR + Expansion MRR - Churned MRR) / Starting MRR) × 100"
+  },
+  arpu: {
+    title: "ARPU/ACV",
+    description: "Average Revenue Per User (ARPU) or Annual Contract Value (ACV) - how much each customer pays on average.",
+    calculation: "Formula: Total Revenue / Number of Customers"
+  },
+  customers: {
+    title: "Number of Customers",
+    description: "Total number of paying customers or active subscriptions.",
+    calculation: "Count all customers with active, paid subscriptions"
+  },
+  salesModel: {
+    title: "Sales Model",
+    description: "How customers typically purchase your product - affects conversion rates and sales cycles.",
+    calculation: "Self-serve: customers buy online without sales contact. Sales-assisted: some sales involvement. Enterprise: dedicated sales team."
+  }
+}
+
+// Tooltip component
+const InfoTooltip = ({ content }: { content: { title: string; description: string; calculation: string } }) => {
+  const [isVisible, setIsVisible] = useState(false)
+
+  return (
+    <div className="relative inline-block ml-1">
+      <Info
+        className="w-4 h-4 text-zinc-400 hover:text-zinc-200 cursor-help transition-colors"
+        onMouseEnter={() => setIsVisible(true)}
+        onMouseLeave={() => setIsVisible(false)}
+      />
+      {isVisible && (
+        <div className="absolute left-0 top-6 z-50 w-80 p-3 bg-zinc-800 border border-zinc-700 rounded-lg shadow-lg">
+          <div className="text-sm text-zinc-100 font-semibold mb-1">{content.title}</div>
+          <div className="text-xs text-zinc-300 mb-2">{content.description}</div>
+          <div className="text-xs text-zinc-400 font-mono">{content.calculation}</div>
+        </div>
+      )}
+    </div>
+  )
+}
 
 // Validation schemas for each step
 const step1Schema = z.object({
@@ -376,8 +432,9 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 <form onSubmit={step2Form.handleSubmit(onStep2Submit)} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-zinc-200 mb-2">
+                      <label className="flex items-center text-sm font-medium text-zinc-200 mb-2">
                         MRR Growth % (MoM)
+                        <InfoTooltip content={metricTooltips.mrrGrowth} />
                       </label>
                       <Input
                         type="number"
@@ -389,8 +446,9 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-zinc-200 mb-2">
-                        Logo Churn % (monthly)
+                      <label className="flex items-center text-sm font-medium text-zinc-200 mb-2">
+                        Churn % (monthly)
+                        <InfoTooltip content={metricTooltips.logoChurn} />
                       </label>
                       <Input
                         type="number"
@@ -404,8 +462,9 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-zinc-200 mb-2">
+                      <label className="flex items-center text-sm font-medium text-zinc-200 mb-2">
                         Net Revenue Retention (%)
+                        <InfoTooltip content={metricTooltips.nrr} />
                       </label>
                       <Input
                         type="number"
@@ -416,8 +475,9 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-zinc-200 mb-2">
+                      <label className="flex items-center text-sm font-medium text-zinc-200 mb-2">
                         ARPU/ACV (€)
+                        <InfoTooltip content={metricTooltips.arpu} />
                       </label>
                       <Input
                         type="number"
@@ -430,8 +490,9 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-zinc-200 mb-2">
+                      <label className="flex items-center text-sm font-medium text-zinc-200 mb-2">
                         Number of Customers
+                        <InfoTooltip content={metricTooltips.customers} />
                       </label>
                       <Input
                         type="number"
@@ -442,8 +503,9 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-zinc-200 mb-2">
+                      <label className="flex items-center text-sm font-medium text-zinc-200 mb-2">
                         Sales Model
+                        <InfoTooltip content={metricTooltips.salesModel} />
                       </label>
                       <Controller
                         name="salesModel"

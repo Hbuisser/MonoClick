@@ -38,7 +38,7 @@ const step3Schema = z.object({
   email: z.string().email('Valid email is required'),
   phone: z.string().optional(),
   company: z.string().optional(),
-  website: z.string().optional(),
+  website: z.string().url('Valid website URL is required').min(1, 'Website is required'),
   consent: z.boolean().refine(val => val === true, 'You must agree to be contacted'),
 })
 
@@ -549,7 +549,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
 
                   <div>
                     <label className="block text-sm font-medium text-zinc-200 mb-2">
-                      Website (optional)
+                      Website *
                     </label>
                     <Input
                       type="url"
@@ -557,6 +557,9 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       className="bg-zinc-800 border-zinc-700 text-zinc-100"
                       {...step3Form.register('website')}
                     />
+                    {step3Form.formState.errors.website && (
+                      <p className="text-red-400 text-sm mt-1">{step3Form.formState.errors.website.message}</p>
+                    )}
                   </div>
 
                   <div className="flex items-start space-x-3 p-4 bg-zinc-800/50 rounded-lg">

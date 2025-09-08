@@ -3,17 +3,48 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
+    // Send to n8n webhook
+    try {
+      const webhookPayload = {
+        name: body.fullName,
+        email: body.email,
+        website: body.website || '',
+        valuation: {
+          pointEstimate: body.valuation?.pointEstimate,
+          lowEstimate: body.valuation?.lowEstimate,
+          highEstimate: body.valuation?.highEstimate,
+          multiple: body.valuation?.multiple
+        },
+        // Additional context data
+        company: body.company,
+        phone: body.phone,
+        businessType: body.businessType,
+        geography: body.geography,
+        arr: body.arr,
+        grossMargin: body.grossMargin,
+        timestamp: new Date().toISOString(),
+        utmParams: body.utmParams
+      }
 
-    // Log the lead data (in production, you'd send this to your CRM/database)
-    console.log('New lead captured:', {
-      timestamp: new Date().toISOString(),
-      email: body.email,
-      company: body.company,
-      arr: body.arr,
-      valuation: body.valuation?.pointEstimate,
-    })
+      const webhookResponse = await fetch('https://n8n.srv970538.hstgr.cloud/webhook/f5ca5405-cd74-41d3-bf4a-9ebf9b862891', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookPayload),
+      })
 
-    // In a real implementation, you would:
+      if (!webhookResponse.ok) {
+        console.error('Webhook failed:', webhookResponse.status, await webhookResponse.text())
+      } else {
+        console.log('Webhook sent successfully')
+      }
+    } catch (webhookError) {
+      // Don't fail the main request if webhook fails
+      console.error('Error sending webhook:', webhookError)
+    }
+
+    // In a real implementation, you would also:
     // 1. Validate the data
     // 2. Save to your database
     // 3. Send to your CRM (HubSpot, Salesforce, etc.)

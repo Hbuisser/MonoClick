@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -60,6 +60,11 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
   const [isLoading, setIsLoading] = useState(false)
   const [showConfetti, setShowConfetti] = useState(false)
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
+  const [animatedValuation, setAnimatedValuation] = useState({
+    point: 0,
+    low: 0,
+    high: 0
+  })
 
   // Handle window resize for confetti
   useEffect(() => {
@@ -70,6 +75,42 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
     updateSize()
     return () => window.removeEventListener('resize', updateSize)
   }, [])
+
+  // Animate valuation numbers when results are shown
+  useEffect(() => {
+    if (!valuation) return
+
+    const duration = 2000 // 2 seconds
+    const steps = 60 // 60 FPS
+    const stepDuration = duration / steps
+
+    let currentStep = 0
+    const interval = setInterval(() => {
+      currentStep++
+      const progress = Math.min(currentStep / steps, 1)
+
+      // Easing function for smooth animation (ease-out)
+      const easeOut = 1 - Math.pow(1 - progress, 3)
+
+      setAnimatedValuation({
+        point: Math.floor(valuation.pointEstimate * easeOut),
+        low: Math.floor(valuation.lowEstimate * easeOut),
+        high: Math.floor(valuation.highEstimate * easeOut)
+      })
+
+      if (progress >= 1) {
+        clearInterval(interval)
+        // Ensure final values are exact
+        setAnimatedValuation({
+          point: valuation.pointEstimate,
+          low: valuation.lowEstimate,
+          high: valuation.highEstimate
+        })
+      }
+    }, stepDuration)
+
+    return () => clearInterval(interval)
+  }, [valuation])
 
   const step1Form = useForm<Step1Data>({
     resolver: zodResolver(step1Schema),
@@ -572,15 +613,30 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 <div className="bg-gradient-to-r from-indigo-500/10 to-cyan-500/10 rounded-2xl p-6 mb-6 border border-indigo-500/20">
                   <div className="text-center mb-4">
                     <div className="text-sm text-zinc-400 mb-2">Estimated Valuation Range</div>
-                    <div className="text-3xl font-heading font-bold text-gradient mb-1">
-                      {formatCurrency(valuation.lowEstimate)} - {formatCurrency(valuation.highEstimate)}
-                    </div>
-                    <div className="text-lg text-zinc-300">
-                      Point Estimate: <span className="font-semibold">{formatCurrency(valuation.pointEstimate)}</span>
-                    </div>
-                    <div className="text-sm text-zinc-400 mt-2">
+                    <motion.div
+                      className="text-3xl font-heading font-bold text-gradient mb-1"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                      {formatCurrency(animatedValuation.low)} - {formatCurrency(animatedValuation.high)}
+                    </motion.div>
+                    <motion.div
+                      className="text-lg text-zinc-300"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                    >
+                      Point Estimate: <span className="font-semibold text-gradient">{formatCurrency(animatedValuation.point)}</span>
+                    </motion.div>
+                    <motion.div
+                      className="text-sm text-zinc-400 mt-2"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.6 }}
+                    >
                       Multiple: {valuation.multiple.toFixed(1)}x ARR
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
 
@@ -607,10 +663,19 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 </div>
 
                 <div className="text-center">
+                  <div className="mb-4 p-3 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-lg border border-red-500/20">
+                    <p className="text-sm text-orange-300 font-medium">
+                      Want to discover how AI can 10x your SaaS valuation?
+                    </p>
+                    <p className="text-xs text-red-300 mt-1">
+                      Only <span className="font-bold">3 spots left</span> for scaling projects this month (September 2025)
+                    </p>
+                  </div>
+
                   <Button
                     asChild
                     size="lg"
-                    className="bg-gradient-brand hover:opacity-90 text-lg px-8 py-6 h-auto"
+                    className="bg-gradient-brand hover:opacity-90 text-lg px-8 py-6 h-auto shadow-lg shadow-indigo-500/25 animate-pulse"
                   >
                     <a
                       href="https://calendly.com/henrybuisseret/30min"
@@ -619,13 +684,25 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       className="flex items-center"
                     >
                       <Calendar className="mr-3 h-5 w-5" />
-                      Book your free AI Scaling Call
+                      Claim Your FREE Strategy Call
                       <ExternalLink className="ml-3 h-4 w-4" />
                     </a>
                   </Button>
-                  <p className="text-sm text-zinc-400 mt-3">
-                    Discover how AI automation can increase your valuation by 10x
-                  </p>
+
+                  <div className="mt-4 space-y-2">
+                    <p className="text-sm text-zinc-300 font-medium">
+                      ✅ 30-minute personalized AI roadmap
+                    </p>
+                    <p className="text-sm text-zinc-300 font-medium">
+                      ✅ Identify your biggest automation opportunities
+                    </p>
+                    <p className="text-sm text-zinc-300 font-medium">
+                      ✅ Get exact steps to increase your multiple by 2-3x
+                    </p>
+                    {/* <p className="text-xs text-zinc-500 mt-3">
+                      No pitch, no pressure - just actionable insights for your business
+                    </p> */}
+                  </div>
                 </div>
               </motion.div>
             )}

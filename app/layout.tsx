@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Outfit } from 'next/font/google'
+import Script from 'next/script'
 
 import { createMetadata } from '@/lib/seo'
 import {
@@ -52,9 +53,11 @@ export default function RootLayout({
             __html: JSON.stringify(websiteSchema),
           }}
         />
+
       </head>
       <body className="min-h-screen bg-zinc-950 text-zinc-100 antialiased">
         {children}
+        <Script src="https://chat.monoclick.ai/widget.js" />
       </body>
     </html>
   )

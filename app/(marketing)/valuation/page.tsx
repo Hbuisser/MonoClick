@@ -131,7 +131,6 @@ export default function ValuationPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="py-16">
         <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">

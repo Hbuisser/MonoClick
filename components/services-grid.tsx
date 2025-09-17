@@ -32,7 +32,7 @@ const services = [
     icon: MessageSquare,
     title: 'AI Support Agent with Knowledge Base',
     description: 'Deploy intelligent AI support agents that know your business inside out. Powered by your data, FAQs, and documentation to provide instant, accurate responses across chat, WhatsApp, and email.',
-    image: '/support.jpg',
+    image: '/support2.png',
     features: [
       'Custom knowledge base integration',
       'Multi-channel support (chat, WhatsApp, email)',

@@ -1,9 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Star } from 'lucide-react'
+import { Star, ExternalLink } from 'lucide-react'
+import Link from 'next/link'
 
 import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 
 const testimonials = [
   {
@@ -12,15 +14,14 @@ const testimonials = [
     role: "Client",
     company: "Worldwide Quality Control",
     rating: 5
-  // },
-  // {
-  //   content: "The RAG assistant answers like our best support agent—only faster. Customer satisfaction went up 25% since deployment.",
-  //   author: "Zoé O.",
-  //   role: "Customer Success Manager",
-  //   company: "CloudScale",
-  //   rating: 5
+  },
+  {
+    content: "Henry was an absolute pleasure to work with. He took the time to really understand our clunky manual process and turned it into a smooth, automated workflow that just works. It's exactly what we needed. He was great at explaining things without any confusing techy words and kept me in the loop the whole time. Really professional and just genuinely good at what he does. Thanks again, Henry!",
+    author: "Hamza",
+    role: "Team Member",
+    company: "Stoltzfus Structures",
+    rating: 5
   }
-
 ]
 
 export function Testimonials() {
@@ -68,20 +69,38 @@ export function Testimonials() {
                   </blockquote>
 
                   {/* Author */}
-                  <div className="flex items-center space-x-3">
-                    <div className="h-10 w-10 rounded-full bg-gradient-brand flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">
-                        {testimonial.author.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                    <div>
-                      <div className="text-zinc-100 font-medium text-sm">
-                        {testimonial.author}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="h-10 w-10 rounded-full bg-gradient-brand flex items-center justify-center">
+                        <span className="text-white font-semibold text-sm">
+                          {testimonial.author.split(' ').map(n => n[0]).join('')}
+                        </span>
                       </div>
-                      <div className="text-zinc-400 text-xs">
-                        {testimonial.company}
+                      <div>
+                        <div className="text-zinc-100 font-medium text-sm">
+                          {testimonial.author}
+                        </div>
+                        <div className="text-zinc-400 text-xs">
+                          {testimonial.company}
+                        </div>
                       </div>
                     </div>
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="sm"
+                      className="border-zinc-700 hover:border-zinc-600 bg-zinc-900/50 hover:bg-zinc-800/50"
+                    >
+                      <Link
+                        href="https://www.upwork.com/freelancers/~013c83e6e4d55ef2e3?viewMode=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-1 text-zinc-300 hover:text-zinc-100"
+                      >
+                        <span className="text-xs">See on Upwork</span>
+                        <ExternalLink className="h-3 w-3" />
+                      </Link>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>

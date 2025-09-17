@@ -6,6 +6,7 @@ import Image from 'next/image'
 const trustedLogos = [
   { name: 'Vexa', src: '/vexa.png', width: 280, height: 72 },
   { name: 'Worldwide Quality Control', src: '/worldwide2.png', width: 310, height: 72 },
+  { name: 'Stoltzfus Structures', src: '/mysheds.png', width: 280, height: 72 },
 ]
 
 const serviceLogos = [

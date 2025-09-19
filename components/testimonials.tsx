@@ -21,6 +21,13 @@ const testimonials = [
     role: "Team Member",
     company: "Stoltzfus Structures",
     rating: 5
+  },
+  {
+    content: "Henry is skilled, curious, easygoing, and very responsive. Not only an n8n expert, but with a strong software background that sets him apart. Strongly recommend hiring him now—his rates will only go up.",
+    author: "Dmitry G.",
+    role: "CEO",
+    company: "Vexa.ai",
+    rating: 5
   }
 ]
 

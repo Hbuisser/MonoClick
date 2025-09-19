@@ -38,7 +38,7 @@ export function SiteHeader() {
           : 'bg-zinc-950/50'
       )}
     >
-      <div className="container mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Left side: Logo + Navigation */}
         <div className="flex items-center space-x-8">
           {/* Logo */}
@@ -76,37 +76,40 @@ export function SiteHeader() {
           </nav>
         </div>
 
-        {/* Right side: CTA Buttons */}
-        <div className="hidden md:flex items-center space-x-3 ml-auto">
-          <Button asChild variant="outline" size="sm" className="border-indigo-500/30 bg-indigo-500/10 text-indigo-300 hover:bg-indigo-500/20 hover:text-indigo-200 hover:border-indigo-400/50">
-            <Link href="/valuation" className="flex items-center">
-              <Calculator className="mr-1.5 h-3.5 w-3.5" />
-              Free SaaS Valuation
-            </Link>
-          </Button>
-          <Button asChild variant="gradient" size="sm">
-            <Link
-              href="https://calendly.com/henrybuisseret/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book a discovery call
-            </Link>
-          </Button>
-        </div>
+        {/* Right side: CTA Buttons (Desktop) + Mobile Menu Button */}
+        <div className="flex items-center space-x-3">
+          {/* Desktop CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-3">
+            <Button asChild variant="outline" size="sm" className="border-indigo-500/30 bg-indigo-500/10 text-indigo-300 hover:bg-indigo-500/20 hover:text-indigo-200 hover:border-indigo-400/50">
+              <Link href="/valuation" className="flex items-center">
+                <Calculator className="mr-1.5 h-3.5 w-3.5" />
+                Free SaaS Valuation
+              </Link>
+            </Button>
+            <Button asChild variant="gradient" size="sm">
+              <Link
+                href="https://calendly.com/henrybuisseret/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a discovery call
+              </Link>
+            </Button>
+          </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle mobile menu"
-        >
-          {isMobileMenuOpen ? (
-            <X className="h-6 w-6 text-zinc-100" />
-          ) : (
-            <Menu className="h-6 w-6 text-zinc-100" />
-          )}
-        </button>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6 text-zinc-100" />
+            ) : (
+              <Menu className="h-6 w-6 text-zinc-100" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

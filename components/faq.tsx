@@ -24,11 +24,11 @@ const faqs = [
   },
   {
     question: 'How much do custom AI automation projects cost?',
-    answer: 'Our AI automation services typically range from $5K-$25K depending on complexity. We offer both project-based pricing and retainer models starting at $3K/month for ongoing optimization. Every custom business automation includes fixed-price quotes with no surprises.'
+    answer: 'Our AI automation services are priced custom based on your specific business needs and project complexity. We offer both project-based pricing and retainer models for ongoing optimization. Every custom business automation includes transparent, fixed-price quotes with no surprises.'
   },
   {
     question: 'Do you provide ongoing support for AI automation systems?',
-    answer: 'Yes! Every done-for-you AI automation includes 30 days of free support. We also offer maintenance retainers starting at $500/month for monitoring, updates, and enhancements to keep your custom AI workflows running optimally.'
+    answer: 'Yes! Every done-for-you AI automation includes 30 days of free support. We also offer maintenance retainers with custom pricing based on your specific needs for monitoring, updates, and enhancements to keep your custom AI workflows running optimally.'
   },
   {
     question: 'How secure are your AI automation solutions?',

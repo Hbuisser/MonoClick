@@ -43,7 +43,7 @@ const services = [
       '85% higher response rates',
       '5 hours saved per day'
     ],
-    pricing: 'Starting at $8K',
+    pricing: 'Custom pricing based on needs',
     timeline: '3-4 weeks',
     technologies: ['Apollo', 'Apify', 'OpenAI', 'Instantly', 'n8n', 'HubSpot']
   },
@@ -65,7 +65,7 @@ const services = [
       '24/7 instant customer support',
       '60% faster response times'
     ],
-    pricing: 'Starting at $7K',
+    pricing: 'Custom pricing based on needs',
     timeline: '4-5 weeks',
     technologies: ['OpenAI', 'Pinecone', 'WhatsApp API', 'n8n', 'Intercom', 'Slack']
   },
@@ -87,7 +87,7 @@ const services = [
       'Consistent brand messaging',
       '70% reduction in content costs'
     ],
-    pricing: 'Starting at $6K',
+    pricing: 'Custom pricing based on needs',
     timeline: '3-4 weeks',
     technologies: ['DALL-E', 'Midjourney', 'RunwayML', 'n8n', 'Figma API', 'Buffer']
   },
@@ -109,7 +109,7 @@ const services = [
       'Scalable architecture from day one',
       'Professional user experience'
     ],
-    pricing: 'Starting at $15K',
+    pricing: 'Custom pricing based on needs',
     timeline: '6-8 weeks',
     technologies: ['Next.js', 'Supabase', 'Stripe', 'NextAuth', 'Tailwind CSS', 'Vercel']
   },
@@ -131,7 +131,7 @@ const services = [
       'Higher perceived value than traditional magnets',
       'Better lead quality through tool engagement'
     ],
-    pricing: 'Starting at $6K',
+    pricing: 'Custom pricing based on needs',
     timeline: '3-4 weeks',
     technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'SpreadToLead', 'n8n']
   }
@@ -157,7 +157,7 @@ const addOns = [
     title: 'Ongoing Support',
     description: 'Monthly retainer for updates, optimizations, and new features',
     included: false,
-    price: 'From $500/month'
+    price: 'Custom pricing based on needs'
   }
 ]
 
@@ -182,8 +182,8 @@ export default function ServicesPage() {
                 <div className="text-sm text-zinc-400">Typical delivery</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-gradient mb-1">Fixed price</div>
-                <div className="text-sm text-zinc-400">No surprises</div>
+                <div className="text-2xl font-bold text-gradient mb-1">Custom pricing</div>
+                <div className="text-sm text-zinc-400">Based on your needs</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-gradient mb-1">30 days</div>
@@ -374,7 +374,7 @@ export default function ServicesPage() {
               {
                 step: '02',
                 title: 'Custom Proposal',
-                description: 'You get a detailed plan with fixed pricing, clear timelines, and projected ROI. No surprises, no hourly billing.',
+                description: 'You get a detailed plan with custom pricing based on your needs, clear timelines, and projected ROI. No surprises, no hourly billing.',
                 duration: '2-3 days'
               },
               {

@@ -8,7 +8,10 @@ import {
   ArrowRight,
   MapPin,
   Clock,
-  Award
+  Award,
+  Twitter,
+  Linkedin,
+  GraduationCap
 } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
@@ -27,8 +30,13 @@ const team = [
   {
     name: 'Henry Buisseret',
     role: 'Founder & AI Automation Engineer',
-    bio: 'Belgian software engineer specializing in AI automation agency services. Background in finance (KBC) and payments (Worldline). Expert in building custom business process automation with AI using n8n, OpenAI, and modern tech stack.',
-    location: 'Belgium'
+    bio: 'Belgian software engineer specializing in AI automation services. Background in finance (KBC) and payments (Worldline). Expert in building custom business process automation with AI using n8n, OpenAI, and modern tech stack.',
+    location: 'Belgium',
+    education: 'School 42 - Software Engineering',
+    social: {
+      twitter: 'https://twitter.com/HBuisseret',
+      linkedin: 'https://linkedin.com/in/henrybuisseret'
+    }
   }
 ]
 
@@ -177,11 +185,15 @@ export default function AboutPage() {
             {team.map((member, index) => (
               <Card key={member.name} className="bg-zinc-900/50 border-zinc-800">
                 <CardContent className="p-8 text-center">
-                  {/* Avatar placeholder */}
-                  <div className="h-24 w-24 rounded-full bg-gradient-brand flex items-center justify-center mx-auto mb-6">
-                    <span className="text-white font-bold text-xl">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                  {/* Profile Picture */}
+                  <div className="h-32 w-32 rounded-full overflow-hidden mx-auto mb-6 border-2 border-indigo-500/20">
+                    <Image
+                      src="/pp.jpg"
+                      alt={`${member.name} profile picture`}
+                      width={128}
+                      height={128}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   <h3 className="text-xl font-heading font-semibold text-zinc-100 mb-2">
@@ -196,15 +208,39 @@ export default function AboutPage() {
                     {member.bio}
                   </p>
 
-                  <div className="flex items-center justify-center space-x-2 text-xs text-zinc-500 mb-4">
+                  <div className="flex items-center justify-center space-x-2 text-xs text-zinc-500 mb-3">
                     <MapPin className="h-3 w-3" />
                     <span>{member.location}</span>
                   </div>
 
+                  <div className="flex items-center justify-center space-x-2 text-xs text-zinc-500 mb-4">
+                    <GraduationCap className="h-3 w-3" />
+                    <span>{member.education}</span>
+                  </div>
+
+                  {/* Social Links */}
+                  <div className="flex items-center justify-center space-x-4 mb-4">
+                    <Link
+                      href={member.social.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-1 text-xs text-zinc-400 hover:text-indigo-400 transition-colors"
+                    >
+                      <Twitter className="h-10 w-10" />
+                    </Link>
+                    <Link
+                      href={member.social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-1 text-xs text-zinc-400 hover:text-indigo-400 transition-colors"
+                    >
+                      <Linkedin className="h-10 w-10" />
+                    </Link>
+                  </div>
+
                   <div className="space-y-2 text-xs text-zinc-400">
                     <p>Previous experience: Finance (KBC), Payments (Worldline)</p>
-                    <p>Built SaaS products: CartoonAI.io, VideoPro.studio</p>
-                    <p>Active on X (@HBuisseret) and LinkedIn</p>
+                    <p>Built SaaS product: CartoonAI.io</p>
                   </div>
                 </CardContent>
               </Card>

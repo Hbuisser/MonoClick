@@ -26,28 +26,6 @@ export const metadata: Metadata = createMetadata({
 
 const services = [
   {
-    icon: Users,
-    title: 'Lead Generation System',
-    description: 'Transform your sales pipeline with our complete lead generation automation. We scrape prospects using Apollo and Apify, analyze their websites with AI to craft personalized messages, then launch targeted cold email campaigns through Instantly.',
-    image: '/lead.jpg',
-    features: [
-      'Automated prospect scraping with Apollo & Apify',
-      'AI website analysis for personalization',
-      'Smart lead enrichment & data validation',
-      'Personalized cold email campaigns',
-      'Instantly integration for email delivery',
-      'CRM integration & automated follow-ups'
-    ],
-    benefits: [
-      '10x more qualified leads',
-      '85% higher response rates',
-      '5 hours saved per day'
-    ],
-    pricing: 'Custom pricing based on needs',
-    timeline: '3-4 weeks',
-    technologies: ['Apollo', 'Apify', 'OpenAI', 'Instantly', 'n8n', 'HubSpot']
-  },
-  {
     icon: MessageSquare,
     title: 'AI Support Agent with Knowledge Base',
     description: 'Deploy intelligent AI support agents that know your business inside out. Powered by your data, FAQs, and documentation to provide instant, accurate responses across chat, WhatsApp, and email.',
@@ -92,27 +70,49 @@ const services = [
     technologies: ['DALL-E', 'Midjourney', 'RunwayML', 'n8n', 'Figma API', 'Buffer']
   },
   {
-    icon: Code,
-    title: 'Custom SaaS MVP',
-    description: 'Transform your automation ideas into market-ready SaaS products. We build custom MVPs with user authentication, billing systems, and scalable architecture to validate and launch your concept quickly.',
-    image: '/mvp.jpg',
+    icon: Users,
+    title: 'Lead Generation System',
+    description: 'Transform your sales pipeline with our complete lead generation automation. We scrape prospects using Apollo and Apify, analyze their websites with AI to craft personalized messages, then launch targeted cold email campaigns through Instantly.',
+    image: '/lead.jpg',
     features: [
-      'Full-stack MVP development',
-      'User authentication & management',
-      'Subscription billing integration',
-      'Admin dashboard & analytics',
-      'API development & documentation',
-      'Scalable cloud deployment'
+      'Automated prospect scraping with Apollo & Apify',
+      'AI website analysis for personalization',
+      'Smart lead enrichment & data validation',
+      'Personalized cold email campaigns',
+      'Instantly integration for email delivery',
+      'CRM integration & automated follow-ups'
     ],
     benefits: [
-      'Market-ready product in weeks',
-      'Scalable architecture from day one',
-      'Professional user experience'
+      '10x more qualified leads',
+      '85% higher response rates',
+      '5 hours saved per day'
     ],
     pricing: 'Custom pricing based on needs',
-    timeline: '6-8 weeks',
-    technologies: ['Next.js', 'Supabase', 'Stripe', 'NextAuth', 'Tailwind CSS', 'Vercel']
+    timeline: '3-4 weeks',
+    technologies: ['Apollo', 'Apify', 'OpenAI', 'Instantly', 'n8n', 'HubSpot']
   },
+  // {
+  //   icon: Code,
+  //   title: 'Custom SaaS MVP',
+  //   description: 'Transform your automation ideas into market-ready SaaS products. We build custom MVPs with user authentication, billing systems, and scalable architecture to validate and launch your concept quickly.',
+  //   image: '/mvp.jpg',
+  //   features: [
+  //     'Full-stack MVP development',
+  //     'User authentication & management',
+  //     'Subscription billing integration',
+  //     'Admin dashboard & analytics',
+  //     'API development & documentation',
+  //     'Scalable cloud deployment'
+  //   ],
+  //   benefits: [
+  //     'Market-ready product in weeks',
+  //     'Scalable architecture from day one',
+  //     'Professional user experience'
+  //   ],
+  //   pricing: 'Custom pricing based on needs',
+  //   timeline: '6-8 weeks',
+  //   technologies: ['Next.js', 'Supabase', 'Stripe', 'NextAuth', 'Tailwind CSS', 'Vercel']
+  // },
   {
     icon: Magnet,
     title: 'Lead Magnet Creation',
@@ -173,8 +173,8 @@ export default function ServicesPage() {
             </h1>
             <p className="text-lg text-zinc-400 max-w-3xl mx-auto mb-8">
               Professional AI automation agency delivering cutting-edge solutions for modern businesses.
-              We build lead generation systems, AI support agents, high-converting lead magnets, content creation automation,
-              and custom SaaS MVPs that eliminate manual tasks and drive revenue growth.
+              We build lead generation systems, AI support agents, high-converting lead magnets and content creation automation,
+              that eliminate manual tasks and drive revenue growth.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
               <div className="text-center">

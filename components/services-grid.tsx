@@ -15,20 +15,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 
 const services = [
   {
-    icon: Users,
-    title: 'Lead Generation System',
-    description: 'Automate your entire lead generation process with AI-powered prospect scraping from Apollo and Apify, personalized messaging based on website analysis, and cold email campaigns through Instantly.',
-    image: '/lead.jpg',
-    features: [
-      'Automated prospect scraping with Apollo & Apify',
-      'AI website analysis for personalization',
-      'Smart lead enrichment & data validation',
-      'Personalized cold email campaigns',
-      'Instantly integration for email delivery',
-      'CRM integration & automated follow-ups'
-    ]
-  },
-  {
     icon: MessageSquare,
     title: 'AI Support Agent with Knowledge Base',
     description: 'Deploy intelligent AI support agents that know your business inside out. Powered by your data, FAQs, and documentation to provide instant, accurate responses across chat, WhatsApp, and email.',
@@ -57,19 +43,33 @@ const services = [
     ]
   },
   {
-    icon: Code,
-    title: 'Custom SaaS MVP',
-    description: 'Transform your automation ideas into market-ready SaaS products. We build custom MVPs with user authentication, billing systems, and scalable architecture to validate and launch your concept.',
-    image: '/mvp.jpg',
+    icon: Users,
+    title: 'Lead Generation System',
+    description: 'Automate your entire lead generation process with AI-powered prospect scraping from Apollo and Apify, personalized messaging based on website analysis, and cold email campaigns through Instantly.',
+    image: '/lead.jpg',
     features: [
-      'Full-stack MVP development',
-      'User authentication & management',
-      'Subscription billing integration',
-      'Admin dashboard & analytics',
-      'API development & documentation',
-      'Scalable cloud deployment'
+      'Automated prospect scraping with Apollo & Apify',
+      'AI website analysis for personalization',
+      'Smart lead enrichment & data validation',
+      'Personalized cold email campaigns',
+      'Instantly integration for email delivery',
+      'CRM integration & automated follow-ups'
     ]
   },
+  // {
+  //   icon: Code,
+  //   title: 'Custom SaaS MVP',
+  //   description: 'Transform your automation ideas into market-ready SaaS products. We build custom MVPs with user authentication, billing systems, and scalable architecture to validate and launch your concept.',
+  //   image: '/mvp.jpg',
+  //   features: [
+  //     'Full-stack MVP development',
+  //     'User authentication & management',
+  //     'Subscription billing integration',
+  //     'Admin dashboard & analytics',
+  //     'API development & documentation',
+  //     'Scalable cloud deployment'
+  //   ]
+  // },
   {
     icon: Magnet,
     title: 'Lead Magnet Creation',

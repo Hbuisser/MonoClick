@@ -28,6 +28,13 @@ const testimonials = [
     role: "CEO",
     company: "Vexa.ai",
     rating: 5
+  },
+  {
+    content: "Working with Henry is a breath of fresh air. Not only is he an expert in development and everything else to do with websites and apps, but also being able to communicate with someone with fluent english has been a lifesaver. Henry also went above and beyond of what we had asked of him.",
+    author: "Eru",
+    role: "Client",
+    company: "Kia Ora Kahi",
+    rating: 5
   }
 ]
 

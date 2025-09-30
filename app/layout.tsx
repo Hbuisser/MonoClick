@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import { Outfit } from 'next/font/google'
 import Script from 'next/script'
 
@@ -10,9 +10,10 @@ import {
 } from '@/lib/schema-org'
 import '@/styles/globals.css'
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-poppins',
+  weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
 })
 
@@ -33,7 +34,7 @@ export default function RootLayout({
   const websiteSchema = generateWebSiteSchema()
 
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${outfit.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

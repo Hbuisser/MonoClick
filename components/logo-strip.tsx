@@ -7,6 +7,7 @@ const trustedLogos = [
   { name: 'Vexa', src: '/vexa.png', width: 280, height: 72 },
   { name: 'Worldwide Quality Control', src: '/worldwide2.png', width: 310, height: 72 },
   { name: 'Stoltzfus Structures', src: '/mysheds.png', width: 280, height: 72 },
+  { name: 'KIA', src: '/kia.png', width: 120, height: 48 },
 ]
 
 const serviceLogos = [
@@ -32,8 +33,8 @@ export function LogoStrip() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           className="flex items-center justify-center gap-8 sm:gap-12 flex-wrap"
@@ -41,9 +42,9 @@ export function LogoStrip() {
           {trustedLogos.map((logo, index) => (
             <motion.div
               key={logo.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 + index * 0.15 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
               className="flex items-center justify-center"

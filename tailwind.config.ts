@@ -92,7 +92,7 @@ const config: Config = {
         'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
+        sans: ['var(--font-poppins)'],
         heading: ['var(--font-outfit)'],
       },
     },

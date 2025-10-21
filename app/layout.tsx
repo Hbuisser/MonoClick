@@ -41,6 +41,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        <meta name="Impact-Site-Verification" content="964246c6-a804-45b7-9f93-eb2478f1573c" />
 
         <script
           type="application/ld+json"

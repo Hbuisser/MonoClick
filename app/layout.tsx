@@ -8,6 +8,7 @@ import {
   generateOrganizationSchema,
   generateWebSiteSchema,
 } from '@/lib/schema-org'
+import { CookieBanner } from '@/components/cookie-banner'
 import '@/styles/globals.css'
 
 const poppins = Poppins({
@@ -59,6 +60,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-zinc-950 text-zinc-100 antialiased">
         {children}
+        <CookieBanner />
         <Script src="https://chat.monoclick.ai/widget.js" />
       </body>
     </html>

@@ -3,10 +3,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import {
   Users,
-  MessageSquare,
   Video,
   Code,
-  Magnet,
+  Brain,
+  ShoppingCart,
   ArrowRight,
   CheckCircle,
   Clock
@@ -19,39 +19,61 @@ import { Badge } from '@/components/ui/badge'
 import { CTABanner } from '@/components/cta-banner'
 
 export const metadata: Metadata = createMetadata({
-  title: 'AI Automation Services - Lead Generation, Support Agents, Lead Magnets & Custom SaaS',
-  description: 'Professional AI automation services: lead generation systems with Apollo & Instantly, AI support agents with knowledge base, high-converting lead magnets, content creation automation, and custom SaaS MVP development.',
+  title: 'AI Automation Services - Lead Generation, RAG Agents, Support Chatbots & Custom SaaS',
+  description: 'Professional AI automation services: lead generation systems with Apollo & Instantly, RAG agents for SaaS, support chatbots for ecommerce, content creation automation, and custom SaaS MVP development.',
   path: '/services'
 })
 
 const services = [
   {
-    icon: MessageSquare,
-    title: 'AI Support Agent with Knowledge Base',
-    description: 'Deploy intelligent AI support agents that know your business inside out. Powered by your data, FAQs, and documentation to provide instant, accurate responses across chat, WhatsApp, and email.',
-    image: '/support2.png',
+    icon: Brain,
+    title: 'RAG Agent for SaaS',
+    description: 'Build intelligent RAG (Retrieval-Augmented Generation) agents that understand your SaaS product, documentation, and customer data. Deploy AI assistants that provide accurate, context-aware responses by retrieving and synthesizing information from your knowledge base.',
+    image: '/rag.png',
     features: [
-      'Custom knowledge base integration',
-      'Multi-channel support (chat, WhatsApp, email)',
-      'AI-powered response generation',
-      'Internal team support automation',
-      'Email draft assistance',
-      'Escalation management & routing'
+      'Vector database integration (Pinecone, Weaviate)',
+      'Document ingestion and chunking',
+      'Semantic search and retrieval',
+      'Context-aware response generation',
+      'Multi-source knowledge base support',
+      'Real-time data synchronization'
     ],
     benefits: [
-      '80% reduction in support tickets',
-      '24/7 instant customer support',
-      '60% faster response times'
+      'Accurate, up-to-date information retrieval',
+      'Reduced hallucinations with source citations',
+      'Scalable knowledge management'
     ],
     pricing: 'Custom pricing based on needs',
     timeline: '4-5 weeks',
-    technologies: ['OpenAI', 'Pinecone', 'WhatsApp API', 'n8n', 'Intercom', 'Slack']
+    technologies: ['OpenAI', 'Pinecone', 'LangChain', 'Weaviate', 'n8n', 'Supabase']
+  },
+  {
+    icon: ShoppingCart,
+    title: 'Support Chatbot for Ecommerce',
+    description: 'Deploy intelligent support chatbots specifically designed for ecommerce businesses. Handle order inquiries, product questions, shipping updates, returns, and customer support 24/7 across your website, WhatsApp, and email channels.',
+    image: '/ecom.png',
+    features: [
+      'Ecommerce-specific knowledge base',
+      'Order status and tracking inquiries',
+      'Product recommendations and FAQs',
+      'Return and refund assistance',
+      'Multi-channel support (chat, WhatsApp, email)',
+      'Integration with ecommerce platforms (Shopify, WooCommerce)'
+    ],
+    benefits: [
+      '75% reduction in support tickets',
+      '24/7 customer support',
+      'Increased conversion rates through instant assistance'
+    ],
+    pricing: 'Custom pricing based on needs',
+    timeline: '4-5 weeks',
+    technologies: ['OpenAI', 'Pinecone', 'Shopify API', 'WhatsApp API', 'n8n', 'Intercom']
   },
   {
     icon: Video,
     title: 'Content Creation',
     description: 'Scale your content production with AI-generated visuals, videos, and marketing materials. From social media posts to product demos, create engaging content at unprecedented speed and consistency.',
-    image: '/content.jpg',
+    image: '/content.png',
     features: [
       'AI-generated images & graphics',
       'Automated video creation',
@@ -73,7 +95,7 @@ const services = [
     icon: Users,
     title: 'Lead Generation System',
     description: 'Transform your sales pipeline with our complete lead generation automation. We scrape prospects using Apollo and Apify, analyze their websites with AI to craft personalized messages, then launch targeted cold email campaigns through Instantly.',
-    image: '/lead.jpg',
+    image: '/email.png',
     features: [
       'Automated prospect scraping with Apollo & Apify',
       'AI website analysis for personalization',
@@ -90,7 +112,7 @@ const services = [
     pricing: 'Custom pricing based on needs',
     timeline: '3-4 weeks',
     technologies: ['Apollo', 'Apify', 'OpenAI', 'Instantly', 'n8n', 'HubSpot']
-  },
+  }
   // {
   //   icon: Code,
   //   title: 'Custom SaaS MVP',
@@ -113,28 +135,6 @@ const services = [
   //   timeline: '6-8 weeks',
   //   technologies: ['Next.js', 'Supabase', 'Stripe', 'NextAuth', 'Tailwind CSS', 'Vercel']
   // },
-  {
-    icon: Magnet,
-    title: 'Lead Magnet Creation',
-    description: 'Generate qualified leads with custom mini-SaaS tools that provide genuine value to your prospects. We build small, functional SaaS applications like this SaaS valuation tool on our website, then connect them to SpreadToLead AI automation for personalized follow-up emails based on tool results.',
-    image: '/magnet.png',
-    features: [
-      'Custom mini-SaaS tools & web applications',
-      'Interactive business calculators & assessments',
-      'Industry-specific utility tools',
-      'Professional UI/UX with lead capture',
-      'SpreadToLead AI automation integration',
-      'Custom email follow-ups based on tool results'
-    ],
-    benefits: [
-      '500% increase in qualified lead capture',
-      'Higher perceived value than traditional magnets',
-      'Better lead quality through tool engagement'
-    ],
-    pricing: 'Custom pricing based on needs',
-    timeline: '3-4 weeks',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'SpreadToLead', 'n8n']
-  }
 ]
 
 const addOns = [
@@ -173,7 +173,7 @@ export default function ServicesPage() {
             </h1>
             <p className="text-lg text-zinc-400 max-w-3xl mx-auto mb-8">
               Professional AI automation agency delivering cutting-edge solutions for modern businesses.
-              We build lead generation systems, AI support agents, high-converting lead magnets and content creation automation,
+              We build lead generation systems, RAG agents for SaaS, support chatbots for ecommerce, and content creation automation,
               that eliminate manual tasks and drive revenue growth.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
@@ -286,13 +286,13 @@ export default function ServicesPage() {
 
                     {/* Image Area - Top Right */}
                     <div className="lg:col-span-4">
-                      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900" style={{ aspectRatio: '3/2' }}>
+                      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900" style={{ aspectRatio: '4/3' }}>
                         <Image
                           src={service.image}
                           alt={service.title}
                           width={1536}
                           height={1024}
-                          className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+                          className="w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/40 via-transparent to-transparent" />
                       </div>

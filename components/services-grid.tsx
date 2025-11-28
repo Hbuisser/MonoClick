@@ -4,10 +4,10 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import {
   Users,
-  MessageSquare,
   Video,
   Code,
-  Magnet,
+  Brain,
+  ShoppingCart,
   ArrowUpRight
 } from 'lucide-react'
 
@@ -15,24 +15,38 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 
 const services = [
   {
-    icon: MessageSquare,
-    title: 'AI Support Agent with Knowledge Base',
-    description: 'Deploy intelligent AI support agents that know your business inside out. Powered by your data, FAQs, and documentation to provide instant, accurate responses across chat, WhatsApp, and email.',
-    image: '/support2.png',
+    icon: Brain,
+    title: 'RAG Agent for SaaS',
+    description: 'Build intelligent RAG (Retrieval-Augmented Generation) agents that understand your SaaS product, documentation, and customer data. Deploy AI assistants that provide accurate, context-aware responses by retrieving and synthesizing information from your knowledge base.',
+    image: '/rag.png',
     features: [
-      'Custom knowledge base integration',
+      'Vector database integration (Pinecone, Weaviate)',
+      'Document ingestion and chunking',
+      'Semantic search and retrieval',
+      'Context-aware response generation',
+      'Multi-source knowledge base support',
+      'Real-time data synchronization'
+    ]
+  },
+  {
+    icon: ShoppingCart,
+    title: 'Support Chatbot for Ecommerce',
+    description: 'Deploy intelligent support chatbots specifically designed for ecommerce businesses. Handle order inquiries, product questions, shipping updates, returns, and customer support 24/7 across your website, WhatsApp, and email channels.',
+    image: '/ecom.png',
+    features: [
+      'Ecommerce-specific knowledge base',
+      'Order status and tracking inquiries',
+      'Product recommendations and FAQs',
+      'Return and refund assistance',
       'Multi-channel support (chat, WhatsApp, email)',
-      'AI-powered response generation',
-      'Internal team support automation',
-      'Email draft assistance',
-      'Escalation management & routing'
+      'Integration with ecommerce platforms (Shopify, WooCommerce)'
     ]
   },
   {
     icon: Video,
     title: 'Content Creation',
     description: 'Scale your content production with AI-generated visuals, videos, and marketing materials. From social media posts to product demos, create engaging content at unprecedented speed.',
-    image: '/content.jpg',
+    image: '/content.png',
     features: [
       'AI-generated images & graphics',
       'Automated video creation',
@@ -46,7 +60,7 @@ const services = [
     icon: Users,
     title: 'Lead Generation System',
     description: 'Automate your entire lead generation process with AI-powered prospect scraping from Apollo and Apify, personalized messaging based on website analysis, and cold email campaigns through Instantly.',
-    image: '/lead.jpg',
+    image: '/email.png',
     features: [
       'Automated prospect scraping with Apollo & Apify',
       'AI website analysis for personalization',
@@ -55,7 +69,7 @@ const services = [
       'Instantly integration for email delivery',
       'CRM integration & automated follow-ups'
     ]
-  },
+  }
   // {
   //   icon: Code,
   //   title: 'Custom SaaS MVP',
@@ -70,20 +84,6 @@ const services = [
   //     'Scalable cloud deployment'
   //   ]
   // },
-  {
-    icon: Magnet,
-    title: 'Lead Magnet Creation',
-    description: 'Generate qualified leads with custom mini-SaaS tools that provide genuine value to your prospects. We build small SaaS applications like this SaaS valuation tool on our website, then connect them to SpreadToLead AI automation for personalized follow-up emails.',
-    image: '/magnet.png',
-    features: [
-      'Custom mini-SaaS tools & web applications',
-      'Interactive business calculators & assessments',
-      'Industry-specific utility tools',
-      'Lead capture with valuable tool usage',
-      'SpreadToLead AI automation integration',
-      'Custom email follow-ups based on tool results'
-    ]
-  }
 ]
 
 export function ServicesGrid() {
@@ -121,13 +121,13 @@ export function ServicesGrid() {
               >
                 <Card className="h-full bg-zinc-900/50 border-zinc-800 hover:border-zinc-700 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 overflow-hidden">
                   {/* Image Header */}
-                  <div className="relative h-96 bg-gradient-to-br from-zinc-800 to-zinc-900 overflow-hidden">
+                  <div className="relative h-64 bg-gradient-to-br from-zinc-800 to-zinc-900 overflow-hidden">
                     <Image
                       src={service.image}
                       alt={service.title}
                       width={1536}
                       height={1024}
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
+                      className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 via-transparent to-transparent" />
                     <div className="absolute top-4 right-4 z-10">

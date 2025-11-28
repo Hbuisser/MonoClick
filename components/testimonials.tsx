@@ -35,6 +35,13 @@ const testimonials = [
     role: "Client",
     company: "Kia Ora Kahi",
     rating: 5
+  },
+  {
+    content: "Henry is a talented problem solver and great communicator. We love working with him on our AI agent!",
+    author: "Emil",
+    role: "CTO",
+    company: "Utiligize",
+    rating: 5
   }
 ]
 

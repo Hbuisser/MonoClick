@@ -8,6 +8,7 @@ const trustedLogos = [
   { name: 'Worldwide Quality Control', src: '/worldwide2.png', width: 310, height: 72 },
   { name: 'Stoltzfus Structures', src: '/mysheds.png', width: 280, height: 72 },
   { name: 'KIA', src: '/kia.png', width: 120, height: 48 },
+  { name: 'Utiligize', src: '/utiligize_logo.jpeg', width: 200, height: 72 },
 ]
 
 const serviceLogos = [

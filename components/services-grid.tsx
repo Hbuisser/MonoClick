@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import {
-  Users,
-  Video,
   Brain,
   ShoppingCart,
+  Scale,
+  Landmark,
   ArrowUpRight,
   Check
 } from 'lucide-react'
@@ -16,14 +16,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 const services = [
   {
     icon: Brain,
-    title: 'RAG Agent for SaaS',
-    description: 'Build intelligent RAG (Retrieval-Augmented Generation) agents that understand your SaaS product, documentation, and customer data.',
+    title: 'Agentic Chatbots for SaaS',
+    description: 'Build intelligent AI agents that understand your SaaS product, documentation, and customer data. Automate support and onboarding at scale.',
     image: '/rag.png',
     features: [
-      'Vector database integration',
-      'Semantic search and retrieval',
+      'Learns your entire knowledge base',
       'Context-aware responses',
-      'Multi-source knowledge base'
+      'Connects to your internal tools',
+      'Scales with your business'
     ]
   },
   {
@@ -39,27 +39,27 @@ const services = [
     ]
   },
   {
-    icon: Video,
-    title: 'Content Creation',
-    description: 'Scale your content production with AI-generated visuals, videos, and marketing materials at unprecedented speed.',
-    image: '/content.png',
+    icon: Scale,
+    title: 'Internal Chatbot for Law Firms',
+    description: 'Empower your legal team with AI assistants trained on case law, contracts, and internal procedures. Accelerate research and documentation.',
+    image: '/rag.png',
     features: [
-      'AI-generated visuals',
-      'Automated video creation',
-      'Social media automation',
-      'Brand-consistent assets'
+      'Case law research',
+      'Contract analysis',
+      'Internal knowledge base',
+      'Secure & confidential'
     ]
   },
   {
-    icon: Users,
-    title: 'Lead Generation System',
-    description: 'Automate your entire lead generation with AI-powered prospect scraping, personalized messaging, and cold email campaigns.',
-    image: '/email.png',
+    icon: Landmark,
+    title: 'Internal Chatbot for Finance',
+    description: 'Give your financial teams instant access to policies, compliance docs, and market data through secure AI-powered assistants.',
+    image: '/rag.png',
     features: [
-      'Apollo & Apify scraping',
-      'AI website analysis',
-      'Personalized cold emails',
-      'CRM integration'
+      'Compliance documentation',
+      'Policy retrieval',
+      'Market data integration',
+      'Audit-ready security'
     ]
   }
 ]
@@ -82,8 +82,8 @@ export function ServicesGrid() {
             We tackle the core productivity challenge with AI
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Done-for-you AI automations that eliminate manual tasks,
-            generate qualified leads, and scale your revenue operations.
+            Custom AI chatbots powered by your knowledge base.
+            We build intelligent assistants for SaaS, ecommerce, legal, and finance.
           </p>
         </motion.div>
 

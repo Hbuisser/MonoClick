@@ -2,10 +2,10 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
-  Users,
-  Video,
   Brain,
   ShoppingCart,
+  Scale,
+  Landmark,
   ArrowRight,
   CheckCircle,
   Clock,
@@ -19,33 +19,33 @@ import { Badge } from '@/components/ui/badge'
 import { CTABanner } from '@/components/cta-banner'
 
 export const metadata: Metadata = createMetadata({
-  title: 'AI Automation Services - Lead Generation, RAG Agents, Support Chatbots & Custom SaaS',
-  description: 'Professional AI automation services: lead generation systems with Apollo & Instantly, RAG agents for SaaS, support chatbots for ecommerce, content creation automation, and custom SaaS MVP development.',
+  title: 'AI Chatbot Services - Agentic Chatbots, Ecommerce Support, Legal & Financial',
+  description: 'Professional AI chatbot services: agentic chatbots for SaaS, support chatbots for ecommerce, internal chatbots for law firms and financial institutions. Custom-built knowledge base solutions.',
   path: '/services'
 })
 
 const services = [
   {
     icon: Brain,
-    title: 'RAG Agent for SaaS',
-    description: 'Build intelligent RAG (Retrieval-Augmented Generation) agents that understand your SaaS product, documentation, and customer data. Deploy AI assistants that provide accurate, context-aware responses by retrieving and synthesizing information from your knowledge base.',
+    title: 'Agentic Chatbots for SaaS',
+    description: 'Build intelligent AI agents that understand your SaaS product, documentation, and customer data. Deploy AI assistants that provide accurate, context-aware responses and can take actions on behalf of your users.',
     image: '/rag.png',
     features: [
-      'Vector database integration (Pinecone, Weaviate)',
-      'Document ingestion and chunking',
-      'Semantic search and retrieval',
+      'Learns your entire knowledge base',
+      'Connects to your internal tools and APIs',
+      'Takes actions on behalf of users',
       'Context-aware response generation',
-      'Multi-source knowledge base support',
+      'Multi-source knowledge support',
       'Real-time data synchronization'
     ],
     benefits: [
       'Accurate, up-to-date information retrieval',
-      'Reduced hallucinations with source citations',
-      'Scalable knowledge management'
+      'Reduced support tickets by 70%',
+      'Scalable customer success'
     ],
     pricing: 'Custom pricing based on needs',
     timeline: '4-5 weeks',
-    technologies: ['OpenAI', 'Pinecone', 'LangChain', 'Weaviate', 'n8n', 'Supabase']
+    technologies: ['OpenAI', 'n8n', 'Pinecone', 'Supabase', 'Your existing tools']
   },
   {
     icon: ShoppingCart,
@@ -70,48 +70,48 @@ const services = [
     technologies: ['OpenAI', 'Pinecone', 'Shopify API', 'WhatsApp API', 'n8n', 'Intercom']
   },
   {
-    icon: Video,
-    title: 'Content Creation',
-    description: 'Scale your content production with AI-generated visuals, videos, and marketing materials. From social media posts to product demos, create engaging content at unprecedented speed and consistency.',
-    image: '/content.png',
+    icon: Scale,
+    title: 'Internal Chatbot for Law Firms',
+    description: 'Empower your legal team with AI assistants trained on case law, contracts, and internal procedures. Accelerate legal research, streamline document review, and ensure consistent knowledge access across your firm.',
+    image: '/rag.png',
     features: [
-      'AI-generated images & graphics',
-      'Automated video creation',
-      'Social media content automation',
-      'Product demo generation',
-      'Brand-consistent visual assets',
-      'Multi-platform content optimization'
+      'Case law and precedent research',
+      'Contract analysis and clause extraction',
+      'Internal policy and procedure lookup',
+      'Matter-specific knowledge retrieval',
+      'Secure, confidential data handling',
+      'Integration with legal management systems'
     ],
     benefits: [
-      '10x faster content production',
-      'Consistent brand messaging',
-      '70% reduction in content costs'
+      '60% faster legal research',
+      'Consistent knowledge across the firm',
+      'Reduced time on routine inquiries'
     ],
     pricing: 'Custom pricing based on needs',
-    timeline: '3-4 weeks',
-    technologies: ['DALL-E', 'Midjourney', 'RunwayML', 'n8n', 'Figma API', 'Buffer']
+    timeline: '4-6 weeks',
+    technologies: ['OpenAI', 'Pinecone', 'LangChain', 'Azure', 'n8n', 'Clio']
   },
   {
-    icon: Users,
-    title: 'Lead Generation System',
-    description: 'Transform your sales pipeline with our complete lead generation automation. We scrape prospects using Apollo and Apify, analyze their websites with AI to craft personalized messages, then launch targeted cold email campaigns through Instantly.',
-    image: '/email.png',
+    icon: Landmark,
+    title: 'Internal Chatbot for Financial Firms',
+    description: 'Give your financial teams instant access to compliance documentation, internal policies, market research, and regulatory guidelines through secure AI-powered assistants built for the finance industry.',
+    image: '/rag.png',
     features: [
-      'Automated prospect scraping with Apollo & Apify',
-      'AI website analysis for personalization',
-      'Smart lead enrichment & data validation',
-      'Personalized cold email campaigns',
-      'Instantly integration for email delivery',
-      'CRM integration & automated follow-ups'
+      'Compliance and regulatory documentation',
+      'Internal policy and procedure retrieval',
+      'Market research and data access',
+      'Risk assessment support',
+      'Audit-ready logging and security',
+      'Integration with financial platforms'
     ],
     benefits: [
-      '10x more qualified leads',
-      '85% higher response rates',
-      '5 hours saved per day'
+      'Instant compliance answers',
+      'Reduced regulatory risk',
+      'Streamlined internal communications'
     ],
     pricing: 'Custom pricing based on needs',
-    timeline: '3-4 weeks',
-    technologies: ['Apollo', 'Apify', 'OpenAI', 'Instantly', 'n8n', 'HubSpot']
+    timeline: '4-6 weeks',
+    technologies: ['OpenAI', 'Pinecone', 'Azure', 'LangChain', 'n8n', 'Salesforce']
   }
 ]
 
@@ -154,9 +154,8 @@ export default function ServicesPage() {
               AI Automation Services
             </h1>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-10">
-              Professional AI automation agency delivering cutting-edge solutions for modern businesses.
-              We build lead generation systems, RAG agents for SaaS, support chatbots for ecommerce, and content creation automation,
-              that eliminate manual tasks and drive revenue growth.
+              Professional AI chatbot agency delivering cutting-edge solutions for modern businesses.
+              We build agentic chatbots for SaaS, support chatbots for ecommerce, and internal knowledge assistants for law firms and financial institutions.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
               {[

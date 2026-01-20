@@ -13,28 +13,28 @@ import {
 
 const faqs = [
   {
-    question: 'What is an AI automation agency and how can it help my business?',
-    answer: 'An AI automation agency specializes in building custom business process automation with AI. We help businesses implement done-for-you AI automations like lead generation automation, AI email outreach systems, and custom AI workflows that eliminate manual tasks and increase revenue.'
+    question: 'What is an AI chatbot with knowledge base?',
+    answer: 'An AI chatbot with knowledge base learns from your specific documents, data, and content. Unlike generic chatbots, it provides accurate, source-cited responses from your actual business knowledge. Learn more on our Technology page.'
   },
   {
-    question: 'How quickly can you implement custom AI automation for my business?',
-    answer: 'We can typically begin discovery within 1-2 business days. Most custom AI automations are live within 4-6 weeks, depending on complexity. Our business process automation with AI projects include full testing and optimization before launch.'
+    question: 'How quickly can you build a custom AI chatbot?',
+    answer: 'We can typically begin discovery within 1-2 business days. Most custom AI chatbots are live within 4-6 weeks, depending on complexity. This includes knowledge base setup, training, testing, and optimization before launch.'
   },
   {
-    question: 'What types of AI automation services do you provide?',
-    answer: 'We provide comprehensive AI automation services including lead generation automation, AI email outreach systems, RAG automation with n8n, CRM automation integration, payment flow automation, and custom AI SaaS prototypes tailored to your business needs.'
+    question: 'What industries do you serve?',
+    answer: 'We specialize in AI chatbots for SaaS companies, ecommerce businesses, law firms, and financial institutions. Each solution is tailored to industry-specific needs, compliance requirements, and use cases.'
   },
   {
-    question: 'How much do custom AI automation projects cost?',
-    answer: 'Our AI automation services are priced custom based on your specific business needs and project complexity. We offer both project-based pricing and retainer models for ongoing optimization. Every custom business automation includes transparent, fixed-price quotes with no surprises.'
+    question: 'How much do custom AI chatbot projects cost?',
+    answer: 'Our AI chatbot services are priced custom based on your specific needs and project complexity. We offer both project-based pricing and retainer models for ongoing optimization. Every project includes transparent, fixed-price quotes with no surprises.'
   },
   {
-    question: 'Do you provide ongoing support for AI automation systems?',
-    answer: 'Yes! Every done-for-you AI automation includes 30 days of free support. We also offer maintenance retainers with custom pricing based on your specific needs for monitoring, updates, and enhancements to keep your custom AI workflows running optimally.'
+    question: 'Do you provide ongoing support?',
+    answer: 'Yes! Every AI chatbot includes 30 days of free support. We also offer maintenance retainers with custom pricing for monitoring, knowledge base updates, and enhancements to keep your chatbot running optimally.'
   },
   {
-    question: 'How secure are your AI automation solutions?',
-    answer: 'Security is our top priority for all AI automation services. We use enterprise-grade encryption, follow SOC 2 compliance standards, and work within your existing security frameworks. All business process automation with AI happens in secure, GDPR-compliant environments.'
+    question: 'How secure are your AI chatbot solutions?',
+    answer: 'Security is our top priority. We use enterprise-grade encryption, follow SOC 2 compliance standards, and can work within your existing security frameworks. For legal and financial clients, we ensure full compliance with industry regulations.'
   }
 ]
 

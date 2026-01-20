@@ -40,7 +40,7 @@ const caseStudies = [
     timeline: '6 weeks',
     teamSize: '8 support agents',
     challenge: 'Support team overwhelmed with repetitive queries, 48-hour response times',
-    solution: 'Implemented RAG-powered knowledge assistant trained on docs and previous tickets',
+    solution: 'Implemented AI-powered knowledge assistant trained on docs and previous tickets',
     results: [
       'Support tickets reduced by 60%',
       'Response time: 48 hours → 5 minutes',

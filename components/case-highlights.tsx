@@ -22,7 +22,7 @@ const cases = [
     icon: Users,
     industry: 'SaaS',
     title: '60% support deflection',
-    description: 'RAG-powered knowledge assistant that handles customer queries 24/7',
+    description: 'AI-powered knowledge assistant that handles customer queries 24/7',
     results: [
       'Support tickets reduced by 60%',
       'Customer satisfaction up 25%',

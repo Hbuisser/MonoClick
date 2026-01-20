@@ -47,7 +47,7 @@ export default function LegalPage() {
               </p>
               <ul className="list-disc pl-6 mb-4 space-y-1">
                 <li>AI lead generation engines</li>
-                <li>RAG knowledge assistants</li>
+                <li>AI knowledge assistants</li>
                 <li>Operations automation systems</li>
                 <li>Revenue dashboards and analytics</li>
                 <li>Custom workflow automation solutions</li>

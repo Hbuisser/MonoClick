@@ -111,7 +111,7 @@ export default function AboutPage() {
                   We specialize in done-for-you AI automations that save time and drive predictable revenue growth.
                 </p>
                 <p>
-                  From lead generation automation and AI email outreach systems to RAG automation with n8n and CRM integrations,
+                  From AI chatbots and knowledge-based assistants to n8n automation and CRM integrations,
                   we build custom AI workflows for business that integrate seamlessly with your existing tech stack.
                 </p>
                 <p>

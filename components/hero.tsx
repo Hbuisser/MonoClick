@@ -8,19 +8,20 @@ import { ArrowRight, Bot, Zap, Send } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 
-const features = [
-  'E-commerces',
-  'SaaS',
-  'Lawyers',
+const useCases = [
+  { industry: 'Ecommerce', example: 'Product recommendations, FAQ, order tracking' },
+  { industry: 'SaaS', example: 'Agentic chatbots connected to your database' },
+  { industry: 'Law Firms', example: 'Internal research on past cases and docs' },
+  { industry: 'Financial Firms', example: 'Reports, analysis, compliance docs' },
 ]
 
 export function Hero() {
-  const [currentFeature, setCurrentFeature] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentFeature((prev) => (prev + 1) % features.length)
-    }, 2500)
+      setCurrentIndex((prev) => (prev + 1) % useCases.length)
+    }, 3000)
     return () => clearInterval(interval)
   }, [])
 
@@ -63,52 +64,51 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-5xl sm:text-6xl lg:text-[6rem] xl:text-[7rem] font-bold tracking-tight text-slate-900 leading-[1.05] mb-8 font-heading"
+              className="text-5xl sm:text-6xl lg:text-[6rem] xl:text-[7rem] font-bold tracking-tight text-slate-900 leading-[1.05] mb-6 font-heading"
             >
               Give your business
               <br />
               <span className="text-gradient">an AI brain</span>
             </motion.h1>
 
-            {/* Rotating feature text */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="mb-8"
-            >
-              <p className="text-lg text-slate-500 mb-2">the most intuitive AI chatbots for</p>
-              <div className="h-8 overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <motion.p
-                    key={currentFeature}
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -20, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-xl font-semibold text-gradient"
-                  >
-                    {features[currentFeature]}
-                  </motion.p>
-                </AnimatePresence>
-              </div>
-            </motion.div>
-
-            {/* Description */}
+            {/* Simple description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-slate-600 leading-relaxed mb-10 max-w-lg"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-xl text-slate-600 leading-relaxed mb-6 max-w-lg"
             >
-              We build AI chatbots that learn your entire knowledge base.
+              We build AI chatbots that learn your entire knowledge base and connect to your tools.
             </motion.p>
+
+            {/* Vertical carousel */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="mb-10"
+            >
+              <div className="h-14 overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentIndex}
+                    initial={{ y: 30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -30, opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <p className="text-lg font-semibold text-gradient">{useCases[currentIndex].industry}</p>
+                    <p className="text-slate-500">{useCases[currentIndex].example}</p>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </motion.div>
 
             {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-4"
             >
               <Button asChild variant="gradient" size="xl" className="group">

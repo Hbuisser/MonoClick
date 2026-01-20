@@ -44,7 +44,7 @@ const services = [
       'Scalable customer success'
     ],
     pricing: 'Custom pricing based on needs',
-    timeline: '4-5 weeks',
+    timeline: '10 working days',
     technologies: ['OpenAI', 'n8n', 'Pinecone', 'Supabase', 'Your existing tools']
   },
   {
@@ -66,7 +66,7 @@ const services = [
       'Increased conversion rates through instant assistance'
     ],
     pricing: 'Custom pricing based on needs',
-    timeline: '4-5 weeks',
+    timeline: '10 working days',
     technologies: ['OpenAI', 'Pinecone', 'Shopify API', 'WhatsApp API', 'n8n', 'Intercom']
   },
   {
@@ -88,7 +88,7 @@ const services = [
       'Reduced time on routine inquiries'
     ],
     pricing: 'Custom pricing based on needs',
-    timeline: '4-6 weeks',
+    timeline: '10 working days',
     technologies: ['OpenAI', 'Pinecone', 'LangChain', 'Azure', 'n8n', 'Clio']
   },
   {
@@ -110,7 +110,7 @@ const services = [
       'Streamlined internal communications'
     ],
     pricing: 'Custom pricing based on needs',
-    timeline: '4-6 weeks',
+    timeline: '10 working days',
     technologies: ['OpenAI', 'Pinecone', 'Azure', 'LangChain', 'n8n', 'Salesforce']
   }
 ]
@@ -128,7 +128,7 @@ const addOns = [
   },
   {
     title: 'Fast Deployment',
-    description: 'Most projects delivered in 2-8 weeks with immediate results',
+    description: 'Most projects delivered in 10 working days after kickoff call',
     included: true
   },
   {
@@ -159,7 +159,7 @@ export default function ServicesPage() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
               {[
-                { value: '1-4 weeks', label: 'Typical delivery' },
+                { value: '10 days', label: 'After kickoff call' },
                 { value: 'Custom pricing', label: 'Based on your needs' },
                 { value: '30 days', label: 'Free support' },
               ].map((stat) => (
@@ -363,14 +363,14 @@ export default function ServicesPage() {
               {
                 step: '03',
                 title: 'Build & Test',
-                description: 'We build your automation with weekly check-ins so you can see progress and give feedback. Everything is tested before launch.',
-                duration: '2-8 weeks'
+                description: 'We build your automation with regular check-ins so you can see progress and give feedback. Everything is tested before launch.',
+                duration: '10 working days'
               },
               {
                 step: '04',
                 title: 'Launch & Support',
                 description: 'We train your team, launch the system, and provide 30 days of free support to ensure everything runs smoothly.',
-                duration: '1 week'
+                duration: 'Included'
               }
             ].map((phase) => (
               <div key={phase.step} className="flex items-start space-x-6">

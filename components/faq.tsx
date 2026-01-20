@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: 'How quickly can you build a custom AI chatbot?',
-    answer: 'We can typically begin discovery within 1-2 business days. Most custom AI chatbots are live within 4-6 weeks, depending on complexity. This includes knowledge base setup, training, testing, and optimization before launch.'
+    answer: 'We can typically begin discovery within 1-2 business days. Most custom AI chatbots are live within 10 working days after kickoff call. This includes knowledge base setup, training, testing, and optimization before launch.'
   },
   {
     question: 'What industries do you serve?',

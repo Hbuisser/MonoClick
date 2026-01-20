@@ -25,7 +25,7 @@ const steps = [
     title: 'Research',
     subtitle: 'Design',
     description: 'We design and prototype your custom automation system with clear ROI projections.',
-    duration: '1-3 weeks'
+    duration: '10 working days'
   },
   {
     icon: Rocket,
@@ -33,7 +33,7 @@ const steps = [
     title: 'Build',
     subtitle: 'Go-Live',
     description: 'We build, test, and deploy your automation with comprehensive training for your team.',
-    duration: '1 week'
+    duration: 'Included'
   },
   {
     icon: TrendingUp,

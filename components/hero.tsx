@@ -26,7 +26,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center bg-white overflow-hidden">
+    <section className="relative min-h-[calc(100vh-4rem)] flex items-center bg-white overflow-hidden pt-8 lg:pt-0">
       {/* Subtle grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem]" />
       <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
@@ -56,7 +56,7 @@ export function Hero() {
       </motion.div>
 
       <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[70vh]">
           {/* Left content */}
           <div>
             {/* Main heading */}

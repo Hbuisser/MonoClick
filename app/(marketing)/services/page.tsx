@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 import {
   Brain,
   ShoppingCart,
@@ -181,9 +181,9 @@ export default function ServicesPage() {
               const Icon = service.icon
               return (
                 <Card key={service.title} className="overflow-hidden hover:shadow-soft-lg transition-all duration-300">
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 lg:p-10">
+                  <div className="p-8 lg:p-10">
                     {/* Content Area */}
-                    <div className="lg:col-span-8">
+                    <div>
                       {/* Header */}
                       <div className="mb-8">
                         <div className="flex items-center space-x-4 mb-4">
@@ -261,7 +261,7 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    {/* Image Area */}
+                    {/* Image Area - commented out for now
                     <div className="lg:col-span-4">
                       <div className="relative rounded-2xl overflow-hidden bg-slate-100 border border-slate-200" style={{ aspectRatio: '4/3' }}>
                         <Image
@@ -273,6 +273,7 @@ export default function ServicesPage() {
                         />
                       </div>
                     </div>
+                    */}
                   </div>
                 </Card>
               )

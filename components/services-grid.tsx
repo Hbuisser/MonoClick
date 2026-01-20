@@ -1,13 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+// import Image from 'next/image'
 import {
   Brain,
   ShoppingCart,
   Scale,
   Landmark,
-  ArrowUpRight,
+  // ArrowUpRight,
   Check
 } from 'lucide-react'
 
@@ -100,7 +100,7 @@ export function ServicesGrid() {
                 className="group"
               >
                 <Card className="h-full overflow-hidden hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-300 border-slate-100">
-                  {/* Image Header */}
+                  {/* Image Header - commented out for now
                   <div className="relative h-52 bg-slate-100 overflow-hidden">
                     <Image
                       src={service.image}
@@ -116,8 +116,9 @@ export function ServicesGrid() {
                       </div>
                     </div>
                   </div>
+                  */}
 
-                  <CardHeader className="pb-3">
+                  <CardHeader className="pb-3 pt-6">
                     <div className="flex items-start gap-4">
                       <div className="h-12 w-12 rounded-xl bg-gradient-brand flex items-center justify-center shadow-brand flex-shrink-0">
                         <Icon className="h-6 w-6 text-white" />

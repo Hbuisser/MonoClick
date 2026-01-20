@@ -58,10 +58,9 @@ const values = [
 ]
 
 const stats = [
-  { label: 'Clients served', value: '5+' },
+  { label: 'Clients served', value: '10+' },
   { label: 'Custom automations', value: '10+' },
-  { label: 'Hours saved weekly', value: '50+' },
-  { label: 'Revenue generated', value: '€20K+' }
+  { label: 'Hours saved weekly', value: '50+' }
 ]
 
 export default function AboutPage() {

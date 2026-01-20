@@ -19,99 +19,99 @@ import { Badge } from '@/components/ui/badge'
 import { CTABanner } from '@/components/cta-banner'
 
 export const metadata: Metadata = createMetadata({
-  title: 'AI Chatbot Services - Agentic Chatbots, Ecommerce Support, Legal & Financial',
-  description: 'Professional AI chatbot services: agentic chatbots for SaaS, support chatbots for ecommerce, internal chatbots for law firms and financial institutions. Custom-built knowledge base solutions.',
+  title: 'AI Growth Systems for B2B SaaS - Support, Lead Qualification, Onboarding',
+  description: 'AI-powered growth systems for B2B SaaS: automated customer support, lead qualification and routing, onboarding automation, and internal knowledge assistants. Built in 10 working days.',
   path: '/services'
 })
 
 const services = [
   {
     icon: Brain,
-    title: 'Agentic Chatbots for SaaS',
-    description: 'Build intelligent AI agents that understand your SaaS product, documentation, and customer data. Deploy AI assistants that provide accurate, context-aware responses and can take actions on behalf of your users.',
+    title: 'AI Customer Support',
+    description: 'Deploy intelligent support agents that understand your product and resolve customer issues 24/7. Reduce ticket volume, decrease response time, and increase customer satisfaction.',
     image: '/rag.png',
     features: [
       'Learns your entire knowledge base',
-      'Connects to your internal tools and APIs',
-      'Takes actions on behalf of users',
-      'Context-aware response generation',
-      'Multi-source knowledge support',
-      'Real-time data synchronization'
+      'Resolves 70% of tickets automatically',
+      'Seamless handoff to human agents',
+      'Context-aware conversations',
+      'Multi-channel support (chat, email, Slack)',
+      'Real-time escalation rules'
     ],
     benefits: [
-      'Accurate, up-to-date information retrieval',
-      'Reduced support tickets by 70%',
-      'Scalable customer success'
+      '70% reduction in support tickets',
+      '< 30 second response time',
+      'Higher CSAT scores'
     ],
     pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
-    technologies: ['OpenAI', 'n8n', 'Pinecone', 'Supabase', 'Your existing tools']
+    technologies: ['OpenAI', 'n8n', 'Intercom', 'Zendesk', 'Your existing tools']
   },
   {
     icon: ShoppingCart,
-    title: 'Support Chatbot for Ecommerce',
-    description: 'Deploy intelligent support chatbots specifically designed for ecommerce businesses. Handle order inquiries, product questions, shipping updates, returns, and customer support 24/7 across your website, WhatsApp, and email channels.',
+    title: 'Lead Qualification & Routing',
+    description: 'Automate your lead qualification process with AI. Score leads based on fit and intent, route them to the right sales rep, and ensure no opportunity falls through the cracks.',
     image: '/ecom.png',
     features: [
-      'Ecommerce-specific knowledge base',
-      'Order status and tracking inquiries',
-      'Product recommendations and FAQs',
-      'Return and refund assistance',
-      'Multi-channel support (chat, WhatsApp, email)',
-      'Integration with ecommerce platforms (Shopify, WooCommerce)'
+      'AI-powered lead scoring',
+      'Automated qualification questions',
+      'Smart routing to sales reps',
+      'CRM integration (HubSpot, Salesforce)',
+      'Real-time lead enrichment',
+      'Conversion analytics'
     ],
     benefits: [
-      '75% reduction in support tickets',
-      '24/7 customer support',
-      'Increased conversion rates through instant assistance'
+      '2x more qualified meetings',
+      '50% faster lead response',
+      'Higher conversion rates'
     ],
     pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
-    technologies: ['OpenAI', 'Pinecone', 'Shopify API', 'WhatsApp API', 'n8n', 'Intercom']
+    technologies: ['OpenAI', 'n8n', 'HubSpot', 'Salesforce', 'Clearbit', 'Slack']
   },
   {
     icon: Scale,
-    title: 'Internal Chatbot for Law Firms',
-    description: 'Empower your legal team with AI assistants trained on case law, contracts, and internal procedures. Accelerate legal research, streamline document review, and ensure consistent knowledge access across your firm.',
+    title: 'Automated Onboarding',
+    description: 'Create AI-powered onboarding experiences that guide users to value faster. Personalized product tours, in-app assistance, and proactive help based on user behavior.',
     image: '/rag.png',
     features: [
-      'Case law and precedent research',
-      'Contract analysis and clause extraction',
-      'Internal policy and procedure lookup',
-      'Matter-specific knowledge retrieval',
-      'Secure, confidential data handling',
-      'Integration with legal management systems'
+      'Personalized onboarding flows',
+      'Interactive product walkthroughs',
+      'In-app AI assistant',
+      'Behavior-triggered guidance',
+      'Progress tracking & analytics',
+      'Integration with your product'
     ],
     benefits: [
-      '60% faster legal research',
-      'Consistent knowledge across the firm',
-      'Reduced time on routine inquiries'
+      '40% faster time-to-value',
+      'Higher activation rates',
+      'Reduced churn'
     ],
     pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
-    technologies: ['OpenAI', 'Pinecone', 'LangChain', 'Azure', 'n8n', 'Clio']
+    technologies: ['OpenAI', 'n8n', 'Segment', 'Amplitude', 'Your product API']
   },
   {
     icon: Landmark,
-    title: 'Internal Chatbot for Financial Firms',
-    description: 'Give your financial teams instant access to compliance documentation, internal policies, market research, and regulatory guidelines through secure AI-powered assistants built for the finance industry.',
+    title: 'Internal Knowledge Assistant',
+    description: 'Give your team instant access to company knowledge, processes, and documentation. Reduce time spent searching and ensure everyone has the answers they need.',
     image: '/rag.png',
     features: [
-      'Compliance and regulatory documentation',
-      'Internal policy and procedure retrieval',
-      'Market research and data access',
-      'Risk assessment support',
-      'Audit-ready logging and security',
-      'Integration with financial platforms'
+      'Unified knowledge search',
+      'Policy and procedure access',
+      'Cross-departmental knowledge',
+      'Secure, role-based access',
+      'Slack & Teams integration',
+      'Analytics on knowledge gaps'
     ],
     benefits: [
-      'Instant compliance answers',
-      'Reduced regulatory risk',
-      'Streamlined internal communications'
+      '5+ hours saved per employee/week',
+      'Faster employee onboarding',
+      'Consistent information'
     ],
     pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
-    technologies: ['OpenAI', 'Pinecone', 'Azure', 'LangChain', 'n8n', 'Salesforce']
+    technologies: ['OpenAI', 'n8n', 'Notion', 'Confluence', 'Google Drive', 'Slack']
   }
 ]
 
@@ -151,11 +151,11 @@ export default function ServicesPage() {
               Our Services
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 font-heading">
-              AI Automation Services
+              AI Growth Systems for SaaS
             </h1>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-10">
-              Professional AI chatbot agency delivering cutting-edge solutions for modern businesses.
-              We build agentic chatbots for SaaS, support chatbots for ecommerce, and internal knowledge assistants for law firms and financial institutions.
+              We build AI-powered systems that help B2B SaaS companies scale faster.
+              From automated support to lead qualification, we deliver in 10 working days.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
               {[

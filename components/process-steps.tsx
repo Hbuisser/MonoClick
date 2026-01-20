@@ -60,6 +60,7 @@ export function ProcessSteps() {
             Our Process
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 font-heading">
+            How we build your AI system
             How we deliver results
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">

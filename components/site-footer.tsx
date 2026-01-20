@@ -34,10 +34,24 @@ export function SiteFooter() {
             {/* Brand */}
             <div className="lg:col-span-2">
               <Link href="/" className="flex items-center space-x-2.5 mb-5">
-                <div className="h-9 w-9 rounded-xl bg-gradient-brand flex items-center justify-center shadow-brand">
-                  <span className="text-white font-bold text-lg">M</span>
+                <div className="h-12 w-12 rounded-xl bg-gradient-brand flex items-center justify-center shadow-brand p-2">
+                  <div className="flex items-center gap-0.5">
+                    <div className="flex flex-col gap-0.5">
+                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
+                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
+                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
+                    </div>
+                    <div className="flex flex-col justify-center">
+                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
+                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
+                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
+                    </div>
+                  </div>
                 </div>
-                <span className="text-xl font-semibold text-slate-900">
+                <span className="text-2xl font-semibold text-slate-900">
                   MonoClick
                 </span>
               </Link>

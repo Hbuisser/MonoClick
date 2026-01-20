@@ -16,50 +16,50 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 const services = [
   {
     icon: Brain,
-    title: 'Agentic Chatbots for SaaS',
-    description: 'Build intelligent AI agents that understand your SaaS product, documentation, and customer data. Automate support and onboarding at scale.',
+    title: 'AI Customer Support',
+    description: 'Deploy intelligent support agents that resolve tickets 24/7. Reduce response time and increase customer satisfaction at scale.',
     image: '/rag.png',
     features: [
       'Learns your entire knowledge base',
-      'Context-aware responses',
-      'Connects to your internal tools',
-      'Scales with your business'
+      'Resolves 70% of tickets automatically',
+      'Seamless human handoff',
+      'Multi-channel support'
     ]
   },
   {
     icon: ShoppingCart,
-    title: 'Support Chatbot for Ecommerce',
-    description: 'Deploy intelligent support chatbots designed for ecommerce. Handle orders, products, shipping, and returns 24/7.',
+    title: 'Lead Qualification & Routing',
+    description: 'Automate lead scoring and routing with AI. Ensure your sales team focuses on the highest-value opportunities.',
     image: '/ecom.png',
     features: [
-      'Order status tracking',
-      'Product recommendations',
-      'Multi-channel support',
-      'Shopify & WooCommerce'
+      'Intelligent lead scoring',
+      'Automated qualification',
+      'CRM integration',
+      'Real-time routing'
     ]
   },
   {
     icon: Scale,
-    title: 'Internal Chatbot for Law Firms',
-    description: 'Empower your legal team with AI assistants trained on case law, contracts, and internal procedures. Accelerate research and documentation.',
+    title: 'Automated Onboarding',
+    description: 'Create interactive onboarding experiences powered by your documentation. Help users get value faster with AI guidance.',
     image: '/rag.png',
     features: [
-      'Case law research',
-      'Contract analysis',
-      'Internal knowledge base',
-      'Secure & confidential'
+      'Personalized user journeys',
+      'Interactive product tours',
+      'In-app AI assistant',
+      'Reduces time-to-value'
     ]
   },
   {
     icon: Landmark,
-    title: 'Internal Chatbot for Finance',
-    description: 'Give your financial teams instant access to policies, compliance docs, and market data through secure AI-powered assistants.',
+    title: 'Internal Knowledge Assistant',
+    description: 'Give your team instant access to company knowledge, processes, and documentation through AI-powered search.',
     image: '/rag.png',
     features: [
-      'Compliance documentation',
-      'Policy retrieval',
-      'Market data integration',
-      'Audit-ready security'
+      'Instant policy answers',
+      'Process documentation',
+      'Cross-team knowledge',
+      'Secure & private'
     ]
   }
 ]
@@ -79,11 +79,11 @@ export function ServicesGrid() {
             Our Services
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 font-heading">
-            We tackle the core productivity challenge with AI
+            AI systems that drive SaaS growth
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Custom AI chatbots powered by your knowledge base.
-            We build intelligent assistants for SaaS, ecommerce, legal, and finance.
+            From customer support to lead qualification, we build AI-powered systems
+            that help B2B SaaS companies scale faster.
           </p>
         </motion.div>
 

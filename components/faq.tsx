@@ -13,28 +13,28 @@ import {
 
 const faqs = [
   {
-    question: 'What is an AI chatbot with knowledge base?',
-    answer: 'An AI chatbot with knowledge base learns from your specific documents, data, and content. Unlike generic chatbots, it provides accurate, source-cited responses from your actual business knowledge. Learn more on our Technology page.'
+    question: 'What are AI growth systems?',
+    answer: 'AI growth systems are automated workflows powered by AI that help SaaS companies scale faster. This includes automated customer support, lead qualification and routing, onboarding automation, and internal knowledge assistants.'
   },
   {
-    question: 'How quickly can you build a custom AI chatbot?',
-    answer: 'We can typically begin discovery within 1-2 business days. Most custom AI chatbots are live within 10 working days after kickoff call. This includes knowledge base setup, training, testing, and optimization before launch.'
+    question: 'How quickly can you build a custom AI system?',
+    answer: 'We deliver most projects within 10 working days after kickoff call. This includes discovery, build, testing, and deployment. We work fast without sacrificing quality.'
   },
   {
-    question: 'What industries do you serve?',
-    answer: 'We specialize in AI chatbots for SaaS companies, ecommerce businesses, law firms, and financial institutions. Each solution is tailored to industry-specific needs, compliance requirements, and use cases.'
+    question: 'What SaaS tools do you integrate with?',
+    answer: 'We integrate with most popular SaaS tools including HubSpot, Salesforce, Intercom, Zendesk, Slack, Notion, and many more. If you use it, we can probably connect to it.'
   },
   {
-    question: 'How much do custom AI chatbot projects cost?',
-    answer: 'Our AI chatbot services are priced custom based on your specific needs and project complexity. We offer both project-based pricing and retainer models for ongoing optimization. Every project includes transparent, fixed-price quotes with no surprises.'
+    question: 'How much do AI growth systems cost?',
+    answer: 'Pricing is custom based on your specific needs and complexity. We offer transparent, fixed-price quotes with no surprises. Every project includes 30 days of free support after launch.'
   },
   {
     question: 'Do you provide ongoing support?',
-    answer: 'Yes! Every AI chatbot includes 30 days of free support. We also offer maintenance retainers with custom pricing for monitoring, knowledge base updates, and enhancements to keep your chatbot running optimally.'
+    answer: 'Yes! Every project includes 30 days of free support. We also offer maintenance retainers for ongoing optimization, monitoring, and enhancements to keep your systems running at peak performance.'
   },
   {
-    question: 'How secure are your AI chatbot solutions?',
-    answer: 'Security is our top priority. We use enterprise-grade encryption, follow SOC 2 compliance standards, and can work within your existing security frameworks. For legal and financial clients, we ensure full compliance with industry regulations.'
+    question: 'How do I know if AI automation is right for my SaaS?',
+    answer: 'If you have repetitive tasks in support, sales, or operations that take up your team\'s time, AI automation can help. Book a free call and we\'ll assess your specific situation together.'
   }
 ]
 

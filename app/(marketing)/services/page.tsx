@@ -4,12 +4,12 @@ import Image from 'next/image'
 import {
   Users,
   Video,
-  Code,
   Brain,
   ShoppingCart,
   ArrowRight,
   CheckCircle,
-  Clock
+  Clock,
+  Check
 } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
@@ -113,28 +113,6 @@ const services = [
     timeline: '3-4 weeks',
     technologies: ['Apollo', 'Apify', 'OpenAI', 'Instantly', 'n8n', 'HubSpot']
   }
-  // {
-  //   icon: Code,
-  //   title: 'Custom SaaS MVP',
-  //   description: 'Transform your automation ideas into market-ready SaaS products. We build custom MVPs with user authentication, billing systems, and scalable architecture to validate and launch your concept quickly.',
-  //   image: '/mvp.jpg',
-  //   features: [
-  //     'Full-stack MVP development',
-  //     'User authentication & management',
-  //     'Subscription billing integration',
-  //     'Admin dashboard & analytics',
-  //     'API development & documentation',
-  //     'Scalable cloud deployment'
-  //   ],
-  //   benefits: [
-  //     'Market-ready product in weeks',
-  //     'Scalable architecture from day one',
-  //     'Professional user experience'
-  //   ],
-  //   pricing: 'Custom pricing based on needs',
-  //   timeline: '6-8 weeks',
-  //   technologies: ['Next.js', 'Supabase', 'Stripe', 'NextAuth', 'Tailwind CSS', 'Vercel']
-  // },
 ]
 
 const addOns = [
@@ -163,74 +141,74 @@ const addOns = [
 
 export default function ServicesPage() {
   return (
-    <div className="pt-16">
+    <div>
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-subtle">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-gradient-subtle relative overflow-hidden">
+        <div className="absolute inset-0 grid-pattern" />
+        <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-zinc-100 mb-6">
+            <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-4">
+              Our Services
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 font-heading">
               AI Automation Services
             </h1>
-            <p className="text-lg text-zinc-400 max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-10">
               Professional AI automation agency delivering cutting-edge solutions for modern businesses.
               We build lead generation systems, RAG agents for SaaS, support chatbots for ecommerce, and content creation automation,
               that eliminate manual tasks and drive revenue growth.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gradient mb-1">1-4 weeks</div>
-                <div className="text-sm text-zinc-400">Typical delivery</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gradient mb-1">Custom pricing</div>
-                <div className="text-sm text-zinc-400">Based on your needs</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gradient mb-1">30 days</div>
-                <div className="text-sm text-zinc-400">Free support</div>
-              </div>
+              {[
+                { value: '1-4 weeks', label: 'Typical delivery' },
+                { value: 'Custom pricing', label: 'Based on your needs' },
+                { value: '30 days', label: 'Free support' },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center p-4 rounded-2xl bg-white border border-slate-200 shadow-soft">
+                  <div className="text-xl font-bold text-gradient mb-1">{stat.value}</div>
+                  <div className="text-sm text-slate-500">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
+          <div className="space-y-12">
             {services.map((service, index) => {
               const Icon = service.icon
               return (
-                <Card key={service.title} className="overflow-hidden bg-zinc-900/50 border-zinc-800">
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 lg:p-12">
+                <Card key={service.title} className="overflow-hidden hover:shadow-soft-lg transition-all duration-300">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 lg:p-10">
                     {/* Content Area */}
                     <div className="lg:col-span-8">
                       {/* Header */}
                       <div className="mb-8">
-                        <div className="mb-6">
-                          <div className="flex items-center space-x-3 mb-4">
-                            <div className="h-14 w-14 rounded-xl bg-gradient-brand flex items-center justify-center shadow-lg">
-                              <Icon className="h-7 w-7 text-white" />
-                            </div>
-                            <h2 className="text-2xl lg:text-3xl font-heading font-bold text-zinc-100">
-                              {service.title}
-                            </h2>
+                        <div className="flex items-center space-x-4 mb-4">
+                          <div className="h-14 w-14 rounded-xl bg-gradient-brand flex items-center justify-center shadow-brand">
+                            <Icon className="h-7 w-7 text-white" />
                           </div>
-                          <p className="text-zinc-400 text-base leading-relaxed">
-                            {service.description}
-                          </p>
+                          <h2 className="text-2xl lg:text-3xl font-semibold text-slate-900">
+                            {service.title}
+                          </h2>
                         </div>
+                        <p className="text-slate-600 text-base leading-relaxed">
+                          {service.description}
+                        </p>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Features */}
                         <div>
-                          <h3 className="text-lg font-semibold text-zinc-100 mb-4">What's included</h3>
+                          <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">What's included</h3>
                           <ul className="space-y-3">
                             {service.features.map((feature, featureIndex) => (
                               <li key={featureIndex} className="flex items-start space-x-2">
-                                <CheckCircle className="h-4 w-4 text-green-400 mt-0.5 flex-shrink-0" />
-                                <span className="text-zinc-300 text-sm">{feature}</span>
+                                <Check className="h-4 w-4 text-indigo-500 mt-0.5 flex-shrink-0" />
+                                <span className="text-slate-600 text-sm">{feature}</span>
                               </li>
                             ))}
                           </ul>
@@ -238,34 +216,34 @@ export default function ServicesPage() {
 
                         {/* Benefits */}
                         <div>
-                          <h3 className="text-lg font-semibold text-zinc-100 mb-4">Expected results</h3>
+                          <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">Expected results</h3>
                           <ul className="space-y-3 mb-6">
                             {service.benefits.map((benefit, benefitIndex) => (
                               <li key={benefitIndex} className="flex items-start space-x-2">
-                                <div className="h-1.5 w-1.5 rounded-full bg-indigo-400 mt-2 flex-shrink-0" />
-                                <span className="text-zinc-300 text-sm">{benefit}</span>
+                                <div className="h-1.5 w-1.5 rounded-full bg-indigo-500 mt-2 flex-shrink-0" />
+                                <span className="text-slate-600 text-sm">{benefit}</span>
                               </li>
                             ))}
                           </ul>
 
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-6">
-                            <div className="flex items-center space-x-2 text-zinc-400">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                            <div className="flex items-center space-x-2 text-slate-500">
                               <Clock className="h-4 w-4" />
                               <span>{service.timeline}</span>
                             </div>
-                            <div className="flex items-center space-x-2 text-zinc-400">
-                              <span className="font-semibold text-zinc-300">{service.pricing}</span>
+                            <div className="text-slate-700 font-medium">
+                              {service.pricing}
                             </div>
                           </div>
                         </div>
                       </div>
 
                       {/* Technologies */}
-                      <div className="mt-8">
-                        <h3 className="text-lg font-semibold text-zinc-100 mb-4">Technologies</h3>
+                      <div className="mt-8 pt-6 border-t border-slate-100">
+                        <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">Technologies</h3>
                         <div className="flex flex-wrap gap-2 mb-6">
                           {service.technologies.map((tech, techIndex) => (
-                            <Badge key={techIndex} variant="secondary" className="bg-zinc-800 text-zinc-300">
+                            <Badge key={techIndex} variant="secondary" className="bg-slate-100 text-slate-600 border-0">
                               {tech}
                             </Badge>
                           ))}
@@ -284,17 +262,16 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    {/* Image Area - Top Right */}
+                    {/* Image Area */}
                     <div className="lg:col-span-4">
-                      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900" style={{ aspectRatio: '4/3' }}>
+                      <div className="relative rounded-2xl overflow-hidden bg-slate-100 border border-slate-200" style={{ aspectRatio: '4/3' }}>
                         <Image
                           src={service.image}
                           alt={service.title}
-                          width={1536}
-                          height={1024}
+                          width={800}
+                          height={600}
                           className="w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/40 via-transparent to-transparent" />
                       </div>
                     </div>
                   </div>
@@ -306,41 +283,44 @@ export default function ServicesPage() {
       </section>
 
       {/* Add-ons */}
-      <section className="py-24 bg-zinc-900/20">
+      <section className="py-24 bg-slate-50/50">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-zinc-100 mb-4">
+          <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-3">
+            Why Choose Us
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-heading">
               Why Choose Our AI Automation Agency
             </h2>
-            <p className="text-zinc-400 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto">
               We don't sell generic software. Every AI automation solution is custom-built for your specific workflows,
               designed for maximum ROI, and deployed fast so you see results quickly.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {addOns.map((addOn, index) => (
-              <Card key={addOn.title} className="bg-zinc-900/50 border-zinc-800">
+            {addOns.map((addOn) => (
+              <Card key={addOn.title} className="hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-300">
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between">
-                    <CardTitle className="text-lg text-zinc-100">
+                    <CardTitle className="text-lg text-slate-900">
                       {addOn.title}
                     </CardTitle>
                     {addOn.included ? (
-                      <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-indigo-500 flex-shrink-0" />
                     ) : (
-                      <Badge variant="outline" className="border-zinc-700 text-zinc-400 text-xs">
+                      <Badge variant="outline" className="border-slate-300 text-slate-500 text-xs">
                         Optional
                       </Badge>
                     )}
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-zinc-400 mb-3">
+                  <CardDescription className="text-slate-600 mb-3">
                     {addOn.description}
                   </CardDescription>
                   {!addOn.included && addOn.price && (
-                    <p className="text-sm font-semibold text-zinc-300">
+                    <p className="text-sm font-medium text-slate-700">
                       {addOn.price}
                     </p>
                   )}
@@ -352,13 +332,16 @@ export default function ServicesPage() {
       </section>
 
       {/* Process */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-zinc-100 mb-4">
+          <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-3">
+            Our Process
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-heading">
               How we work
             </h2>
-            <p className="text-zinc-400">
+            <p className="text-slate-600">
               Our proven process ensures your automation delivers results on time and within budget.
             </p>
           </div>
@@ -389,19 +372,19 @@ export default function ServicesPage() {
                 description: 'We train your team, launch the system, and provide 30 days of free support to ensure everything runs smoothly.',
                 duration: '1 week'
               }
-            ].map((phase, index) => (
+            ].map((phase) => (
               <div key={phase.step} className="flex items-start space-x-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-brand flex items-center justify-center text-white font-bold">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-gradient-brand flex items-center justify-center text-white font-bold shadow-brand">
                   {phase.step}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-heading font-semibold text-zinc-100 mb-2">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
                     {phase.title}
                   </h3>
-                  <p className="text-zinc-400 mb-2">
+                  <p className="text-slate-600 mb-2">
                     {phase.description}
                   </p>
-                  <p className="text-sm text-zinc-500">
+                  <p className="text-sm text-slate-500">
                     Duration: {phase.duration}
                   </p>
                 </div>

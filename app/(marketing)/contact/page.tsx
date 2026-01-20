@@ -5,12 +5,10 @@ import {
   Calendar,
   Clock,
   MapPin,
-  MessageCircle,
-  Phone
+  ArrowRight
 } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
-import { ContactForm } from '@/components/contact-form'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
@@ -36,15 +34,7 @@ const contactMethods = [
     action: 'henry@monoclick.ai',
     href: 'mailto:henry@monoclick.ai',
     primary: false
-  },
-  // {
-  //   icon: MessageCircle,
-  //   title: 'Live Chat',
-  //   description: 'Quick questions? Chat with us during business hours',
-  //   action: 'Start chat',
-  //   href: '#',
-  //   primary: false
-  // }
+  }
 ]
 
 const faqs = [
@@ -64,25 +54,29 @@ const faqs = [
 
 export default function ContactPage() {
   return (
-    <div className="pt-16">
+    <div>
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-subtle">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-gradient-subtle relative overflow-hidden">
+        <div className="absolute inset-0 grid-pattern" />
+        <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-zinc-100 mb-6">
+            <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-4">
+              Contact Us
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 font-heading">
               Let's automate your workflows
             </h1>
-            <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
               Ready to turn your processes into AI-powered systems?
               Let's discuss your project and explore the possibilities.
             </p>
-            <div className="flex items-center justify-center space-x-8 text-sm text-zinc-300">
+            <div className="flex items-center justify-center space-x-8 text-sm text-slate-600">
               <div className="flex items-center space-x-2">
-                <Clock className="h-4 w-4 text-green-400" />
+                <div className="h-2 w-2 rounded-full bg-indigo-500" />
                 <span>Free 30-min consultation</span>
               </div>
               <div className="flex items-center space-x-2">
-                <MapPin className="h-4 w-4 text-indigo-400" />
+                <MapPin className="h-4 w-4 text-indigo-500" />
                 <span>EU timezone</span>
               </div>
             </div>
@@ -91,42 +85,43 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Methods */}
-      <section className="py-16 border-b border-zinc-800">
+      <section className="py-16 border-b border-slate-200 bg-white">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {contactMethods.map((method, index) => {
+            {contactMethods.map((method) => {
               const Icon = method.icon
               return (
                 <Card
                   key={method.title}
-                  className={`bg-zinc-900/50 border-zinc-800 hover:border-zinc-700 transition-colors ${
-                    method.primary ? 'ring-1 ring-indigo-500/20' : ''
+                  className={`hover:shadow-soft-lg transition-all duration-300 ${
+                    method.primary ? 'ring-2 ring-indigo-500/20' : ''
                   }`}
                 >
-                  <CardContent className="p-6 text-center">
-                    <div className={`h-12 w-12 rounded-xl ${
-                      method.primary ? 'bg-gradient-brand' : 'bg-zinc-800'
-                    } flex items-center justify-center mx-auto mb-4`}>
-                      <Icon className="h-6 w-6 text-white" />
+                  <CardContent className="p-8 text-center">
+                    <div className={`h-14 w-14 rounded-xl ${
+                      method.primary ? 'bg-gradient-brand shadow-brand' : 'bg-slate-100'
+                    } flex items-center justify-center mx-auto mb-5`}>
+                      <Icon className={`h-6 w-6 ${method.primary ? 'text-white' : 'text-slate-600'}`} />
                     </div>
-                    <h3 className="text-lg font-semibold text-zinc-100 mb-2">
+                    <h3 className="text-xl font-semibold text-slate-900 mb-2">
                       {method.title}
                     </h3>
-                    <p className="text-zinc-400 text-sm mb-4">
+                    <p className="text-slate-600 text-sm mb-5">
                       {method.description}
                     </p>
                     <Button
                       asChild
                       variant={method.primary ? 'gradient' : 'outline'}
                       size="sm"
-                      className={!method.primary ? 'border-zinc-700 hover:bg-zinc-800' : ''}
                     >
                       <Link
                         href={method.href}
                         target={method.href.startsWith('http') ? '_blank' : undefined}
                         rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="flex items-center"
                       >
                         {method.action}
+                        {method.primary && <ArrowRight className="ml-2 h-4 w-4" />}
                       </Link>
                     </Button>
                   </CardContent>
@@ -137,104 +132,88 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-24">
+      {/* What to expect & Contact info */}
+      <section className="py-24 bg-slate-50/50">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
-            {/* Form */}
-            <div>
-              {/* <ContactForm /> */}
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* What to expect */}
+            <Card className="lg:col-span-2">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6">
+                  What happens next?
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {[
+                    { step: '1', title: 'We review your submission', time: 'Usually within 4 hours' },
+                    { step: '2', title: 'Discovery call', time: '30 minutes to understand your needs' },
+                    { step: '3', title: 'Proposal & timeline', time: 'Fixed-price quote within 48 hours' },
+                  ].map((item) => (
+                    <div key={item.step} className="text-center">
+                      <div className="h-12 w-12 rounded-2xl bg-gradient-brand flex items-center justify-center text-white font-bold mx-auto mb-4 shadow-brand">
+                        {item.step}
+                      </div>
+                      <h4 className="text-slate-900 font-medium mb-1">{item.title}</h4>
+                      <p className="text-slate-500 text-sm">{item.time}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
 
-            {/* Info sidebar */}
-            <div className="space-y-8">
-              {/* What to expect */}
-              <Card className="bg-zinc-900/50 border-zinc-800">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-zinc-100 mb-4">
-                    What happens next?
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="h-6 w-6 rounded-full bg-indigo-600 flex items-center justify-center text-white text-xs font-bold mt-0.5">
-                        1
-                      </div>
-                      <div>
-                        <p className="text-zinc-300 font-medium">We review your submission</p>
-                        <p className="text-zinc-400 text-sm">Usually within 4 hours</p>
-                      </div>
+            {/* Contact info */}
+            <Card>
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6">
+                  Get in touch
+                </h3>
+                <div className="space-y-4">
+                  <a
+                    href="mailto:henry@monoclick.ai"
+                    className="flex items-center space-x-3 text-sm text-slate-600 hover:text-teal-600 transition-colors"
+                  >
+                    <div className="h-10 w-10 rounded-lg bg-slate-100 flex items-center justify-center">
+                      <Mail className="h-5 w-5" />
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="h-6 w-6 rounded-full bg-indigo-600 flex items-center justify-center text-white text-xs font-bold mt-0.5">
-                        2
-                      </div>
-                      <div>
-                        <p className="text-zinc-300 font-medium">Discovery call</p>
-                        <p className="text-zinc-400 text-sm">30 minutes to understand your needs</p>
-                      </div>
+                    <span>henry@monoclick.ai</span>
+                  </a>
+                  <div className="flex items-center space-x-3 text-sm text-slate-600">
+                    <div className="h-10 w-10 rounded-lg bg-slate-100 flex items-center justify-center">
+                      <MapPin className="h-5 w-5" />
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="h-6 w-6 rounded-full bg-indigo-600 flex items-center justify-center text-white text-xs font-bold mt-0.5">
-                        3
-                      </div>
-                      <div>
-                        <p className="text-zinc-300 font-medium">Proposal & timeline</p>
-                        <p className="text-zinc-400 text-sm">Fixed-price quote within 48 hours</p>
-                      </div>
-                    </div>
+                    <span>European Union & United States</span>
                   </div>
-                </CardContent>
-              </Card>
+                  <div className="flex items-center space-x-3 text-sm text-slate-600">
+                    <div className="h-10 w-10 rounded-lg bg-slate-100 flex items-center justify-center">
+                      <Clock className="h-5 w-5" />
+                    </div>
+                    <span>Response time: &lt; 24 hours</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
 
-              {/* FAQ */}
-              <Card className="bg-zinc-900/50 border-zinc-800">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-zinc-100 mb-4">
-                    Quick answers
-                  </h3>
-                  <div className="space-y-4">
-                    {faqs.map((faq, index) => (
-                      <div key={index}>
-                        <p className="text-zinc-300 font-medium text-sm mb-1">
-                          {faq.question}
-                        </p>
-                        <p className="text-zinc-400 text-sm">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Contact info */}
-              <Card className="bg-zinc-900/50 border-zinc-800">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-zinc-100 mb-4">
-                    Get in touch
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3 text-sm">
-                      <Mail className="h-4 w-4 text-zinc-400" />
-                      <a
-                        href="mailto:henry@monoclick.ai"
-                        className="text-zinc-300 hover:text-indigo-400 transition-colors"
-                      >
-                        henry@monoclick.ai
-                      </a>
+          {/* FAQ */}
+          <div className="mt-12">
+            <Card>
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6">
+                  Quick answers
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {faqs.map((faq, index) => (
+                    <div key={index}>
+                      <h4 className="text-slate-900 font-medium text-sm mb-2">
+                        {faq.question}
+                      </h4>
+                      <p className="text-slate-600 text-sm">
+                        {faq.answer}
+                      </p>
                     </div>
-                    <div className="flex items-center space-x-3 text-sm">
-                      <MapPin className="h-4 w-4 text-zinc-400" />
-                      <span className="text-zinc-300">European Union & United States</span>
-                    </div>
-                    <div className="flex items-center space-x-3 text-sm">
-                      <Clock className="h-4 w-4 text-zinc-400" />
-                      <span className="text-zinc-300">Response time: &lt; 24 hours</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

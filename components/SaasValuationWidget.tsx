@@ -57,15 +57,15 @@ const InfoTooltip = ({ content }: { content: { title: string; description: strin
   return (
     <div className="relative inline-block ml-1">
       <Info
-        className="w-4 h-4 text-zinc-400 hover:text-zinc-200 cursor-help transition-colors"
+        className="w-4 h-4 text-slate-400 hover:text-slate-600 cursor-help transition-colors"
         onMouseEnter={() => setIsVisible(true)}
         onMouseLeave={() => setIsVisible(false)}
       />
       {isVisible && (
-        <div className="absolute left-0 top-6 z-50 w-80 p-3 bg-zinc-800 border border-zinc-700 rounded-lg shadow-lg">
-          <div className="text-sm text-zinc-100 font-semibold mb-1">{content.title}</div>
-          <div className="text-xs text-zinc-300 mb-2">{content.description}</div>
-          <div className="text-xs text-zinc-400 font-mono">{content.calculation}</div>
+        <div className="absolute left-0 top-6 z-50 w-80 p-3 bg-white border border-slate-200 rounded-lg shadow-soft-lg">
+          <div className="text-sm text-slate-900 font-semibold mb-1">{content.title}</div>
+          <div className="text-xs text-slate-600 mb-2">{content.description}</div>
+          <div className="text-xs text-slate-500 font-mono bg-slate-50 p-2 rounded">{content.calculation}</div>
         </div>
       )}
     </div>
@@ -291,18 +291,18 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
         />
       )}
 
-      <Card className="w-full max-w-2xl mx-auto bg-zinc-900/50 border-zinc-800 backdrop-blur-sm">
+      <Card className="w-full max-w-2xl mx-auto shadow-soft-lg">
         <CardHeader className="text-center pb-4 px-4 sm:px-6">
-          <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-zinc-100 mb-2">
-            <Calculator className="inline-block w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-indigo-400" />
+          <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-900 mb-2">
+            <Calculator className="inline-block w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-indigo-500" />
             SaaS Valuation Calculator
           </CardTitle>
-          <CardDescription className="text-sm sm:text-base text-zinc-400">
+          <CardDescription className="text-sm sm:text-base text-slate-600">
             Get an instant estimate of your SaaS company's valuation
           </CardDescription>
           <div className="mt-4">
             <Progress value={progress} className="h-2" />
-            <p className="text-xs sm:text-sm text-zinc-500 mt-2">Step {currentStep} of 4</p>
+            <p className="text-xs sm:text-sm text-slate-500 mt-2">Step {currentStep} of 4</p>
           </div>
         </CardHeader>
 
@@ -317,13 +317,13 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 transition={{ duration: 0.3 }}
               >
                 <div className="mb-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-zinc-100 mb-2">Business Basics</h3>
-                  <p className="text-zinc-400 text-sm">Tell us about your SaaS business</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-2">Business Basics</h3>
+                  <p className="text-slate-600 text-sm">Tell us about your SaaS business</p>
                 </div>
 
                 <form onSubmit={step1Form.handleSubmit(onStep1Submit)} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-zinc-200 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
                       Business Type *
                     </label>
                     <Controller
@@ -331,7 +331,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       control={step1Form.control}
                       render={({ field }) => (
                         <Select onValueChange={field.onChange} value={field.value}>
-                          <SelectTrigger className="bg-zinc-800 border-zinc-700 text-zinc-100">
+                          <SelectTrigger className="bg-white border-slate-200 text-slate-900">
                             <SelectValue placeholder="Select business type" />
                           </SelectTrigger>
                           <SelectContent>
@@ -347,12 +347,12 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       )}
                     />
                     {step1Form.formState.errors.businessType && (
-                      <p className="text-red-400 text-sm mt-1">{step1Form.formState.errors.businessType.message}</p>
+                      <p className="text-red-500 text-sm mt-1">{step1Form.formState.errors.businessType.message}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-zinc-200 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
                       Geography *
                     </label>
                     <Controller
@@ -360,7 +360,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       control={step1Form.control}
                       render={({ field }) => (
                         <Select onValueChange={field.onChange} value={field.value}>
-                          <SelectTrigger className="bg-zinc-800 border-zinc-700 text-zinc-100">
+                          <SelectTrigger className="bg-white border-slate-200 text-slate-900">
                             <SelectValue placeholder="Select primary market" />
                           </SelectTrigger>
                           <SelectContent>
@@ -372,42 +372,42 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       )}
                     />
                     {step1Form.formState.errors.geography && (
-                      <p className="text-red-400 text-sm mt-1">{step1Form.formState.errors.geography.message}</p>
+                      <p className="text-red-500 text-sm mt-1">{step1Form.formState.errors.geography.message}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-zinc-200 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
                       Annual Recurring Revenue (ARR) in € *
                     </label>
                     <Input
                       type="number"
                       placeholder="e.g. 500000"
-                      className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                      className="bg-white border-slate-200 text-slate-900"
                       {...step1Form.register('arr', { valueAsNumber: true })}
                     />
                     {step1Form.formState.errors.arr && (
-                      <p className="text-red-400 text-sm mt-1">{step1Form.formState.errors.arr.message}</p>
+                      <p className="text-red-500 text-sm mt-1">{step1Form.formState.errors.arr.message}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-zinc-200 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
                       Gross Margin (%) *
                     </label>
                     <Input
                       type="number"
                       placeholder="75"
-                      className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                      className="bg-white border-slate-200 text-slate-900"
                       {...step1Form.register('grossMargin', { valueAsNumber: true })}
                     />
-                    <p className="text-zinc-500 text-xs mt-1">Default: 75% (typical for SaaS)</p>
+                    <p className="text-slate-500 text-xs mt-1">Default: 75% (typical for SaaS)</p>
                     {step1Form.formState.errors.grossMargin && (
-                      <p className="text-red-400 text-sm mt-1">{step1Form.formState.errors.grossMargin.message}</p>
+                      <p className="text-red-500 text-sm mt-1">{step1Form.formState.errors.grossMargin.message}</p>
                     )}
                   </div>
 
-                  <Button type="submit" className="w-full bg-gradient-brand hover:opacity-90">
+                  <Button type="submit" variant="gradient" className="w-full">
                     <span className="hidden sm:inline">Continue to Growth Metrics</span>
                     <span className="sm:hidden">Continue</span>
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -425,64 +425,64 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 transition={{ duration: 0.3 }}
               >
                 <div className="mb-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-zinc-100 mb-2">Growth & Retention</h3>
-                  <p className="text-zinc-400 text-sm">Optional metrics to improve accuracy - you can skip this step</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-2">Growth & Retention</h3>
+                  <p className="text-slate-600 text-sm">Optional metrics to improve accuracy - you can skip this step</p>
                 </div>
 
                 <form onSubmit={step2Form.handleSubmit(onStep2Submit)} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="flex items-center text-sm font-medium text-zinc-200 mb-2">
+                      <label className="flex items-center text-sm font-medium text-slate-700 mb-2">
                         MRR Growth % (MoM)
                         <InfoTooltip content={metricTooltips.mrrGrowth} />
                       </label>
                       <Input
                         type="number"
                         placeholder="5"
-                        className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                        className="bg-white border-slate-200 text-slate-900"
                         {...step2Form.register('mrrGrowth', { valueAsNumber: true })}
                       />
-                      <p className="text-zinc-500 text-xs mt-1">Default: 5%</p>
+                      <p className="text-slate-500 text-xs mt-1">Default: 5%</p>
                     </div>
 
                     <div>
-                      <label className="flex items-center text-sm font-medium text-zinc-200 mb-2">
+                      <label className="flex items-center text-sm font-medium text-slate-700 mb-2">
                         Churn % (monthly)
                         <InfoTooltip content={metricTooltips.logoChurn} />
                       </label>
                       <Input
                         type="number"
                         placeholder="3"
-                        className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                        className="bg-white border-slate-200 text-slate-900"
                         {...step2Form.register('logoChurn', { valueAsNumber: true })}
                       />
-                      <p className="text-zinc-500 text-xs mt-1">Default: 3%</p>
+                      <p className="text-slate-500 text-xs mt-1">Default: 3%</p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="flex items-center text-sm font-medium text-zinc-200 mb-2">
+                      <label className="flex items-center text-sm font-medium text-slate-700 mb-2">
                         Net Revenue Retention (%)
                         <InfoTooltip content={metricTooltips.nrr} />
                       </label>
                       <Input
                         type="number"
                         placeholder="Optional"
-                        className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                        className="bg-white border-slate-200 text-slate-900"
                         {...step2Form.register('nrr', { valueAsNumber: true })}
                       />
                     </div>
 
                     <div>
-                      <label className="flex items-center text-sm font-medium text-zinc-200 mb-2">
+                      <label className="flex items-center text-sm font-medium text-slate-700 mb-2">
                         ARPU/ACV (€)
                         <InfoTooltip content={metricTooltips.arpu} />
                       </label>
                       <Input
                         type="number"
                         placeholder="Optional"
-                        className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                        className="bg-white border-slate-200 text-slate-900"
                         {...step2Form.register('arpu', { valueAsNumber: true })}
                       />
                     </div>
@@ -490,20 +490,20 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="flex items-center text-sm font-medium text-zinc-200 mb-2">
+                      <label className="flex items-center text-sm font-medium text-slate-700 mb-2">
                         Number of Customers
                         <InfoTooltip content={metricTooltips.customers} />
                       </label>
                       <Input
                         type="number"
                         placeholder="Optional"
-                        className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                        className="bg-white border-slate-200 text-slate-900"
                         {...step2Form.register('customers', { valueAsNumber: true })}
                       />
                     </div>
 
                     <div>
-                      <label className="flex items-center text-sm font-medium text-zinc-200 mb-2">
+                      <label className="flex items-center text-sm font-medium text-slate-700 mb-2">
                         Sales Model
                         <InfoTooltip content={metricTooltips.salesModel} />
                       </label>
@@ -512,7 +512,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                         control={step2Form.control}
                         render={({ field }) => (
                           <Select onValueChange={field.onChange} value={field.value}>
-                            <SelectTrigger className="bg-zinc-800 border-zinc-700 text-zinc-100">
+                            <SelectTrigger className="bg-white border-slate-200 text-slate-900">
                               <SelectValue placeholder="Select sales model" />
                             </SelectTrigger>
                             <SelectContent>
@@ -531,7 +531,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       <ArrowLeft className="mr-2 h-4 w-4" />
                       Back
                     </Button>
-                    <Button type="submit" className="flex-1 bg-gradient-brand hover:opacity-90 order-1 sm:order-2">
+                    <Button type="submit" variant="gradient" className="flex-1 order-1 sm:order-2">
                       <span className="hidden sm:inline">Continue to Contact Info</span>
                       <span className="sm:hidden">Continue</span>
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -550,99 +550,99 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 transition={{ duration: 0.3 }}
               >
                 <div className="mb-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-zinc-100 mb-2">Get Your Valuation</h3>
-                  <p className="text-zinc-400 text-sm">Almost done! Just your contact info and we'll show your results.</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-2">Get Your Valuation</h3>
+                  <p className="text-slate-600 text-sm">Almost done! Just your contact info and we'll show your results.</p>
                 </div>
 
                 <form onSubmit={step3Form.handleSubmit(onStep3Submit)} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-zinc-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-700 mb-2">
                         First Name *
                       </label>
                       <Input
                         placeholder="John"
-                        className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                        className="bg-white border-slate-200 text-slate-900"
                         {...step3Form.register('firstName')}
                       />
                       {step3Form.formState.errors.firstName && (
-                        <p className="text-red-400 text-sm mt-1">{step3Form.formState.errors.firstName.message}</p>
+                        <p className="text-red-500 text-sm mt-1">{step3Form.formState.errors.firstName.message}</p>
                       )}
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-zinc-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-700 mb-2">
                         Last Name *
                       </label>
                       <Input
                         placeholder="Smith"
-                        className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                        className="bg-white border-slate-200 text-slate-900"
                         {...step3Form.register('lastName')}
                       />
                       {step3Form.formState.errors.lastName && (
-                        <p className="text-red-400 text-sm mt-1">{step3Form.formState.errors.lastName.message}</p>
+                        <p className="text-red-500 text-sm mt-1">{step3Form.formState.errors.lastName.message}</p>
                       )}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-zinc-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-700 mb-2">
                         Email *
                       </label>
                       <Input
                         type="email"
                         placeholder="john@example.com"
-                        className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                        className="bg-white border-slate-200 text-slate-900"
                         {...step3Form.register('email')}
                       />
                       {step3Form.formState.errors.email && (
-                        <p className="text-red-400 text-sm mt-1">{step3Form.formState.errors.email.message}</p>
+                        <p className="text-red-500 text-sm mt-1">{step3Form.formState.errors.email.message}</p>
                       )}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-zinc-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-700 mb-2">
                         Phone (optional)
                       </label>
                       <Input
                         type="tel"
                         placeholder="+1 555 123 4567"
-                        className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                        className="bg-white border-slate-200 text-slate-900"
                         {...step3Form.register('phone')}
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-zinc-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-700 mb-2">
                         Company (optional)
                       </label>
                       <Input
                         placeholder="Acme Corp"
-                        className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                        className="bg-white border-slate-200 text-slate-900"
                         {...step3Form.register('company')}
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-zinc-200 mb-2">
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
                       Website *
                     </label>
                     <Input
                       type="url"
                       placeholder="https://company.com"
-                      className="bg-zinc-800 border-zinc-700 text-zinc-100"
+                      className="bg-white border-slate-200 text-slate-900"
                       {...step3Form.register('website')}
                     />
                     {step3Form.formState.errors.website && (
-                      <p className="text-red-400 text-sm mt-1">{step3Form.formState.errors.website.message}</p>
+                      <p className="text-red-500 text-sm mt-1">{step3Form.formState.errors.website.message}</p>
                     )}
                   </div>
 
-                  <div className="flex items-start space-x-3 p-4 bg-zinc-800/50 rounded-lg">
+                  <div className="flex items-start space-x-3 p-4 bg-slate-50 rounded-lg border border-slate-200">
                     <Controller
                       name="consent"
                       control={step3Form.control}
@@ -655,11 +655,11 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       )}
                     />
                     <div>
-                      <p className="text-sm text-zinc-300">
+                      <p className="text-sm text-slate-700">
                         I agree to be contacted by Monoclick.ai about AI automation opportunities. *
                       </p>
                       {step3Form.formState.errors.consent && (
-                        <p className="text-red-400 text-sm mt-1">{step3Form.formState.errors.consent.message}</p>
+                        <p className="text-red-500 text-sm mt-1">{step3Form.formState.errors.consent.message}</p>
                       )}
                     </div>
                   </div>
@@ -669,7 +669,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       <ArrowLeft className="mr-2 h-4 w-4" />
                       Back
                     </Button>
-                    <Button type="submit" disabled={isLoading} className="flex-1 bg-gradient-brand hover:opacity-90 order-1 sm:order-2">
+                    <Button type="submit" variant="gradient" disabled={isLoading} className="flex-1 order-1 sm:order-2">
                       {isLoading ? 'Calculating...' : 'Get My Valuation'}
                       {!isLoading && <TrendingUp className="ml-2 h-4 w-4" />}
                     </Button>
@@ -686,20 +686,20 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 transition={{ duration: 0.5 }}
               >
                 <div className="text-center mb-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-brand rounded-full mb-4">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-brand rounded-full mb-4 shadow-brand">
                     <CheckCircle2 className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-100 mb-2">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-2">
                     Your SaaS Valuation
                   </h3>
-                  <p className="text-zinc-400">Based on current market conditions and your metrics</p>
+                  <p className="text-slate-600">Based on current market conditions and your metrics</p>
                 </div>
 
-                <div className="bg-gradient-to-r from-indigo-500/10 to-cyan-500/10 rounded-2xl p-6 mb-6 border border-indigo-500/20">
+                <div className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6 mb-6 border border-indigo-200">
                   <div className="text-center mb-4">
-                    <div className="text-sm text-zinc-400 mb-2">Estimated Valuation Range</div>
+                    <div className="text-sm text-slate-600 mb-2">Estimated Valuation Range</div>
                     <motion.div
-                      className="text-2xl sm:text-3xl font-heading font-bold text-gradient mb-1"
+                      className="text-2xl sm:text-3xl font-semibold text-gradient mb-1"
                       initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
@@ -707,7 +707,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       {formatCurrency(animatedValuation.low)} - {formatCurrency(animatedValuation.high)}
                     </motion.div>
                     <motion.div
-                      className="text-base sm:text-lg text-zinc-300"
+                      className="text-base sm:text-lg text-slate-700"
                       initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 0.5, delay: 0.4 }}
@@ -715,7 +715,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       Point Estimate: <span className="font-semibold text-gradient">{formatCurrency(animatedValuation.point)}</span>
                     </motion.div>
                     <motion.div
-                      className="text-sm text-zinc-400 mt-2"
+                      className="text-sm text-slate-500 mt-2"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.5, delay: 0.6 }}
@@ -727,11 +727,11 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
 
                 {valuation.insights && valuation.insights.length > 0 && (
                   <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-zinc-100 mb-3">Key Insights</h4>
+                    <h4 className="text-lg font-semibold text-slate-900 mb-3">Key Insights</h4>
                     <div className="space-y-2">
                       {valuation.insights.map((insight: string, index: number) => (
-                        <div key={index} className="flex items-start space-x-2 text-sm text-zinc-300">
-                          <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full mt-2 flex-shrink-0" />
+                        <div key={index} className="flex items-start space-x-2 text-sm text-slate-600">
+                          <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full mt-2 flex-shrink-0" />
                           <span>{insight}</span>
                         </div>
                       ))}
@@ -739,8 +739,8 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                   </div>
                 )}
 
-                <div className="bg-zinc-800/50 rounded-xl p-4 mb-6">
-                  <p className="text-xs text-zinc-400 text-center">
+                <div className="bg-slate-50 rounded-xl p-4 mb-6 border border-slate-200">
+                  <p className="text-xs text-slate-500 text-center">
                     <strong>Disclaimer:</strong> This is an educational estimate based on market data and your inputs.
                     It is not financial advice and actual valuations may vary significantly based on due diligence,
                     market conditions, and specific buyer requirements.
@@ -748,19 +748,20 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 </div>
 
                 <div className="text-center">
-                  <div className="mb-4 p-3 sm:p-4 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-lg border border-red-500/20">
-                    <p className="text-sm sm:text-base text-orange-300 font-medium">
+                  <div className="mb-4 p-3 sm:p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg border border-amber-200">
+                    <p className="text-sm sm:text-base text-amber-800 font-medium">
                       Want to discover how AI can 10x your SaaS valuation?
                     </p>
-                    <p className="text-xs sm:text-sm text-red-300 mt-1">
-                      Only <span className="font-bold">3 spots left</span> for scaling projects this month (September 2025)
+                    <p className="text-xs sm:text-sm text-amber-700 mt-1">
+                      Only <span className="font-bold">3 spots left</span> for scaling projects this month
                     </p>
                   </div>
 
                   <Button
                     asChild
                     size="lg"
-                    className="bg-gradient-brand hover:opacity-90 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 h-auto shadow-lg shadow-indigo-500/25 animate-pulse w-full sm:w-auto"
+                    variant="gradient"
+                    className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 h-auto shadow-brand-lg w-full sm:w-auto"
                   >
                     <a
                       href="https://calendly.com/henrybuisseret/30min"
@@ -776,33 +777,20 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                   </Button>
 
                   <div className="mt-4 space-y-2 sm:space-y-3">
-                    <p className="text-xs sm:text-sm text-zinc-300 font-medium flex items-center justify-center sm:justify-start">
-                      <span className="mr-2 flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white flex items-center justify-center">
-                        <svg className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-zinc-900" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </span>
-                      30-minute personalized AI roadmap
-                    </p>
-                    <p className="text-xs sm:text-sm text-zinc-300 font-medium flex items-center justify-center sm:justify-start">
-                      <span className="mr-2 flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white flex items-center justify-center">
-                        <svg className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-zinc-900" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </span>
-                      Identify your biggest automation opportunities
-                    </p>
-                    <p className="text-xs sm:text-sm text-zinc-300 font-medium flex items-center justify-center sm:justify-start">
-                      <span className="mr-2 flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white flex items-center justify-center">
-                        <svg className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-zinc-900" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </span>
-                      Get exact steps to increase your multiple by 2-3x
-                    </p>
-                    {/* <p className="text-xs text-zinc-500 mt-3">
-                      No pitch, no pressure - just actionable insights for your business
-                    </p> */}
+                    {[
+                      '30-minute personalized AI roadmap',
+                      'Identify your biggest automation opportunities',
+                      'Get exact steps to increase your multiple by 2-3x'
+                    ].map((item, index) => (
+                      <p key={index} className="text-xs sm:text-sm text-slate-600 font-medium flex items-center justify-center">
+                        <span className="mr-2 flex-shrink-0 w-4 h-4 rounded-full bg-indigo-500 flex items-center justify-center">
+                          <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </span>
+                        {item}
+                      </p>
+                    ))}
                   </div>
                 </div>
               </motion.div>

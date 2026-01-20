@@ -4,48 +4,27 @@
 
 @layer base {
   :root {
+    /* Light mode - with original indigo/cyan accent */
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 222 47% 11%;
     --primary: 238 75% 59%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 238 75% 95%;
+    --accent-foreground: 238 75% 45%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
     --ring: 238 75% 59%;
-    --radius: 1rem;
-  }
-
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 238 75% 59%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 238 75% 59%;
+    --radius: 0.75rem;
   }
 }
 
@@ -64,13 +43,17 @@
   }
 }
 
-/* Custom brand styles */
+/* Custom brand styles - ORIGINAL indigo to cyan gradient */
 .bg-gradient-brand {
   background: linear-gradient(135deg, #4f46e5 0%, #22d3ee 100%);
 }
 
+.bg-gradient-brand-subtle {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(34, 211, 238, 0.04) 100%);
+}
+
 .bg-gradient-subtle {
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(34, 211, 238, 0.05) 100%);
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 }
 
 .text-gradient {
@@ -80,16 +63,36 @@
   background-clip: text;
 }
 
-/* Animated dots pattern */
+/* Modern dot pattern - subtle */
 .dots-pattern {
-  background-image: radial-gradient(circle, rgba(79, 70, 229, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
-  animation: dots-float 20s linear infinite;
+  background-image: radial-gradient(circle, rgba(79, 70, 229, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-@keyframes dots-float {
-  0% { background-position: 0 0; }
-  100% { background-position: 20px 20px; }
+/* Grid pattern for hero backgrounds */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(79, 70, 229, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 70, 229, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Logo strip animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-scroll-left:hover {
+  animation-play-state: paused;
 }
 
 /* Smooth scrolling */
@@ -100,6 +103,16 @@ html {
 /* Focus styles */
 :focus-visible {
   @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+}
+
+/* Modern card hover effect */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10 hover:-translate-y-1;
+}
+
+/* Glassmorphism effect for header */
+.glass {
+  @apply backdrop-blur-xl bg-white/80 border-b border-slate-200/50;
 }
 
 /* Reduced motion */
@@ -116,7 +129,18 @@ html {
     transition-delay: 0s !important;
   }
 
-  .dots-pattern {
+  .dots-pattern,
+  .animate-scroll-left {
     animation: none;
   }
+}
+
+/* Typography refinements */
+h1, h2, h3, h4, h5, h6 {
+  @apply tracking-tight;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-indigo-100 text-indigo-900;
 }

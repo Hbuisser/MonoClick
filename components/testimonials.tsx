@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Star, ExternalLink } from 'lucide-react'
+import { Star, ExternalLink, Quote } from 'lucide-react'
 import Link from 'next/link'
 
 import { Card, CardContent } from '@/components/ui/card'
@@ -11,7 +11,7 @@ const testimonials = [
   {
     content: "Henry has done a great job. Technically he is capable but more than that he has been very patient and very customer service and customer support oriented. I thought he would give up but never did. More freelancers like him are needed on the platform. I highly recommend him.",
     author: "Chris O.",
-    role: "Client",
+    role: "Manager",
     company: "Worldwide Quality Control",
     rating: 5
   },
@@ -32,7 +32,7 @@ const testimonials = [
   {
     content: "Working with Henry is a breath of fresh air. Not only is he an expert in development and everything else to do with websites and apps, but also being able to communicate with someone with fluent english has been a lifesaver. Henry also went above and beyond of what we had asked of him.",
     author: "Eru",
-    role: "Client",
+    role: "Manager",
     company: "Kia Ora Kahi",
     rating: 5
   },
@@ -42,12 +42,33 @@ const testimonials = [
     role: "CTO",
     company: "Utiligize",
     rating: 5
+  },
+  {
+    content: "Superstar, great work. Extremely fast and very knowledgeable. Highly recommended.",
+    author: "Adonis",
+    role: "Founder & CEO",
+    company: "welzo.com",
+    rating: 5
+  },
+  {
+    content: "A truly fascinating skillset when it comes to AI automations. I haven't been that impressed in quite some time!",
+    author: "Kai",
+    role: "Founder",
+    company: "theanxietysupporthub.com",
+    rating: 5
+  },
+  {
+    content: "Very good and enriching workshop.",
+    author: "Doron",
+    role: "Manager",
+    company: "IT Development",
+    rating: 5
   }
 ]
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-zinc-900/20">
+    <section className="py-24 bg-white">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,72 +77,63 @@ export function Testimonials() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-zinc-100 mb-4">
+          <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-3">
+            Customer Stories
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 font-heading">
             What our clients say
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Don't just take our word for it. Here's what business leaders say
             about working with MonoClick.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
             >
-              <Card className="h-full bg-zinc-900/50 border-zinc-800 hover:border-zinc-700 transition-colors duration-300">
+              <Card className="h-full hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-300 border-slate-100">
                 <CardContent className="p-6">
+                  {/* Quote icon */}
+                  <div className="mb-4">
+                    <Quote className="h-8 w-8 text-indigo-100 fill-indigo-100" />
+                  </div>
+
                   {/* Star rating */}
-                  <div className="flex items-center space-x-1 mb-4">
+                  <div className="flex items-center space-x-0.5 mb-4">
                     {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
 
                   {/* Quote */}
-                  <blockquote className="text-zinc-300 leading-relaxed mb-6">
+                  <blockquote className="text-slate-600 leading-relaxed mb-6 text-sm">
                     "{testimonial.content}"
                   </blockquote>
 
                   {/* Author */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
                     <div className="flex items-center space-x-3">
-                      <div className="h-10 w-10 rounded-full bg-gradient-brand flex items-center justify-center">
+                      <div className="h-10 w-10 rounded-full bg-gradient-brand flex items-center justify-center shadow-sm">
                         <span className="text-white font-semibold text-sm">
                           {testimonial.author.split(' ').map(n => n[0]).join('')}
                         </span>
                       </div>
                       <div>
-                        <div className="text-zinc-100 font-medium text-sm">
+                        <div className="text-slate-900 font-medium text-sm">
                           {testimonial.author}
                         </div>
-                        <div className="text-zinc-400 text-xs">
-                          {testimonial.company}
+                        <div className="text-slate-500 text-xs">
+                          {testimonial.role}{testimonial.company && ` at ${testimonial.company}`}
                         </div>
                       </div>
                     </div>
-                    <Button
-                      asChild
-                      variant="outline"
-                      size="sm"
-                      className="border-zinc-700 hover:border-zinc-600 bg-zinc-900/50 hover:bg-zinc-800/50"
-                    >
-                      <Link
-                        href="https://www.upwork.com/freelancers/~013c83e6e4d55ef2e3?viewMode=1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-1 text-zinc-300 hover:text-zinc-100"
-                      >
-                        <span className="text-xs">See on Upwork</span>
-                        <ExternalLink className="h-3 w-3" />
-                      </Link>
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -132,21 +144,38 @@ export function Testimonials() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6"
         >
-          <div className="inline-flex items-center space-x-6 px-6 py-3 rounded-full bg-zinc-800/30 border border-zinc-800">
+          <div className="inline-flex items-center space-x-6 px-6 py-3 rounded-full bg-slate-50 border border-slate-200">
             <div className="flex items-center space-x-2">
-              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-              <span className="text-sm text-zinc-300">5/5 average rating</span>
+              <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+              <span className="text-sm text-slate-700 font-medium">5/5 average rating</span>
             </div>
-            <div className="h-4 w-px bg-zinc-700" />
+            <div className="h-4 w-px bg-slate-200" />
             <div className="flex items-center space-x-2">
-              <span className="h-2 w-2 rounded-full bg-green-400" />
-              <span className="text-sm text-zinc-300">100% project success rate</span>
+              <span className="h-2 w-2 rounded-full bg-green-500" />
+              <span className="text-sm text-slate-700 font-medium">100% project success rate</span>
             </div>
           </div>
+
+          <Button
+            asChild
+            variant="outline"
+            size="sm"
+            className="group"
+          >
+            <Link
+              href="https://www.upwork.com/freelancers/~013c83e6e4d55ef2e3?viewMode=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center"
+            >
+              View all reviews on Upwork
+              <ExternalLink className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </Button>
         </motion.div>
       </div>
     </section>

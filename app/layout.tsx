@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
-import { Outfit } from 'next/font/google'
+import { Inter, Space_Grotesk } from 'next/font/google'
 import Script from 'next/script'
 
 import { createMetadata } from '@/lib/seo'
@@ -8,19 +7,17 @@ import {
   generateOrganizationSchema,
   generateWebSiteSchema,
 } from '@/lib/schema-org'
-import { CookieBanner } from '@/components/cookie-banner'
 import '@/styles/globals.css'
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-poppins',
-  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
   display: 'swap',
 })
 
-const outfit = Outfit({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-outfit',
+  variable: '--font-space-grotesk',
   display: 'swap',
 })
 
@@ -35,7 +32,7 @@ export default function RootLayout({
   const websiteSchema = generateWebSiteSchema()
 
   return (
-    <html lang="en" className={`${poppins.variable} ${outfit.variable}`}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -58,9 +55,8 @@ export default function RootLayout({
         />
 
       </head>
-      <body className="min-h-screen bg-zinc-950 text-zinc-100 antialiased">
+      <body className="min-h-screen bg-white text-slate-900 antialiased font-sans">
         {children}
-        <CookieBanner />
         <Script src="https://chat.monoclick.ai/widget.js" />
       </body>
     </html>

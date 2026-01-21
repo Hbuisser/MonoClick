@@ -95,7 +95,7 @@ export default function TechnologyPage() {
               RAG: The AI That Actually Knows Your Business
             </h1>
             <p className="text-lg text-slate-600 mb-10">
-              RAG (Retrieval-Augmented Generation) is the breakthrough technology that allows AI chatbots to give accurate, 
+              RAG (Retrieval-Augmented Generation) is the breakthrough technology that allows AI chatbots to give accurate,
               helpful answers based on your specific knowledge—not generic responses or made-up information.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -128,15 +128,15 @@ export default function TechnologyPage() {
           <div className="bg-slate-50 rounded-2xl p-8 lg:p-12 mb-12">
             <div className="prose prose-lg max-w-none text-slate-600">
               <p className="text-xl leading-relaxed mb-6">
-                <strong className="text-slate-900">The problem with regular AI:</strong> ChatGPT and similar tools are trained on general internet data. 
+                <strong className="text-slate-900">The problem with regular AI:</strong> ChatGPT and similar tools are trained on general internet data.
                 They don't know your products, your policies, or your specific way of doing things. When they don't know something, they often make things up.
               </p>
               <p className="text-xl leading-relaxed mb-6">
-                <strong className="text-slate-900">The RAG solution:</strong> We connect AI to your actual knowledge base—your documents, FAQs, product info, 
+                <strong className="text-slate-900">The RAG solution:</strong> We connect AI to your actual knowledge base—your documents, FAQs, product info,
                 policies, and data. When someone asks a question, the AI first searches your knowledge, then uses that information to craft an accurate response.
               </p>
               <p className="text-xl leading-relaxed">
-                <strong className="text-slate-900">The result:</strong> An AI assistant that gives helpful, accurate answers about YOUR business, 
+                <strong className="text-slate-900">The result:</strong> An AI assistant that gives helpful, accurate answers about YOUR business,
                 backed by your actual content. No hallucinations, no made-up facts—just your knowledge, delivered instantly.
               </p>
             </div>
@@ -194,15 +194,15 @@ export default function TechnologyPage() {
               </h2>
               <div className="space-y-4 text-slate-600">
                 <p>
-                  The RAG market is projected to grow from $1.4 billion in 2024 to over $40 billion by 2030. 
+                  The RAG market is projected to grow from $1.4 billion in 2024 to over $40 billion by 2030.
                   This isn't just hype—it's a fundamental shift in how businesses operate.
                 </p>
                 <p>
-                  Companies that implement knowledge-based AI now will have a significant competitive advantage. 
+                  Companies that implement knowledge-based AI now will have a significant competitive advantage.
                   They'll be able to serve customers faster, onboard employees quicker, and scale operations without proportionally increasing headcount.
                 </p>
                 <p>
-                  By 2026, Gartner predicts that 80% of enterprises will have deployed RAG-based applications. 
+                  By 2026, Gartner predicts that 80% of enterprises will have deployed RAG-based applications.
                   The question isn't whether to adopt this technology—it's how quickly you can implement it.
                 </p>
               </div>
@@ -215,7 +215,7 @@ export default function TechnologyPage() {
                   <div>
                     <h4 className="font-semibold text-slate-900 mb-1">Early Adopter Advantage</h4>
                     <p className="text-sm text-slate-600">
-                      Businesses implementing RAG-based chatbots now report 60-80% reduction in support tickets 
+                      Businesses implementing RAG-based chatbots now report 60-80% reduction in support tickets
                       and significant improvements in customer satisfaction scores.
                     </p>
                   </div>
@@ -266,12 +266,12 @@ export default function TechnologyPage() {
                 </div>
                 <div className="space-y-4 text-slate-600">
                   <p>
-                    n8n is an open-source workflow automation platform that allows us to connect your AI chatbot 
+                    n8n is an open-source workflow automation platform that allows us to connect your AI chatbot
                     to any internal tool, database, or API your company uses.
                   </p>
                   <p>
-                    This means your chatbot doesn't just answer questions—it can take actions. 
-                    It can look up orders in your CRM, check inventory in your system, create tickets in your helpdesk, 
+                    This means your chatbot doesn't just answer questions—it can take actions.
+                    It can look up orders in your CRM, check inventory in your system, create tickets in your helpdesk,
                     and much more.
                   </p>
                 </div>
@@ -310,7 +310,7 @@ export default function TechnologyPage() {
                     <div>
                       <h4 className="font-semibold text-slate-900 mb-1">Example: Agentic Chatbot</h4>
                       <p className="text-sm text-slate-600">
-                        A customer asks "Where's my order?" → The chatbot searches your Shopify store, 
+                        A customer asks "Where's my order?" → The chatbot searches your Shopify store,
                         finds the order, checks the shipping status, and responds with a tracking link—all automatically.
                       </p>
                     </div>
@@ -329,7 +329,7 @@ export default function TechnologyPage() {
             Ready to Give Your Business an AI Brain?
           </h2>
           <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-            Let's discuss how RAG-powered chatbots can transform your customer support, 
+            Let's discuss how RAG-powered chatbots can transform your customer support,
             internal knowledge access, and team productivity.
           </p>
           <Button asChild variant="gradient" size="lg">

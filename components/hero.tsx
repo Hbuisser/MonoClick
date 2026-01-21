@@ -61,7 +61,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8rem] font-bold tracking-tight text-slate-900 leading-[1.0] mb-8 font-heading"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] font-bold tracking-tight text-slate-900 leading-[1.0] mb-8 font-heading"
         >
           <span className="text-gradient">AI growth partner</span>
           <br />

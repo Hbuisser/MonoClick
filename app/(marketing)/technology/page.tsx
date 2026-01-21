@@ -9,7 +9,8 @@ import {
   TrendingUp,
   Zap,
   Link2,
-  CheckCircle
+  CheckCircle,
+  GraduationCap
 } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
@@ -322,8 +323,73 @@ export default function TechnologyPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Workshops Section */}
       <section className="py-24 bg-white">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-indigo-50 to-cyan-50 rounded-3xl p-8 lg:p-12 border border-indigo-100">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-brand flex items-center justify-center shadow-brand">
+                    <GraduationCap className="w-6 h-6 text-white" />
+                  </div>
+                  <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider">
+                    Learn From Experts
+                  </p>
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-heading">
+                  AI Agents & RAG Workshops
+                </h2>
+                <p className="text-slate-600 mb-6">
+                  Want your team to understand and leverage AI technology? We offer hands-on workshops
+                  on AI agents and RAG architecture—designed for technical and non-technical teams alike.
+                </p>
+                <div className="space-y-3 mb-8">
+                  {[
+                    'Understand how RAG and AI agents work',
+                    'Identify automation opportunities in your business',
+                    'Hands-on building sessions with real tools',
+                    'Best practices for AI implementation'
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-indigo-500 flex-shrink-0" />
+                      <span className="text-slate-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <Button asChild variant="gradient" size="lg">
+                  <Link
+                    href="https://calendly.com/henrybuisseret/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Book a Workshop
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { title: 'Half-Day', desc: 'Intro to AI & RAG fundamentals' },
+                  { title: 'Full-Day', desc: 'Deep dive with hands-on building' },
+                  { title: 'Team Size', desc: 'Tailored for 5-20 participants' },
+                  { title: 'Format', desc: 'On-site or remote available' }
+                ].map((item) => (
+                  <Card key={item.title} className="bg-white/80 backdrop-blur">
+                    <CardContent className="p-5">
+                      <h4 className="font-semibold text-slate-900 mb-1">{item.title}</h4>
+                      <p className="text-sm text-slate-600">{item.desc}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-slate-50/50">
         <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-heading">
             Ready to Give Your Business an AI Brain?

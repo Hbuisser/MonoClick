@@ -9,7 +9,8 @@ import {
   ArrowRight,
   CheckCircle,
   Clock,
-  Check
+  Check,
+  GraduationCap
 } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
@@ -112,6 +113,28 @@ const services = [
     pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
     technologies: ['OpenAI', 'n8n', 'Notion', 'Confluence', 'Google Drive', 'Slack']
+  },
+  {
+    icon: GraduationCap,
+    title: 'AI Agents & RAG Workshops',
+    description: 'Hands-on workshops for your team to understand and leverage AI agents and RAG technology. Learn how to build, deploy, and optimize AI-powered systems for your business.',
+    image: '/rag.png',
+    features: [
+      'Introduction to AI agents & RAG',
+      'Hands-on building sessions',
+      'Best practices & architecture',
+      'Use case identification',
+      'Live Q&A and troubleshooting',
+      'Custom workshop content'
+    ],
+    benefits: [
+      'Team AI literacy & confidence',
+      'Identify automation opportunities',
+      'Build internal AI capabilities'
+    ],
+    pricing: 'Custom pricing based on team size',
+    timeline: 'Half-day or full-day sessions',
+    technologies: ['OpenAI', 'n8n', 'RAG Architecture', 'Vector Databases', 'Prompt Engineering']
   }
 ]
 

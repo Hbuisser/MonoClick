@@ -60,7 +60,6 @@ export function ProcessSteps() {
             Our Process
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 font-heading">
-            How we build your AI system
             How we deliver results
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
@@ -68,58 +67,56 @@ export function ProcessSteps() {
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Connection line - desktop only */}
-          <div className="hidden lg:block absolute top-16 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-indigo-200 via-cyan-200 to-indigo-200" />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-            {steps.map((step, index) => {
-              const Icon = step.icon
-              return (
-                <motion.div
-                  key={step.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.15 }}
-                  viewport={{ once: true }}
-                  className="relative"
-                >
-                  <div className="text-center">
-                    {/* Step circle */}
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      className="relative z-10 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-brand text-white font-bold text-lg mb-6 shadow-brand"
-                    >
-                      {step.number}
-                    </motion.div>
-
-                    {/* Icon badge */}
-                    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 translate-x-6 -translate-y-1">
-                      <div className="h-7 w-7 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-center">
-                        <Icon className="h-4 w-4 text-indigo-600" />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="mt-2">
-                      <h3 className="text-xl font-semibold text-slate-900 mb-1">
-                        {step.title}
-                      </h3>
-                      <p className="text-sm text-indigo-600 font-medium mb-3">
-                        {step.subtitle}
-                      </p>
-                      <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                        {step.description}
-                      </p>
-                      <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-slate-100 text-xs font-medium text-slate-600">
-                        <span className="mr-1.5">⏱️</span> {step.duration}
-                      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {steps.map((step, index) => {
+            const Icon = step.icon
+            const isLast = index === steps.length - 1
+            return (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                {/* Connector arrow - hidden on mobile and for last item */}
+                {!isLast && (
+                  <div className="hidden lg:flex absolute top-1/2 -right-[1.25rem] -translate-y-1/2 z-20">
+                    <div className="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center">
+                      <ArrowRight className="h-5 w-5 text-indigo-500" />
                     </div>
                   </div>
-                </motion.div>
-              )
-            })}
-          </div>
+                )}
+
+                <div className="bg-slate-50 rounded-2xl p-6 h-full border border-slate-100 hover:border-indigo-200 hover:shadow-soft transition-all duration-300">
+                  {/* Header with number and icon */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-brand text-white font-bold text-sm shadow-brand">
+                      {step.number}
+                    </div>
+                    <div className="h-10 w-10 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-center">
+                      <Icon className="h-5 w-5 text-indigo-600" />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-semibold text-slate-900 mb-1">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-indigo-600 font-medium mb-3">
+                    {step.subtitle}
+                  </p>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    {step.description}
+                  </p>
+                  <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-medium text-slate-600">
+                    <span className="mr-1.5">⏱️</span> {step.duration}
+                  </div>
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
 
         {/* Bottom CTA */}

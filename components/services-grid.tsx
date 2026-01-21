@@ -8,7 +8,9 @@ import {
   Scale,
   Landmark,
   // ArrowUpRight,
-  Check
+  Check,
+  GraduationCap,
+  Sparkles
 } from 'lucide-react'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -61,6 +63,19 @@ const services = [
       'Cross-team knowledge',
       'Secure & private'
     ]
+  },
+  {
+    icon: GraduationCap,
+    title: 'AI Agents & RAG Workshops',
+    description: 'Hands-on workshops for your team to understand and build with AI agents and RAG technology.',
+    image: '/rag.png',
+    features: [
+      'Hands-on building sessions',
+      'Best practices & architecture',
+      'Use case identification',
+      'Half-day or full-day'
+    ],
+    highlight: true
   }
 ]
 
@@ -90,6 +105,8 @@ export function ServicesGrid() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon
+            const isHighlight = 'highlight' in service && service.highlight
+            const isLastOdd = index === services.length - 1 && services.length % 2 === 1
             return (
               <motion.div
                 key={service.title}
@@ -97,30 +114,29 @@ export function ServicesGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group"
+                className={`group ${isLastOdd ? 'lg:col-span-2 lg:max-w-xl lg:mx-auto' : ''}`}
               >
-                <Card className="h-full overflow-hidden hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-300 border-slate-100">
-                  {/* Image Header - commented out for now
-                  <div className="relative h-52 bg-slate-100 overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      width={800}
-                      height={400}
-                      className="w-full h-full object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent" />
+                <Card className={`h-full overflow-hidden hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-300 ${
+                  isHighlight
+                    ? 'border-2 border-indigo-400 bg-gradient-to-br from-indigo-50/50 to-cyan-50/50 relative'
+                    : 'border-slate-100'
+                }`}>
+                  {isHighlight && (
                     <div className="absolute top-4 right-4">
-                      <div className="h-8 w-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-sm group-hover:bg-indigo-500 transition-colors">
-                        <ArrowUpRight className="h-4 w-4 text-slate-600 group-hover:text-white transition-colors" />
+                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-medium">
+                        <Sparkles className="h-3 w-3" />
+                        New
                       </div>
                     </div>
-                  </div>
-                  */}
+                  )}
 
                   <CardHeader className="pb-3 pt-6">
                     <div className="flex items-start gap-4">
-                      <div className="h-12 w-12 rounded-xl bg-gradient-brand flex items-center justify-center shadow-brand flex-shrink-0">
+                      <div className={`h-12 w-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                        isHighlight
+                          ? 'bg-indigo-600 shadow-lg shadow-indigo-500/30'
+                          : 'bg-gradient-brand shadow-brand'
+                      }`}>
                         <Icon className="h-6 w-6 text-white" />
                       </div>
                       <div>
@@ -138,7 +154,7 @@ export function ServicesGrid() {
                     <div className="grid grid-cols-2 gap-2">
                       {service.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center text-sm text-slate-600">
-                          <Check className="h-4 w-4 text-indigo-500 mr-2 flex-shrink-0" />
+                          <Check className={`h-4 w-4 mr-2 flex-shrink-0 ${isHighlight ? 'text-indigo-600' : 'text-indigo-500'}`} />
                           <span>{feature}</span>
                         </div>
                       ))}

@@ -10,7 +10,8 @@ import {
   CheckCircle,
   Clock,
   Check,
-  GraduationCap
+  GraduationCap,
+  Sparkles
 } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
@@ -134,7 +135,8 @@ const services = [
     ],
     pricing: 'Custom pricing based on team size',
     timeline: 'Half-day or full-day sessions',
-    technologies: ['OpenAI', 'n8n', 'RAG Architecture', 'Vector Databases', 'Prompt Engineering']
+    technologies: ['OpenAI', 'n8n', 'RAG Architecture', 'Vector Databases', 'Prompt Engineering'],
+    highlight: true
   }
 ]
 
@@ -202,15 +204,32 @@ export default function ServicesPage() {
           <div className="space-y-12">
             {services.map((service, index) => {
               const Icon = service.icon
+              const isHighlight = 'highlight' in service && service.highlight
               return (
-                <Card key={service.title} className="overflow-hidden hover:shadow-soft-lg transition-all duration-300">
+                <Card key={service.title} className={`overflow-hidden hover:shadow-soft-lg transition-all duration-300 relative ${
+                  isHighlight
+                    ? 'border-2 border-indigo-400 bg-gradient-to-br from-indigo-50/50 to-cyan-50/50'
+                    : ''
+                }`}>
+                  {isHighlight && (
+                    <div className="absolute top-6 right-6">
+                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-medium">
+                        <Sparkles className="h-3 w-3" />
+                        New
+                      </div>
+                    </div>
+                  )}
                   <div className="p-8 lg:p-10">
                     {/* Content Area */}
                     <div>
                       {/* Header */}
                       <div className="mb-8">
                         <div className="flex items-center space-x-4 mb-4">
-                          <div className="h-14 w-14 rounded-xl bg-gradient-brand flex items-center justify-center shadow-brand">
+                          <div className={`h-14 w-14 rounded-xl flex items-center justify-center ${
+                            isHighlight
+                              ? 'bg-indigo-600 shadow-lg shadow-indigo-500/30'
+                              : 'bg-gradient-brand shadow-brand'
+                          }`}>
                             <Icon className="h-7 w-7 text-white" />
                           </div>
                           <h2 className="text-2xl lg:text-3xl font-semibold text-slate-900">

@@ -81,9 +81,9 @@ export default function AboutPage() {
               MonoClick is a specialized AI automation agency delivering custom business process automation with AI.
               We build done-for-you AI automations, lead generation automation, and custom AI workflows for business growth.
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-6 max-w-2xl mx-auto">
               {stats.map((stat) => (
-                <div key={stat.label} className="text-center p-4 rounded-2xl bg-white border border-slate-200 shadow-soft">
+                <div key={stat.label} className="text-center p-4 rounded-2xl bg-white border border-slate-200 shadow-soft min-w-[140px]">
                   <div className="text-2xl font-bold text-gradient mb-1">{stat.value}</div>
                   <div className="text-sm text-slate-500">{stat.label}</div>
                 </div>

@@ -16,7 +16,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 const services = [
   {
     icon: MessageSquare,
-    title: 'AI Chatbot for Ecommerce',
+    title: 'AI Chatbot',
     description: 'Deploy intelligent chatbots trained on your FAQ, policies, and product catalog. Answer customer questions 24/7 and drive conversions.',
     image: '/rag.png',
     features: [

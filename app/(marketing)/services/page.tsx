@@ -28,7 +28,7 @@ export const metadata: Metadata = createMetadata({
 const services = [
   {
     icon: MessageSquare,
-    title: 'AI Chatbot for Ecommerce',
+    title: 'AI Chatbot',
     description: 'Deploy intelligent chatbots trained on your FAQ, policies, and product catalog. Answer customer questions instantly, provide product recommendations, and drive conversions 24/7.',
     image: '/rag.png',
     features: [

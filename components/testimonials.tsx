@@ -11,7 +11,7 @@ const testimonials = [
   {
     content: "By far the best AI developer I've ever worked with, and I've worked with many. Henry consistently goes above and beyond and is truly next level. He doesn't just deliver what's asked; he thinks ahead, anticipates challenges, and actively aligns his work with our broader business goals. His approach is structured, strategic, and incredibly clear. What really sets him apart is his communication. The Loom videos he provides to explain his thinking and implementations make everything seamless and easy to understand. Working with Henry is working with a true partner rather than just a freelancer. If you're looking for someone who combines deep technical skill with business insight and proactive thinking, Henry is your guy. Looking forward to many more projects together!!",
     author: "Fabien",
-    role: "Founder & CEO",
+    role: "CEO",
     company: "HearWell",
     rating: 5
   },
@@ -53,14 +53,14 @@ const testimonials = [
   {
     content: "Superstar, great work. Extremely fast and very knowledgeable. Highly recommended.",
     author: "Adonis",
-    role: "Founder & CEO",
+    role: "CEO",
     company: "welzo.com",
     rating: 5
   },
   {
     content: "A truly fascinating skillset when it comes to AI automations. I haven't been that impressed in quite some time!",
     author: "Kai",
-    role: "Founder",
+    role: "CEO",
     company: "theanxietysupporthub.com",
     rating: 5
   },

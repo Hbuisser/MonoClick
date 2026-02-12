@@ -43,7 +43,7 @@ export function Hero() {
           <div className="w-[140px] h-[140px] rounded-full overflow-hidden shadow-2xl shadow-slate-900/20 border-4 border-white">
             <Image
               src="/pp.jpg"
-              alt="Henry Buisseret - Founder"
+              alt="Henry Buisseret"
               width={140}
               height={140}
               className="w-full h-full object-cover"
@@ -51,7 +51,7 @@ export function Hero() {
             />
           </div>
           <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white rounded-full px-3 py-1.5 shadow-lg border border-slate-100">
-            <p className="text-xs font-medium text-slate-700 whitespace-nowrap">Henry • Founder</p>
+            <p className="text-xs font-medium text-slate-700 whitespace-nowrap">Henry</p>
           </div>
         </div>
       </motion.div>
@@ -64,9 +64,9 @@ export function Hero() {
           transition={{ duration: 0.7 }}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] font-bold tracking-tight text-slate-900 leading-[1.0] mb-8 font-heading"
         >
-          <span className="text-gradient">AI growth partner</span>
+          <span className="text-gradient">AI Growth Partner</span>
           <br />
-          for fast-moving ecommerce
+          for E-commerce Brands
         </motion.h1>
 
         {/* Subtitle */}

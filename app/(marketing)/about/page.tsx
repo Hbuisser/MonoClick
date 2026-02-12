@@ -28,7 +28,7 @@ export const metadata: Metadata = createMetadata({
 const team = [
   {
     name: 'Henry Buisseret',
-    role: 'Founder & AI Automation Engineer',
+    role: 'AI Automation Engineer',
     bio: 'Belgian software engineer specializing in AI automation for ecommerce. Background in finance (KBC) and payments (Worldline). Expert in building custom AI systems for ecommerce brands using n8n, OpenAI, and modern tech stack.',
     location: 'Belgium',
     education: 'School 42 - Software Engineering',
@@ -75,7 +75,7 @@ export default function AboutPage() {
               About Us
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 font-heading">
-              About Our AI Automation Agency for Ecommerce
+              AI Growth Partner for Fast-Moving E-commerce Brands
             </h1>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-10">
               MonoClick is a specialized AI automation agency delivering custom AI growth systems for fast-moving ecommerce brands.
@@ -110,11 +110,11 @@ export default function AboutPage() {
                   We specialize in done-for-you AI solutions that save time, reduce costs, and drive revenue growth.
                 </p>
                 <p>
-                  From AI chatbots trained on your products to support automation with Gorgias/Zendesk, business dashboards, 
+                  From AI chatbots trained on your products to support automation with Gorgias/Zendesk, business dashboards,
                   AI content creation, and competitor ad intelligence, we build custom systems that integrate seamlessly with your ecommerce stack.
                 </p>
                 <p>
-                  Our clients include fast-moving ecommerce brands, DTC companies, and growing online retailers across Europe and globally 
+                  Our clients include fast-moving ecommerce brands, DTC companies, and growing online retailers across Europe and globally
                   who need AI automation that delivers measurable ROI. We don't sell generic software—every system is custom-built for your specific needs.
                 </p>
               </div>
@@ -180,11 +180,9 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-3">
-              Meet The Founder
-            </p>
+
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-heading">
-              About the founder
+              About Henry
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
               Henry Buisseret combines engineering expertise with real-world business experience
@@ -319,7 +317,7 @@ export default function AboutPage() {
                     Ecommerce-native AI solutions
                   </h3>
                   <p className="text-slate-600 text-sm">
-                    We leverage cutting-edge AI to create chatbots, support automation, dashboards, 
+                    We leverage cutting-edge AI to create chatbots, support automation, dashboards,
                     and competitive intelligence tailored for fast-moving ecommerce brands.
                   </p>
                 </div>

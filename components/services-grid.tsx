@@ -3,77 +3,75 @@
 import { motion } from 'framer-motion'
 // import Image from 'next/image'
 import {
-  Brain,
-  ShoppingCart,
-  Scale,
-  Landmark,
-  // ArrowUpRight,
-  Check,
-  GraduationCap,
-  Sparkles
+  MessageSquare,
+  HeadphonesIcon,
+  BarChart3,
+  Sparkles,
+  TrendingUp,
+  Check
 } from 'lucide-react'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 const services = [
   {
-    icon: Brain,
-    title: 'AI Customer Support',
-    description: 'Deploy intelligent support agents that resolve tickets 24/7. Reduce response time and increase customer satisfaction at scale.',
+    icon: MessageSquare,
+    title: 'AI Chatbot for Ecommerce',
+    description: 'Deploy intelligent chatbots trained on your FAQ, policies, and product catalog. Answer customer questions 24/7 and drive conversions.',
     image: '/rag.png',
     features: [
-      'Learns your entire knowledge base',
-      'Resolves 70% of tickets automatically',
-      'Seamless human handoff',
-      'Multi-channel support'
+      'Trained on your products',
+      'FAQ & policy knowledge',
+      'Order tracking assistance',
+      'Instant product recommendations'
     ]
   },
   {
-    icon: ShoppingCart,
-    title: 'Lead Qualification & Routing',
-    description: 'Automate lead scoring and routing with AI. Ensure your sales team focuses on the highest-value opportunities.',
+    icon: HeadphonesIcon,
+    title: 'AI Support Automation',
+    description: 'Integrate with Gorgias or Zendesk to draft AI-powered responses. Reduce response time and improve support efficiency.',
     image: '/ecom.png',
     features: [
-      'Intelligent lead scoring',
-      'Automated qualification',
-      'CRM integration',
-      'Real-time routing'
+      'Gorgias & Zendesk integration',
+      'AI-drafted responses',
+      'Context-aware suggestions',
+      '70% faster ticket resolution'
     ]
   },
   {
-    icon: Scale,
-    title: 'Automated Onboarding',
-    description: 'Create interactive onboarding experiences powered by your documentation. Help users get value faster with AI guidance.',
+    icon: BarChart3,
+    title: 'Business Dashboards',
+    description: 'Custom analytics dashboards that visualize your key metrics. Make data-driven decisions with real-time insights.',
     image: '/rag.png',
     features: [
-      'Personalized user journeys',
-      'Interactive product tours',
-      'In-app AI assistant',
-      'Reduces time-to-value'
+      'Real-time sales analytics',
+      'Inventory tracking',
+      'Customer behavior insights',
+      'Custom KPI monitoring'
     ]
   },
   {
-    icon: Landmark,
-    title: 'Internal Knowledge Assistant',
-    description: 'Give your team instant access to company knowledge, processes, and documentation through AI-powered search.',
+    icon: Sparkles,
+    title: 'AI Content Creation',
+    description: 'Generate high-converting product descriptions, email campaigns, and marketing copy at scale with AI.',
     image: '/rag.png',
     features: [
-      'Instant policy answers',
-      'Process documentation',
-      'Cross-team knowledge',
-      'Secure & private'
+      'Product descriptions',
+      'Email marketing copy',
+      'Social media content',
+      'SEO-optimized content'
     ]
   },
   {
-    icon: GraduationCap,
-    title: 'AI Agents & RAG Workshops',
-    description: 'Hands-on workshops for your team to understand and build with AI agents and RAG technology.',
+    icon: TrendingUp,
+    title: 'Competitor Ad Intelligence',
+    description: 'Automatically track and analyze winning ads from your competitors. Stay ahead with insights into their strategies.',
     image: '/rag.png',
     features: [
-      'Hands-on building sessions',
-      'Best practices & architecture',
-      'Use case identification',
-      'Half-day or full-day'
+      'Automatic ad scraping',
+      'Performance tracking',
+      'Creative analysis',
+      'Strategy insights'
     ],
     highlight: true
   }
@@ -94,11 +92,11 @@ export function ServicesGrid() {
             Our Services
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 font-heading">
-            AI systems that drive SaaS growth
+            AI systems that drive ecommerce growth
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            From customer support to lead qualification, we build AI-powered systems
-            that help B2B SaaS companies scale faster.
+            From AI chatbots to competitor intelligence, we build AI-powered systems
+            that help fast-moving ecommerce brands scale smarter.
           </p>
         </motion.div>
 

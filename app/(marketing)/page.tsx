@@ -10,8 +10,8 @@ import { CTABanner } from '@/components/cta-banner'
 import { createMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = createMetadata({
-  title: 'AI Growth Partner for B2B SaaS - Support, Leads, Onboarding Automation',
-  description: 'AI-powered growth systems for B2B SaaS. We build automated customer support, lead qualification, onboarding flows, and internal knowledge assistants. Delivered in 10 working days.',
+  title: 'AI Growth Partner for Fast-Moving Ecommerce - Chatbots, Support, Analytics',
+  description: 'AI-powered growth systems for fast-moving ecommerce. We build AI chatbots, support automation with Gorgias/Zendesk, business dashboards, content creation, and competitor ad scrapers. Delivered in 10 working days.',
 })
 
 export default function HomePage() {

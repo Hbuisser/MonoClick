@@ -9,10 +9,11 @@ import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const useCases = [
-  { industry: 'Customer Support', example: 'AI chatbots that resolve tickets 24/7' },
-  { industry: 'Lead Qualification', example: 'Automated scoring and routing' },
-  { industry: 'Onboarding', example: 'Interactive guides powered by your docs' },
-  { industry: 'Internal Knowledge', example: 'Instant answers from your knowledge base' },
+  { industry: 'AI Chatbots', example: 'Trained on your FAQ, policies, and products' },
+  { industry: 'Support Automation', example: 'AI-powered draft answers for Gorgias & Zendesk' },
+  { industry: 'Business Intelligence', example: 'Custom dashboards for data-driven decisions' },
+  { industry: 'Content Creation', example: 'AI-powered product descriptions & marketing copy' },
+  { industry: 'Competitive Intelligence', example: 'Track and analyze winning competitor ads' },
 ]
 
 export function Hero() {
@@ -65,7 +66,7 @@ export function Hero() {
         >
           <span className="text-gradient">AI growth partner</span>
           <br />
-          for fast-moving B2B SaaS
+          for fast-moving ecommerce
         </motion.h1>
 
         {/* Subtitle */}
@@ -75,7 +76,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-6 max-w-2xl"
         >
-          We build AI-powered growth systems that automate support, qualify leads, and scale your operations.
+          We build AI-powered systems that automate customer support, analyze competitors, and drive smarter business decisions.
         </motion.p>
 
         {/* Vertical carousel */}

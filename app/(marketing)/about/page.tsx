@@ -20,8 +20,8 @@ import { Button } from '@/components/ui/button'
 import { CTABanner } from '@/components/cta-banner'
 
 export const metadata: Metadata = createMetadata({
-  title: 'About Our AI Automation Agency',
-  description: 'MonoClick is an AI automation agency specializing in custom business process automation with AI. We deliver lead generation automation, AI workflows, and done-for-you automations.',
+  title: 'About Our AI Automation Agency for Ecommerce',
+  description: 'MonoClick is an AI automation agency specializing in ecommerce growth systems. We deliver AI chatbots, support automation, business dashboards, content creation, and competitive intelligence for fast-moving ecommerce brands.',
   path: '/about'
 })
 
@@ -29,7 +29,7 @@ const team = [
   {
     name: 'Henry Buisseret',
     role: 'Founder & AI Automation Engineer',
-    bio: 'Belgian software engineer specializing in AI automation services. Background in finance (KBC) and payments (Worldline). Expert in building custom business process automation with AI using n8n, OpenAI, and modern tech stack.',
+    bio: 'Belgian software engineer specializing in AI automation for ecommerce. Background in finance (KBC) and payments (Worldline). Expert in building custom AI systems for ecommerce brands using n8n, OpenAI, and modern tech stack.',
     location: 'Belgium',
     education: 'School 42 - Software Engineering',
     social: {
@@ -42,18 +42,18 @@ const team = [
 const values = [
   {
     icon: Target,
-    title: 'Custom AI Automation Solutions',
-    description: 'We build custom business automation tailored to your specific workflows and tech stack. Every AI automation is designed for your unique business requirements, not generic one-size-fits-all tools.'
+    title: 'Ecommerce-Focused AI Solutions',
+    description: 'We build custom AI systems tailored to fast-moving ecommerce brands. Every solution is designed for your specific products, customers, and workflows—not generic one-size-fits-all tools.'
   },
   {
     icon: Users,
-    title: 'AI-First Business Process Automation',
-    description: 'We leverage AI agents, intelligent workflows, and automation tools like n8n to create business process automation with AI that learns and adapts to your operations.'
+    title: 'AI-Powered Ecommerce Growth',
+    description: 'We leverage AI chatbots, support automation, business intelligence, and competitive analysis to help ecommerce brands scale smarter and sell more.'
   },
   {
     icon: Lightbulb,
-    title: 'ROI-Driven AI Automation Services',
-    description: 'Every done-for-you AI automation is built to save time, reduce costs, or generate revenue. We focus on delivering measurable business impact through custom AI workflows.'
+    title: 'ROI-Driven Automation',
+    description: 'Every AI system is built to save time, reduce support costs, or increase conversions. We focus on delivering measurable business impact that drives revenue growth.'
   }
 ]
 
@@ -75,11 +75,11 @@ export default function AboutPage() {
               About Us
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 font-heading">
-              About Our AI Automation Agency
+              About Our AI Automation Agency for Ecommerce
             </h1>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-10">
-              MonoClick is a specialized AI automation agency delivering custom business process automation with AI.
-              We build done-for-you AI automations, lead generation automation, and custom AI workflows for business growth.
+              MonoClick is a specialized AI automation agency delivering custom AI growth systems for fast-moving ecommerce brands.
+              We build AI chatbots, support automation, business dashboards, content creation tools, and competitor intelligence systems.
             </p>
             <div className="flex flex-wrap justify-center gap-6 max-w-2xl mx-auto">
               {stats.map((stat) => (
@@ -102,20 +102,20 @@ export default function AboutPage() {
                 Our Mission
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 font-heading">
-                Leading AI Automation Agency for Custom Business Workflows
+                AI Automation Agency for Fast-Moving Ecommerce Brands
               </h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  MonoClick is an AI automation agency founded to help businesses implement custom business process automation with AI.
-                  We specialize in done-for-you AI automations that save time and drive predictable revenue growth.
+                  MonoClick is an AI automation agency founded to help ecommerce brands scale smarter with AI-powered growth systems.
+                  We specialize in done-for-you AI solutions that save time, reduce costs, and drive revenue growth.
                 </p>
                 <p>
-                  From AI chatbots and knowledge-based assistants to n8n automation and CRM integrations,
-                  we build custom AI workflows for business that integrate seamlessly with your existing tech stack.
+                  From AI chatbots trained on your products to support automation with Gorgias/Zendesk, business dashboards, 
+                  AI content creation, and competitor ad intelligence, we build custom systems that integrate seamlessly with your ecommerce stack.
                 </p>
                 <p>
-                  Our clients include SMBs, agencies, and growing teams across Europe and globally who need AI automation services
-                  that deliver measurable ROI. We don't sell generic software—every automation is custom-built for your specific needs.
+                  Our clients include fast-moving ecommerce brands, DTC companies, and growing online retailers across Europe and globally 
+                  who need AI automation that delivers measurable ROI. We don't sell generic software—every system is custom-built for your specific needs.
                 </p>
               </div>
             </div>
@@ -145,12 +145,12 @@ export default function AboutPage() {
             <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-3">
               Our Approach
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-heading">
-              Why Choose Our AI Automation Agency
-            </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              How we deliver custom business process automation with AI that actually drives measurable business results.
-            </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-heading">
+                Why Choose Our Ecommerce AI Automation Agency
+              </h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">
+                How we deliver custom AI growth systems for ecommerce that actually drive measurable business results.
+              </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -316,11 +316,11 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                    AI-powered solutions
+                    Ecommerce-native AI solutions
                   </h3>
                   <p className="text-slate-600 text-sm">
-                    We leverage cutting-edge AI agents and intelligent workflows to create
-                    automations that learn and adapt to your business.
+                    We leverage cutting-edge AI to create chatbots, support automation, dashboards, 
+                    and competitive intelligence tailored for fast-moving ecommerce brands.
                   </p>
                 </div>
               </div>
@@ -345,7 +345,7 @@ export default function AboutPage() {
           <div className="mt-12 text-center">
             <Button asChild variant="gradient" size="lg">
               <Link href="/contact">
-                Get Custom AI Automation for Your Business
+                Get Custom AI Automation for Your Ecommerce Brand
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

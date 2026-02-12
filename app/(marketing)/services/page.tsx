@@ -2,16 +2,15 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 // import Image from 'next/image'
 import {
-  Brain,
-  ShoppingCart,
-  Scale,
-  Landmark,
+  MessageSquare,
+  HeadphonesIcon,
+  BarChart3,
+  Sparkles,
+  TrendingUp,
   ArrowRight,
   CheckCircle,
   Clock,
-  Check,
-  GraduationCap,
-  Sparkles
+  Check
 } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
@@ -21,121 +20,121 @@ import { Badge } from '@/components/ui/badge'
 import { CTABanner } from '@/components/cta-banner'
 
 export const metadata: Metadata = createMetadata({
-  title: 'AI Growth Systems for B2B SaaS - Support, Lead Qualification, Onboarding',
-  description: 'AI-powered growth systems for B2B SaaS: automated customer support, lead qualification and routing, onboarding automation, and internal knowledge assistants. Built in 10 working days.',
+  title: 'AI Growth Systems for Ecommerce - Chatbots, Support, Analytics & Competitive Intelligence',
+  description: 'AI-powered growth systems for fast-moving ecommerce: AI chatbots trained on your products, support automation with Gorgias/Zendesk, business dashboards, content creation, and competitor ad tracking. Built in 10 working days.',
   path: '/services'
 })
 
 const services = [
   {
-    icon: Brain,
-    title: 'AI Customer Support',
-    description: 'Deploy intelligent support agents that understand your product and resolve customer issues 24/7. Reduce ticket volume, decrease response time, and increase customer satisfaction.',
+    icon: MessageSquare,
+    title: 'AI Chatbot for Ecommerce',
+    description: 'Deploy intelligent chatbots trained on your FAQ, policies, and product catalog. Answer customer questions instantly, provide product recommendations, and drive conversions 24/7.',
     image: '/rag.png',
     features: [
-      'Learns your entire knowledge base',
-      'Resolves 70% of tickets automatically',
-      'Seamless handoff to human agents',
-      'Context-aware conversations',
-      'Multi-channel support (chat, email, Slack)',
-      'Real-time escalation rules'
+      'Trained on your entire product catalog',
+      'FAQ and policy knowledge base',
+      'Order tracking and status updates',
+      'Intelligent product recommendations',
+      'Multi-channel support (website, social media)',
+      'Seamless handoff to human support'
     ],
     benefits: [
-      '70% reduction in support tickets',
-      '< 30 second response time',
-      'Higher CSAT scores'
+      '60% reduction in support inquiries',
+      '< 10 second response time',
+      '30% increase in conversion rate'
     ],
     pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
-    technologies: ['OpenAI', 'n8n', 'Intercom', 'Zendesk', 'Your existing tools']
+    technologies: ['OpenAI', 'n8n', 'Shopify', 'WooCommerce', 'Your existing tools']
   },
   {
-    icon: ShoppingCart,
-    title: 'Lead Qualification & Routing',
-    description: 'Automate your lead qualification process with AI. Score leads based on fit and intent, route them to the right sales rep, and ensure no opportunity falls through the cracks.',
+    icon: HeadphonesIcon,
+    title: 'AI Support Automation (Gorgias/Zendesk)',
+    description: 'Integrate AI directly with your Gorgias or Zendesk account to draft intelligent responses. Reduce response time, improve support efficiency, and scale your customer service team.',
     image: '/ecom.png',
     features: [
-      'AI-powered lead scoring',
-      'Automated qualification questions',
-      'Smart routing to sales reps',
-      'CRM integration (HubSpot, Salesforce)',
-      'Real-time lead enrichment',
-      'Conversion analytics'
+      'Native Gorgias & Zendesk integration',
+      'AI-drafted responses based on context',
+      'Auto-categorization and tagging',
+      'Sentiment analysis and prioritization',
+      'Macro and template suggestions',
+      'Multi-language support'
     ],
     benefits: [
-      '2x more qualified meetings',
-      '50% faster lead response',
-      'Higher conversion rates'
+      '70% faster ticket resolution',
+      '50% reduction in average handle time',
+      'Improved customer satisfaction scores'
     ],
     pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
-    technologies: ['OpenAI', 'n8n', 'HubSpot', 'Salesforce', 'Clearbit', 'Slack']
+    technologies: ['OpenAI', 'n8n', 'Gorgias', 'Zendesk', 'Your knowledge base']
   },
   {
-    icon: Scale,
-    title: 'Automated Onboarding',
-    description: 'Create AI-powered onboarding experiences that guide users to value faster. Personalized product tours, in-app assistance, and proactive help based on user behavior.',
+    icon: BarChart3,
+    title: 'Business Intelligence Dashboards',
+    description: 'Custom analytics dashboards that visualize your key ecommerce metrics in real-time. Track sales, inventory, customer behavior, and marketing performance all in one place.',
     image: '/rag.png',
     features: [
-      'Personalized onboarding flows',
-      'Interactive product walkthroughs',
-      'In-app AI assistant',
-      'Behavior-triggered guidance',
-      'Progress tracking & analytics',
-      'Integration with your product'
+      'Real-time sales and revenue tracking',
+      'Inventory management insights',
+      'Customer lifetime value analysis',
+      'Marketing attribution and ROI',
+      'Product performance metrics',
+      'Custom KPI visualization'
     ],
     benefits: [
-      '40% faster time-to-value',
-      'Higher activation rates',
-      'Reduced churn'
+      'Data-driven decision making',
+      'Identify trends and opportunities faster',
+      'Unified view across all channels'
     ],
     pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
-    technologies: ['OpenAI', 'n8n', 'Segment', 'Amplitude', 'Your product API']
+    technologies: ['n8n', 'Shopify', 'Google Analytics', 'Meta Ads', 'Power BI', 'Looker']
   },
   {
-    icon: Landmark,
-    title: 'Internal Knowledge Assistant',
-    description: 'Give your team instant access to company knowledge, processes, and documentation. Reduce time spent searching and ensure everyone has the answers they need.',
+    icon: Sparkles,
+    title: 'AI Content Creation',
+    description: 'Generate high-converting product descriptions, email campaigns, blog posts, and social media content at scale. Maintain consistent brand voice while saving hours of writing time.',
     image: '/rag.png',
     features: [
-      'Unified knowledge search',
-      'Policy and procedure access',
-      'Cross-departmental knowledge',
-      'Secure, role-based access',
-      'Slack & Teams integration',
-      'Analytics on knowledge gaps'
+      'AI-powered product descriptions',
+      'Email marketing campaigns',
+      'Social media content calendar',
+      'Blog posts and SEO content',
+      'Brand voice consistency',
+      'Multi-language content generation'
     ],
     benefits: [
-      '5+ hours saved per employee/week',
-      'Faster employee onboarding',
-      'Consistent information'
+      '10x faster content production',
+      'Consistent brand messaging',
+      'Improved SEO performance'
     ],
     pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
-    technologies: ['OpenAI', 'n8n', 'Notion', 'Confluence', 'Google Drive', 'Slack']
+    technologies: ['OpenAI', 'n8n', 'Anthropic', 'Your brand guidelines', 'Shopify API']
   },
   {
-    icon: GraduationCap,
-    title: 'AI Agents & RAG Workshops',
-    description: 'Hands-on workshops for your team to understand and leverage AI agents and RAG technology. Learn how to build, deploy, and optimize AI-powered systems for your business.',
+    icon: TrendingUp,
+    title: 'Competitor Ad Intelligence',
+    description: 'Automatically track, scrape, and analyze winning ads from your competitors. Get insights into their creative strategies, messaging, and offers to stay ahead of the competition.',
     image: '/rag.png',
     features: [
-      'Introduction to AI agents & RAG',
-      'Hands-on building sessions',
-      'Best practices & architecture',
-      'Use case identification',
-      'Live Q&A and troubleshooting',
-      'Custom workshop content'
+      'Automatic ad scraping and monitoring',
+      'Creative performance tracking',
+      'Messaging and offer analysis',
+      'Trend identification',
+      'Competitive intelligence reports',
+      'Alert system for new campaigns'
     ],
     benefits: [
-      'Team AI literacy & confidence',
-      'Identify automation opportunities',
-      'Build internal AI capabilities'
+      'Stay ahead of competitor strategies',
+      'Identify winning creative patterns',
+      'Faster campaign iteration'
     ],
-    pricing: 'Custom pricing based on team size',
-    timeline: 'Half-day or full-day sessions',
-    technologies: ['OpenAI', 'n8n', 'RAG Architecture', 'Vector Databases', 'Prompt Engineering'],
+    pricing: 'Custom pricing based on needs',
+    timeline: '10 working days',
+    technologies: ['n8n', 'Meta Ad Library', 'TikTok', 'Google Ads', 'AI Analysis'],
     highlight: true
   }
 ]
@@ -176,11 +175,11 @@ export default function ServicesPage() {
               Our Services
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 font-heading">
-              AI Growth Systems for SaaS
+              AI Growth Systems for Ecommerce
             </h1>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-10">
-              We build AI-powered systems that help B2B SaaS companies scale faster.
-              From automated support to lead qualification, we deliver in 10 working days.
+              We build AI-powered systems that help fast-moving ecommerce brands scale smarter.
+              From AI chatbots to competitor intelligence, we deliver in 10 working days.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
               {[

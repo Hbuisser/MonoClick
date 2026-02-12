@@ -9,6 +9,13 @@ import { Button } from '@/components/ui/button'
 
 const testimonials = [
   {
+    content: "By far the best AI developer I've ever worked with, and I've worked with many. Henry consistently goes above and beyond and is truly next level. He doesn't just deliver what's asked; he thinks ahead, anticipates challenges, and actively aligns his work with our broader business goals. His approach is structured, strategic, and incredibly clear. What really sets him apart is his communication. The Loom videos he provides to explain his thinking and implementations make everything seamless and easy to understand. Working with Henry is working with a true partner rather than just a freelancer. If you're looking for someone who combines deep technical skill with business insight and proactive thinking, Henry is your guy. Looking forward to many more projects together!!",
+    author: "Fabien",
+    role: "Founder & CEO",
+    company: "HearWell",
+    rating: 5
+  },
+  {
     content: "Henry has done a great job. Technically he is capable but more than that he has been very patient and very customer service and customer support oriented. I thought he would give up but never did. More freelancers like him are needed on the platform. I highly recommend him.",
     author: "Chris O.",
     role: "Manager",

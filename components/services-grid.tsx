@@ -1,165 +1,149 @@
 'use client'
 
-import { motion } from 'framer-motion'
-// import Image from 'next/image'
 import {
   MessageSquare,
   HeadphonesIcon,
   BarChart3,
   Sparkles,
   TrendingUp,
-  Check
+  Check,
 } from 'lucide-react'
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { HoverSurface, ScrollReveal } from '@/components/scroll-reveal'
 
 const services = [
   {
     icon: MessageSquare,
     title: 'AI Chatbot',
-    description: 'Deploy intelligent chatbots trained on your FAQ, policies, and product catalog. Answer customer questions 24/7 and drive conversions.',
+    description:
+      'Deploy intelligent chatbots trained on your FAQ, policies, and product catalog. Answer customer questions 24/7 and drive conversions.',
     image: '/rag.png',
     features: [
       'Trained on your products',
       'FAQ & policy knowledge',
       'Order tracking assistance',
-      'Instant product recommendations'
-    ]
+      'Instant product recommendations',
+    ],
   },
   {
     icon: HeadphonesIcon,
     title: 'AI Support Automation',
-    description: 'Integrate with Gorgias or Zendesk to draft AI-powered responses. Reduce response time and improve support efficiency.',
+    description:
+      'Integrate with Gorgias or Zendesk to draft AI-powered responses. Reduce response time and improve support efficiency.',
     image: '/ecom.png',
     features: [
       'Gorgias & Zendesk integration',
       'AI-drafted responses',
       'Context-aware suggestions',
-      '70% faster ticket resolution'
-    ]
+      '70% faster ticket resolution',
+    ],
   },
   {
     icon: BarChart3,
     title: 'Business Dashboards',
-    description: 'Custom analytics dashboards that visualize your key metrics. Make data-driven decisions with real-time insights.',
+    description:
+      'Custom analytics dashboards that visualize your key metrics. Make data-driven decisions with real-time insights.',
     image: '/rag.png',
     features: [
       'Real-time sales analytics',
       'Inventory tracking',
       'Customer behavior insights',
-      'Custom KPI monitoring'
-    ]
+      'Custom KPI monitoring',
+    ],
   },
   {
     icon: Sparkles,
     title: 'AI Content Creation',
-    description: 'Generate high-converting product descriptions, email campaigns, and marketing copy at scale with AI.',
+    description:
+      'Generate high-converting product descriptions, email campaigns, and marketing copy at scale with AI.',
     image: '/rag.png',
     features: [
       'Product descriptions',
       'Email marketing copy',
       'Social media content',
-      'SEO-optimized content'
-    ]
+      'SEO-optimized content',
+    ],
   },
   {
     icon: TrendingUp,
     title: 'Competitor Ad Intelligence',
-    description: 'Automatically track and analyze winning ads from your competitors. Stay ahead with insights into their strategies.',
+    description:
+      'Automatically track and analyze winning ads from your competitors. Stay ahead with insights into their strategies.',
     image: '/rag.png',
     features: [
       'Automatic ad scraping',
       'Performance tracking',
       'Creative analysis',
-      'Strategy insights'
+      'Strategy insights',
     ],
-    highlight: true
-  }
+    highlight: true,
+  },
 ]
 
 export function ServicesGrid() {
   return (
-    <section className="py-24 bg-slate-50/50">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-3">
-            Our Services
-          </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 font-heading">
-            AI systems that drive ecommerce growth
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            From AI chatbots to competitor intelligence, we build AI-powered systems
-            that help fast-moving ecommerce brands scale smarter.
-          </p>
-        </motion.div>
+    <section className="border-t border-white/10 bg-black py-24">
+      <div className="editorial-max">
+        <ScrollReveal variant="slide-left" className="mb-14 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <span className="section-label mb-4 block text-white">Our Services</span>
+            <h2 className="display-title max-w-4xl text-[clamp(2.25rem,6vw,5rem)] text-white">
+              AI systems that drive ecommerce growth
+            </h2>
+          </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <ScrollReveal variant="fade" delay={0.08} className="mb-16 max-w-2xl text-sm leading-relaxed text-white/50">
+          From AI chatbots to competitor intelligence, we build AI-powered systems that help fast-moving ecommerce brands
+          scale smarter.
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 gap-px bg-white/10 md:grid-cols-2">
           {services.map((service, index) => {
             const Icon = service.icon
             const isHighlight = 'highlight' in service && service.highlight
-            const isLastOdd = index === services.length - 1 && services.length % 2 === 1
+            const num = String(index + 1).padStart(2, '0')
             return (
-              <motion.div
+              <ScrollReveal
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`group ${isLastOdd ? 'lg:col-span-2 lg:max-w-xl lg:mx-auto' : ''}`}
+                variant="fade-up"
+                delay={index * 0.07}
+                className={index === 4 ? 'md:col-span-2' : ''}
               >
-                <Card className={`h-full overflow-hidden hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-300 ${
-                  isHighlight
-                    ? 'border-2 border-indigo-400 bg-gradient-to-br from-indigo-50/50 to-cyan-50/50 relative'
-                    : 'border-slate-100'
-                }`}>
-                  {isHighlight && (
-                    <div className="absolute top-4 right-4">
-                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-medium">
-                        <Sparkles className="h-3 w-3" />
+                <HoverSurface
+                  className={`h-full bg-black px-6 py-10 transition-colors duration-300 hover:bg-neutral-950 ${
+                    index === 4 ? '' : ''
+                  }`}
+                >
+                  <span className="mb-4 block text-[0.6rem] font-medium uppercase tracking-widest text-white/30">
+                    {num}
+                  </span>
+                  <div className="mb-4 flex items-start gap-3">
+                    <div
+                      className={`flex h-10 w-10 flex-shrink-0 items-center justify-center border transition-colors duration-300 group-hover:border-white/30 ${
+                        isHighlight ? 'border-white/40 bg-white/10' : 'border-white/15 bg-white/5'
+                      }`}
+                    >
+                      <Icon className="h-5 w-5 text-white" />
+                    </div>
+                    {isHighlight && (
+                      <span className="border border-white/25 px-2 py-0.5 text-[0.55rem] font-semibold uppercase tracking-widest text-white/80">
                         New
-                      </div>
-                    </div>
-                  )}
-
-                  <CardHeader className="pb-3 pt-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`h-12 w-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                        isHighlight
-                          ? 'bg-indigo-600 shadow-lg shadow-indigo-500/30'
-                          : 'bg-gradient-brand shadow-brand'
-                      }`}>
-                        <Icon className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-xl font-semibold text-slate-900 mb-2">
-                          {service.title}
-                        </CardTitle>
-                        <CardDescription className="text-slate-600 text-sm leading-relaxed">
-                          {service.description}
-                        </CardDescription>
-                      </div>
-                    </div>
-                  </CardHeader>
-
-                  <CardContent className="pt-0 pb-6">
-                    <div className="grid grid-cols-2 gap-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center text-sm text-slate-600">
-                          <Check className={`h-4 w-4 mr-2 flex-shrink-0 ${isHighlight ? 'text-indigo-600' : 'text-indigo-500'}`} />
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="mb-3 text-base font-bold uppercase tracking-tight text-white">{service.title}</h3>
+                  <p className="mb-6 text-xs leading-relaxed text-white/45">{service.description}</p>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start gap-2 text-xs text-white/55">
+                        <Check className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-white/40" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </HoverSurface>
+              </ScrollReveal>
             )
           })}
         </div>

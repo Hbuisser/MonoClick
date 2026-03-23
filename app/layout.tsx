@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
-import Script from 'next/script'
 
 import { createMetadata } from '@/lib/seo'
 import {
@@ -55,9 +54,8 @@ export default function RootLayout({
         />
 
       </head>
-      <body className="min-h-screen bg-white text-slate-900 antialiased font-sans">
+      <body className="min-h-screen bg-black font-sans text-zinc-50 antialiased">
         {children}
-        <Script src="https://chat.monoclick.ai/widget.js" />
       </body>
     </html>
   )

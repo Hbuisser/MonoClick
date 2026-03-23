@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { createMetadata } from '@/lib/seo'
+import { RevealSection } from '@/components/scroll-reveal'
 
 export const metadata: Metadata = createMetadata({
   title: 'Privacy Policy',
@@ -10,14 +11,14 @@ export const metadata: Metadata = createMetadata({
 
 export default function PrivacyPage() {
   return (
-    <div className="pt-16">
-      <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-24">
-        <div className="prose prose-slate max-w-none">
-          <h1 className="text-4xl font-heading font-bold text-slate-900 mb-8">
+    <div className="min-h-screen bg-[#fcfcfc] text-black">
+      <div className="editorial-max max-w-4xl py-24">
+        <div className="max-w-none">
+          <h1 className="mb-8 font-heading text-4xl font-bold text-black">
             Privacy Policy
           </h1>
 
-          <p className="text-slate-500 mb-8">
+          <p className="mb-8 text-sm text-black/50">
             Last updated: {new Date().toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
@@ -25,9 +26,9 @@ export default function PrivacyPage() {
             })}
           </p>
 
-          <div className="space-y-8 text-slate-600">
-            <section>
-              <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+          <div className="space-y-8 text-sm leading-relaxed text-black/65">
+            <RevealSection variant="fade-up">
+              <h2 className="mb-4 text-2xl font-semibold text-black">
                 1. Introduction
               </h2>
               <p className="mb-4">
@@ -35,13 +36,13 @@ export default function PrivacyPage() {
                 This Privacy Policy explains how we collect, use, disclose, and safeguard
                 your information when you visit our website or use our services.
               </p>
-            </section>
+            </RevealSection>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+            <RevealSection variant="fade-up">
+              <h2 className="mb-4 text-2xl font-semibold text-black">
                 2. Information We Collect
               </h2>
-              <h3 className="text-lg font-medium text-slate-800 mb-2">
+              <h3 className="mb-2 text-lg font-medium text-black/85">
                 Personal Information
               </h3>
               <p className="mb-4">
@@ -54,7 +55,7 @@ export default function PrivacyPage() {
                 <li>Project details and requirements</li>
               </ul>
 
-              <h3 className="text-lg font-medium text-slate-800 mb-2">
+              <h3 className="mb-2 text-lg font-medium text-black/85">
                 Automatically Collected Information
               </h3>
               <p className="mb-4">
@@ -66,10 +67,10 @@ export default function PrivacyPage() {
                 <li>Device information</li>
                 <li>Usage patterns and analytics</li>
               </ul>
-            </section>
+            </RevealSection>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+            <RevealSection variant="fade-up">
+              <h2 className="mb-4 text-2xl font-semibold text-black">
                 3. How We Use Your Information
               </h2>
               <p className="mb-4">
@@ -82,10 +83,10 @@ export default function PrivacyPage() {
                 <li>Analyze website usage and performance</li>
                 <li>Comply with legal obligations</li>
               </ul>
-            </section>
+            </RevealSection>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+            <RevealSection variant="fade-up">
+              <h2 className="mb-4 text-2xl font-semibold text-black">
                 4. Information Sharing
               </h2>
               <p className="mb-4">
@@ -98,10 +99,10 @@ export default function PrivacyPage() {
                 <li>When required by law or to protect our rights</li>
                 <li>In connection with a business transfer or acquisition</li>
               </ul>
-            </section>
+            </RevealSection>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+            <RevealSection variant="fade-up">
+              <h2 className="mb-4 text-2xl font-semibold text-black">
                 5. Data Security
               </h2>
               <p className="mb-4">
@@ -110,10 +111,10 @@ export default function PrivacyPage() {
                 alteration, disclosure, or destruction. However, no method of transmission
                 over the internet is 100% secure.
               </p>
-            </section>
+            </RevealSection>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+            <RevealSection variant="fade-up">
+              <h2 className="mb-4 text-2xl font-semibold text-black">
                 6. Your Rights
               </h2>
               <p className="mb-4">
@@ -127,10 +128,10 @@ export default function PrivacyPage() {
                 <li>Data portability</li>
                 <li>Objection to processing</li>
               </ul>
-            </section>
+            </RevealSection>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+            <RevealSection variant="fade-up">
+              <h2 className="mb-4 text-2xl font-semibold text-black">
                 7. Cookies and Tracking
               </h2>
               <p className="mb-4">
@@ -138,10 +139,10 @@ export default function PrivacyPage() {
                 browsing experience and analyze website usage. You can control
                 cookie settings through your browser preferences.
               </p>
-            </section>
+            </RevealSection>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+            <RevealSection variant="fade-up">
+              <h2 className="mb-4 text-2xl font-semibold text-black">
                 8. International Transfers
               </h2>
               <p className="mb-4">
@@ -149,10 +150,10 @@ export default function PrivacyPage() {
                 other than your country of residence. We ensure appropriate
                 safeguards are in place for such transfers.
               </p>
-            </section>
+            </RevealSection>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+            <RevealSection variant="fade-up">
+              <h2 className="mb-4 text-2xl font-semibold text-black">
                 9. Children's Privacy
               </h2>
               <p className="mb-4">
@@ -160,10 +161,10 @@ export default function PrivacyPage() {
                 We do not knowingly collect personal information from children
                 under 16.
               </p>
-            </section>
+            </RevealSection>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+            <RevealSection variant="fade-up">
+              <h2 className="mb-4 text-2xl font-semibold text-black">
                 10. Changes to This Policy
               </h2>
               <p className="mb-4">
@@ -171,10 +172,10 @@ export default function PrivacyPage() {
                 notify you of any changes by posting the new policy on this page
                 and updating the "Last updated" date.
               </p>
-            </section>
+            </RevealSection>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-slate-900 mb-4">
+            <RevealSection variant="fade-up">
+              <h2 className="mb-4 text-2xl font-semibold text-black">
                 11. Contact Us
               </h2>
               <p className="mb-4">
@@ -182,12 +183,18 @@ export default function PrivacyPage() {
                 practices, please contact us at:
               </p>
               <p className="mb-2">
-                Email: <a href="mailto:henry@monoclick.ai" className="text-indigo-600 hover:text-indigo-500">henry@monoclick.ai</a>
+                Email:{' '}
+                <a href="mailto:henry@monoclick.ai" className="underline underline-offset-4 hover:opacity-70">
+                  henry@monoclick.ai
+                </a>
               </p>
               <p>
-                General inquiries: <a href="mailto:henry@monoclick.ai" className="text-indigo-600 hover:text-indigo-500">henry@monoclick.ai</a>
+                General inquiries:{' '}
+                <a href="mailto:henry@monoclick.ai" className="underline underline-offset-4 hover:opacity-70">
+                  henry@monoclick.ai
+                </a>
               </p>
-            </section>
+            </RevealSection>
           </div>
         </div>
       </div>

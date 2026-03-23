@@ -11,6 +11,7 @@ import {
 import { createMetadata } from '@/lib/seo'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { RevealSection } from '@/components/scroll-reveal'
 
 export const metadata: Metadata = createMetadata({
   title: 'Contact Us',
@@ -56,63 +57,59 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-subtle relative overflow-hidden">
-        <div className="absolute inset-0 grid-pattern" />
-        <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-4">
-              Contact Us
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 font-heading">
-              Let's automate your workflows
-            </h1>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
-              Ready to turn your processes into AI-powered systems?
-              Let's discuss your project and explore the possibilities.
-            </p>
-            <div className="flex items-center justify-center space-x-8 text-sm text-slate-600">
-              <div className="flex items-center space-x-2">
-                <div className="h-2 w-2 rounded-full bg-indigo-500" />
-                <span>Free 30-min consultation</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="h-4 w-4 text-indigo-500" />
-                <span>EU timezone</span>
-              </div>
+      <RevealSection variant="fade-up" className="relative overflow-hidden border-b border-white/10 bg-black py-24">
+        <div className="editorial-max text-center">
+          <p className="section-label mb-4 block text-white">Contact Us</p>
+          <h1 className="mb-6 font-heading text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            Let&apos;s automate your workflows
+          </h1>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-white/60">
+            Ready to turn your processes into AI-powered systems?
+            Let&apos;s discuss your project and explore the possibilities.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-white/55">
+            <div className="flex items-center space-x-2">
+              <div className="h-2 w-2 rounded-full bg-white" />
+              <span>Free 30-min consultation</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <MapPin className="h-4 w-4 text-white/60" />
+              <span>EU timezone</span>
             </div>
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Contact Methods */}
-      <section className="py-16 border-b border-slate-200 bg-white">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <RevealSection variant="bright" className="border-b border-white/10 bg-black py-16">
+        <div className="editorial-max">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {contactMethods.map((method) => {
               const Icon = method.icon
               return (
                 <Card
                   key={method.title}
-                  className={`hover:shadow-soft-lg transition-all duration-300 ${
-                    method.primary ? 'ring-2 ring-indigo-500/20' : ''
+                  className={`rounded-none border-white/10 bg-neutral-950 text-white shadow-none transition-all hover:border-white/20 ${
+                    method.primary ? 'ring-1 ring-white/20' : ''
                   }`}
                 >
                   <CardContent className="p-8 text-center">
-                    <div className={`h-14 w-14 rounded-xl ${
-                      method.primary ? 'bg-gradient-brand shadow-brand' : 'bg-slate-100'
-                    } flex items-center justify-center mx-auto mb-5`}>
-                      <Icon className={`h-6 w-6 ${method.primary ? 'text-white' : 'text-slate-600'}`} />
+                    <div
+                      className={`mx-auto mb-5 flex h-14 w-14 items-center justify-center border ${
+                        method.primary
+                          ? 'border-white/25 bg-white/10'
+                          : 'border-white/10 bg-white/5'
+                      }`}
+                    >
+                      <Icon className={`h-6 w-6 ${method.primary ? 'text-white' : 'text-white/70'}`} />
                     </div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                      {method.title}
-                    </h3>
-                    <p className="text-slate-600 text-sm mb-5">
-                      {method.description}
-                    </p>
+                    <h3 className="mb-2 text-xl font-semibold">{method.title}</h3>
+                    <p className="mb-5 text-sm text-white/55">{method.description}</p>
                     <Button
                       asChild
-                      variant={method.primary ? 'gradient' : 'outline'}
+                      variant={method.primary ? 'editorial' : 'editorial'}
                       size="sm"
+                      className={method.primary ? '' : 'border-white/15 hover:bg-white/5'}
                     >
                       <Link
                         href={method.href}
@@ -130,60 +127,54 @@ export default function ContactPage() {
             })}
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       {/* What to expect & Contact info */}
-      <section className="py-24 bg-slate-50/50">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* What to expect */}
-            <Card className="lg:col-span-2">
+      <RevealSection variant="fade-up" className="bg-[#fcfcfc] py-24 text-black">
+        <div className="editorial-max max-w-7xl">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            <Card className="rounded-none border-black/10 bg-white lg:col-span-2">
               <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6">
-                  What happens next?
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <h3 className="mb-6 text-xl font-semibold text-black">What happens next?</h3>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                   {[
                     { step: '1', title: 'We review your submission', time: 'Usually within 4 hours' },
                     { step: '2', title: 'Discovery call', time: '30 minutes to understand your needs' },
                     { step: '3', title: 'Proposal & timeline', time: 'Fixed-price quote within 48 hours' },
                   ].map((item) => (
                     <div key={item.step} className="text-center">
-                      <div className="h-12 w-12 rounded-2xl bg-gradient-brand flex items-center justify-center text-white font-bold mx-auto mb-4 shadow-brand">
+                      <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center border border-black/15 bg-black text-sm font-bold text-white">
                         {item.step}
                       </div>
-                      <h4 className="text-slate-900 font-medium mb-1">{item.title}</h4>
-                      <p className="text-slate-500 text-sm">{item.time}</p>
+                      <h4 className="mb-1 font-medium text-black">{item.title}</h4>
+                      <p className="text-sm text-black/50">{item.time}</p>
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            {/* Contact info */}
-            <Card>
+            <Card className="rounded-none border-black/10 bg-white">
               <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6">
-                  Get in touch
-                </h3>
+                <h3 className="mb-6 text-xl font-semibold text-black">Get in touch</h3>
                 <div className="space-y-4">
                   <a
                     href="mailto:henry@monoclick.ai"
-                    className="flex items-center space-x-3 text-sm text-slate-600 hover:text-teal-600 transition-colors"
+                    className="flex items-center space-x-3 text-sm text-black/65 transition-colors hover:text-black"
                   >
-                    <div className="h-10 w-10 rounded-lg bg-slate-100 flex items-center justify-center">
+                    <div className="flex h-10 w-10 items-center justify-center border border-black/10 bg-black/5">
                       <Mail className="h-5 w-5" />
                     </div>
                     <span>henry@monoclick.ai</span>
                   </a>
-                  <div className="flex items-center space-x-3 text-sm text-slate-600">
-                    <div className="h-10 w-10 rounded-lg bg-slate-100 flex items-center justify-center">
+                  <div className="flex items-center space-x-3 text-sm text-black/65">
+                    <div className="flex h-10 w-10 items-center justify-center border border-black/10 bg-black/5">
                       <MapPin className="h-5 w-5" />
                     </div>
                     <span>European Union & United States</span>
                   </div>
-                  <div className="flex items-center space-x-3 text-sm text-slate-600">
-                    <div className="h-10 w-10 rounded-lg bg-slate-100 flex items-center justify-center">
+                  <div className="flex items-center space-x-3 text-sm text-black/65">
+                    <div className="flex h-10 w-10 items-center justify-center border border-black/10 bg-black/5">
                       <Clock className="h-5 w-5" />
                     </div>
                     <span>Response time: &lt; 24 hours</span>
@@ -193,22 +184,15 @@ export default function ContactPage() {
             </Card>
           </div>
 
-          {/* FAQ */}
           <div className="mt-12">
-            <Card>
+            <Card className="rounded-none border-black/10 bg-white">
               <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-slate-900 mb-6">
-                  Quick answers
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <h3 className="mb-6 text-xl font-semibold text-black">Quick answers</h3>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                   {faqs.map((faq, index) => (
                     <div key={index}>
-                      <h4 className="text-slate-900 font-medium text-sm mb-2">
-                        {faq.question}
-                      </h4>
-                      <p className="text-slate-600 text-sm">
-                        {faq.answer}
-                      </p>
+                      <h4 className="mb-2 text-sm font-medium text-black">{faq.question}</h4>
+                      <p className="text-sm text-black/60">{faq.answer}</p>
                     </div>
                   ))}
                 </div>
@@ -216,7 +200,7 @@ export default function ContactPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </RevealSection>
     </div>
   )
 }

@@ -18,6 +18,7 @@ import { createMetadata } from '@/lib/seo'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { CTABanner } from '@/components/cta-banner'
+import { RevealSection } from '@/components/scroll-reveal'
 
 export const metadata: Metadata = createMetadata({
   title: 'About Our AI Automation Agency for Ecommerce',
@@ -67,44 +68,40 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-subtle relative overflow-hidden">
-        <div className="absolute inset-0 grid-pattern" />
-        <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-4">
-              About Us
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 font-heading">
-              AI Growth Partner for Fast-Moving E-commerce Brands
-            </h1>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-10">
-              MonoClick is a specialized AI automation agency delivering custom AI growth systems for fast-moving ecommerce brands.
-              We build AI chatbots, support automation, business dashboards, content creation tools, and competitor intelligence systems.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 max-w-2xl mx-auto">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center p-4 rounded-2xl bg-white border border-slate-200 shadow-soft min-w-[140px]">
-                  <div className="text-2xl font-bold text-gradient mb-1">{stat.value}</div>
-                  <div className="text-sm text-slate-500">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+      <RevealSection variant="fade-up" className="relative overflow-hidden border-b border-white/10 bg-black py-24">
+        <div className="editorial-max text-center">
+          <p className="section-label mb-4 block text-white">About Us</p>
+          <h1 className="mb-6 font-heading text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            AI Growth Partner for Fast-Moving E-commerce Brands
+          </h1>
+          <p className="mx-auto mb-10 max-w-3xl text-lg text-white/60">
+            MonoClick is a specialized AI automation agency delivering custom AI growth systems for fast-moving ecommerce brands.
+            We build AI chatbots, support automation, business dashboards, content creation tools, and competitor intelligence systems.
+          </p>
+          <div className="mx-auto flex max-w-2xl flex-wrap justify-center gap-6">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="min-w-[140px] border border-white/10 bg-neutral-950 p-4 text-center"
+              >
+                <div className="mb-1 text-2xl font-bold text-white">{stat.value}</div>
+                <div className="text-sm text-white/45">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Story Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <RevealSection variant="fade-up" className="bg-[#fcfcfc] py-24 text-black">
+        <div className="editorial-max max-w-5xl">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div>
-              <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-3">
-                Our Mission
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 font-heading">
+              <p className="section-label mb-3 block text-black">Our Mission</p>
+              <h2 className="mb-6 font-heading text-3xl font-bold sm:text-4xl">
                 AI Automation Agency for Fast-Moving Ecommerce Brands
               </h2>
-              <div className="space-y-4 text-slate-600 leading-relaxed">
+              <div className="space-y-4 leading-relaxed text-black/65">
                 <p>
                   MonoClick is an AI automation agency founded to help ecommerce brands scale smarter with AI-powered growth systems.
                   We specialize in done-for-you AI solutions that save time, reduce costs, and drive revenue growth.
@@ -119,9 +116,9 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+            <div className="border border-black/10 bg-white p-8">
               <div className="text-center">
-                <div className="relative h-48 w-full rounded-xl overflow-hidden mb-4 bg-white border border-slate-100">
+                <div className="relative mb-4 h-48 w-full overflow-hidden border border-black/10 bg-white">
                   <Image
                     src="/auto_ex.png"
                     alt="AI automation workflow for generating personalized emails based on prospect website data"
@@ -129,73 +126,70 @@ export default function AboutPage() {
                     className="object-contain"
                   />
                 </div>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-black/50">
                   AI automation to generate personalized emails based on website info of prospects
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Values */}
-      <section className="py-24 bg-slate-50/50">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-3">
-              Our Approach
+      <RevealSection variant="bright" className="border-t border-black/10 bg-black py-24 text-white">
+        <div className="editorial-max">
+          <div className="mb-16 text-center">
+            <p className="section-label mb-3 block text-white">Our Approach</p>
+            <h2 className="mb-4 font-heading text-3xl font-bold sm:text-4xl">
+              Why Choose Our Ecommerce AI Automation Agency
+            </h2>
+            <p className="mx-auto max-w-2xl text-white/55">
+              How we deliver custom AI growth systems for ecommerce that actually drive measurable business results.
             </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-heading">
-                Why Choose Our Ecommerce AI Automation Agency
-              </h2>
-              <p className="text-slate-600 max-w-2xl mx-auto">
-                How we deliver custom AI growth systems for ecommerce that actually drive measurable business results.
-              </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-px bg-white/10 md:grid-cols-3">
             {values.map((value) => {
               const Icon = value.icon
               return (
-                <Card key={value.title} className="text-center hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-300">
+                <Card
+                  key={value.title}
+                  className="rounded-none border-0 border-transparent bg-black text-center text-white shadow-none transition-colors hover:bg-neutral-950"
+                >
                   <CardContent className="p-8">
-                    <div className="h-16 w-16 rounded-2xl bg-gradient-brand flex items-center justify-center mx-auto mb-6 shadow-brand">
+                    <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center border border-white/15 bg-white/5">
                       <Icon className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                      {value.title}
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      {value.description}
-                    </p>
+                    <h3 className="mb-4 text-xl font-semibold">{value.title}</h3>
+                    <p className="leading-relaxed text-white/55">{value.description}</p>
                   </CardContent>
                 </Card>
               )
             })}
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Team */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-heading">
-              About Henry
-            </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
+      <RevealSection variant="fade-up" className="border-t border-black/10 bg-[#fcfcfc] py-24 text-black">
+        <div className="editorial-max max-w-7xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 font-heading text-3xl font-bold sm:text-4xl">About Henry</h2>
+            <p className="mx-auto max-w-2xl text-black/60">
               Henry Buisseret combines engineering expertise with real-world business experience
               to deliver automations that drive measurable results.
             </p>
           </div>
 
-          <div className="max-w-lg mx-auto">
+          <div className="mx-auto max-w-lg">
             {team.map((member) => (
-              <Card key={member.name} className="hover:shadow-soft-lg transition-all duration-300">
+              <Card
+                key={member.name}
+                className="border border-black/10 bg-white shadow-none transition-all hover:border-black/20"
+              >
                 <CardContent className="p-8 text-center">
                   {/* Profile Picture */}
-                  <div className="h-32 w-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-indigo-100 shadow-soft">
+                  <div className="mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full border-2 border-black/10">
                     <Image
                       src="/pp.jpg"
                       alt={`${member.name} profile picture`}
@@ -205,19 +199,15 @@ export default function AboutPage() {
                     />
                   </div>
 
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                    {member.name}
-                  </h3>
+                  <h3 className="mb-2 text-xl font-semibold text-black">{member.name}</h3>
 
-                  <p className="text-indigo-600 text-sm font-medium mb-3">
+                  <p className="mb-3 text-sm font-medium uppercase tracking-wider text-black/50">
                     {member.role}
                   </p>
 
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                    {member.bio}
-                  </p>
+                  <p className="mb-4 text-sm leading-relaxed text-black/65">{member.bio}</p>
 
-                  <div className="flex items-center justify-center space-x-4 text-xs text-slate-500 mb-4">
+                  <div className="mb-4 flex items-center justify-center space-x-4 text-xs text-black/50">
                     <div className="flex items-center space-x-1">
                       <MapPin className="h-3 w-3" />
                       <span>{member.location}</span>
@@ -234,7 +224,7 @@ export default function AboutPage() {
                       href={member.social.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="h-10 w-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 transition-all"
+                      className="flex h-10 w-10 items-center justify-center border border-black/10 text-black/50 transition-all hover:border-black/25 hover:text-black"
                     >
                       <Twitter className="h-5 w-5" />
                     </Link>
@@ -242,13 +232,13 @@ export default function AboutPage() {
                       href={member.social.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="h-10 w-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 transition-all"
+                      className="flex h-10 w-10 items-center justify-center border border-black/10 text-black/50 transition-all hover:border-black/25 hover:text-black"
                     >
                       <Linkedin className="h-5 w-5" />
                     </Link>
                   </div>
 
-                  <div className="space-y-1 text-xs text-slate-500 pt-4 border-t border-slate-100">
+                  <div className="space-y-1 border-t border-black/10 pt-4 text-xs text-black/50">
                     <p>Previous experience: Finance (KBC), Payments (Worldline)</p>
                     <p>Built SaaS product: CartoonAI.io</p>
                   </div>
@@ -257,34 +247,26 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Working with us */}
-      <section className="py-24 bg-slate-50/50">
-        <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-indigo-600 font-medium text-sm uppercase tracking-wider mb-3">
-              Why MonoClick
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-heading">
-              What makes us different
-            </h2>
-            <p className="text-slate-600">
-              What makes our custom automation approach different.
-            </p>
+      <RevealSection variant="slide-left" className="border-t border-white/10 bg-black py-24 text-white">
+        <div className="editorial-max max-w-4xl">
+          <div className="mb-12 text-center">
+            <p className="section-label mb-3 block text-white">Why MonoClick</p>
+            <h2 className="mb-4 font-heading text-3xl font-bold sm:text-4xl">What makes us different</h2>
+            <p className="text-white/55">What makes our custom automation approach different.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="h-10 w-10 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                  <Clock className="h-5 w-5 text-indigo-600" />
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-white/15 bg-white/5">
+                  <Clock className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                    No generic tools
-                  </h3>
-                  <p className="text-slate-600 text-sm">
+                  <h3 className="mb-2 text-lg font-semibold">No generic tools</h3>
+                  <p className="text-sm text-white/55">
                     We build custom automations that fit your specific workflows and tech stack.
                     Every solution is tailored to your business needs.
                   </p>
@@ -292,14 +274,12 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="h-10 w-10 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                  <Award className="h-5 w-5 text-indigo-600" />
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-white/15 bg-white/5">
+                  <Award className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                    Proven results
-                  </h3>
-                  <p className="text-slate-600 text-sm">
+                  <h3 className="mb-2 text-lg font-semibold">Proven results</h3>
+                  <p className="text-sm text-white/55">
                     Our automations save time, reduce costs, and generate revenue.
                     We focus on delivering measurable ROI for your business.
                   </p>
@@ -309,14 +289,12 @@ export default function AboutPage() {
 
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="h-10 w-10 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                  <Users className="h-5 w-5 text-indigo-600" />
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-white/15 bg-white/5">
+                  <Users className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                    Ecommerce-native AI solutions
-                  </h3>
-                  <p className="text-slate-600 text-sm">
+                  <h3 className="mb-2 text-lg font-semibold">Ecommerce-native AI solutions</h3>
+                  <p className="text-sm text-white/55">
                     We leverage cutting-edge AI to create chatbots, support automation, dashboards,
                     and competitive intelligence tailored for fast-moving ecommerce brands.
                   </p>
@@ -324,14 +302,12 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="h-10 w-10 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                  <Target className="h-5 w-5 text-indigo-600" />
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-white/15 bg-white/5">
+                  <Target className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                    End-to-end service
-                  </h3>
-                  <p className="text-slate-600 text-sm">
+                  <h3 className="mb-2 text-lg font-semibold">End-to-end service</h3>
+                  <p className="text-sm text-white/55">
                     From strategy and development to deployment and support, we handle
                     everything so you can focus on growing your business.
                   </p>
@@ -341,7 +317,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button asChild variant="gradient" size="lg">
+            <Button asChild variant="editorial" size="lg" className="rounded-none px-8">
               <Link href="/contact">
                 Get Custom AI Automation for Your Ecommerce Brand
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -349,7 +325,7 @@ export default function AboutPage() {
             </Button>
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       <CTABanner />
     </div>

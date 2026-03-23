@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
+import WireframeDottedGlobe from '@/components/ui/wireframe-dotted-globe'
 
 const useCases = [
   { industry: 'AI Chatbots', example: 'Trained on your FAQ, policies, and products' },
@@ -15,6 +15,22 @@ const useCases = [
   { industry: 'Content Creation', example: 'AI-powered product descriptions & marketing copy' },
   { industry: 'Competitive Intelligence', example: 'Track and analyze winning competitor ads' },
 ]
+
+const heroStagger = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.1, delayChildren: 0.12 },
+  },
+}
+
+const heroItem = {
+  hidden: { opacity: 0, y: 28 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const },
+  },
+}
 
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -27,107 +43,112 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex items-center bg-white overflow-hidden">
-      {/* Subtle grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
+    <section className="relative min-h-[calc(100dvh-var(--menu-height))] overflow-hidden bg-black">
+      <div className="pointer-events-auto absolute inset-0 z-0 flex items-center justify-center">
+        <WireframeDottedGlobe
+          width={1400}
+          height={720}
+          showInteractionHint={false}
+          canvasClassName="rounded-none opacity-[0.85] md:opacity-100"
+          className="w-full max-w-[min(100vw,1600px)]"
+        />
+      </div>
 
-      {/* Founder image - top right */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black via-black/20 to-black"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_75%_65%_at_50%_50%,transparent_15%,rgba(0,0,0,0.72)_100%)]"
+        aria-hidden
+      />
+
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="absolute top-32 right-8 lg:right-16 xl:right-24 z-20 hidden md:block"
+        transition={{ duration: 0.8, delay: 0.2 }}
+        whileHover={{ scale: 1.04 }}
+        className="pointer-events-auto absolute right-8 top-24 z-20 hidden md:block lg:right-16"
       >
         <div className="relative">
-          <div className="w-[140px] h-[140px] rounded-full overflow-hidden shadow-2xl shadow-slate-900/20 border-4 border-white">
+          <div className="h-[120px] w-[120px] overflow-hidden rounded-full border border-white/20 shadow-2xl shadow-black/50">
             <Image
               src="/pp.jpg"
               alt="Henry Buisseret"
-              width={140}
-              height={140}
-              className="w-full h-full object-cover"
+              width={120}
+              height={120}
+              className="h-full w-full object-cover"
               priority
             />
           </div>
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white rounded-full px-3 py-1.5 shadow-lg border border-slate-100">
-            <p className="text-xs font-medium text-slate-700 whitespace-nowrap">Henry</p>
+          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 rounded-full border border-white/15 bg-black/80 px-3 py-1 backdrop-blur-sm">
+            <p className="whitespace-nowrap text-xs font-medium text-white/90">Henry</p>
           </div>
         </div>
       </motion.div>
 
-      <div className="relative z-10 w-full pl-6 sm:pl-10 lg:pl-20 xl:pl-32 pr-6 sm:pr-10 lg:pr-20 pt-16 lg:pt-24">
-        {/* Main heading */}
+      <motion.div
+        variants={heroStagger}
+        initial="hidden"
+        animate="show"
+        className="pointer-events-none relative z-10 flex min-h-[calc(100dvh-var(--menu-height))] flex-col justify-end pb-8 pl-5 pr-6 pt-10 sm:pl-8 lg:pb-10 lg:pl-12"
+      >
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] font-bold tracking-tight text-slate-900 leading-[1.0] mb-8 font-heading"
+          variants={heroItem}
+          className="font-heading text-[13vw] font-black uppercase leading-[0.88] tracking-[-0.075em] text-white sm:text-[11vw] lg:text-[min(9rem,10vw)]"
         >
-          <span className="text-gradient">AI Growth Partner</span>
-          <br />
-          for E-commerce Brands
+          <span className="block">AI Growth Partner</span>
+          <span className="block">for E-commerce Brands</span>
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-6 max-w-2xl"
+          variants={heroItem}
+          className="mt-6 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base"
         >
-          We build AI-powered systems that automate customer support, analyze competitors, and drive smarter business decisions.
+          We build AI-powered systems that automate customer support, analyze competitors, and drive
+          smarter business decisions.
         </motion.p>
 
-        {/* Vertical carousel */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="mb-10"
-        >
+        <motion.div variants={heroItem} className="mt-8">
           <div className="h-14 overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                initial={{ y: 30, opacity: 0 }}
+                initial={{ y: 24, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -30, opacity: 0 }}
-                transition={{ duration: 0.4 }}
+                exit={{ y: -24, opacity: 0 }}
+                transition={{ duration: 0.35 }}
               >
-                <p className="text-lg font-semibold text-gradient">{useCases[currentIndex].industry}</p>
-                <p className="text-slate-500">{useCases[currentIndex].example}</p>
+                <p className="text-base font-semibold uppercase tracking-tight text-white">
+                  {useCases[currentIndex].industry}
+                </p>
+                <p className="text-sm text-white/50">{useCases[currentIndex].example}</p>
               </motion.div>
             </AnimatePresence>
           </div>
         </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+        <motion.div variants={heroItem} className="mt-6">
           <Link
             href="https://calendly.com/henrybuisseret/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 bg-gradient-brand text-white font-medium px-6 py-3 rounded-xl shadow-brand hover:shadow-brand-lg transition-shadow"
+            className="pointer-events-auto group inline-flex items-center gap-3 border border-white/35 bg-white/5 px-5 py-3 text-sm font-medium uppercase tracking-[0.04em] text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-black"
           >
-            <span className="overflow-hidden h-[1.2em] relative inline-flex items-center">
+            <span className="relative inline-flex h-[1.2em] items-center overflow-hidden">
               <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
-                Let's talk
+                Let&apos;s talk
               </span>
-              <span className="block absolute top-full transition-transform duration-300 ease-out group-hover:-translate-y-full">
-                Let's talk
+              <span className="absolute top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+                Let&apos;s talk
               </span>
             </span>
-            <span className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-              <ArrowRight className="h-4 w-4 text-indigo-600 transition-transform duration-300 ease-out group-hover:translate-x-0.5" />
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/25 bg-black/40 transition-colors group-hover:border-black group-hover:bg-black/10">
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5" />
             </span>
           </Link>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   )
 }

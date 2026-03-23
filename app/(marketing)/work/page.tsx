@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowUpRight, Calendar, Clock, Users } from 'lucide-react'
 
@@ -8,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { CTABanner } from '@/components/cta-banner'
+import { RevealSection } from '@/components/scroll-reveal'
 
 export const metadata: Metadata = createMetadata({
   title: 'Case Studies',
@@ -71,38 +71,39 @@ const caseStudies = [
 
 export default function WorkPage() {
   return (
-    <div className="pt-16">
+    <div>
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-subtle">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-zinc-100 mb-6">
-              Case Studies
-            </h1>
-            <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-8">
-              See how we've helped B2B companies transform their workflows with
-              AI-powered automation systems that deliver measurable results.
-            </p>
-            <div className="flex items-center justify-center space-x-8 text-sm text-zinc-300">
-              <div className="flex items-center space-x-2">
-                <span className="h-2 w-2 rounded-full bg-green-400" />
-                <span>100+ automations deployed</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="h-2 w-2 rounded-full bg-indigo-400" />
-                <span>50K+ hours saved monthly</span>
-              </div>
+      <RevealSection variant="fade-up" className="border-b border-white/10 bg-black py-24">
+        <div className="editorial-max text-center">
+          <h1 className="mb-6 font-heading text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            Case Studies
+          </h1>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-white/55">
+            See how we&apos;ve helped B2B companies transform their workflows with AI-powered automation systems
+            that deliver measurable results.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-white/45">
+            <div className="flex items-center space-x-2">
+              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              <span>100+ automations deployed</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="h-2 w-2 rounded-full bg-white/60" />
+              <span>50K+ hours saved monthly</span>
             </div>
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       {/* Case Studies */}
-      <section className="py-24">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <RevealSection variant="bright" className="border-t border-white/10 bg-black py-24">
+        <div className="editorial-max max-w-7xl">
           <div className="space-y-16">
             {caseStudies.map((study, index) => (
-              <Card key={study.title} className="overflow-hidden bg-zinc-900/50 border-zinc-800">
+              <Card
+                key={study.title}
+                className="overflow-hidden rounded-none border-white/10 bg-neutral-950 text-white shadow-none"
+              >
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                   {/* Content */}
                   <div className="p-8 lg:p-12">
@@ -111,7 +112,10 @@ export default function WorkPage() {
                         <Badge variant="outline" className="border-zinc-700 text-zinc-300">
                           {study.industry}
                         </Badge>
-                        <Badge variant="gradient">
+                        <Badge
+                          variant="outline"
+                          className="rounded-none border-white/20 text-white/80"
+                        >
                           Case Study
                         </Badge>
                       </div>
@@ -157,7 +161,7 @@ export default function WorkPage() {
                       <ul className="space-y-2">
                         {study.results.map((result, resultIndex) => (
                           <li key={resultIndex} className="flex items-center space-x-2">
-                            <div className="h-1.5 w-1.5 rounded-full bg-indigo-400 flex-shrink-0" />
+                            <div className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/50" />
                             <span className="text-zinc-300 text-sm">{result}</span>
                           </li>
                         ))}
@@ -195,14 +199,12 @@ export default function WorkPage() {
 
           {/* Bottom CTA */}
           <div className="mt-16 text-center">
-            <h3 className="text-2xl font-heading font-bold text-zinc-100 mb-4">
-              Ready to see similar results?
-            </h3>
-            <p className="text-zinc-400 mb-6 max-w-2xl mx-auto">
-              Every business is unique. Let's discuss how we can build custom automations
-              that address your specific challenges and growth goals.
+            <h3 className="mb-4 font-heading text-2xl font-bold text-white">Ready to see similar results?</h3>
+            <p className="mx-auto mb-6 max-w-2xl text-white/55">
+              Every business is unique. Let&apos;s discuss how we can build custom automations that address your
+              specific challenges and growth goals.
             </p>
-            <Button asChild variant="gradient" size="lg">
+            <Button asChild variant="editorial" size="lg" className="rounded-none px-8">
               <Link href="/contact">
                 Start your project
                 <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -210,7 +212,7 @@ export default function WorkPage() {
             </Button>
           </div>
         </div>
-      </section>
+      </RevealSection>
 
       <CTABanner />
     </div>

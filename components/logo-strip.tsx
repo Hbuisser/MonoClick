@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
+import { RevealSection, ScrollReveal } from '@/components/scroll-reveal'
+
 const trustedLogos = [
   { name: 'Vexa', src: '/vexa.png', width: 140, height: 40 },
   { name: 'Worldwide Quality Control', src: '/worldwide2.png', width: 160, height: 40 },
@@ -18,107 +20,81 @@ const serviceLogos = [
 ]
 
 export function LogoStrip() {
-  // Double the logos for seamless infinite scroll
   const duplicatedLogos = [...trustedLogos, ...trustedLogos]
 
   return (
-    <section className="py-16 border-t border-slate-100 bg-slate-50/50">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Trusted by section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <p className="text-slate-500 text-sm font-medium uppercase tracking-wider">
-            Trusted by innovative companies
-          </p>
-        </motion.div>
+    <RevealSection variant="bright" className="border-t border-white/10 bg-black py-16">
+      <div className="editorial-max">
+        <ScrollReveal variant="fade-up" className="mb-10 text-center">
+          <p className="section-label text-white">Trusted by innovative companies</p>
+        </ScrollReveal>
 
-        {/* Infinite scroll logo marquee */}
         <div className="relative overflow-hidden">
-          {/* Fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-50/50 to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-50/50 to-transparent z-10" />
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-black to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-black to-transparent" />
 
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
             className="flex animate-scroll-left"
           >
             {duplicatedLogos.map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="flex items-center justify-center px-8 sm:px-12 flex-shrink-0"
+                className="flex flex-shrink-0 items-center justify-center px-8 sm:px-12"
               >
-                <div className="flex items-center justify-center grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
+                <motion.div
+                  className="flex items-center justify-center opacity-50 grayscale"
+                  whileHover={{ scale: 1.08, opacity: 1, filter: 'grayscale(0)' }}
+                  transition={{ duration: 0.25 }}
+                >
                   <Image
                     src={logo.src}
                     alt={logo.name}
                     width={logo.width}
                     height={logo.height}
-                    className="h-8 sm:h-10 w-auto object-contain"
+                    className="h-8 w-auto object-contain sm:h-10"
                   />
-                </div>
+                </motion.div>
               </div>
             ))}
           </motion.div>
         </div>
       </div>
-    </section>
+    </RevealSection>
   )
 }
 
 export function PoweredBy() {
   return (
-    <section className="py-12 border-t border-slate-100">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Powered by section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-8"
-        >
-          <p className="text-slate-400 text-xs sm:text-sm uppercase tracking-wider">
-            Powered by
-          </p>
-        </motion.div>
+    <RevealSection variant="fade-up" className="border-t border-white/10 bg-black py-12">
+      <div className="editorial-max">
+        <ScrollReveal variant="slide-left" className="mb-8 text-center">
+          <p className="section-label text-white">Powered by</p>
+        </ScrollReveal>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex items-center justify-center gap-10 sm:gap-16 flex-wrap"
-        >
+        <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-16">
           {serviceLogos.map((logo, index) => (
-            <motion.div
-              key={logo.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="flex items-center justify-center"
-            >
-              <div className="flex items-center justify-center grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all duration-300">
+            <ScrollReveal key={logo.name} variant="scale" delay={index * 0.08}>
+              <motion.div
+                className="flex items-center justify-center opacity-45 grayscale"
+                whileHover={{ scale: 1.06, opacity: 1, filter: 'grayscale(0)' }}
+                transition={{ duration: 0.25 }}
+              >
                 <Image
                   src={logo.src}
                   alt={logo.name}
                   width={logo.width}
                   height={logo.height}
-                  className="h-8 sm:h-10 w-auto object-contain"
+                  className="h-8 w-auto object-contain sm:h-10"
                 />
-              </div>
-            </motion.div>
+              </motion.div>
+            </ScrollReveal>
           ))}
-        </motion.div>
+        </div>
       </div>
-    </section>
+    </RevealSection>
   )
 }

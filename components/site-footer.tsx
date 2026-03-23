@@ -1,5 +1,11 @@
+'use client'
+
 import Link from 'next/link'
-import { Mail, MapPin, Twitter, Linkedin, ArrowUpRight } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Mail, MapPin, Twitter, Linkedin } from 'lucide-react'
+
+import { MonoClickLogoMark } from '@/components/MonoClickLogoMark'
+import { ScrollReveal } from '@/components/scroll-reveal'
 
 const navigation = {
   company: [
@@ -27,127 +33,113 @@ const navigation = {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-slate-50 border-t border-slate-200">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-            {/* Brand */}
-            <div className="lg:col-span-2">
-              <Link href="/" className="flex items-center space-x-2.5 mb-5">
-                <div className="h-12 w-12 rounded-xl bg-gradient-brand flex items-center justify-center shadow-brand p-2">
-                  <div className="flex items-center gap-0.5">
-                    <div className="flex flex-col gap-0.5">
-                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
-                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
-                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
-                    </div>
-                    <div className="flex flex-col justify-center">
-                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
-                    </div>
-                    <div className="flex flex-col gap-0.5">
-                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
-                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
-                      <div className="w-1.5 h-1.5 bg-white rounded-[1px]" />
-                    </div>
-                  </div>
-                </div>
-                <span className="text-2xl font-semibold text-slate-900">
-                  MonoClick
-                </span>
-              </Link>
-              <p className="text-slate-600 mb-6 max-w-md leading-relaxed">
-                AI-powered automations that turn manual workflows into predictable
-                pipelines for B2B companies. Lead gen, ops, and customer success included.
-              </p>
-              <div className="space-y-3">
-                <a
-                  href="mailto:henry@monoclick.ai"
-                  className="flex items-center space-x-2.5 text-slate-600 text-sm hover:text-indigo-600 transition-colors group"
-                >
-                  <div className="h-8 w-8 rounded-lg bg-white border border-slate-200 flex items-center justify-center group-hover:border-indigo-200 group-hover:bg-indigo-50 transition-colors">
-                    <Mail className="h-4 w-4" />
-                  </div>
-                  <span>henry@monoclick.ai</span>
-                </a>
-                <div className="flex items-center space-x-2.5 text-slate-600 text-sm">
-                  <div className="h-8 w-8 rounded-lg bg-white border border-slate-200 flex items-center justify-center">
-                    <MapPin className="h-4 w-4" />
-                  </div>
-                  <span>EU & US</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Company */}
-            <div>
-              <h3 className="text-slate-900 font-semibold mb-5">Company</h3>
-              <ul className="space-y-3">
-                {navigation.company.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-slate-600 hover:text-indigo-600 transition-colors text-sm inline-flex items-center group"
-                    >
-                      {item.name}
-                      <ArrowUpRight className="ml-1 h-3 w-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 transition-all" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Legal & Social */}
-            <div>
-              <h3 className="text-slate-900 font-semibold mb-5">Legal</h3>
-              <ul className="space-y-3">
-                {navigation.legal.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="text-slate-600 hover:text-indigo-600 transition-colors text-sm inline-flex items-center group"
-                    >
-                      {item.name}
-                      <ArrowUpRight className="ml-1 h-3 w-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 transition-all" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-
-              <h3 className="text-slate-900 font-semibold mb-4 mt-8">Follow us</h3>
-              <div className="flex space-x-2">
-                {navigation.social.map((item) => {
-                  const Icon = item.icon
-                  return (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="h-9 w-9 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={item.name}
-                    >
-                      <Icon className="h-4 w-4" />
-                    </a>
-                  )
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-slate-200 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-slate-500 text-sm">
-              © {new Date().getFullYear()} MonoClick. All rights reserved.
+    <footer className="border-t border-white/10 bg-black px-6 py-12">
+      <div className="editorial-max">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
+          <ScrollReveal variant="fade-up" className="lg:col-span-5">
+            <Link href="/" className="mb-6 flex items-center gap-2.5">
+              <motion.div whileHover={{ scale: 1.03 }}>
+                <MonoClickLogoMark />
+              </motion.div>
+              <span className="font-heading text-lg font-semibold tracking-tight text-white">MonoClick</span>
+            </Link>
+            <p className="mb-8 max-w-md text-sm leading-relaxed text-white/45">
+              AI-powered automations that turn manual workflows into predictable pipelines for B2B
+              companies. Lead gen, ops, and customer success included.
             </p>
-            <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-              <p className="text-slate-500 text-xs">
-                Built with Next.js, TypeScript, and Tailwind CSS
-              </p>
+            <div className="space-y-4">
+              <motion.a
+                href="mailto:henry@monoclick.ai"
+                className="flex items-center gap-3 text-sm text-white/50 transition-colors hover:text-white"
+                whileHover={{ x: 3 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+              >
+                <div className="flex h-9 w-9 items-center justify-center border border-white/15 bg-white/5">
+                  <Mail className="h-4 w-4" />
+                </div>
+                <span>henry@monoclick.ai</span>
+              </motion.a>
+              <div className="flex items-center gap-3 text-sm text-white/50">
+                <div className="flex h-9 w-9 items-center justify-center border border-white/15 bg-white/5">
+                  <MapPin className="h-4 w-4" />
+                </div>
+                <span>EU & US</span>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
+
+          <ScrollReveal variant="slide-left" delay={0.06} className="lg:col-span-3">
+            <h3 className="mb-5 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-white/35">
+              Company
+            </h3>
+            <ul className="space-y-3">
+              {navigation.company.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="inline-block text-sm text-white/50 transition-colors hover:text-white"
+                  >
+                    <motion.span className="inline-block" whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+                      {item.name}
+                    </motion.span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+
+          <ScrollReveal variant="slide-right" delay={0.1} className="lg:col-span-4">
+            <h3 className="mb-5 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-white/35">
+              Legal
+            </h3>
+            <ul className="mb-10 space-y-3">
+              {navigation.legal.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="inline-block text-sm text-white/50 transition-colors hover:text-white"
+                  >
+                    <motion.span className="inline-block" whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+                      {item.name}
+                    </motion.span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="mb-4 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-white/35">
+              Follow us
+            </h3>
+            <div className="flex gap-2">
+              {navigation.social.map((item) => {
+                const Icon = item.icon
+                return (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/45 transition-colors hover:border-white/30 hover:text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.name}
+                    whileHover={{ scale: 1.08, borderColor: 'rgba(255,255,255,0.35)' }}
+                    whileTap={{ scale: 0.96 }}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </motion.a>
+                )
+              })}
+            </div>
+          </ScrollReveal>
         </div>
+
+        <ScrollReveal variant="fade" delay={0.08} className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
+          <p className="text-[0.6rem] font-medium uppercase tracking-widest text-white/25">
+            © {new Date().getFullYear()} MonoClick. All rights reserved.
+          </p>
+          <p className="text-[0.6rem] font-medium uppercase tracking-widest text-white/25">
+            Built with Next.js, TypeScript, and Tailwind CSS
+          </p>
+        </ScrollReveal>
       </div>
     </footer>
   )

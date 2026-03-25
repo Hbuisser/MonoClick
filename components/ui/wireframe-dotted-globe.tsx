@@ -8,7 +8,7 @@ interface WireframeDottedGlobeProps {
   width?: number
   height?: number
   className?: string
-  /** When false, hides the drag/zoom hint (e.g. hero with other chrome). */
+  /** When false, hides the drag hint (e.g. hero with other chrome). */
   showInteractionHint?: boolean
   /** Passed to the canvas; use rounded-none for full-bleed heroes. */
   canvasClassName?: string
@@ -201,9 +201,6 @@ export default function WireframeDottedGlobe({
     let autoRotate = true
     const rotationSpeed = 0.12
 
-    const minScale = radius * 0.5
-    const maxScale = radius * 3
-
     const rotate = () => {
       if (autoRotate) {
         rotation[0] += rotationSpeed
@@ -246,43 +243,13 @@ export default function WireframeDottedGlobe({
       document.addEventListener('mouseup', handleMouseUp)
     }
 
-    const handleWheel = (event: WheelEvent) => {
-      if (event.deltaY === 0) return
-
-      const currentScale = projection.scale()
-
-      const epsilon = 0.02
-      const isAtMinZoom = currentScale <= minScale + epsilon
-      const isAtMaxZoom = currentScale >= maxScale - epsilon
-
-      // Scroll down = zoom in (bigger). At max zoom, scroll down → let the page scroll.
-      if (event.deltaY > 0 && isAtMaxZoom) {
-        return
-      }
-
-      // Scroll up = zoom out (smaller). At min zoom, scroll up → let the page scroll.
-      if (event.deltaY < 0 && isAtMinZoom) {
-        return
-      }
-
-      event.preventDefault()
-      const zoomFactor = event.deltaY > 0 ? 1.1 : 0.9
-      const newScale = Math.max(minScale, Math.min(maxScale, currentScale * zoomFactor))
-      projection.scale(newScale)
-      render()
-    }
-
-    const wheelOptions: AddEventListenerOptions = { passive: false }
-
     canvas.addEventListener('mousedown', handleMouseDown)
-    canvas.addEventListener('wheel', handleWheel, wheelOptions)
 
     loadWorldData()
 
     return () => {
       rotationTimer.stop()
       canvas.removeEventListener('mousedown', handleMouseDown)
-      canvas.removeEventListener('wheel', handleWheel, wheelOptions)
     }
   }, [width, height])
 
@@ -308,7 +275,7 @@ export default function WireframeDottedGlobe({
       />
       {showInteractionHint ? (
         <div className="pointer-events-none absolute bottom-4 right-4 rounded-md bg-neutral-900/90 px-2 py-1 text-xs text-white/50">
-          Drag to rotate · Scroll down to enlarge
+          Drag to rotate
         </div>
       ) : null}
     </div>

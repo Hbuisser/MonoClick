@@ -18,6 +18,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { CTABanner } from '@/components/cta-banner'
 import { RevealSection } from '@/components/scroll-reveal'
+import { TechnologyHeroSparkles } from '@/components/technology-hero-sparkles'
 
 export const metadata: Metadata = createMetadata({
   title: 'RAG Technology - How AI Chatbots Learn Your Business Knowledge',
@@ -99,7 +100,8 @@ export default function TechnologyPage() {
   return (
     <div>
       <RevealSection variant="fade-up" className="relative overflow-hidden border-b border-white/10 bg-black py-24">
-        <div className="editorial-max text-center">
+        <TechnologyHeroSparkles />
+        <div className="editorial-max relative z-10 text-center">
           <div className="mx-auto max-w-3xl">
             <p className="section-label mb-4 block text-white">The Technology Behind Our Chatbots</p>
             <h1 className="mb-6 font-heading text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
@@ -111,7 +113,10 @@ export default function TechnologyPage() {
             </p>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
               {marketStats.map((stat) => (
-                <div key={stat.label} className="border border-white/10 bg-neutral-950 p-4 text-center">
+                <div
+                  key={stat.label}
+                  className="border border-white/10 bg-neutral-950/90 p-4 text-center backdrop-blur-sm"
+                >
                   <div className="mb-1 text-xl font-bold text-white">{stat.value}</div>
                   <div className="text-sm text-white/45">{stat.label}</div>
                 </div>

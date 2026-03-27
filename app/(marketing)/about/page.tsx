@@ -189,14 +189,16 @@ export default function AboutPage() {
               >
                 <CardContent className="p-8 text-center">
                   {/* Profile Picture */}
-                  <div className="mx-auto mb-6 h-32 w-32 overflow-hidden border-2 border-blue-500/30 shadow-[0_0_20px_-4px_rgba(37,99,235,0.25)]">
-                    <Image
-                      src="/pp.jpg"
-                      alt={`${member.name} profile picture`}
-                      width={128}
-                      height={128}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="mx-auto mb-6 inline-block border border-black/10 p-3">
+                    <div className="h-32 w-32 overflow-hidden">
+                      <Image
+                        src="/pp.jpg"
+                        alt={`${member.name} profile picture`}
+                        width={128}
+                        height={128}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
 
                   <h3 className="mb-2 text-xl font-semibold text-black">{member.name}</h3>

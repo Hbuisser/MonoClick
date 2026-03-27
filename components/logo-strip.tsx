@@ -26,7 +26,7 @@ export function LogoStrip() {
     <RevealSection variant="bright" className="border-t border-white/10 bg-black py-16">
       <div className="editorial-max">
         <ScrollReveal variant="fade-up" className="mb-10 text-center">
-          <p className="section-label text-white">Trusted by innovative companies</p>
+          <p className="section-label text-white">Trusted by</p>
         </ScrollReveal>
 
         <div className="relative overflow-hidden">

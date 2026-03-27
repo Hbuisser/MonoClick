@@ -93,7 +93,7 @@ export function ServicesGrid() {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal variant="fade" delay={0.08} className="mb-16 max-w-2xl text-sm leading-relaxed text-white/50">
+        <ScrollReveal variant="fade" delay={0.08} className="mb-16 max-w-2xl text-base leading-relaxed text-white/50">
           From AI chatbots to competitor intelligence, we build AI-powered systems that help fast-moving ecommerce brands
           scale smarter.
         </ScrollReveal>
@@ -118,25 +118,16 @@ export function ServicesGrid() {
                   <span className="mb-4 block text-[0.6rem] font-medium uppercase tracking-widest text-white/30">
                     {num}
                   </span>
-                  <div className="mb-4 flex items-start gap-3">
-                    <div
-                      className={`flex h-10 w-10 flex-shrink-0 items-center justify-center border transition-colors duration-300 group-hover:border-blue-500/40 ${
-                        isHighlight ? 'border-blue-500/50 bg-gradient-to-br from-blue-600/20 to-sky-400/10' : 'border-white/15 bg-white/5'
-                      }`}
-                    >
-                      <Icon className={`h-5 w-5 ${isHighlight ? 'text-sky-400' : 'text-white'}`} />
+                  <div className="mb-4">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-blue-500/30 bg-gradient-to-br from-blue-600/15 to-sky-400/10 transition-colors duration-300 group-hover:border-blue-500/40">
+                      <Icon className="h-5 w-5 text-sky-400" />
                     </div>
-                    {isHighlight && (
-                      <span className="bg-gradient-to-r from-blue-600 to-sky-400 px-2 py-0.5 text-[0.55rem] font-semibold uppercase tracking-widest text-white">
-                        New
-                      </span>
-                    )}
                   </div>
                   <h3 className="mb-3 text-base font-bold uppercase tracking-tight text-white">{service.title}</h3>
-                  <p className="mb-6 text-xs leading-relaxed text-white/45">{service.description}</p>
-                  <ul className="space-y-2">
+                  <p className="mb-6 text-sm leading-relaxed text-white/45">{service.description}</p>
+                  <ul className="space-y-2.5">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start gap-2 text-xs text-white/55">
+                      <li key={featureIndex} className="flex items-start gap-2 text-sm text-white/55">
                         <Check className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-sky-400/70" />
                         <span>{feature}</span>
                       </li>

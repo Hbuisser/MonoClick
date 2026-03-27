@@ -55,7 +55,7 @@ export function LogoStrip() {
                     alt={logo.name}
                     width={logo.width}
                     height={logo.height}
-                    className="h-8 w-auto object-contain sm:h-10"
+                    className="h-10 w-auto object-contain sm:h-14"
                   />
                 </motion.div>
               </div>

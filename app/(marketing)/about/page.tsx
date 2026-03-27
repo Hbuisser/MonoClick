@@ -82,9 +82,9 @@ export default function AboutPage() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="min-w-[140px] border border-white/10 bg-neutral-950 p-4 text-center"
+                className="min-w-[140px] border border-blue-500/20 bg-neutral-950 p-4 text-center"
               >
-                <div className="mb-1 text-2xl font-bold text-white">{stat.value}</div>
+                <div className="mb-1 text-2xl font-bold text-gradient">{stat.value}</div>
                 <div className="text-sm text-white/45">{stat.label}</div>
               </div>
             ))}
@@ -157,8 +157,8 @@ export default function AboutPage() {
                   className="rounded-none border-0 border-transparent bg-black text-center text-white shadow-none transition-colors hover:bg-neutral-950"
                 >
                   <CardContent className="p-8">
-                    <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center border border-white/15 bg-white/5">
-                      <Icon className="h-8 w-8 text-white" />
+                    <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center border border-blue-500/30 bg-gradient-to-br from-blue-600/15 to-sky-400/10">
+                      <Icon className="h-8 w-8 text-sky-400" />
                     </div>
                     <h3 className="mb-4 text-xl font-semibold">{value.title}</h3>
                     <p className="leading-relaxed text-white/55">{value.description}</p>
@@ -189,7 +189,7 @@ export default function AboutPage() {
               >
                 <CardContent className="p-8 text-center">
                   {/* Profile Picture */}
-                  <div className="mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full border-2 border-black/10">
+                  <div className="mx-auto mb-6 h-32 w-32 overflow-hidden border-2 border-blue-500/30 shadow-[0_0_20px_-4px_rgba(37,99,235,0.25)]">
                     <Image
                       src="/pp.jpg"
                       alt={`${member.name} profile picture`}
@@ -224,7 +224,7 @@ export default function AboutPage() {
                       href={member.social.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center border border-black/10 text-black/50 transition-all hover:border-black/25 hover:text-black"
+                      className="flex h-10 w-10 items-center justify-center border border-blue-500/25 bg-gradient-to-br from-blue-600/10 to-sky-400/5 text-blue-600 transition-all hover:border-blue-500/40 hover:text-blue-700"
                     >
                       <Twitter className="h-5 w-5" />
                     </Link>
@@ -232,7 +232,7 @@ export default function AboutPage() {
                       href={member.social.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center border border-black/10 text-black/50 transition-all hover:border-black/25 hover:text-black"
+                      className="flex h-10 w-10 items-center justify-center border border-blue-500/25 bg-gradient-to-br from-blue-600/10 to-sky-400/5 text-blue-600 transition-all hover:border-blue-500/40 hover:text-blue-700"
                     >
                       <Linkedin className="h-5 w-5" />
                     </Link>
@@ -261,8 +261,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-white/15 bg-white/5">
-                  <Clock className="h-5 w-5 text-white" />
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-blue-500/30 bg-gradient-to-br from-blue-600/15 to-sky-400/10">
+                  <Clock className="h-5 w-5 text-sky-400" />
                 </div>
                 <div>
                   <h3 className="mb-2 text-lg font-semibold">No generic tools</h3>
@@ -274,8 +274,8 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-white/15 bg-white/5">
-                  <Award className="h-5 w-5 text-white" />
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-blue-500/30 bg-gradient-to-br from-blue-600/15 to-sky-400/10">
+                  <Award className="h-5 w-5 text-sky-400" />
                 </div>
                 <div>
                   <h3 className="mb-2 text-lg font-semibold">Proven results</h3>
@@ -289,8 +289,8 @@ export default function AboutPage() {
 
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-white/15 bg-white/5">
-                  <Users className="h-5 w-5 text-white" />
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-blue-500/30 bg-gradient-to-br from-blue-600/15 to-sky-400/10">
+                  <Users className="h-5 w-5 text-sky-400" />
                 </div>
                 <div>
                   <h3 className="mb-2 text-lg font-semibold">Ecommerce-native AI solutions</h3>
@@ -302,8 +302,8 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-white/15 bg-white/5">
-                  <Target className="h-5 w-5 text-white" />
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-blue-500/30 bg-gradient-to-br from-blue-600/15 to-sky-400/10">
+                  <Target className="h-5 w-5 text-sky-400" />
                 </div>
                 <div>
                   <h3 className="mb-2 text-lg font-semibold">End-to-end service</h3>
@@ -317,10 +317,10 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button asChild variant="editorial" size="lg" className="rounded-none px-8">
-              <Link href="/contact">
+            <Button asChild variant="gradient-blue" size="lg" className="rounded-none px-8">
+              <Link href="/contact" className="group">
                 Get Custom AI Automation for Your Ecommerce Brand
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
               </Link>
             </Button>
           </div>

@@ -61,15 +61,15 @@ export function CTABanner() {
                 viewport={{ once: true }}
                 className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
               >
-                <Button asChild variant="editorial" size="xl" className="rounded-none px-8">
+                <Button asChild variant="gradient-blue" size="xl" className="rounded-none px-8">
                   <Link
                     href="https://calendly.com/henrybuisseret/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center"
+                    className="group flex items-center"
                   >
                     Request a demo
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </Button>
 
@@ -102,7 +102,7 @@ export function CTABanner() {
                     viewport={{ once: true }}
                     className="flex items-center gap-2"
                   >
-                    <Check className="h-3.5 w-3.5 text-white/50" />
+                    <Check className="h-3.5 w-3.5 text-sky-400" />
                     <span>{item}</span>
                   </motion.div>
                 ))}

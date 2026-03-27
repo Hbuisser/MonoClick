@@ -70,21 +70,21 @@ export function Hero() {
         whileHover={{ scale: 1.04 }}
         className="pointer-events-auto absolute right-8 top-24 z-20 hidden md:block lg:right-16"
       >
-        <div className="relative">
-          <div className="h-[120px] w-[120px] overflow-hidden rounded-full border border-white/20 shadow-2xl shadow-black/50">
-            <Image
-              src="/pp.jpg"
-              alt="Henry Buisseret"
-              width={120}
-              height={120}
-              className="h-full w-full object-cover"
-              priority
-            />
+          <div className="relative border border-white p-3 bg-white/5">
+            <div className="h-[160px] w-[160px] overflow-hidden">
+              <Image
+                src="/pp.jpg"
+                alt="Henry Buisseret"
+                width={160}
+                height={160}
+                className="h-full w-full object-cover"
+                priority
+              />
+            </div>
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 border border-white/15 bg-black/80 px-3 py-1 backdrop-blur-sm">
+              <p className="whitespace-nowrap text-xs font-medium text-white/90">Henry</p>
+            </div>
           </div>
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 rounded-full border border-white/15 bg-black/80 px-3 py-1 backdrop-blur-sm">
-            <p className="whitespace-nowrap text-xs font-medium text-white/90">Henry</p>
-          </div>
-        </div>
       </motion.div>
 
       <motion.div
@@ -98,16 +98,17 @@ export function Hero() {
           className="font-heading text-[13vw] font-black uppercase leading-[0.88] tracking-[-0.075em] text-white sm:text-[11vw] lg:text-[min(9rem,10vw)]"
         >
           <span className="block">AI Growth Partner</span>
-          <span className="block">for E-commerce Brands</span>
+          <span className="block">For E-commerce</span>
+          <span className="block">Brands</span>
         </motion.h1>
 
-        <motion.p
+        {/* <motion.p
           variants={heroItem}
           className="mt-6 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base"
         >
           We build AI-powered systems that automate customer support, analyze competitors, and drive
           smarter business decisions.
-        </motion.p>
+        </motion.p> */}
 
         <motion.div variants={heroItem} className="mt-8">
           <div className="h-14 overflow-hidden">
@@ -133,7 +134,7 @@ export function Hero() {
             href="https://calendly.com/henrybuisseret/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="pointer-events-auto group inline-flex items-center gap-3 border border-white/35 bg-white/5 px-5 py-3 text-sm font-medium uppercase tracking-[0.04em] text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-black"
+            className="pointer-events-auto group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 px-6 py-3 text-sm font-medium uppercase tracking-[0.04em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_0_40px_-4px_rgba(37,99,235,0.6),0_0_80px_-12px_rgba(56,189,248,0.25)] hover:brightness-110 active:scale-[0.98] active:translate-y-0"
           >
             <span className="relative inline-flex h-[1.2em] items-center overflow-hidden">
               <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
@@ -143,7 +144,7 @@ export function Hero() {
                 Let&apos;s talk
               </span>
             </span>
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/25 bg-black/40 transition-colors group-hover:border-black group-hover:bg-black/10">
+            <span className="flex h-8 w-8 items-center justify-center bg-white/20 transition-colors group-hover:bg-white/30">
               <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5" />
             </span>
           </Link>

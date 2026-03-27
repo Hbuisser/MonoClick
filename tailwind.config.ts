@@ -51,19 +51,18 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Brand colors - Blue/Indigo
         brand: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
-          950: '#1e1b4b',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+          950: '#172554',
         },
       },
       borderRadius: {
@@ -76,8 +75,10 @@ const config: Config = {
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
         'soft-lg': '0 10px 40px -10px rgba(0, 0, 0, 0.1), 0 2px 10px -2px rgba(0, 0, 0, 0.04)',
-        'brand': '0 4px 14px 0 rgba(79, 70, 229, 0.25)',
-        'brand-lg': '0 10px 40px -10px rgba(79, 70, 229, 0.3)',
+        'brand': '0 4px 14px 0 rgba(37, 99, 235, 0.3)',
+        'brand-lg': '0 10px 40px -10px rgba(37, 99, 235, 0.35)',
+        'blue-glow': '0 0 24px -4px rgba(37, 99, 235, 0.35), 0 0 64px -12px rgba(56, 189, 248, 0.18)',
+        'blue-glow-sm': '0 0 12px -2px rgba(37, 99, 235, 0.25)',
       },
       keyframes: {
         'accordion-down': {

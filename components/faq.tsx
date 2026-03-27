@@ -66,7 +66,7 @@ export function FAQ() {
                 value={`item-${index}`}
                 className="border-b border-black/10 transition-colors last:border-0 hover:bg-black/[0.02]"
               >
-                <AccordionTrigger className="px-6 py-5 text-left text-sm font-medium text-black transition-colors hover:text-black/80 hover:no-underline data-[state=open]:bg-black/[0.03]">
+                <AccordionTrigger className="px-6 py-5 text-left text-sm font-medium text-black transition-colors hover:text-black/80 hover:no-underline data-[state=open]:bg-blue-50/60 data-[state=open]:text-blue-700">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-5 text-sm leading-relaxed text-black/60">
@@ -93,10 +93,10 @@ export function FAQ() {
                 href="https://calendly.com/henrybuisseret/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-sm font-medium text-black transition-opacity hover:opacity-60"
+                className="inline-flex items-center text-sm font-medium text-gradient transition-opacity hover:opacity-75"
               >
                 Book a call
-                <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                <ArrowRight className="ml-1 h-3.5 w-3.5 text-blue-600" />
               </Link>
             </div>
           </div>

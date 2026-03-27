@@ -16,7 +16,7 @@ const cases = [
       'Conversion rate increased by 35%',
       'Sales team productivity up 40%'
     ],
-    color: 'from-indigo-600 to-purple-600'
+    color: 'from-blue-600 to-sky-400'
   },
   {
     icon: Users,
@@ -28,7 +28,7 @@ const cases = [
       'Customer satisfaction up 25%',
       'Team can focus on complex issues'
     ],
-    color: 'from-cyan-500 to-blue-500'
+    color: 'from-blue-500 to-sky-300'
   },
   {
     icon: Zap,
@@ -40,7 +40,7 @@ const cases = [
       'Error rate reduced by 80%',
       'Sales velocity increased 3x'
     ],
-    color: 'from-green-500 to-emerald-500'
+    color: 'from-blue-700 to-sky-500'
   },
 ]
 
@@ -81,14 +81,14 @@ export function CaseHighlights() {
                   <CardContent className="p-6">
                     {/* Header */}
                     <div className="flex items-center justify-between mb-6">
-                      <div className={`h-12 w-12 rounded-xl bg-gradient-to-r ${caseStudy.color} flex items-center justify-center`}>
+                      <div className={`h-12 w-12 bg-gradient-to-r ${caseStudy.color} flex items-center justify-center`}>
                         <Icon className="h-6 w-6 text-white" />
                       </div>
-                      <ArrowUpRight className="h-5 w-5 text-zinc-500 group-hover:text-indigo-400 transition-colors" />
+                      <ArrowUpRight className="h-5 w-5 text-zinc-500 group-hover:text-sky-400 transition-colors" />
                     </div>
 
                     {/* Industry badge */}
-                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-zinc-800/50 text-xs text-zinc-300 mb-4">
+                    <div className="inline-flex items-center px-3 py-1 bg-zinc-800/50 text-xs text-zinc-300 mb-4">
                       {caseStudy.industry}
                     </div>
 
@@ -106,7 +106,7 @@ export function CaseHighlights() {
                     <div className="space-y-2">
                       {caseStudy.results.map((result, resultIndex) => (
                         <div key={resultIndex} className="flex items-start space-x-2">
-                          <div className="h-1.5 w-1.5 rounded-full bg-indigo-400 mt-2 flex-shrink-0" />
+                          <div className="h-1.5 w-1.5 rounded-full bg-sky-400 mt-2 flex-shrink-0" />
                           <span className="text-sm text-zinc-300">{result}</span>
                         </div>
                       ))}

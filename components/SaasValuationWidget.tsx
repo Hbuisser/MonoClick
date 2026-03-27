@@ -62,10 +62,10 @@ const InfoTooltip = ({ content }: { content: { title: string; description: strin
         onMouseLeave={() => setIsVisible(false)}
       />
       {isVisible && (
-        <div className="absolute left-0 top-6 z-50 w-80 p-3 bg-white border border-slate-200 rounded-lg shadow-soft-lg">
+        <div className="absolute left-0 top-6 z-50 w-80 p-3 bg-white border border-slate-200 shadow-soft-lg">
           <div className="text-sm text-slate-900 font-semibold mb-1">{content.title}</div>
           <div className="text-xs text-slate-600 mb-2">{content.description}</div>
-          <div className="text-xs text-slate-500 font-mono bg-slate-50 p-2 rounded">{content.calculation}</div>
+          <div className="text-xs text-slate-500 font-mono bg-slate-50 p-2">{content.calculation}</div>
         </div>
       )}
     </div>
@@ -642,7 +642,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                     )}
                   </div>
 
-                  <div className="flex items-start space-x-3 p-4 bg-slate-50 rounded-lg border border-slate-200">
+                  <div className="flex items-start space-x-3 p-4 bg-slate-50 border border-slate-200">
                     <Controller
                       name="consent"
                       control={step3Form.control}
@@ -686,7 +686,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 transition={{ duration: 0.5 }}
               >
                 <div className="text-center mb-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-brand rounded-full mb-4 shadow-brand">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-brand mb-4 shadow-brand">
                     <CheckCircle2 className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-2">
@@ -695,7 +695,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                   <p className="text-slate-600">Based on current market conditions and your metrics</p>
                 </div>
 
-                <div className="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6 mb-6 border border-indigo-200">
+                <div className="bg-gradient-to-r from-indigo-50 to-cyan-50 p-6 mb-6 border border-indigo-200">
                   <div className="text-center mb-4">
                     <div className="text-sm text-slate-600 mb-2">Estimated Valuation Range</div>
                     <motion.div
@@ -739,7 +739,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                   </div>
                 )}
 
-                <div className="bg-slate-50 rounded-xl p-4 mb-6 border border-slate-200">
+                <div className="bg-slate-50 p-4 mb-6 border border-slate-200">
                   <p className="text-xs text-slate-500 text-center">
                     <strong>Disclaimer:</strong> This is an educational estimate based on market data and your inputs.
                     It is not financial advice and actual valuations may vary significantly based on due diligence,
@@ -748,7 +748,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                 </div>
 
                 <div className="text-center">
-                  <div className="mb-4 p-3 sm:p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg border border-amber-200">
+                  <div className="mb-4 p-3 sm:p-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200">
                     <p className="text-sm sm:text-base text-amber-800 font-medium">
                       Want to discover how AI can 10x your SaaS valuation?
                     </p>
@@ -783,7 +783,7 @@ export function SaasValuationWidget({ className, onComplete }: SaasValuationWidg
                       'Get exact steps to increase your multiple by 2-3x'
                     ].map((item, index) => (
                       <p key={index} className="text-xs sm:text-sm text-slate-600 font-medium flex items-center justify-center">
-                        <span className="mr-2 flex-shrink-0 w-4 h-4 rounded-full bg-indigo-500 flex items-center justify-center">
+                        <span className="mr-2 flex-shrink-0 w-4 h-4 bg-indigo-500 flex items-center justify-center">
                           <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>

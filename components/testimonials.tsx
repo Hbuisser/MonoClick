@@ -115,7 +115,7 @@ export function Testimonials() {
 
               <div className="flex items-center justify-between border-t border-black/10 pt-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center border border-black/10 bg-black text-xs font-semibold text-white">
+                  <div className="flex h-9 w-9 items-center justify-center bg-gradient-to-br from-blue-600 to-sky-400 text-xs font-semibold text-white">
                     {testimonial.author
                       .split(' ')
                       .map((n) => n[0])
@@ -151,9 +151,9 @@ export function Testimonials() {
 
           <Button
             asChild
-            variant="editorial"
+            variant="gradient-blue"
             size="sm"
-            className="border-black/20 text-black hover:bg-black hover:text-white"
+            className="rounded-none"
           >
             <Link
               href="https://www.upwork.com/freelancers/~013c83e6e4d55ef2e3?viewMode=1"

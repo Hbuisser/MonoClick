@@ -68,8 +68,8 @@ export function ProcessSteps() {
                     <span className="text-[0.6rem] font-medium uppercase tracking-widest text-white/30">
                       {step.number}
                     </span>
-                    <div className="flex h-10 w-10 items-center justify-center border border-white/15 bg-white/5">
-                      <Icon className="h-5 w-5 text-white" />
+                    <div className="flex h-10 w-10 items-center justify-center border border-blue-500/30 bg-gradient-to-br from-blue-600/15 to-sky-400/10">
+                      <Icon className="h-5 w-5 text-sky-400" />
                     </div>
                   </div>
                   <h3 className="mb-1 text-base font-bold uppercase tracking-tight text-white">{step.title}</h3>
@@ -99,10 +99,10 @@ export function ProcessSteps() {
               href="https://calendly.com/henrybuisseret/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="nav-link-editorial inline-flex items-center gap-1 text-white transition-opacity hover:opacity-60"
+              className="group nav-link-editorial inline-flex items-center gap-1 bg-gradient-to-r from-blue-600 to-sky-400 px-4 py-2 text-white shadow-blue-glow-sm transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-blue-glow hover:brightness-110 active:scale-[0.98] active:translate-y-0"
             >
               Book now
-              <ArrowRight className="h-3.5 w-3.5" />
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
             </Link>
           </div>
         </ScrollReveal>

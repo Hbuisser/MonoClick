@@ -1,15 +1,20 @@
 import { cn } from '@/lib/utils'
 
-/** Seven square pixels in an “M” inside a square frame (no rounded corners). */
 const mPattern = [
   [1, 0, 1],
   [1, 1, 1],
   [1, 0, 1],
 ] as const
 
+const GRID_GAP = 1
+const CELL_SIZE = 5
+const COLS = 3
+const ROWS = 3
+const SVG_W = COLS * CELL_SIZE + (COLS - 1) * GRID_GAP
+const SVG_H = ROWS * CELL_SIZE + (ROWS - 1) * GRID_GAP
+
 type MonoClickLogoMarkProps = {
   className?: string
-  /** Frame + border; default matches site chrome. */
   frameClassName?: string
 }
 
@@ -17,22 +22,32 @@ export function MonoClickLogoMark({ className, frameClassName }: MonoClickLogoMa
   return (
     <div
       className={cn(
-        'inline-flex size-9 shrink-0 items-center justify-center rounded-none border border-white/20 bg-white/5 p-1.5',
+        'inline-flex aspect-square size-10 shrink-0 items-center justify-center rounded-none border border-white bg-white/10 p-2',
         frameClassName,
         className,
       )}
       aria-hidden
     >
-      <div className="grid grid-cols-3 gap-0.5">
+      <svg
+        viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        className="h-full w-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         {mPattern.map((row, ri) =>
-          row.map((cell, ci) => (
-            <div
-              key={`${ri}-${ci}`}
-              className={cn('size-1.5 shrink-0 rounded-none', cell ? 'bg-white' : 'bg-transparent')}
-            />
-          )),
+          row.map((cell, ci) =>
+            cell ? (
+              <rect
+                key={`${ri}-${ci}`}
+                x={ci * (CELL_SIZE + GRID_GAP)}
+                y={ri * (CELL_SIZE + GRID_GAP)}
+                width={CELL_SIZE}
+                height={CELL_SIZE}
+                fill="#ffffff"
+              />
+            ) : null,
+          ),
         )}
-      </div>
+      </svg>
     </div>
   )
 }

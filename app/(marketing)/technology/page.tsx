@@ -115,9 +115,9 @@ export default function TechnologyPage() {
               {marketStats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="border border-white/10 bg-neutral-950/90 p-4 text-center backdrop-blur-sm"
+                  className="border border-blue-500/20 bg-neutral-950/90 p-4 text-center backdrop-blur-sm"
                 >
-                  <div className="mb-1 text-xl font-bold text-white">{stat.value}</div>
+                  <div className="mb-1 text-xl font-bold text-gradient">{stat.value}</div>
                   <div className="text-sm text-white/45">{stat.label}</div>
                 </div>
               ))}
@@ -169,8 +169,8 @@ export default function TechnologyPage() {
               return (
                 <div key={item.step} className="relative bg-black px-6 py-10">
                   <span className="mb-4 block text-[0.6rem] font-medium uppercase tracking-widest text-white/30">{item.step}</span>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center border border-white/15 bg-white/5">
-                    <Icon className="h-6 w-6 text-white" />
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center border border-blue-500/30 bg-gradient-to-br from-blue-600/15 to-sky-400/10">
+                    <Icon className="h-6 w-6 text-sky-400" />
                   </div>
                   <h3 className="mb-2 text-base font-bold uppercase tracking-tight">{item.title}</h3>
                   <p className="text-xs leading-relaxed text-white/45">{item.description}</p>
@@ -204,8 +204,8 @@ export default function TechnologyPage() {
 
               <div className="mt-8 border border-black/10 bg-white p-6">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-black/10 bg-black/5">
-                    <TrendingUp className="h-5 w-5 text-black" />
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-gradient-to-br from-blue-600 to-sky-400">
+                    <TrendingUp className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <h4 className="mb-1 font-semibold text-black">Early Adopter Advantage</h4>
@@ -247,8 +247,8 @@ export default function TechnologyPage() {
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
               <div>
                 <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center border border-white/15 bg-white/5">
-                    <Link2 className="h-6 w-6 text-white" />
+                  <div className="flex h-12 w-12 items-center justify-center border border-blue-500/30 bg-gradient-to-br from-blue-600/15 to-sky-400/10">
+                    <Link2 className="h-6 w-6 text-sky-400" />
                   </div>
                   <h3 className="text-xl font-semibold">Why n8n Matters</h3>
                 </div>
@@ -271,7 +271,7 @@ export default function TechnologyPage() {
                     'No vendor lock-in—you own your workflows',
                   ].map((feature) => (
                     <div key={feature} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-white/45" />
+                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-sky-400/70" />
                       <span className="text-sm text-white/70">{feature}</span>
                     </div>
                   ))}
@@ -293,7 +293,7 @@ export default function TechnologyPage() {
 
                 <div className="mt-8 border border-white/10 bg-black/80 p-6">
                   <div className="flex items-start gap-3">
-                    <Zap className="mt-0.5 h-5 w-5 flex-shrink-0 text-white/60" />
+                    <Zap className="mt-0.5 h-5 w-5 flex-shrink-0 text-sky-400" />
                     <div>
                       <h4 className="mb-1 font-semibold text-white">Example: Agentic Chatbot</h4>
                       <p className="text-sm text-white/50">
@@ -315,8 +315,8 @@ export default function TechnologyPage() {
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
               <div>
                 <div className="mb-6 flex flex-wrap items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center border border-black/15 bg-black/5">
-                    <GraduationCap className="h-6 w-6 text-black" />
+                  <div className="flex h-12 w-12 items-center justify-center bg-gradient-to-br from-blue-600 to-sky-400">
+                    <GraduationCap className="h-6 w-6 text-white" />
                   </div>
                   <p className="section-label text-black">Learn From Experts</p>
                 </div>
@@ -333,15 +333,15 @@ export default function TechnologyPage() {
                     'Best practices for AI implementation',
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-black/40" />
+                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-blue-600" />
                       <span className="text-sm text-black/75">{item}</span>
                     </div>
                   ))}
                 </div>
-                <Button asChild variant="editorial" size="lg" className="rounded-none px-8">
-                  <Link href="https://calendly.com/henrybuisseret/30min" target="_blank" rel="noopener noreferrer">
+                <Button asChild variant="gradient-blue" size="lg" className="rounded-none px-8">
+                  <Link href="https://calendly.com/henrybuisseret/30min" target="_blank" rel="noopener noreferrer" className="group">
                     Book a Workshop
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
                   </Link>
                 </Button>
               </div>
@@ -371,10 +371,10 @@ export default function TechnologyPage() {
           <p className="mx-auto mb-8 max-w-2xl text-lg text-white/55">
             Let&apos;s discuss how RAG-powered chatbots can transform your customer support, internal knowledge access, and team productivity.
           </p>
-          <Button asChild variant="editorial" size="lg" className="rounded-none px-8">
-            <Link href="https://calendly.com/henrybuisseret/30min" target="_blank" rel="noopener noreferrer">
+          <Button asChild variant="gradient-blue" size="lg" className="rounded-none px-8">
+            <Link href="https://calendly.com/henrybuisseret/30min" target="_blank" rel="noopener noreferrer" className="group">
               Book a Free Consultation
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
             </Link>
           </Button>
         </div>

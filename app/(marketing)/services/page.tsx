@@ -186,9 +186,9 @@ export default function ServicesPage() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="border border-white/10 bg-neutral-950 p-4 text-center"
+                className="border border-blue-500/20 bg-neutral-950 p-4 text-center"
               >
-                <div className="mb-1 text-xl font-bold text-white">{stat.value}</div>
+                <div className="mb-1 text-xl font-bold text-gradient">{stat.value}</div>
                 <div className="text-sm text-white/45">{stat.label}</div>
               </div>
             ))}
@@ -207,12 +207,12 @@ export default function ServicesPage() {
                 <Card
                   key={service.title}
                   className={`relative overflow-hidden rounded-none border-white/10 bg-neutral-950 shadow-none transition-all hover:border-white/20 ${
-                    isHighlight ? 'ring-1 ring-white/25' : ''
+                    isHighlight ? 'ring-1 ring-blue-500/30' : ''
                   }`}
                 >
                   {isHighlight && (
                     <div className="absolute right-6 top-6">
-                      <div className="flex items-center gap-1.5 border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-white">
+                      <div className="flex items-center gap-1.5 bg-gradient-to-r from-blue-600 to-sky-400 px-3 py-1 text-xs font-medium uppercase tracking-wider text-white">
                         <Sparkles className="h-3 w-3" />
                         New
                       </div>
@@ -226,10 +226,10 @@ export default function ServicesPage() {
                         <div className="mb-4 flex items-center space-x-4">
                           <div
                             className={`flex h-14 w-14 items-center justify-center border ${
-                              isHighlight ? 'border-white/35 bg-white/15' : 'border-white/15 bg-white/5'
+                              isHighlight ? 'border-blue-500/40 bg-gradient-to-br from-blue-600/20 to-sky-400/10' : 'border-blue-500/25 bg-gradient-to-br from-blue-600/10 to-sky-400/5'
                             }`}
                           >
-                            <Icon className="h-7 w-7 text-white" />
+                            <Icon className={`h-7 w-7 ${isHighlight ? 'text-sky-400' : 'text-sky-400/80'}`} />
                           </div>
                           <h2 className="text-2xl font-semibold text-white lg:text-3xl">{service.title}</h2>
                         </div>
@@ -245,7 +245,7 @@ export default function ServicesPage() {
                           <ul className="space-y-3">
                             {service.features.map((feature, featureIndex) => (
                               <li key={featureIndex} className="flex items-start space-x-2">
-                                <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-white/45" />
+                                <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-400/70" />
                                 <span className="text-sm text-white/60">{feature}</span>
                               </li>
                             ))}
@@ -260,7 +260,7 @@ export default function ServicesPage() {
                           <ul className="mb-6 space-y-3">
                             {service.benefits.map((benefit, benefitIndex) => (
                               <li key={benefitIndex} className="flex items-start space-x-2">
-                                <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/50" />
+                                <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sky-400" />
                                 <span className="text-sm text-white/60">{benefit}</span>
                               </li>
                             ))}
@@ -293,14 +293,15 @@ export default function ServicesPage() {
                           ))}
                         </div>
 
-                        <Button asChild variant="editorial" size="sm" className="rounded-none">
+                        <Button asChild variant="gradient-blue" size="sm" className="rounded-none">
                           <Link
                             href="https://calendly.com/henrybuisseret/30min"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="group"
                           >
                             Book a Free Call
-                            <ArrowRight className="ml-2 h-4 w-4" />
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
                           </Link>
                         </Button>
                       </div>
@@ -308,7 +309,7 @@ export default function ServicesPage() {
 
                     {/* Image Area - commented out for now
                     <div className="lg:col-span-4">
-                      <div className="relative rounded-2xl overflow-hidden bg-slate-100 border border-slate-200" style={{ aspectRatio: '4/3' }}>
+                      <div className="relative overflow-hidden bg-slate-100 border border-slate-200" style={{ aspectRatio: '4/3' }}>
                         <Image
                           src={service.image}
                           alt={service.title}
@@ -351,7 +352,7 @@ export default function ServicesPage() {
                   <div className="flex items-start justify-between">
                     <CardTitle className="text-lg text-black">{addOn.title}</CardTitle>
                     {addOn.included ? (
-                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-black/50" />
+                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-blue-600" />
                     ) : (
                       <Badge variant="outline" className="rounded-none border-black/20 text-xs text-black/55">
                         Optional
@@ -414,7 +415,7 @@ export default function ServicesPage() {
               },
             ].map((phase) => (
               <div key={phase.step} className="flex items-start space-x-6">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center border border-white/20 bg-white/5 text-sm font-bold text-white">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center border border-blue-500/30 bg-gradient-to-br from-blue-600/15 to-sky-400/10 text-sm font-bold text-sky-400">
                   {phase.step}
                 </div>
                 <div className="flex-1">
@@ -427,14 +428,15 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <Button asChild variant="editorial" size="lg" className="rounded-none px-8">
+            <Button asChild variant="gradient-blue" size="lg" className="rounded-none px-8">
               <Link
                 href="https://calendly.com/henrybuisseret/30min"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="group"
               >
                 Book a Free Call
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
               </Link>
             </Button>
           </div>

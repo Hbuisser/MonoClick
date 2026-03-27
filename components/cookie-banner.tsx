@@ -30,9 +30,9 @@ export function CookieBanner() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 animate-in slide-in-from-bottom duration-300">
       <div className="container mx-auto max-w-7xl">
-        <div className="bg-zinc-900 border border-zinc-800 rounded-lg shadow-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div className="bg-zinc-900 border border-zinc-800 shadow-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="flex items-start gap-3 flex-1">
-            <div className="h-10 w-10 rounded-lg bg-gradient-brand flex items-center justify-center flex-shrink-0 mt-0.5">
+            <div className="h-10 w-10 bg-gradient-brand flex items-center justify-center flex-shrink-0 mt-0.5">
               <Cookie className="h-5 w-5 text-white" />
             </div>
             <div className="flex-1">

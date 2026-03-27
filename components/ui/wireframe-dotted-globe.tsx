@@ -256,7 +256,7 @@ export default function WireframeDottedGlobe({
   if (error) {
     return (
       <div
-        className={`flex items-center justify-center rounded-2xl border border-white/10 bg-neutral-950 p-8 ${className}`}
+        className={`flex items-center justify-center border border-white/10 bg-neutral-950 p-8 ${className}`}
       >
         <div className="text-center">
           <p className="mb-2 font-semibold text-red-400">Error loading Earth visualization</p>
@@ -274,7 +274,7 @@ export default function WireframeDottedGlobe({
         style={{ height: 'auto' }}
       />
       {showInteractionHint ? (
-        <div className="pointer-events-none absolute bottom-4 right-4 rounded-md bg-neutral-900/90 px-2 py-1 text-xs text-white/50">
+        <div className="pointer-events-none absolute bottom-4 right-4 bg-neutral-900/90 px-2 py-1 text-xs text-white/50">
           Drag to rotate
         </div>
       ) : null}

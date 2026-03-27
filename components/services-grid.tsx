@@ -120,14 +120,14 @@ export function ServicesGrid() {
                   </span>
                   <div className="mb-4 flex items-start gap-3">
                     <div
-                      className={`flex h-10 w-10 flex-shrink-0 items-center justify-center border transition-colors duration-300 group-hover:border-white/30 ${
-                        isHighlight ? 'border-white/40 bg-white/10' : 'border-white/15 bg-white/5'
+                      className={`flex h-10 w-10 flex-shrink-0 items-center justify-center border transition-colors duration-300 group-hover:border-blue-500/40 ${
+                        isHighlight ? 'border-blue-500/50 bg-gradient-to-br from-blue-600/20 to-sky-400/10' : 'border-white/15 bg-white/5'
                       }`}
                     >
-                      <Icon className="h-5 w-5 text-white" />
+                      <Icon className={`h-5 w-5 ${isHighlight ? 'text-sky-400' : 'text-white'}`} />
                     </div>
                     {isHighlight && (
-                      <span className="border border-white/25 px-2 py-0.5 text-[0.55rem] font-semibold uppercase tracking-widest text-white/80">
+                      <span className="bg-gradient-to-r from-blue-600 to-sky-400 px-2 py-0.5 text-[0.55rem] font-semibold uppercase tracking-widest text-white">
                         New
                       </span>
                     )}
@@ -137,7 +137,7 @@ export function ServicesGrid() {
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start gap-2 text-xs text-white/55">
-                        <Check className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-white/40" />
+                        <Check className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-sky-400/70" />
                         <span>{feature}</span>
                       </li>
                     ))}

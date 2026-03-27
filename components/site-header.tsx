@@ -64,15 +64,15 @@ export function SiteHeader() {
             href="https://calendly.com/henrybuisseret/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="nav-link-editorial hidden items-center gap-2 border border-white/35 px-3 py-1.5 text-white/90 transition-colors duration-200 hover:border-white hover:text-white md:inline-flex"
+            className="group nav-link-editorial hidden items-center gap-2 bg-gradient-to-r from-blue-600 to-sky-400 px-3.5 py-1.5 text-white shadow-blue-glow-sm transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.05] hover:shadow-blue-glow hover:brightness-110 active:scale-[0.97] active:translate-y-0 md:inline-flex"
           >
             Let&apos;s talk
-            <ArrowRight className="h-3 w-3" />
+            <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5" />
           </Link>
 
           <button
             type="button"
-            className="rounded border border-white/20 p-2 text-white transition-colors hover:bg-white/5 md:hidden"
+            className="border border-white/20 p-2 text-white transition-colors hover:bg-white/5 md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -96,7 +96,7 @@ export function SiteHeader() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'nav-link-editorial block rounded px-3 py-2.5 text-white transition-colors',
+                    'nav-link-editorial block px-3 py-2.5 text-white transition-colors',
                     pathname === item.href ? 'bg-white/10' : 'hover:bg-white/5'
                   )}
                   whileTap={{ scale: 0.98 }}
@@ -108,7 +108,7 @@ export function SiteHeader() {
                 href="https://calendly.com/henrybuisseret/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="nav-link-editorial mt-2 flex items-center justify-center gap-2 border border-white/35 px-4 py-3 text-white"
+                className="nav-link-editorial mt-2 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-sky-400 px-4 py-3 text-white shadow-blue-glow-sm"
               >
                 Let&apos;s talk
                 <ArrowRight className="h-3.5 w-3.5" />

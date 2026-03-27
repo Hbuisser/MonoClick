@@ -184,7 +184,7 @@ export default function WorkPage() {
                   {/* Image placeholder */}
                   <div className="bg-zinc-800/30 flex items-center justify-center p-8">
                     <div className="text-center">
-                      <div className="h-48 w-full rounded-xl bg-zinc-800/50 flex items-center justify-center mb-4">
+                      <div className="h-48 w-full bg-zinc-800/50 flex items-center justify-center mb-4">
                         <span className="text-zinc-500">Case Study Visual</span>
                       </div>
                       <p className="text-sm text-zinc-400">

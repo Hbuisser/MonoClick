@@ -54,14 +54,14 @@ export function SiteFooter() {
                 whileHover={{ x: 3 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 25 }}
               >
-                <div className="flex h-9 w-9 items-center justify-center border border-white/15 bg-white/5">
-                  <Mail className="h-4 w-4" />
+                <div className="flex h-9 w-9 items-center justify-center bg-gradient-to-br from-blue-600/20 to-sky-400/10 border border-blue-500/25">
+                  <Mail className="h-4 w-4 text-sky-400" />
                 </div>
                 <span>henry@monoclick.ai</span>
               </motion.a>
               <div className="flex items-center gap-3 text-sm text-white/50">
-                <div className="flex h-9 w-9 items-center justify-center border border-white/15 bg-white/5">
-                  <MapPin className="h-4 w-4" />
+                <div className="flex h-9 w-9 items-center justify-center bg-gradient-to-br from-blue-600/20 to-sky-400/10 border border-blue-500/25">
+                  <MapPin className="h-4 w-4 text-sky-400" />
                 </div>
                 <span>EU & US</span>
               </div>
@@ -117,11 +117,11 @@ export function SiteFooter() {
                   <motion.a
                     key={item.name}
                     href={item.href}
-                    className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/45 transition-colors hover:border-white/30 hover:text-white"
+                    className="flex h-10 w-10 items-center justify-center border border-blue-500/25 bg-gradient-to-br from-blue-600/15 to-sky-400/10 text-sky-400/70 transition-colors hover:text-sky-300"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={item.name}
-                    whileHover={{ scale: 1.08, borderColor: 'rgba(255,255,255,0.35)' }}
+                    whileHover={{ scale: 1.08, borderColor: 'rgba(56,189,248,0.4)' }}
                     whileTap={{ scale: 0.96 }}
                   >
                     <Icon className="h-4 w-4" />

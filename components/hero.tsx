@@ -73,11 +73,11 @@ export function Hero() {
           <div className="relative border border-white p-3 bg-white/5">
             <div className="h-[160px] w-[160px] overflow-hidden">
               <Image
-                src="/pp.jpg"
+                src="/pp2.jpg"
                 alt="Henry Buisseret"
                 width={160}
                 height={160}
-                className="h-full w-full object-cover"
+                className="h-full w-full scale-125 object-cover object-[center_30%]"
                 priority
               />
             </div>

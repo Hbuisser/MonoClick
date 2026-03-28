@@ -192,7 +192,7 @@ export default function AboutPage() {
                   <div className="mx-auto mb-6 inline-block border border-black/10 p-3">
                     <div className="h-32 w-32 overflow-hidden">
                       <Image
-                        src="/pp.jpg"
+                        src="/pp2.jpg"
                         alt={`${member.name} profile picture`}
                         width={128}
                         height={128}

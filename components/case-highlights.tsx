@@ -7,38 +7,38 @@ import { Card, CardContent } from '@/components/ui/card'
 
 const cases = [
   {
-    icon: Clock,
-    industry: 'Real Estate',
-    title: '40% faster lead response',
-    description: 'Automated lead qualification and instant follow-ups for a property management company',
+    icon: Users,
+    industry: 'Health & Wellness Ecommerce',
+    title: '60% fewer support tickets',
+    description: 'AI-powered support automation for Gorgias that handles product and order queries 24/7',
     results: [
-      'Lead response time: 2 hours → 20 minutes',
-      'Conversion rate increased by 35%',
-      'Sales team productivity up 40%'
+      'Support tickets reduced by 60%',
+      'Response time: 48 hours → 5 minutes',
+      'Customer satisfaction up 25%'
     ],
     color: 'from-blue-600 to-sky-400'
   },
   {
-    icon: Users,
-    industry: 'SaaS',
-    title: '60% support deflection',
-    description: 'AI-powered knowledge assistant that handles customer queries 24/7',
+    icon: Clock,
+    industry: 'DTC Ecommerce',
+    title: '30% more conversions',
+    description: 'AI chatbot trained on product catalog and policies, answering pre-purchase questions instantly',
     results: [
-      'Support tickets reduced by 60%',
-      'Customer satisfaction up 25%',
-      'Team can focus on complex issues'
+      '60% reduction in support inquiries',
+      'Response time under 10 seconds',
+      'Conversion rate increased by 30%'
     ],
     color: 'from-blue-500 to-sky-300'
   },
   {
     icon: Zap,
-    industry: 'B2B Manufacturing',
-    title: '2 days → 2 hours',
-    description: 'Streamlined quote generation process with automated pricing and approval workflows',
+    industry: 'Fashion Ecommerce',
+    title: '40% lower CPA',
+    description: 'Competitor ad intelligence dashboard tracking Meta and TikTok creative strategies',
     results: [
-      'Quote turnaround: 2 days → 2 hours',
-      'Error rate reduced by 80%',
-      'Sales velocity increased 3x'
+      'Identified winning competitor ad angles',
+      'CPA reduced by 40%',
+      'Creative launch time cut by 60%'
     ],
     color: 'from-blue-700 to-sky-500'
   },
@@ -59,8 +59,8 @@ export function CaseHighlights() {
             Real results for real businesses
           </h2>
           <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
-            See how we've helped companies like yours automate critical workflows
-            and achieve measurable business outcomes.
+            See how we&apos;ve helped ecommerce brands like yours scale with AI-powered
+            systems that deliver measurable results.
           </p>
         </motion.div>
 

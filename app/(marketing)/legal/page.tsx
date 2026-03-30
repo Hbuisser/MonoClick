@@ -43,15 +43,15 @@ export default function LegalPage() {
                 2. Description of Services
               </h2>
               <p className="mb-4">
-                MonoClick provides AI-powered automation services including but not
-                limited to:
+                MonoClick provides AI-powered growth systems for ecommerce brands
+                including but not limited to:
               </p>
               <ul className="list-disc pl-6 mb-4 space-y-1">
-                <li>AI lead generation engines</li>
-                <li>AI knowledge assistants</li>
-                <li>Operations automation systems</li>
-                <li>Revenue dashboards and analytics</li>
-                <li>Custom workflow automation solutions</li>
+                <li>AI chatbots trained on product catalogs, FAQs, and policies</li>
+                <li>AI support automation for Gorgias and Zendesk</li>
+                <li>Ecommerce analytics dashboards</li>
+                <li>AI-powered content creation for product descriptions and marketing copy</li>
+                <li>Competitor ad intelligence and tracking</li>
               </ul>
             </RevealSection>
 

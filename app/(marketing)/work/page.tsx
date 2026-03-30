@@ -11,61 +11,61 @@ import { RevealSection } from '@/components/scroll-reveal'
 
 export const metadata: Metadata = createMetadata({
   title: 'Case Studies',
-  description: 'See how MonoClick has helped B2B companies automate workflows and achieve measurable results with AI-powered systems.',
+  description: 'See how MonoClick has helped ecommerce brands scale with AI-powered chatbots, support automation, dashboards, and competitor intelligence.',
   path: '/work'
 })
 
 const caseStudies = [
   {
-    title: 'Real Estate Pipeline Automation',
-    client: 'PropertyFlow',
-    industry: 'Real Estate',
+    title: 'AI Support Automation for DTC Brand',
+    client: 'Welzo',
+    industry: 'Health & Wellness Ecommerce',
     timeline: '10 working days',
-    teamSize: '12 agents',
-    challenge: 'Manual lead qualification and slow response times were causing a 40% lead loss rate',
-    solution: 'Built an AI-powered lead qualification system with instant follow-up sequences',
-    results: [
-      'Lead response time: 2 hours → 20 minutes',
-      'Conversion rate increased by 35%',
-      'Sales team productivity up 40%',
-      'Lead loss rate reduced to 8%'
-    ],
-    technologies: ['n8n', 'OpenAI GPT-4', 'HubSpot API', 'Calendly'],
-    image: '/case-studies/real-estate.jpg'
-  },
-  {
-    title: 'SaaS Support Deflection System',
-    client: 'CloudScale',
-    industry: 'SaaS',
-    timeline: '10 working days',
-    teamSize: '8 support agents',
-    challenge: 'Support team overwhelmed with repetitive queries, 48-hour response times',
-    solution: 'Implemented AI-powered knowledge assistant trained on docs and previous tickets',
+    teamSize: '6 support agents',
+    challenge: 'Support team overwhelmed with repetitive order and product queries, 48-hour response times during peak sales',
+    solution: 'Deployed AI-powered support automation with Gorgias, trained on product catalog, FAQs, and order data',
     results: [
       'Support tickets reduced by 60%',
       'Response time: 48 hours → 5 minutes',
       'Customer satisfaction up 25%',
-      'Team can focus on complex issues'
+      'Team freed to handle complex issues'
     ],
-    technologies: ['n8n', 'OpenAI Embeddings', 'Pinecone', 'Intercom API'],
-    image: '/case-studies/saas-support.jpg'
+    technologies: ['n8n', 'OpenAI Embeddings', 'Pinecone', 'Gorgias API'],
+    image: '/case-studies/support-automation.jpg'
   },
   {
-    title: 'Manufacturing Quote Automation',
-    client: 'IndustrialTech',
-    industry: 'B2B Manufacturing',
+    title: 'AI Chatbot for Shopify Store',
+    client: 'Kia Ora Kahi',
+    industry: 'DTC Ecommerce',
     timeline: '10 working days',
-    teamSize: '15 sales reps',
-    challenge: 'Complex quote generation taking 2 days, prone to pricing errors',
-    solution: 'Automated quote system with dynamic pricing rules and approval workflows',
+    teamSize: '4 team members',
+    challenge: 'High volume of pre-purchase questions going unanswered, leading to cart abandonment and lost conversions',
+    solution: 'Built an AI chatbot trained on the full product catalog, shipping policies, and FAQ to handle inquiries 24/7',
     results: [
-      'Quote turnaround: 2 days → 2 hours',
-      'Error rate reduced by 80%',
-      'Sales velocity increased 3x',
-      'Customer satisfaction improved'
+      '60% reduction in support inquiries',
+      'Response time under 10 seconds',
+      'Conversion rate increased by 30%',
+      '24/7 customer coverage without extra hires'
     ],
-    technologies: ['n8n', 'Salesforce API', 'DocuSign', 'Custom Pricing Engine'],
-    image: '/case-studies/manufacturing.jpg'
+    technologies: ['n8n', 'OpenAI GPT-4', 'Shopify API', 'Custom RAG Pipeline'],
+    image: '/case-studies/ai-chatbot.jpg'
+  },
+  {
+    title: 'Competitor Ad Intelligence Dashboard',
+    client: 'Growing Fashion Brand',
+    industry: 'Fashion Ecommerce',
+    timeline: '10 working days',
+    teamSize: '3 marketing team',
+    challenge: 'No visibility into competitor ad strategies, creative decisions based on guesswork, high CPA on paid channels',
+    solution: 'Built a competitor ad tracking system across Meta and TikTok with automated creative analysis and alerts',
+    results: [
+      'Identified 3 winning ad angles from competitors',
+      'CPA reduced by 40% after creative iteration',
+      'Time-to-launch for new creatives cut by 60%',
+      'Data-driven ad strategy replacing guesswork'
+    ],
+    technologies: ['n8n', 'Meta Ad Library', 'TikTok Creative Center', 'Custom Dashboard'],
+    image: '/case-studies/competitor-ads.jpg'
   }
 ]
 
@@ -79,8 +79,8 @@ export default function WorkPage() {
             Case Studies
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-white/55">
-            See how we&apos;ve helped B2B companies transform their workflows with AI-powered automation systems
-            that deliver measurable results.
+            See how we&apos;ve helped ecommerce brands scale with AI-powered chatbots, support automation,
+            and competitive intelligence that deliver measurable results.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-white/45">
             <div className="flex items-center space-x-2">

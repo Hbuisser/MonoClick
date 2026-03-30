@@ -77,7 +77,7 @@ export default async function Image() {
             maxWidth: '900px',
           }}
         >
-          Growth systems for B2B companies.
+          AI growth systems for ecommerce brands.
         </h1>
 
         {/* Subtitle */}
@@ -90,7 +90,7 @@ export default async function Image() {
             lineHeight: 1.4,
           }}
         >
-          AI-powered automations that turn manual workflows into predictable pipelines
+          Chatbots, support automation, dashboards, content, and competitor intelligence
         </p>
 
         {/* Bottom gradient */}

@@ -44,8 +44,8 @@ export function SiteFooter() {
               <span className="font-heading text-lg font-semibold tracking-tight text-white">MonoClick</span>
             </Link>
             <p className="mb-8 max-w-md text-sm leading-relaxed text-white/45">
-              AI-powered automations that turn manual workflows into predictable pipelines for B2B
-              companies. Lead gen, ops, and customer success included.
+              Custom AI growth systems for ecommerce brands. Chatbots, support automation,
+              dashboards, content creation, and competitor intelligence — delivered in 10 working days.
             </p>
             <div className="space-y-4">
               <motion.a

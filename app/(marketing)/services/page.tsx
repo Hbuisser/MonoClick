@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-// import Image from 'next/image'
+import Image from 'next/image'
 import {
   MessageSquare,
   HeadphonesIcon,
@@ -31,7 +31,7 @@ const services = [
     icon: MessageSquare,
     title: 'AI Chatbot',
     description: 'Deploy intelligent chatbots trained on your FAQ, policies, and product catalog. Answer customer questions instantly, provide product recommendations, and drive conversions 24/7.',
-    image: '/rag.png',
+    image: '/chatbot.png',
     features: [
       'Trained on your entire product catalog',
       'FAQ and policy knowledge base',
@@ -53,7 +53,7 @@ const services = [
     icon: HeadphonesIcon,
     title: 'AI Support Automation (Gorgias/Zendesk)',
     description: 'Integrate AI directly with your Gorgias or Zendesk account to draft intelligent responses. Reduce response time, improve support efficiency, and scale your customer service team.',
-    image: '/ecom.png',
+    image: '/support.png',
     features: [
       'Native Gorgias & Zendesk integration',
       'AI-drafted responses based on context',
@@ -75,7 +75,7 @@ const services = [
     icon: BarChart3,
     title: 'Business Intelligence Dashboards',
     description: 'Custom analytics dashboards that visualize your key ecommerce metrics in real-time. Track sales, inventory, customer behavior, and marketing performance all in one place.',
-    image: '/rag.png',
+    image: '/dashboard.png',
     features: [
       'Real-time sales and revenue tracking',
       'Inventory management insights',
@@ -196,6 +196,33 @@ export default function ServicesPage() {
         </div>
       </RevealSection>
 
+      {/* Technology logos */}
+      <RevealSection variant="fade-up" className="border-t border-white/10 bg-black py-14">
+        <div className="editorial-max">
+          <p className="section-label mb-10 text-center text-white">Technologies We Use</p>
+          <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-20">
+            {[
+              { name: 'Shopify', src: '/shopify_logo.png' },
+              { name: 'Gorgias', src: '/gorgias_logo.png' },
+              { name: 'Meta', src: '/meta_logo.png' },
+              { name: 'Anthropic', src: '/anthropic_logo.png' },
+              { name: 'Zendesk', src: '/zendesk_logo.png' },
+            ].map((logo) => (
+              <div key={logo.name} className="flex items-center justify-center">
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={800}
+                  height={240}
+                  quality={95}
+                  className="h-16 w-auto object-contain sm:h-24"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </RevealSection>
+
       {/* Services Grid */}
       <RevealSection variant="bright" className="border-t border-white/10 bg-black py-24 text-white">
         <div className="editorial-max max-w-7xl">
@@ -219,107 +246,109 @@ export default function ServicesPage() {
                     </div>
                   )}
                   <div className="p-8 lg:p-10">
-                    {/* Content Area */}
-                    <div>
-                      {/* Header */}
-                      <div className="mb-8">
-                        <div className="mb-4 flex items-center space-x-4">
-                          <div
-                            className={`flex h-14 w-14 items-center justify-center border ${
-                              isHighlight ? 'border-blue-500/40 bg-gradient-to-br from-blue-600/20 to-sky-400/10' : 'border-blue-500/25 bg-gradient-to-br from-blue-600/10 to-sky-400/5'
-                            }`}
-                          >
-                            <Icon className={`h-7 w-7 ${isHighlight ? 'text-sky-400' : 'text-sky-400/80'}`} />
-                          </div>
-                          <h2 className="text-2xl font-semibold text-white lg:text-3xl">{service.title}</h2>
+                    {/* Header */}
+                    <div className="mb-8">
+                      <div className="mb-4 flex items-center space-x-4">
+                        <div
+                          className={`flex h-14 w-14 items-center justify-center border ${
+                            isHighlight ? 'border-blue-500/40 bg-gradient-to-br from-blue-600/20 to-sky-400/10' : 'border-blue-500/25 bg-gradient-to-br from-blue-600/10 to-sky-400/5'
+                          }`}
+                        >
+                          <Icon className={`h-7 w-7 ${isHighlight ? 'text-sky-400' : 'text-sky-400/80'}`} />
                         </div>
-                        <p className="text-base leading-relaxed text-white/60">{service.description}</p>
+                        <h2 className="text-2xl font-semibold text-white lg:text-3xl">{service.title}</h2>
                       </div>
+                      <p className="text-base leading-relaxed text-white/60">{service.description}</p>
+                    </div>
 
-                      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                        {/* Features */}
-                        <div>
-                          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">
-                            What&apos;s included
-                          </h3>
-                          <ul className="space-y-3">
-                            {service.features.map((feature, featureIndex) => (
-                              <li key={featureIndex} className="flex items-start space-x-2">
-                                <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-400/70" />
-                                <span className="text-sm text-white/60">{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                    <div className={`grid grid-cols-1 gap-8 ${['/chatbot.png', '/support.png', '/dashboard.png'].includes(service.image) ? 'lg:grid-cols-5' : 'md:grid-cols-2'}`}>
+                      <div className={`${['/chatbot.png', '/support.png', '/dashboard.png'].includes(service.image) ? 'lg:col-span-3' : ''}`}>
+                        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                          {/* Features */}
+                          <div>
+                            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">
+                              What&apos;s included
+                            </h3>
+                            <ul className="space-y-3">
+                              {service.features.map((feature, featureIndex) => (
+                                <li key={featureIndex} className="flex items-start space-x-2">
+                                  <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-400/70" />
+                                  <span className="text-sm text-white/60">{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
 
-                        {/* Benefits */}
-                        <div>
-                          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">
-                            Expected results
-                          </h3>
-                          <ul className="mb-6 space-y-3">
-                            {service.benefits.map((benefit, benefitIndex) => (
-                              <li key={benefitIndex} className="flex items-start space-x-2">
-                                <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sky-400" />
-                                <span className="text-sm text-white/60">{benefit}</span>
-                              </li>
-                            ))}
-                          </ul>
+                          {/* Benefits */}
+                          <div>
+                            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">
+                              Expected results
+                            </h3>
+                            <ul className="mb-6 space-y-3">
+                              {service.benefits.map((benefit, benefitIndex) => (
+                                <li key={benefitIndex} className="flex items-start space-x-2">
+                                  <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sky-400" />
+                                  <span className="text-sm text-white/60">{benefit}</span>
+                                </li>
+                              ))}
+                            </ul>
 
-                          <div className="grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
-                            <div className="flex items-center space-x-2 text-white/45">
-                              <Clock className="h-4 w-4" />
-                              <span>{service.timeline}</span>
+                            <div className="grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
+                              <div className="flex items-center space-x-2 text-white/45">
+                                <Clock className="h-4 w-4" />
+                                <span>{service.timeline}</span>
+                              </div>
+                              <div className="font-medium text-white/85">{service.pricing}</div>
                             </div>
-                            <div className="font-medium text-white/85">{service.pricing}</div>
                           </div>
                         </div>
                       </div>
 
-                      {/* Technologies */}
-                      <div className="mt-8 border-t border-white/10 pt-6">
-                        <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">
-                          Technologies
-                        </h3>
-                        <div className="mb-6 flex flex-wrap gap-2">
-                          {service.technologies.map((tech, techIndex) => (
-                            <Badge
-                              key={techIndex}
-                              variant="secondary"
-                              className="rounded-none border border-white/10 bg-white/5 text-white/70"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
+                      {['/chatbot.png', '/support.png', '/dashboard.png'].includes(service.image) && (
+                        <div className="flex items-center lg:col-span-2">
+                          <div className="relative w-full overflow-hidden border border-white/10">
+                            <Image
+                              src={service.image}
+                              alt={service.title}
+                              width={600}
+                              height={338}
+                              quality={90}
+                              className="w-full object-cover"
+                            />
+                          </div>
                         </div>
+                      )}
+                    </div>
 
-                        <Button asChild variant="gradient-blue" size="sm" className="rounded-none">
-                          <Link
-                            href="https://calendly.com/henrybuisseret/30min"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group"
+                    {/* Technologies */}
+                    <div className="mt-8 border-t border-white/10 pt-6">
+                      <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">
+                        Technologies
+                      </h3>
+                      <div className="mb-6 flex flex-wrap gap-2">
+                        {service.technologies.map((tech, techIndex) => (
+                          <Badge
+                            key={techIndex}
+                            variant="secondary"
+                            className="rounded-none border border-white/10 bg-white/5 text-white/70"
                           >
-                            Book a Free Call
-                            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-                          </Link>
-                        </Button>
+                            {tech}
+                          </Badge>
+                        ))}
                       </div>
-                    </div>
 
-                    {/* Image Area - commented out for now
-                    <div className="lg:col-span-4">
-                      <div className="relative overflow-hidden bg-slate-100 border border-slate-200" style={{ aspectRatio: '4/3' }}>
-                        <Image
-                          src={service.image}
-                          alt={service.title}
-                          width={800}
-                          height={600}
-                          className="w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
-                        />
-                      </div>
+                      <Button asChild variant="gradient-blue" size="sm" className="rounded-none">
+                        <Link
+                          href="https://calendly.com/henrybuisseret/30min"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group"
+                        >
+                          Book a Free Call
+                          <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                        </Link>
+                      </Button>
                     </div>
-                    */}
                   </div>
                 </Card>
               )

@@ -118,16 +118,16 @@ export default function AboutPage() {
             </div>
             <div className="border border-black/10 bg-white p-8">
               <div className="text-center">
-                <div className="relative mb-4 h-48 w-full overflow-hidden border border-black/10 bg-white">
+                <div className="relative mb-4 h-64 w-full overflow-hidden border border-black/10 bg-white">
                   <Image
-                    src="/auto_ex.png"
-                    alt="AI automation workflow for generating personalized emails based on prospect website data"
+                    src="/dashboard.png"
+                    alt="Custom AI-powered business intelligence dashboard for ecommerce"
                     fill
                     className="object-contain"
                   />
                 </div>
                 <p className="text-sm text-black/50">
-                  AI automation to generate personalized emails based on website info of prospects
+                  AI support agent dashboard — automated ticket triage, draft replies, and resolution tracking
                 </p>
               </div>
             </div>

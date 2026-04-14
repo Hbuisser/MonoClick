@@ -77,7 +77,7 @@ export function Hero() {
                 alt="Henry Buisseret"
                 width={160}
                 height={160}
-                className="h-full w-full scale-125 object-cover object-[center_30%]"
+                className="h-full w-full scale-110 object-cover object-[center_30%]"
                 priority
               />
             </div>

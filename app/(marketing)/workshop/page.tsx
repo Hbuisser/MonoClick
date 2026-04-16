@@ -4,7 +4,6 @@ import Image from 'next/image'
 import {
   ArrowRight,
   Users,
-  Clock,
   CheckCircle,
   Sparkles,
   MessageSquare,
@@ -143,7 +142,7 @@ export default function WorkshopPage() {
   return (
     <div>
       {/* Hero */}
-      <RevealSection variant="fade-up" className="relative overflow-hidden border-b border-white/10 bg-black py-24">
+      <RevealSection variant="fade-up" className="relative overflow-hidden border-b border-white/10 bg-black py-16 sm:py-24">
         <div className="editorial-max relative z-10">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div className="text-center lg:text-left">
@@ -171,7 +170,7 @@ export default function WorkshopPage() {
 
             <div className="flex flex-col items-center gap-5">
               <div className="border border-white bg-white/5 p-3">
-                <div className="relative aspect-[3/4] w-[280px] overflow-hidden sm:w-[320px]">
+                <div className="relative aspect-[3/4] w-full max-w-[280px] overflow-hidden sm:max-w-[320px]">
                   <Image
                     src="/pp2.jpg"
                     alt="Henry Buisseret — workshop trainer"
@@ -241,8 +240,8 @@ export default function WorkshopPage() {
             </p>
           </div>
 
-          <div className="border border-black/10 bg-white p-8 lg:p-12">
-            <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_280px]">
+          <div className="border border-black/10 bg-white p-5 sm:p-8 lg:p-12">
+            <div className="grid grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-[1fr_280px]">
               <div className="text-base leading-relaxed text-black/65 lg:text-lg">
                 <p className="mb-6">
                   <strong className="text-black">Most people use AI like a search engine.</strong> They type a vague question,
@@ -377,8 +376,8 @@ export default function WorkshopPage() {
       {/* Workshop format details */}
       <RevealSection variant="fade-up" className="border-t border-black/10 bg-[#fcfcfc] py-24 text-black">
         <div className="editorial-max">
-          <div className="border border-black/10 bg-white p-8 lg:p-12">
-            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          <div className="border border-black/10 bg-white p-5 sm:p-8 lg:p-12">
+            <div className="grid grid-cols-1 items-center gap-10 sm:gap-12 lg:grid-cols-2">
               <div>
                 <div className="mb-6 flex flex-wrap items-center gap-3">
                   <div className="flex h-12 w-12 items-center justify-center bg-gradient-to-br from-blue-600 to-sky-400">

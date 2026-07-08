@@ -43,8 +43,8 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="mb-8 max-w-md text-sm leading-relaxed text-white/45">
-              Custom AI growth systems for ecommerce brands. Chatbots, support automation,
-              dashboards, content creation, and competitor intelligence — delivered in 10
+              Custom AI growth systems for ecommerce brands. AI-built stores, a support agent, a
+              creative agent for your Meta ads, a content agent, and chatbots — delivered in 10
               working days.
             </p>
             <div className="space-y-3">

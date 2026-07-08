@@ -11,7 +11,7 @@ import { RevealSection } from '@/components/scroll-reveal'
 
 export const metadata: Metadata = createMetadata({
   title: 'Case Studies',
-  description: 'See how MonoClick has helped ecommerce brands scale with AI-powered chatbots, support automation, dashboards, and competitor intelligence.',
+  description: 'See how MonoClick has helped ecommerce brands scale with AI support agents, AI ad creative, content automation, and chatbots.',
   path: '/work'
 })
 

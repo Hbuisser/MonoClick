@@ -15,7 +15,7 @@ const faqs = [
   {
     question: 'What are AI growth systems for ecommerce?',
     answer:
-      'AI growth systems are automated workflows powered by AI that help ecommerce brands scale faster. This includes AI chatbots trained on your products, support automation with Gorgias/Zendesk, business dashboards, AI content creation, and competitor ad tracking.',
+      'AI growth systems are automated workflows powered by AI that help ecommerce brands scale faster. This includes AI-built ecommerce stores designed end-to-end, an AI support agent for Gorgias/Zendesk, an AI creative agent that analyzes your Meta ads and generates new concepts, an AI content agent that publishes to social, and AI chatbots trained on your products.',
   },
   {
     question: 'How quickly can you build a custom AI system?',

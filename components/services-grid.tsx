@@ -3,9 +3,9 @@
 import {
   MessageSquare,
   HeadphonesIcon,
-  BarChart3,
-  Sparkles,
-  TrendingUp,
+  Store,
+  Wand2,
+  Share2,
   Check,
 } from 'lucide-react'
 
@@ -13,70 +13,70 @@ import { HoverSurface, ScrollReveal } from '@/components/scroll-reveal'
 
 const services = [
   {
-    icon: MessageSquare,
-    title: 'AI Chatbot',
+    icon: Store,
+    title: 'Ecommerce Store Builder',
     description:
-      'Deploy intelligent chatbots trained on your FAQ, policies, and product catalog. Answer customer questions 24/7 and drive conversions.',
-    image: '/rag.png',
+      'Complete, conversion-ready storefronts designed and built end-to-end by AI — concept, art direction, copy, 3D, motion, AI-generated photography and film. No templates, no stock assets.',
+    image: '/showcase/cendre.jpg',
     features: [
-      'Trained on your products',
-      'FAQ & policy knowledge',
-      'Order tracking assistance',
-      'Instant product recommendations',
+      'Bespoke design & art direction — zero templates',
+      'AI-generated photography, video & 3D',
+      'Scroll-driven storytelling & motion',
+      'Shopify, headless or fully custom build',
     ],
   },
   {
     icon: HeadphonesIcon,
-    title: 'AI Support Automation',
+    title: 'AI Support Agent',
     description:
-      'Integrate with Gorgias or Zendesk to draft AI-powered responses. Reduce response time and improve support efficiency.',
-    image: '/ecom.png',
+      'An always-on agent that plugs into Gorgias or Zendesk, reads every ticket in context, and drafts — or fully resolves — replies grounded in your policies and orders.',
+    image: '/support.png',
     features: [
-      'Gorgias & Zendesk integration',
-      'AI-drafted responses',
-      'Context-aware suggestions',
+      'Native Gorgias & Zendesk integration',
+      'Context-aware from your order data',
+      'Auto-triage, tagging & escalation',
       '70% faster ticket resolution',
     ],
   },
   {
-    icon: BarChart3,
-    title: 'Business Dashboards',
+    icon: Wand2,
+    title: 'AI Creative Agent',
     description:
-      'Custom analytics dashboards that visualize your key metrics. Make data-driven decisions with real-time insights.',
+      'Analyzes your Meta ads history — ROAS, spend, copy and video — to learn what converts, mines audience data from Reddit, Trustpilot and the web, teardowns competitor ads, then generates new concepts and image/video prompts.',
     image: '/rag.png',
     features: [
-      'Real-time sales analytics',
-      'Inventory tracking',
-      'Customer behavior insights',
-      'Custom KPI monitoring',
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: 'AI Content Creation',
-    description:
-      'Generate high-converting product descriptions, email campaigns, and marketing copy at scale with AI.',
-    image: '/rag.png',
-    features: [
-      'Product descriptions',
-      'Email marketing copy',
-      'Social media content',
-      'SEO-optimized content',
-    ],
-  },
-  {
-    icon: TrendingUp,
-    title: 'Competitor Ad Intelligence',
-    description:
-      'Automatically track and analyze winning ads from your competitors. Stay ahead with insights into their strategies.',
-    image: '/rag.png',
-    features: [
-      'Automatic ad scraping',
-      'Performance tracking',
-      'Creative analysis',
-      'Strategy insights',
+      'Meta ads history & ROAS analysis',
+      'Audience research — Reddit, Trustpilot, web',
+      'Competitor ad teardown & angle mapping',
+      'New concepts, copy & image/video prompts',
     ],
     highlight: true,
+  },
+  {
+    icon: Share2,
+    title: 'AI Content Agent',
+    description:
+      'Turns creative concepts into finished content — images, video, captions and hooks — on-brand and on-schedule, then publishes straight to your social channels.',
+    image: '/rag.png',
+    features: [
+      'Concept-to-content production',
+      'On-brand voice & visual consistency',
+      'Content calendar & scheduling',
+      'Auto-publishing to social channels',
+    ],
+  },
+  {
+    icon: MessageSquare,
+    title: 'AI Chatbots',
+    description:
+      'Customer-facing chatbots trained on your catalog, FAQ and policies. Answer instantly, recommend products, track orders, and turn browsers into buyers 24/7.',
+    image: '/rag.png',
+    features: [
+      'Trained on your product catalog',
+      'FAQ & policy knowledge base',
+      'Order tracking & recommendations',
+      'Seamless handoff to human support',
+    ],
   },
 ]
 
@@ -94,26 +94,22 @@ export function ServicesGrid() {
         </ScrollReveal>
 
         <ScrollReveal variant="fade" delay={0.08} className="mb-16 max-w-2xl text-base leading-relaxed text-white/50">
-          From AI chatbots to competitor intelligence, we build AI-powered systems that help fast-moving ecommerce brands
-          scale smarter.
+          From AI-built storefronts to always-on support agents, we build AI-powered systems that help fast-moving
+          ecommerce brands scale smarter.
         </ScrollReveal>
 
         <div className="grid grid-cols-1 gap-px bg-white/10 md:grid-cols-2">
           {services.map((service, index) => {
             const Icon = service.icon
-            const isHighlight = 'highlight' in service && service.highlight
             const num = String(index + 1).padStart(2, '0')
             return (
               <ScrollReveal
                 key={service.title}
                 variant="fade-up"
                 delay={index * 0.07}
-                className={index === 4 ? 'md:col-span-2' : ''}
               >
                 <HoverSurface
-                  className={`h-full bg-black px-6 py-10 transition-colors duration-300 hover:bg-neutral-950 ${
-                    index === 4 ? '' : ''
-                  }`}
+                  className="h-full bg-black px-6 py-10 transition-colors duration-300 hover:bg-neutral-950"
                 >
                   <span className="mb-4 block text-[0.6rem] font-medium uppercase tracking-widest text-white/30">
                     {num}

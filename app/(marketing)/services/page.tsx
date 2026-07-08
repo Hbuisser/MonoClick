@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Check, Clock } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Check, Clock } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
 import { CTABanner } from '@/components/cta-banner'
@@ -9,23 +9,131 @@ import { RevealSection, ScrollReveal } from '@/components/scroll-reveal'
 import { Magnetic } from '@/components/fx/magnetic'
 
 export const metadata: Metadata = createMetadata({
-  title: 'AI Growth Systems for Ecommerce - Chatbots, Support, Analytics & Competitive Intelligence',
-  description: 'AI-powered growth systems for fast-moving ecommerce: AI chatbots trained on your products, support automation with Gorgias/Zendesk, business dashboards, content creation, and competitor ad tracking. Built in 10 working days.',
+  title: 'AI Growth Systems for Ecommerce - Store Builder, Support Agent, Creative Agent, Content & Chatbots',
+  description: 'AI-powered growth systems for fast-moving ecommerce: AI-built ecommerce stores designed end-to-end, an AI support agent for Gorgias/Zendesk, an AI creative agent that analyzes your Meta ads and generates new concepts, an AI content agent that publishes to social, and AI chatbots trained on your products. Built in 10 working days.',
   path: '/services'
 })
 
 const services = [
   {
-    title: 'AI Chatbot',
-    accent: 'that sells for you',
-    description: 'Deploy intelligent chatbots trained on your FAQ, policies, and product catalog. Answer customer questions instantly, provide product recommendations, and drive conversions 24/7.',
+    title: 'Ecommerce Store Builder',
+    accent: 'designed and shipped by AI',
+    description: 'Complete, conversion-ready storefronts designed and built end-to-end by AI — concept, art direction, copy, 3D, motion, AI-generated photography and film, code and deployment. No templates, no stock assets. Every pixel bespoke to your brand.',
+    image: null,
+    features: [
+      'Bespoke design and art direction — zero templates',
+      'AI-generated photography, video and 3D',
+      'Scroll-driven storytelling and motion',
+      'Conversion-focused product and cart flows',
+      'Shopify, headless or fully custom build',
+      'Fast, responsive and SEO-ready'
+    ],
+    benefits: [
+      'A storefront that looks like nothing else',
+      'Launch in a fraction of agency time and cost',
+      'Craft that turns browsers into buyers'
+    ],
+    timeline: '10 working days',
+    technologies: ['Three.js / WebGL', 'React', 'Shopify', 'AI photography & video', 'Vercel'],
+    examples: [
+      {
+        name: 'CENDRE',
+        tagline: 'Parisian fragrance house',
+        url: 'https://fable-cendre.vercel.app',
+        image: '/showcase/cendre.jpg',
+        note: 'Real-time 3D glass flacon, scroll-driven storytelling, AI campaign film.',
+      },
+      {
+        name: 'CRUDE™',
+        tagline: 'Brutalist streetwear drop',
+        url: 'https://fable-crude.vercel.app',
+        image: '/showcase/crude.jpg',
+        note: 'Custom WebGL glitch shaders, kinetic type, full-screen cart takeover.',
+      },
+      {
+        name: 'TSUCHI',
+        tagline: 'Japanese ceramics studio',
+        url: 'https://fable-tsuchi.vercel.app',
+        image: '/showcase/tsuchi.jpg',
+        note: 'Washi textures, self-drawing ink-brush motion, AI cinemagraph.',
+      },
+    ],
+  },
+  {
+    title: 'AI Support Agent',
+    accent: 'for Gorgias & Zendesk',
+    description: 'An always-on support agent that plugs into Gorgias or Zendesk, reads every ticket in context, and drafts — or fully resolves — replies grounded in your policies, orders, and product data. Scale your support team without hiring.',
+    image: '/support.png',
+    features: [
+      'Native Gorgias & Zendesk integration',
+      'Context-aware replies from your order data',
+      'Auto-categorization, tagging and triage',
+      'Drafts or auto-resolves routine tickets',
+      'Sentiment-aware escalation to humans',
+      'Multi-language support'
+    ],
+    benefits: [
+      '70% faster ticket resolution',
+      '50% reduction in average handle time',
+      'Higher CSAT, around the clock'
+    ],
+    timeline: '10 working days',
+    technologies: ['OpenAI', 'Anthropic', 'n8n', 'Gorgias', 'Zendesk']
+  },
+  {
+    title: 'AI Creative Agent',
+    accent: 'that finds what works',
+    description: 'Analyzes your entire Meta ads history — ROAS, spend, copy, image and video — to learn what actually converts. Mines audience and market signal from Reddit, Trustpilot and the open web, teardowns competitor creative, then generates fresh ad concepts, copy, and image & video prompts ready to produce.',
+    image: null,
+    features: [
+      'Meta ads history analysis — ROAS, spend, creative',
+      'Winning-pattern detection across copy, image & video',
+      'Audience & market research (Reddit, Trustpilot, web)',
+      'Competitor ad teardown and angle mapping',
+      'New ad concepts and scroll-stopping copy',
+      'Image & video generation prompts, ready to run'
+    ],
+    benefits: [
+      'Kill wasted spend, double down on winners',
+      'A pipeline of tested creative angles',
+      'Faster concept-to-launch cycles'
+    ],
+    timeline: '10 working days',
+    technologies: ['Meta Ads API', 'Anthropic', 'n8n', 'Reddit', 'Trustpilot'],
+    highlight: true
+  },
+  {
+    title: 'AI Content Agent',
+    accent: 'shipped to social',
+    description: 'Turns the Creative Agent’s concepts into finished content — images, video, captions and hooks — on-brand and on-schedule, then publishes straight to your social channels. From idea to feed without the busywork.',
+    image: null,
+    features: [
+      'Concept-to-content production (image, video, copy)',
+      'On-brand voice and visual consistency',
+      'Captions, hooks and hashtag sets',
+      'Content calendar and scheduling',
+      'Auto-publishing to social channels',
+      'Multi-format and multi-language output'
+    ],
+    benefits: [
+      '10x faster content production',
+      'An always-full content calendar',
+      'Consistent brand presence across channels'
+    ],
+    timeline: '10 working days',
+    technologies: ['Anthropic', 'n8n', 'Image & video AI', 'Meta', 'TikTok']
+  },
+  {
+    title: 'AI Chatbots',
+    accent: 'that sell 24/7',
+    description: 'Customer-facing chatbots trained on your catalog, FAQ and policies. They answer instantly, recommend the right products, track orders, and turn browsers into buyers — day and night, across every channel.',
     image: '/chatbot.png',
     features: [
       'Trained on your entire product catalog',
       'FAQ and policy knowledge base',
       'Order tracking and status updates',
       'Intelligent product recommendations',
-      'Multi-channel support (website, social media)',
+      'Website and social channels',
       'Seamless handoff to human support'
     ],
     benefits: [
@@ -34,92 +142,7 @@ const services = [
       '30% increase in conversion rate'
     ],
     timeline: '10 working days',
-    technologies: ['OpenAI', 'n8n', 'Shopify', 'WooCommerce', 'Your existing tools']
-  },
-  {
-    title: 'Support Automation',
-    accent: 'for Gorgias & Zendesk',
-    description: 'Integrate AI directly with your Gorgias or Zendesk account to draft intelligent responses. Reduce response time, improve support efficiency, and scale your customer service team.',
-    image: '/support.png',
-    features: [
-      'Native Gorgias & Zendesk integration',
-      'AI-drafted responses based on context',
-      'Auto-categorization and tagging',
-      'Sentiment analysis and prioritization',
-      'Macro and template suggestions',
-      'Multi-language support'
-    ],
-    benefits: [
-      '70% faster ticket resolution',
-      '50% reduction in average handle time',
-      'Improved customer satisfaction scores'
-    ],
-    timeline: '10 working days',
-    technologies: ['OpenAI', 'n8n', 'Gorgias', 'Zendesk', 'Your knowledge base']
-  },
-  {
-    title: 'Business Dashboards',
-    accent: 'that see everything',
-    description: 'Custom analytics dashboards that visualize your key ecommerce metrics in real-time. Track sales, inventory, customer behavior, and marketing performance all in one place.',
-    image: '/dashboard.png',
-    features: [
-      'Real-time sales and revenue tracking',
-      'Inventory management insights',
-      'Customer lifetime value analysis',
-      'Marketing attribution and ROI',
-      'Product performance metrics',
-      'Custom KPI visualization'
-    ],
-    benefits: [
-      'Data-driven decision making',
-      'Identify trends and opportunities faster',
-      'Unified view across all channels'
-    ],
-    timeline: '10 working days',
-    technologies: ['n8n', 'Shopify', 'Google Analytics', 'Meta Ads', 'Power BI', 'Looker']
-  },
-  {
-    title: 'Content Creation',
-    accent: 'at machine scale',
-    description: 'Generate high-converting product descriptions, email campaigns, blog posts, and social media content at scale. Maintain consistent brand voice while saving hours of writing time.',
-    image: null,
-    features: [
-      'AI-powered product descriptions',
-      'Email marketing campaigns',
-      'Social media content calendar',
-      'Blog posts and SEO content',
-      'Brand voice consistency',
-      'Multi-language content generation'
-    ],
-    benefits: [
-      '10x faster content production',
-      'Consistent brand messaging',
-      'Improved SEO performance'
-    ],
-    timeline: '10 working days',
-    technologies: ['OpenAI', 'n8n', 'Anthropic', 'Your brand guidelines', 'Shopify API']
-  },
-  {
-    title: 'Ad Intelligence',
-    accent: 'on your competitors',
-    description: 'Automatically track, scrape, and analyze winning ads from your competitors. Get insights into their creative strategies, messaging, and offers to stay ahead of the competition.',
-    image: null,
-    features: [
-      'Automatic ad scraping and monitoring',
-      'Creative performance tracking',
-      'Messaging and offer analysis',
-      'Trend identification',
-      'Competitive intelligence reports',
-      'Alert system for new campaigns'
-    ],
-    benefits: [
-      'Stay ahead of competitor strategies',
-      'Identify winning creative patterns',
-      'Faster campaign iteration'
-    ],
-    timeline: '10 working days',
-    technologies: ['n8n', 'Meta Ad Library', 'TikTok', 'Google Ads', 'AI Analysis'],
-    highlight: true
+    technologies: ['OpenAI', 'n8n', 'Shopify', 'WooCommerce', 'Anthropic']
   }
 ]
 
@@ -192,7 +215,7 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
               We build AI-powered systems that help fast-moving ecommerce brands scale smarter.
-              From AI chatbots to competitor intelligence, we deliver in 10 working days.
+              From AI-built storefronts to always-on support agents, we deliver in 10 working days.
             </p>
           </ScrollReveal>
 
@@ -343,6 +366,43 @@ export default function ServicesPage() {
                     </div>
                   </div>
                 </div>
+
+                {'examples' in service && service.examples && (
+                  <div className="mt-14 border-t border-white/10 pt-10">
+                    <h3 className="label-mono mb-6 text-white/40">Stores built &amp; designed by AI</h3>
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+                      {service.examples.map((example) => (
+                        <a
+                          key={example.name}
+                          href={example.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex flex-col border border-white/10 bg-white/[0.02] transition-colors duration-300 hover:border-white/30"
+                        >
+                          <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10">
+                            <Image
+                              src={example.image}
+                              alt={`${example.name} — ${example.tagline}`}
+                              fill
+                              sizes="(max-width: 640px) 100vw, 33vw"
+                              className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                            />
+                          </div>
+                          <div className="flex flex-1 flex-col p-5">
+                            <div className="mb-2 flex items-center justify-between">
+                              <h4 className="font-heading text-base font-bold uppercase tracking-wide text-white">
+                                {example.name}
+                              </h4>
+                              <ArrowUpRight className="h-4 w-4 text-white/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white" />
+                            </div>
+                            <div className="label-mono mb-3 text-sky-400/80">{example.tagline}</div>
+                            <p className="text-xs leading-relaxed text-white/50">{example.note}</p>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </RevealSection>
           )

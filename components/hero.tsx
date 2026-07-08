@@ -12,11 +12,11 @@ import { Magnetic } from '@/components/fx/magnetic'
 const HeroParticles = dynamic(() => import('@/components/hero-particles'), { ssr: false })
 
 const useCases = [
+  { industry: 'Ecommerce Store Builder', example: 'Storefronts designed & shipped by AI, zero templates' },
+  { industry: 'AI Support Agent', example: 'Resolves tickets in context on Gorgias & Zendesk' },
+  { industry: 'AI Creative Agent', example: 'Analyzes your Meta ads, generates new concepts' },
+  { industry: 'AI Content Agent', example: 'Turns concepts into content, publishes to social' },
   { industry: 'AI Chatbots', example: 'Trained on your FAQ, policies, and products' },
-  { industry: 'Support Automation', example: 'AI-powered draft answers for Gorgias & Zendesk' },
-  { industry: 'Business Intelligence', example: 'Custom dashboards for data-driven decisions' },
-  { industry: 'Content Creation', example: 'AI-powered product descriptions & marketing copy' },
-  { industry: 'Competitive Intelligence', example: 'Track and analyze winning competitor ads' },
 ]
 
 const heroStagger = {

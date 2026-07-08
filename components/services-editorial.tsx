@@ -8,63 +8,63 @@ import { ScrollReveal } from '@/components/scroll-reveal'
 
 const services = [
   {
-    title: 'AI Chatbot',
-    accent: 'that sells',
+    title: 'Ecommerce Store Builder',
+    accent: 'designed by AI',
     description:
-      'Deploy intelligent chatbots trained on your FAQ, policies, and product catalog. Answer customer questions 24/7 and drive conversions.',
+      'Complete, conversion-ready storefronts designed and built end-to-end by AI — concept, art direction, copy, 3D, motion, AI-generated photography and film, code and deployment. No templates, no stock assets.',
     features: [
-      'Trained on your products',
-      'FAQ & policy knowledge',
-      'Order tracking assistance',
-      'Instant product recommendations',
+      'Bespoke design & art direction — zero templates',
+      'AI-generated photography, video & 3D',
+      'Scroll-driven storytelling & motion',
+      'Shopify, headless or fully custom build',
     ],
   },
   {
-    title: 'Support Automation',
-    accent: 'for Gorgias & Zendesk',
+    title: 'AI Support Agent',
+    accent: 'on Gorgias & Zendesk',
     description:
-      'Integrate with Gorgias or Zendesk to draft AI-powered responses. Reduce response time and improve support efficiency.',
+      'An always-on agent that plugs into Gorgias or Zendesk, reads every ticket in context, and drafts — or fully resolves — replies grounded in your policies, orders, and products.',
     features: [
-      'Gorgias & Zendesk integration',
-      'AI-drafted responses',
-      'Context-aware suggestions',
+      'Native Gorgias & Zendesk integration',
+      'Context-aware from your order data',
+      'Auto-triage, tagging & escalation',
       '70% faster ticket resolution',
     ],
   },
   {
-    title: 'Business Dashboards',
-    accent: 'that decide',
+    title: 'AI Creative Agent',
+    accent: 'that finds what works',
     description:
-      'Custom analytics dashboards that visualize your key metrics. Make data-driven decisions with real-time insights.',
+      'Analyzes your Meta ads history — ROAS, spend, copy, image and video — to learn what converts. Mines audience signal from Reddit, Trustpilot and the web, teardowns competitor ads, then generates fresh concepts, copy, and image & video prompts.',
     features: [
-      'Real-time sales analytics',
-      'Inventory tracking',
-      'Customer behavior insights',
-      'Custom KPI monitoring',
+      'Meta ads history & ROAS analysis',
+      'Audience research — Reddit, Trustpilot, web',
+      'Competitor ad teardown & angle mapping',
+      'New concepts, copy & image/video prompts',
     ],
   },
   {
-    title: 'Content Creation',
-    accent: 'at scale',
+    title: 'AI Content Agent',
+    accent: 'shipped to social',
     description:
-      'Generate high-converting product descriptions, email campaigns, and marketing copy at scale with AI.',
+      'Turns the Creative Agent’s concepts into finished content — images, video, captions and hooks — on-brand and on-schedule, then publishes straight to your social channels.',
     features: [
-      'Product descriptions',
-      'Email marketing copy',
-      'Social media content',
-      'SEO-optimized content',
+      'Concept-to-content production',
+      'On-brand voice & visual consistency',
+      'Content calendar & scheduling',
+      'Auto-publishing to social channels',
     ],
   },
   {
-    title: 'Ad Intelligence',
-    accent: 'on your competitors',
+    title: 'AI Chatbots',
+    accent: 'that sell',
     description:
-      'Automatically track and analyze winning ads from your competitors. Stay ahead with insights into their strategies.',
+      'Customer-facing chatbots trained on your catalog, FAQ and policies. They answer instantly, recommend the right products, track orders, and turn browsers into buyers — 24/7.',
     features: [
-      'Automatic ad scraping',
-      'Performance tracking',
-      'Creative analysis',
-      'Strategy insights',
+      'Trained on your product catalog',
+      'FAQ & policy knowledge base',
+      'Order tracking & recommendations',
+      'Seamless handoff to human support',
     ],
   },
 ]
@@ -88,8 +88,8 @@ export function ServicesEditorial() {
           delay={0.08}
           className="mb-14 max-w-2xl text-sm leading-relaxed text-white/45"
         >
-          From AI chatbots to competitor intelligence — systems built for fast-moving
-          ecommerce brands, shipped in ten working days.
+          From AI-built storefronts to always-on support agents — systems built for
+          fast-moving ecommerce brands, shipped in ten working days.
         </ScrollReveal>
 
         <div className="border-t border-white/10">

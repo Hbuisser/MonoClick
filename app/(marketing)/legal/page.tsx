@@ -47,11 +47,11 @@ export default function LegalPage() {
                 including but not limited to:
               </p>
               <ul className="list-disc pl-6 mb-4 space-y-1">
+                <li>Ecommerce store design and development, built end-to-end with AI</li>
+                <li>AI support agents for Gorgias and Zendesk</li>
+                <li>AI creative agents that analyze ad performance and generate ad concepts, copy, and image/video prompts</li>
+                <li>AI content agents that produce content and publish to social media</li>
                 <li>AI chatbots trained on product catalogs, FAQs, and policies</li>
-                <li>AI support automation for Gorgias and Zendesk</li>
-                <li>Ecommerce analytics dashboards</li>
-                <li>AI-powered content creation for product descriptions and marketing copy</li>
-                <li>Competitor ad intelligence and tracking</li>
               </ul>
             </RevealSection>
 

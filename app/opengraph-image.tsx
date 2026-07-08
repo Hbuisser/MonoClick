@@ -90,7 +90,7 @@ export default async function Image() {
             lineHeight: 1.4,
           }}
         >
-          Chatbots, support automation, dashboards, content, and competitor intelligence
+          AI store builder, support agent, creative agent, content, and chatbots
         </p>
 
         {/* Bottom gradient */}

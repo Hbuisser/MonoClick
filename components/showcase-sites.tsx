@@ -48,10 +48,10 @@ export function ShowcaseSites() {
             <span className="serif-accent text-[1.04em] text-white/70">A few hours.</span>
           </h2>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/50">
-            We asked Claude (Fable 5) to design, art-direct and ship three fundamentally
-            different ecommerce experiences — concept, copy, AI-generated photography and
-            film, 3D, code and deployment. No templates, no stock assets. This is the level
-            of craft AI can bring to your store today.
+            We gave one autonomous AI design agent a single brief. It designed, art-directed
+            and shipped three fundamentally different ecommerce experiences — concept, copy,
+            AI-generated photography and film, 3D, code and deployment. No templates, no
+            stock assets. This is the level of craft AI can bring to your store today.
           </p>
         </ScrollReveal>
 
@@ -105,8 +105,8 @@ export function ShowcaseSites() {
         <ScrollReveal variant="fade-up" delay={0.3} className="mt-10">
           <p className="text-xs leading-relaxed text-white/30">
             Live demonstration stores — every pixel, asset and line of code produced
-            autonomously by Claude (Fable 5), directed by MonoClick. Imagine what this does
-            for your brand.
+            autonomously by our AI design agent, directed by MonoClick. Imagine what this
+            does for your brand.
           </p>
         </ScrollReveal>
       </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 
@@ -211,14 +211,28 @@ export default function HeroParticles({
 }: {
   scrollRef: React.MutableRefObject<number>
 }) {
+  const wrap = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const el = wrap.current
+    if (!el) return
+    const io = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting))
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
   return (
-    <Canvas
-      dpr={[1, 1.75]}
-      camera={{ position: [0, 0, 6.4], fov: 42 }}
-      gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
-      style={{ background: 'transparent' }}
-    >
-      <ParticleM scrollRef={scrollRef} />
-    </Canvas>
+    <div ref={wrap} className="h-full w-full">
+      <Canvas
+        frameloop={visible ? 'always' : 'never'}
+        dpr={[1, 1.75]}
+        camera={{ position: [0, 0, 6.4], fov: 42 }}
+        gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
+        style={{ background: 'transparent' }}
+      >
+        <ParticleM scrollRef={scrollRef} />
+      </Canvas>
+    </div>
   )
 }

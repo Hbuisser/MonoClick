@@ -12,10 +12,10 @@ import { Magnetic } from '@/components/fx/magnetic'
 const HeroParticles = dynamic(() => import('@/components/hero-particles'), { ssr: false })
 
 const useCases = [
-  { industry: 'Ecommerce Store Builder', example: 'Storefronts designed & shipped by AI, zero templates' },
   { industry: 'AI Support Agent', example: 'Resolves tickets in context on Gorgias & Zendesk' },
   { industry: 'AI Creative Agent', example: 'Analyzes your Meta ads, generates new concepts' },
   { industry: 'AI Content Agent', example: 'Turns concepts into content, publishes to social' },
+  { industry: 'AI Design Agent', example: 'Storefronts designed & shipped by AI, zero templates' },
   { industry: 'AI Chatbots', example: 'Trained on your FAQ, policies, and products' },
 ]
 

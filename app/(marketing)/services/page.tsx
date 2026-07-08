@@ -9,56 +9,12 @@ import { RevealSection, ScrollReveal } from '@/components/scroll-reveal'
 import { Magnetic } from '@/components/fx/magnetic'
 
 export const metadata: Metadata = createMetadata({
-  title: 'AI Growth Systems for Ecommerce - Store Builder, Support Agent, Creative Agent, Content & Chatbots',
-  description: 'AI-powered growth systems for fast-moving ecommerce: AI-built ecommerce stores designed end-to-end, an AI support agent for Gorgias/Zendesk, an AI creative agent that analyzes your Meta ads and generates new concepts, an AI content agent that publishes to social, and AI chatbots trained on your products. Built in 10 working days.',
+  title: 'AI Growth Systems for Ecommerce - Support Agent, Creative Agent, Content Agent, Design Agent & Chatbots',
+  description: 'AI-powered growth systems for fast-moving ecommerce: an AI support agent for Gorgias/Zendesk, an AI creative agent that analyzes your Meta ads and generates new concepts, an AI content agent that publishes to social, an AI design agent that builds your storefront, and AI chatbots trained on your products. Built in 10 working days.',
   path: '/services'
 })
 
 const services = [
-  {
-    title: 'Ecommerce Store Builder',
-    accent: 'designed and shipped by AI',
-    description: 'Complete, conversion-ready storefronts designed and built end-to-end by AI — concept, art direction, copy, 3D, motion, AI-generated photography and film, code and deployment. No templates, no stock assets. Every pixel bespoke to your brand.',
-    image: null,
-    features: [
-      'Bespoke design and art direction — zero templates',
-      'AI-generated photography, video and 3D',
-      'Scroll-driven storytelling and motion',
-      'Conversion-focused product and cart flows',
-      'Shopify, headless or fully custom build',
-      'Fast, responsive and SEO-ready'
-    ],
-    benefits: [
-      'A storefront that looks like nothing else',
-      'Launch in a fraction of agency time and cost',
-      'Craft that turns browsers into buyers'
-    ],
-    timeline: '10 working days',
-    technologies: ['Three.js / WebGL', 'React', 'Shopify', 'AI photography & video', 'Vercel'],
-    examples: [
-      {
-        name: 'CENDRE',
-        tagline: 'Parisian fragrance house',
-        url: 'https://fable-cendre.vercel.app',
-        image: '/showcase/cendre.jpg',
-        note: 'Real-time 3D glass flacon, scroll-driven storytelling, AI campaign film.',
-      },
-      {
-        name: 'CRUDE™',
-        tagline: 'Brutalist streetwear drop',
-        url: 'https://fable-crude.vercel.app',
-        image: '/showcase/crude.jpg',
-        note: 'Custom WebGL glitch shaders, kinetic type, full-screen cart takeover.',
-      },
-      {
-        name: 'TSUCHI',
-        tagline: 'Japanese ceramics studio',
-        url: 'https://fable-tsuchi.vercel.app',
-        image: '/showcase/tsuchi.jpg',
-        note: 'Washi textures, self-drawing ink-brush motion, AI cinemagraph.',
-      },
-    ],
-  },
   {
     title: 'AI Support Agent',
     accent: 'for Gorgias & Zendesk',
@@ -124,6 +80,50 @@ const services = [
     technologies: ['Anthropic', 'n8n', 'Image & video AI', 'Meta', 'TikTok']
   },
   {
+    title: 'AI Design Agent',
+    accent: 'no templates',
+    description: 'Designs and builds complete, conversion-ready storefronts end-to-end — concept, art direction, copy, 3D, motion, AI-generated photography and film, code and deployment. No templates, no stock assets. Every pixel bespoke to your brand.',
+    image: null,
+    features: [
+      'Bespoke design and art direction — zero templates',
+      'AI-generated photography, video and 3D',
+      'Scroll-driven storytelling and motion',
+      'Conversion-focused product and cart flows',
+      'Shopify, headless or fully custom build',
+      'Fast, responsive and SEO-ready'
+    ],
+    benefits: [
+      'A storefront that looks like nothing else',
+      'Launch in a fraction of agency time and cost',
+      'Craft that turns browsers into buyers'
+    ],
+    timeline: '10 working days',
+    technologies: ['Three.js / WebGL', 'React', 'Shopify', 'AI photography & video', 'Vercel'],
+    examples: [
+      {
+        name: 'CENDRE',
+        tagline: 'Parisian fragrance house',
+        url: 'https://fable-cendre.vercel.app',
+        image: '/showcase/cendre.jpg',
+        note: 'Real-time 3D glass flacon, scroll-driven storytelling, AI campaign film.',
+      },
+      {
+        name: 'CRUDE™',
+        tagline: 'Brutalist streetwear drop',
+        url: 'https://fable-crude.vercel.app',
+        image: '/showcase/crude.jpg',
+        note: 'Custom WebGL glitch shaders, kinetic type, full-screen cart takeover.',
+      },
+      {
+        name: 'TSUCHI',
+        tagline: 'Japanese ceramics studio',
+        url: 'https://fable-tsuchi.vercel.app',
+        image: '/showcase/tsuchi.jpg',
+        note: 'Washi textures, self-drawing ink-brush motion, AI cinemagraph.',
+      },
+    ],
+  },
+  {
     title: 'AI Chatbots',
     accent: 'that sell 24/7',
     description: 'Customer-facing chatbots trained on your catalog, FAQ and policies. They answer instantly, recommend the right products, track orders, and turn browsers into buyers — day and night, across every channel.',
@@ -169,29 +169,29 @@ const process = [
   {
     step: '01',
     title: 'Free Discovery Call',
-    accent: 'no pitch',
-    description: 'We chat about your biggest time-wasters and growth bottlenecks. No sales pitch — just an honest conversation about what automation could do for your business.',
+    accent: 'a real conversation',
+    description: 'We chat about your biggest time-wasters and growth bottlenecks — an honest, useful conversation about what automation could do for your business.',
     duration: '30-45 minutes',
   },
   {
     step: '02',
     title: 'Custom Proposal',
-    accent: 'no surprises',
-    description: 'You get a detailed plan with custom pricing based on your needs, clear timelines, and projected ROI. No surprises, no hourly billing.',
+    accent: 'clear & upfront',
+    description: 'You get a detailed plan with custom pricing based on your needs, clear timelines, and projected ROI. Transparent, fixed pricing you can plan around.',
     duration: '2-3 days',
   },
   {
     step: '03',
     title: 'Build & Test',
-    accent: 'no black box',
+    accent: 'full visibility',
     description: 'We build your automation with regular check-ins so you can see progress and give feedback. Everything is tested before launch.',
     duration: '10 working days',
   },
   {
     step: '04',
     title: 'Launch & Support',
-    accent: 'no goodbye',
-    description: 'We train your team, launch the system, and provide 30 days of free support to ensure everything runs smoothly.',
+    accent: 'we stay with you',
+    description: 'We train your team, launch the system, and provide 30 days of free support to keep everything running smoothly.',
     duration: 'Included',
   },
 ]
@@ -215,7 +215,7 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
               We build AI-powered systems that help fast-moving ecommerce brands scale smarter.
-              From AI-built storefronts to always-on support agents, we deliver in 10 working days.
+              From always-on support agents to AI-designed storefronts, we deliver in 10 working days.
             </p>
           </ScrollReveal>
 
@@ -445,7 +445,7 @@ export default function ServicesPage() {
             <p className="label-mono mb-5 text-sky-400">How we work</p>
             <h2 className="display-title text-[clamp(2rem,5vw,3.8rem)] text-white">
               Four steps,{' '}
-              <span className="serif-accent text-[1.04em] text-white/85">zero drama</span>
+              <span className="serif-accent text-[1.04em] text-white/85">total clarity</span>
             </h2>
           </div>
 

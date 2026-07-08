@@ -8,18 +8,6 @@ import { ScrollReveal } from '@/components/scroll-reveal'
 
 const services = [
   {
-    title: 'Ecommerce Store Builder',
-    accent: 'designed by AI',
-    description:
-      'Complete, conversion-ready storefronts designed and built end-to-end by AI — concept, art direction, copy, 3D, motion, AI-generated photography and film, code and deployment. No templates, no stock assets.',
-    features: [
-      'Bespoke design & art direction — zero templates',
-      'AI-generated photography, video & 3D',
-      'Scroll-driven storytelling & motion',
-      'Shopify, headless or fully custom build',
-    ],
-  },
-  {
     title: 'AI Support Agent',
     accent: 'on Gorgias & Zendesk',
     description:
@@ -56,6 +44,18 @@ const services = [
     ],
   },
   {
+    title: 'AI Design Agent',
+    accent: 'no templates',
+    description:
+      'Designs and builds complete, conversion-ready storefronts end-to-end — concept, art direction, copy, 3D, motion, AI-generated photography and film, code and deployment. No templates, no stock assets.',
+    features: [
+      'Bespoke design & art direction — zero templates',
+      'AI-generated photography, video & 3D',
+      'Scroll-driven storytelling & motion',
+      'Shopify, headless or fully custom build',
+    ],
+  },
+  {
     title: 'AI Chatbots',
     accent: 'that sell',
     description:
@@ -88,7 +88,7 @@ export function ServicesEditorial() {
           delay={0.08}
           className="mb-14 max-w-2xl text-sm leading-relaxed text-white/45"
         >
-          From AI-built storefronts to always-on support agents — systems built for
+          From always-on support agents to AI-designed storefronts — systems built for
           fast-moving ecommerce brands, shipped in ten working days.
         </ScrollReveal>
 

@@ -51,7 +51,7 @@ export function CTABanner() {
                 <span className="text-left leading-tight">
                   Book a free call with Henry
                   <span className="block text-[0.6rem] font-normal normal-case tracking-normal text-white/70">
-                    30 minutes — no pitch, just a plan
+                    30 minutes
                   </span>
                 </span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

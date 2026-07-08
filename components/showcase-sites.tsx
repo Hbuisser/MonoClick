@@ -41,7 +41,7 @@ export function ShowcaseSites() {
       <div className="editorial-max">
         <ScrollReveal variant="slide-right" className="mb-14">
           <span className="label-mono mb-5 block text-sky-400">
-            02 — Ecommerce Store Builder · zero templates
+            02 — AI Design Agent · zero templates
           </span>
           <h2 className="display-title max-w-4xl text-[clamp(2.25rem,6vw,5rem)] text-white">
             Three stores. One AI.{' '}

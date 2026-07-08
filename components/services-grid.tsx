@@ -3,7 +3,7 @@
 import {
   MessageSquare,
   HeadphonesIcon,
-  Store,
+  Palette,
   Wand2,
   Share2,
   Check,
@@ -12,19 +12,6 @@ import {
 import { HoverSurface, ScrollReveal } from '@/components/scroll-reveal'
 
 const services = [
-  {
-    icon: Store,
-    title: 'Ecommerce Store Builder',
-    description:
-      'Complete, conversion-ready storefronts designed and built end-to-end by AI — concept, art direction, copy, 3D, motion, AI-generated photography and film. No templates, no stock assets.',
-    image: '/showcase/cendre.jpg',
-    features: [
-      'Bespoke design & art direction — zero templates',
-      'AI-generated photography, video & 3D',
-      'Scroll-driven storytelling & motion',
-      'Shopify, headless or fully custom build',
-    ],
-  },
   {
     icon: HeadphonesIcon,
     title: 'AI Support Agent',
@@ -66,6 +53,19 @@ const services = [
     ],
   },
   {
+    icon: Palette,
+    title: 'AI Design Agent',
+    description:
+      'Designs and builds complete, conversion-ready storefronts end-to-end — concept, art direction, copy, 3D, motion, AI-generated photography and film. No templates, no stock assets.',
+    image: '/showcase/cendre.jpg',
+    features: [
+      'Bespoke design & art direction — zero templates',
+      'AI-generated photography, video & 3D',
+      'Scroll-driven storytelling & motion',
+      'Shopify, headless or fully custom build',
+    ],
+  },
+  {
     icon: MessageSquare,
     title: 'AI Chatbots',
     description:
@@ -94,7 +94,7 @@ export function ServicesGrid() {
         </ScrollReveal>
 
         <ScrollReveal variant="fade" delay={0.08} className="mb-16 max-w-2xl text-base leading-relaxed text-white/50">
-          From AI-built storefronts to always-on support agents, we build AI-powered systems that help fast-moving
+          From always-on support agents to AI-designed storefronts, we build AI-powered systems that help fast-moving
           ecommerce brands scale smarter.
         </ScrollReveal>
 

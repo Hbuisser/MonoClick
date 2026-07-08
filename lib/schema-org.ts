@@ -28,10 +28,10 @@ export function generateOrganizationSchema() {
     },
     knowsAbout: [
       'AI Automation for Ecommerce',
-      'AI-Built Ecommerce Stores',
       'AI Support Agents for Gorgias & Zendesk',
       'AI Creative Agents for Meta Ads',
       'AI Content Agent for Social Media',
+      'AI Design Agents for Ecommerce Stores',
       'AI Chatbots for Online Stores',
     ],
   }
@@ -58,7 +58,7 @@ export function generateServiceSchema() {
     '@type': 'Service',
     name: 'AI Growth Systems for Ecommerce',
     description:
-      'Custom AI-powered growth systems for ecommerce brands — AI-built ecommerce stores, an AI support agent, an AI creative agent for Meta ads, an AI content agent, and AI chatbots.',
+      'Custom AI-powered growth systems for ecommerce brands — an AI support agent, an AI creative agent for Meta ads, an AI content agent, an AI design agent that builds your storefront, and AI chatbots.',
     provider: {
       '@type': 'Organization',
       name: siteConfig.name,
@@ -70,15 +70,6 @@ export function generateServiceSchema() {
       '@type': 'OfferCatalog',
       name: 'AI Growth Systems for Ecommerce',
       itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Ecommerce Store Builder',
-            description:
-              'Conversion-ready ecommerce storefronts designed and built end-to-end by AI — art direction, 3D, motion, AI-generated photography and film, code and deployment, with zero templates',
-          },
-        },
         {
           '@type': 'Offer',
           itemOffered: {
@@ -104,6 +95,15 @@ export function generateServiceSchema() {
             name: 'AI Content Agent',
             description:
               'Turns creative concepts into finished content — images, video, and copy — and publishes to your social channels',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'AI Design Agent',
+            description:
+              'Conversion-ready ecommerce storefronts designed and built end-to-end by AI — art direction, 3D, motion, AI-generated photography and film, code and deployment, with zero templates',
           },
         },
         {

@@ -10,7 +10,7 @@ import { Magnetic } from '@/components/fx/magnetic'
 
 export const metadata: Metadata = createMetadata({
   title: 'About Our AI Automation Agency for Ecommerce',
-  description: 'MonoClick is an AI automation agency specializing in ecommerce growth systems. We deliver AI-built ecommerce stores, an AI support agent, an AI creative agent for your Meta ads, an AI content agent, and AI chatbots for fast-moving ecommerce brands.',
+  description: 'MonoClick is an AI automation agency specializing in ecommerce growth systems. We deliver an AI support agent, an AI creative agent for your Meta ads, an AI content agent, an AI design agent, and AI chatbots for fast-moving ecommerce brands.',
   path: '/about'
 })
 
@@ -31,7 +31,7 @@ const values = [
     title: 'AI-powered growth',
     accent: 'sell more, work less',
     description:
-      'We build AI-designed storefronts and leverage AI support agents, AI ad creative, content automation, and chatbots to help ecommerce brands scale smarter and sell more.',
+      'We leverage AI support agents, AI ad creative, content automation, AI-designed storefronts, and chatbots to help ecommerce brands scale smarter and sell more.',
   },
   {
     title: 'ROI-driven',
@@ -55,7 +55,7 @@ const differentiators = [
   {
     title: 'Ecommerce-native AI',
     description:
-      'We leverage cutting-edge AI to build entire storefronts, support agents, ad creative, content automation, and chatbots tailored for fast-moving ecommerce brands.',
+      'We leverage cutting-edge AI to build support agents, ad creative, content automation, entire storefronts, and chatbots tailored for fast-moving ecommerce brands.',
   },
   {
     title: 'End-to-end service',
@@ -82,9 +82,9 @@ export default function AboutPage() {
             </h1>
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
               MonoClick is a specialized AI automation agency delivering custom AI growth
-              systems for fast-moving ecommerce brands. We build AI-designed ecommerce stores,
-              an AI support agent, an AI creative agent for your Meta ads, an AI content agent,
-              and AI chatbots.
+              systems for fast-moving ecommerce brands. We build an AI support agent, an AI
+              creative agent for your Meta ads, an AI content agent, an AI design agent, and AI
+              chatbots.
             </p>
           </ScrollReveal>
 
@@ -116,11 +116,11 @@ export default function AboutPage() {
                   solutions that save time, reduce costs, and drive revenue growth.
                 </p>
                 <p>
-                  From AI-designed storefronts and an AI support agent for Gorgias/Zendesk to an
-                  AI creative agent that analyzes your Meta ads and generates new concepts, an
-                  AI content agent that publishes to social, and AI chatbots trained on your
-                  products, we build custom systems that integrate seamlessly with your ecommerce
-                  stack.
+                  From an AI support agent for Gorgias/Zendesk to an AI creative agent that
+                  analyzes your Meta ads and generates new concepts, an AI content agent that
+                  publishes to social, an AI design agent that builds your storefront, and AI
+                  chatbots trained on your products, we build custom systems that integrate
+                  seamlessly with your ecommerce stack.
                 </p>
                 <p>
                   Our clients include fast-moving ecommerce brands, DTC companies, and growing

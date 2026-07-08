@@ -171,7 +171,7 @@ export function Hero() {
 
           <motion.div
             variants={fadeItem}
-            className="pointer-events-none hidden items-end gap-10 md:flex"
+            className="pointer-events-none hidden items-end gap-10 md:flex lg:mr-20"
           >
             {[
               ['100+', 'Automations shipped'],

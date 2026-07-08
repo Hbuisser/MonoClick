@@ -127,6 +127,8 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)'],
         heading: ['var(--font-space-grotesk)'],
+        serif: ['var(--font-instrument-serif)', 'Georgia', 'serif'],
+        mono: ['var(--font-plex-mono)', 'ui-monospace', 'monospace'],
       },
     },
   },

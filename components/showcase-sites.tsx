@@ -40,11 +40,12 @@ export function ShowcaseSites() {
     <section className="border-t border-white/10 bg-black py-24" id="ai-showcase">
       <div className="editorial-max">
         <ScrollReveal variant="slide-right" className="mb-14">
-          <span className="section-label mb-4 block text-white">
-            Built end-to-end by AI — zero templates
+          <span className="label-mono mb-5 block text-sky-400">
+            02 — Built end-to-end by AI, zero templates
           </span>
           <h2 className="display-title max-w-4xl text-[clamp(2.25rem,6vw,5rem)] text-white">
-            Three stores. One AI. <span className="text-white/40">A few hours.</span>
+            Three stores. One AI.{' '}
+            <span className="serif-accent text-[1.04em] text-white/70">A few hours.</span>
           </h2>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/50">
             We asked Claude (Fable 5) to design, art-direct and ship three fundamentally

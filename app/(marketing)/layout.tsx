@@ -1,5 +1,6 @@
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { SiteFX } from '@/components/fx/site-fx'
 
 interface MarketingLayoutProps {
   children: React.ReactNode
@@ -8,6 +9,7 @@ interface MarketingLayoutProps {
 export default function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
     <div className="flex min-h-screen flex-col bg-black text-zinc-50">
+      <SiteFX />
       <SiteHeader />
       <main className="flex-1 pt-[var(--menu-height)]">{children}</main>
       <SiteFooter />

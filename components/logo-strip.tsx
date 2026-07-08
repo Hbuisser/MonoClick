@@ -31,8 +31,9 @@ export function LogoStrip() {
   return (
     <RevealSection variant="bright" className="border-t border-white/10 bg-black py-16">
       <div className="editorial-max">
-        <ScrollReveal variant="fade-up" className="mb-10 text-center">
-          <p className="section-label text-white">Trusted by</p>
+        <ScrollReveal variant="fade-up" className="mb-10 flex items-center gap-6">
+          <p className="label-mono shrink-0 text-white/40">Trusted by</p>
+          <div className="h-px flex-1 bg-white/10" aria-hidden />
         </ScrollReveal>
 
         <div className="relative overflow-hidden">
@@ -57,7 +58,7 @@ export function LogoStrip() {
                     alt={logo.name}
                     width={logo.width}
                     height={logo.height}
-                    className="h-10 w-auto object-contain sm:h-14"
+                    className="h-10 w-auto object-contain opacity-80 transition-opacity duration-500 hover:opacity-100 sm:h-14"
                   />
                 </div>
               </div>
@@ -73,8 +74,9 @@ export function PoweredBy() {
   return (
     <RevealSection variant="fade-up" className="border-t border-white/10 bg-black py-16">
       <div className="editorial-max">
-        <ScrollReveal variant="slide-left" className="mb-10 text-center">
-          <p className="section-label text-white">Tools We Work With</p>
+        <ScrollReveal variant="slide-left" className="mb-10 flex items-center gap-6">
+          <p className="label-mono shrink-0 text-white/40">Tools we work with</p>
+          <div className="h-px flex-1 bg-white/10" aria-hidden />
         </ScrollReveal>
 
         <div className="grid grid-cols-2 items-center justify-items-center gap-8 sm:grid-cols-3 sm:gap-12 lg:grid-cols-4">
@@ -88,7 +90,7 @@ export function PoweredBy() {
                 alt={logo.name}
                 width={logo.width}
                 height={logo.height}
-                className="h-14 w-auto object-contain sm:h-20"
+                className="h-14 w-auto object-contain opacity-85 transition-opacity duration-500 hover:opacity-100 sm:h-20"
               />
             </div>
           ))}

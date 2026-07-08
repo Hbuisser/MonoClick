@@ -20,14 +20,29 @@ const MotionLink = motion(Link)
 
 export function SiteHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
     setIsMobileMenuOpen(false)
   }, [pathname])
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-[var(--menu-height)] border-b border-white/10 bg-black">
+    <header
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 h-[var(--menu-height)] transition-[background-color,border-color,backdrop-filter] duration-500',
+        scrolled || isMobileMenuOpen
+          ? 'border-b border-white/10 bg-black/75 backdrop-blur-xl'
+          : 'border-b border-transparent bg-transparent'
+      )}
+    >
       <div className="flex h-full w-full items-center justify-between px-6">
         <Link href="/" className="group flex items-center gap-2.5">
           <motion.div

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
+import { Inter, Space_Grotesk, Instrument_Serif, IBM_Plex_Mono } from 'next/font/google'
 
 import { createMetadata } from '@/lib/seo'
 import {
@@ -20,6 +20,21 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 })
 
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  variable: '--font-instrument-serif',
+  display: 'swap',
+})
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-plex-mono',
+  display: 'swap',
+})
+
 export const metadata: Metadata = createMetadata({})
 
 export default function RootLayout({
@@ -31,7 +46,7 @@ export default function RootLayout({
   const websiteSchema = generateWebSiteSchema()
 
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${plexMono.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

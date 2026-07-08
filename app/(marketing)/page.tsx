@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { Hero } from '@/components/hero'
 import { LogoStrip, PoweredBy } from '@/components/logo-strip'
-import { ServicesGrid } from '@/components/services-grid'
+import { ServicesEditorial } from '@/components/services-editorial'
 import { ShowcaseSites } from '@/components/showcase-sites'
 import { ProcessSteps } from '@/components/process-steps'
 import { CaseHighlights } from '@/components/case-highlights'
@@ -20,7 +20,7 @@ export default function HomePage() {
     <>
       <Hero />
       <LogoStrip />
-      <ServicesGrid />
+      <ServicesEditorial />
       <ShowcaseSites />
       <PoweredBy />
       <Testimonials />

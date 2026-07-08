@@ -41,18 +41,24 @@ export function ShowcaseSites() {
       <div className="editorial-max">
         <ScrollReveal variant="slide-right" className="mb-14">
           <span className="label-mono mb-5 block text-sky-400">
-            02 — AI Design Agent · zero templates
+            02 — AI Design Agent · Shopify &amp; custom builds
           </span>
           <h2 className="display-title max-w-4xl text-[clamp(2.25rem,6vw,5rem)] text-white">
-            Three stores. One AI.{' '}
-            <span className="serif-accent text-[1.04em] text-white/70">A few hours.</span>
+            We design and build storefronts that look like nothing else.{' '}
+            <span className="serif-accent text-[1.04em] text-white/70">
+              Concept to launch in days.
+            </span>
           </h2>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/50">
-            We gave one autonomous AI design agent a single brief. It designed, art-directed
-            and shipped three fundamentally different ecommerce experiences — concept, copy,
-            AI-generated photography and film, 3D, code and deployment. No templates, no
-            stock assets. This is the level of craft AI can bring to your store today.
+            The AI Design Agent is how MonoClick ships custom Shopify and headless stores end
+            to end — concept, copy, AI-generated photography and film, 3D, code and
+            deployment. No templates, no stock assets. Each store below was built from a
+            single brief, so you can judge the craft before we point it at yours.
           </p>
+        </ScrollReveal>
+
+        <ScrollReveal variant="fade-up" className="mb-6 border-t border-white/10 pt-6">
+          <span className="label-mono block text-white/40">Portfolio</span>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">

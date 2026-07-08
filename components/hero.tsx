@@ -68,7 +68,7 @@ export function Hero() {
       className="relative min-h-[calc(100dvh-var(--menu-height))] overflow-hidden bg-black"
     >
       {/* particle pixel-M */}
-      <div className="absolute inset-0 z-0 md:left-[28%]">
+      <div className="absolute inset-0 z-0 md:left-[42%]">
         <HeroParticles scrollRef={scrollRef} />
       </div>
 
@@ -89,7 +89,7 @@ export function Hero() {
         transition={{ duration: 1, delay: 1.2 }}
         className="pointer-events-none absolute left-5 right-6 top-8 z-10 hidden items-start justify-between sm:left-8 lg:left-12 md:flex"
       >
-        <p className="label-mono text-white/40">
+        {/* <p className="label-mono text-white/40">
           AI Systems Studio
           <br />
           EU — US
@@ -98,7 +98,7 @@ export function Hero() {
           Shipped in 10 working days
           <br />
           Fixed-price, no surprises
-        </p>
+        </p> */}
       </motion.div>
 
       <motion.div

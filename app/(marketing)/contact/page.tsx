@@ -1,42 +1,17 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  Mail,
-  Calendar,
-  Clock,
-  MapPin,
-  ArrowRight
-} from 'lucide-react'
+import Image from 'next/image'
+import { Mail, Clock, MapPin, ArrowRight } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
-import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { RevealSection } from '@/components/scroll-reveal'
+import { RevealSection, ScrollReveal } from '@/components/scroll-reveal'
+import { Magnetic } from '@/components/fx/magnetic'
 
 export const metadata: Metadata = createMetadata({
   title: 'Contact Us',
   description: 'Ready to automate your workflows? Get in touch with MonoClick for a free discovery call and project quote.',
   path: '/contact'
 })
-
-const contactMethods = [
-  {
-    icon: Calendar,
-    title: 'Book a Discovery Call',
-    description: 'Schedule a 30-minute call to discuss your automation needs',
-    action: 'Book now',
-    href: 'https://calendly.com/henrybuisseret/30min',
-    primary: true
-  },
-  {
-    icon: Mail,
-    title: 'Send us an Email',
-    description: 'Prefer email? Drop us a line with your project details',
-    action: 'henry@monoclick.ai',
-    href: 'mailto:henry@monoclick.ai',
-    primary: false
-  }
-]
 
 const faqs = [
   {
@@ -56,148 +31,138 @@ const faqs = [
 export default function ContactPage() {
   return (
     <div>
-      {/* Hero Section */}
-      <RevealSection variant="fade-up" className="relative overflow-hidden border-b border-white/10 bg-black py-24">
-        <div className="editorial-max text-center">
-          <p className="section-label mb-4 block text-white">Contact Us</p>
-          <h1 className="mb-6 font-heading text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-            Let&apos;s automate your workflows
-          </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-white/60">
-            Ready to turn your processes into AI-powered systems?
-            Let&apos;s discuss your project and explore the possibilities.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-white/55">
-            <div className="flex items-center space-x-2">
-              <div className="h-2 w-2 rounded-full bg-white" />
-              <span>Free 30-min consultation</span>
+      {/* Hero + methods */}
+      <section className="relative overflow-hidden border-b border-white/10 bg-black pb-16 pt-20 sm:pb-20 sm:pt-28">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_45%_at_50%_0%,rgba(37,99,235,0.14),transparent_65%)]"
+          aria-hidden
+        />
+        <div className="editorial-max relative">
+          <ScrollReveal variant="fade-up">
+            <p className="label-mono mb-6 text-sky-400">Contact</p>
+            <h1 className="display-title max-w-5xl text-[clamp(2.4rem,6.6vw,5.4rem)] text-white">
+              Say{' '}
+              <span className="serif-accent text-[1.02em] text-white/85">hello.</span>
+            </h1>
+            <p className="mt-8 max-w-xl text-sm leading-relaxed text-white/50 sm:text-base">
+              Ready to turn your processes into AI-powered systems? Let&apos;s discuss your
+              project and explore the possibilities.
+            </p>
+            <div className="label-mono mt-8 flex flex-wrap items-center gap-8 text-white/40">
+              <span className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                Free 30-min consultation
+              </span>
+              <span className="flex items-center gap-2">
+                <MapPin className="h-3.5 w-3.5" /> EU &amp; US
+              </span>
+              <span className="flex items-center gap-2">
+                <Clock className="h-3.5 w-3.5" /> Response &lt; 24 hours
+              </span>
             </div>
-            <div className="flex items-center space-x-2">
-              <MapPin className="h-4 w-4 text-white/60" />
-              <span>EU timezone</span>
-            </div>
-          </div>
-        </div>
-      </RevealSection>
+          </ScrollReveal>
 
-      {/* Contact Methods */}
-      <RevealSection variant="bright" className="border-b border-white/10 bg-black py-16">
-        <div className="editorial-max">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {contactMethods.map((method) => {
-              const Icon = method.icon
-              return (
-                <Card
-                  key={method.title}
-                  className={`rounded-none border-white/10 bg-neutral-950 text-white shadow-none transition-all hover:border-white/20 ${
-                    method.primary ? 'ring-1 ring-white/20' : ''
-                  }`}
-                >
-                  <CardContent className="p-8 text-center">
-                    <div
-                      className={`mx-auto mb-5 flex h-14 w-14 items-center justify-center border ${
-                        method.primary
-                          ? 'border-white/25 bg-white/10'
-                          : 'border-white/10 bg-white/5'
-                      }`}
-                    >
-                      <Icon className={`h-6 w-6 ${method.primary ? 'text-white' : 'text-white/70'}`} />
-                    </div>
-                    <h3 className="mb-2 text-xl font-semibold">{method.title}</h3>
-                    <p className="mb-5 text-sm text-white/55">{method.description}</p>
-                    <Button
-                      asChild
-                      variant={method.primary ? 'editorial' : 'editorial'}
-                      size="sm"
-                      className={method.primary ? '' : 'border-white/15 hover:bg-white/5'}
-                    >
-                      <Link
-                        href={method.href}
-                        target={method.href.startsWith('http') ? '_blank' : undefined}
-                        rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="flex items-center"
-                      >
-                        {method.action}
-                        {method.primary && <ArrowRight className="ml-2 h-4 w-4" />}
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
-        </div>
-      </RevealSection>
-
-      {/* What to expect & Contact info */}
-      <RevealSection variant="fade-up" className="bg-[#fcfcfc] py-24 text-black">
-        <div className="editorial-max max-w-7xl">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-            <Card className="rounded-none border-black/10 bg-white lg:col-span-2">
-              <CardContent className="p-8">
-                <h3 className="mb-6 text-xl font-semibold text-black">What happens next?</h3>
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                  {[
-                    { step: '1', title: 'We review your submission', time: 'Usually within 4 hours' },
-                    { step: '2', title: 'Discovery call', time: '30 minutes to understand your needs' },
-                    { step: '3', title: 'Proposal & timeline', time: 'Fixed-price quote within 48 hours' },
-                  ].map((item) => (
-                    <div key={item.step} className="text-center">
-                      <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center border border-black/15 bg-black text-sm font-bold text-white">
-                        {item.step}
-                      </div>
-                      <h4 className="mb-1 font-medium text-black">{item.title}</h4>
-                      <p className="text-sm text-black/50">{item.time}</p>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-none border-black/10 bg-white">
-              <CardContent className="p-8">
-                <h3 className="mb-6 text-xl font-semibold text-black">Get in touch</h3>
-                <div className="space-y-4">
-                  <a
-                    href="mailto:henry@monoclick.ai"
-                    className="flex items-center space-x-3 text-sm text-black/65 transition-colors hover:text-black"
+          <ScrollReveal variant="fade-up" delay={0.12} className="mt-16 grid grid-cols-1 gap-px border border-white/10 bg-white/10 md:grid-cols-2">
+            {/* Call */}
+            <div className="group relative bg-black p-9 transition-colors duration-300 hover:bg-neutral-950">
+              <span className="label-mono text-white/30">01 — Fastest</span>
+              <h3 className="mt-5 font-heading text-2xl font-black uppercase tracking-tight text-white">
+                Book a discovery call
+              </h3>
+              <div className="serif-accent mt-1 text-lg text-sky-400/80">thirty minutes, zero pitch</div>
+              <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/50">
+                Schedule a 30-minute call to discuss your automation needs.
+              </p>
+              <div className="mt-8">
+                <Magnetic>
+                  <Link
+                    href="https://calendly.com/henrybuisseret/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/btn inline-flex items-center gap-4 bg-gradient-to-r from-blue-600 to-sky-400 py-3.5 pl-3.5 pr-6 text-sm font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] transition-shadow duration-300 hover:shadow-[0_0_48px_-4px_rgba(37,99,235,0.65)]"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center border border-black/10 bg-black/5">
-                      <Mail className="h-5 w-5" />
-                    </div>
-                    <span>henry@monoclick.ai</span>
-                  </a>
-                  <div className="flex items-center space-x-3 text-sm text-black/65">
-                    <div className="flex h-10 w-10 items-center justify-center border border-black/10 bg-black/5">
-                      <MapPin className="h-5 w-5" />
-                    </div>
-                    <span>European Union & United States</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-sm text-black/65">
-                    <div className="flex h-10 w-10 items-center justify-center border border-black/10 bg-black/5">
-                      <Clock className="h-5 w-5" />
-                    </div>
-                    <span>Response time: &lt; 24 hours</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                    <span className="relative h-8 w-8 overflow-hidden rounded-full border border-white/40">
+                      <Image
+                        src="/pp2.jpg"
+                        alt="Henry Buisseret"
+                        fill
+                        sizes="32px"
+                        className="scale-110 object-cover object-[center_30%]"
+                      />
+                    </span>
+                    Book with Henry
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                  </Link>
+                </Magnetic>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="group bg-black p-9 transition-colors duration-300 hover:bg-neutral-950">
+              <span className="label-mono text-white/30">02 — Classic</span>
+              <h3 className="mt-5 font-heading text-2xl font-black uppercase tracking-tight text-white">
+                Send an email
+              </h3>
+              <div className="serif-accent mt-1 text-lg text-sky-400/80">with your project details</div>
+              <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/50">
+                Prefer email? Drop us a line — you&apos;ll hear back within a day.
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="mailto:henry@monoclick.ai"
+                  className="group/mail inline-flex items-center gap-2 border-b border-white/25 pb-1 text-sm font-medium uppercase tracking-[0.1em] text-white/70 transition-colors hover:border-sky-400 hover:text-sky-400"
+                >
+                  <Mail className="h-4 w-4" />
+                  henry@monoclick.ai
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* What happens next — paper */}
+      <RevealSection variant="fade-up" className="border-b border-black/10 bg-[#f5f3ef] py-24 text-black">
+        <div className="editorial-max">
+          <div className="mb-14">
+            <p className="label-mono mb-5 text-blue-600">What happens next</p>
+            <h2 className="display-title max-w-4xl text-[clamp(1.9rem,4.6vw,3.6rem)] text-black">
+              Three steps to{' '}
+              <span className="serif-accent text-[1.04em] text-black/80">kickoff</span>
+            </h2>
           </div>
 
-          <div className="mt-12">
-            <Card className="rounded-none border-black/10 bg-white">
-              <CardContent className="p-8">
-                <h3 className="mb-6 text-xl font-semibold text-black">Quick answers</h3>
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                  {faqs.map((faq, index) => (
-                    <div key={index}>
-                      <h4 className="mb-2 text-sm font-medium text-black">{faq.question}</h4>
-                      <p className="text-sm text-black/60">{faq.answer}</p>
-                    </div>
-                  ))}
+          <div className="grid grid-cols-1 gap-px border border-black/10 bg-black/10 md:grid-cols-3">
+            {[
+              { step: '01', title: 'We review your message', time: 'Usually within 4 hours' },
+              { step: '02', title: 'Discovery call', time: '30 minutes to understand your needs' },
+              { step: '03', title: 'Proposal & timeline', time: 'Fixed-price quote within 48 hours' },
+            ].map((item) => (
+              <div key={item.step} className="bg-[#faf9f6] p-8">
+                <span className="font-heading text-5xl font-black leading-none text-black/[0.12]">
+                  {item.step}
+                </span>
+                <h4 className="mt-5 font-heading text-lg font-black uppercase tracking-tight text-black">
+                  {item.title}
+                </h4>
+                <p className="label-mono mt-3 text-black/40">{item.time}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* quick answers */}
+          <div className="mt-20">
+            <p className="label-mono mb-8 text-black/40">Quick answers</p>
+            <div className="grid grid-cols-1 gap-10 border-t border-black/10 pt-10 md:grid-cols-3">
+              {faqs.map((faq) => (
+                <div key={faq.question}>
+                  <h4 className="font-heading text-base font-bold uppercase tracking-tight text-black">
+                    {faq.question}
+                  </h4>
+                  <p className="mt-3 text-sm leading-relaxed text-black/55">{faq.answer}</p>
                 </div>
-              </CardContent>
-            </Card>
+              ))}
+            </div>
           </div>
         </div>
       </RevealSection>

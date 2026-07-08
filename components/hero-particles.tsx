@@ -178,6 +178,9 @@ function ParticleM({ scrollRef }: { scrollRef: React.MutableRefObject<number> })
     if (points.current) {
       points.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.12) * 0.12
       points.current.rotation.x = Math.cos(state.clock.elapsedTime * 0.1) * 0.05
+      // fill the right column on wide screens; centered on mobile
+      const wide = state.size.width > 900
+      points.current.scale.setScalar(wide ? 1.16 : 1)
     }
   })
 

@@ -1,25 +1,12 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import {
-  ArrowRight,
-  Users,
-  CheckCircle,
-  Sparkles,
-  MessageSquare,
-  Settings,
-  BookOpen,
-  Lightbulb,
-  Target,
-  TrendingUp,
-  Zap,
-} from 'lucide-react'
+import { ArrowRight, CheckCircle } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
-import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { CTABanner } from '@/components/cta-banner'
-import { RevealSection } from '@/components/scroll-reveal'
+import { RevealSection, ScrollReveal } from '@/components/scroll-reveal'
+import { Magnetic } from '@/components/fx/magnetic'
 
 export const metadata: Metadata = createMetadata({
   title: 'AI Workshop - Train Your Team to 10x Productivity with AI',
@@ -29,7 +16,7 @@ export const metadata: Metadata = createMetadata({
 })
 
 const workshopHighlights = [
-  { value: '1 Day', label: 'Full immersive training' },
+  { value: '1 day', label: 'Full immersive training' },
   { value: '5–10', label: 'Participants per session' },
   { value: '100%', label: 'Hands-on, practical focus' },
 ]
@@ -37,28 +24,28 @@ const workshopHighlights = [
 const agenda = [
   {
     time: 'Morning',
-    icon: Settings,
+    no: '一',
     title: 'Setup & Foundations',
     description:
       'Get everyone set up with Claude and their development environment. Understand how AI assistants work, what they can do, and where they shine in day-to-day ecommerce operations.',
   },
   {
     time: 'Late Morning',
-    icon: MessageSquare,
+    no: '二',
     title: 'The Art of Prompting',
     description:
       'Learn how to write prompts that get results. We cover prompt structure, context setting, iterating on outputs, and the difference between a vague request and a precise instruction that saves hours.',
   },
   {
     time: 'Early Afternoon',
-    icon: BookOpen,
+    no: '三',
     title: 'Memory, Skills & Rules',
     description:
       'Teach your AI colleague about your business. Set up persistent memory so it remembers your brand voice, product catalogue, and workflows. Create reusable skills for repetitive tasks.',
   },
   {
     time: 'Late Afternoon',
-    icon: Target,
+    no: '四',
     title: 'Real Ecommerce Workflows',
     description:
       'Put it all together with hands-on exercises: product descriptions, customer emails, inventory analysis, ad copy, SEO content — all tailored to your actual store and products.',
@@ -67,37 +54,31 @@ const agenda = [
 
 const whatYouLearn = [
   {
-    icon: Sparkles,
     title: 'Install & Configure',
     description:
       'Set up Claude on every team member\'s machine. Configure the workspace, connect it to your existing tools, and get comfortable with the interface.',
   },
   {
-    icon: Lightbulb,
     title: 'Write Effective Prompts',
     description:
       'Move beyond "write me a product description" to prompts that produce on-brand, conversion-ready content your team can use immediately.',
   },
   {
-    icon: BookOpen,
     title: 'Build a Knowledge Base',
     description:
       'Set up memory and rules so your AI assistant knows your brand guidelines, tone of voice, target audience, and product specifics — no repeating yourself every session.',
   },
   {
-    icon: TrendingUp,
     title: 'Manage Tokens & Costs',
     description:
       'Understand how AI usage is measured, set sensible limits, and learn techniques to get more value from every interaction without overspending.',
   },
   {
-    icon: Zap,
     title: 'Create Reusable Skills',
     description:
       'Build custom skills that automate your most common tasks: generating product copy, answering support tickets, analysing competitor pricing, and more.',
   },
   {
-    icon: Users,
     title: 'Team Collaboration',
     description:
       'Establish shared conventions so your whole team works with AI consistently. Share prompts, templates, and best practices across departments.',
@@ -142,35 +123,51 @@ export default function WorkshopPage() {
   return (
     <div>
       {/* Hero */}
-      <RevealSection variant="fade-up" className="relative overflow-hidden border-b border-white/10 bg-black py-16 sm:py-24">
+      <section className="relative overflow-hidden border-b border-white/10 bg-black pb-16 pt-20 sm:pb-20 sm:pt-24">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_45%_at_15%_15%,rgba(37,99,235,0.13),transparent_65%)]"
+          aria-hidden
+        />
         <div className="editorial-max relative z-10">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-            <div className="text-center lg:text-left">
-              <p className="section-label mb-4 block text-white">In-Person AI Workshop</p>
-              <h1 className="mb-6 font-heading text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-                Give Your Team an AI Colleague That 10x&apos;s Their Output
+          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
+            <ScrollReveal variant="fade-up" className="lg:col-span-7">
+              <p className="label-mono mb-6 text-sky-400">In-person AI workshop</p>
+              <h1 className="display-title text-[clamp(2.4rem,6vw,4.8rem)] text-white">
+                Give your team an{' '}
+                <span className="serif-accent text-[1.02em] text-white/85">AI colleague</span>
               </h1>
-              <p className="mb-10 text-lg text-white/60">
-                A one-day, hands-on workshop where I train your ecommerce team (5–10 people) to use AI in their daily work.
-                From installation to advanced prompting — everyone leaves ready to work faster, smarter, and more
-                consistently.
+              <p className="mt-8 max-w-xl text-sm leading-relaxed text-white/50 sm:text-base">
+                A one-day, hands-on workshop where I train your ecommerce team (5–10 people)
+                to use AI in their daily work. From installation to advanced prompting —
+                everyone leaves ready to work faster, smarter, and more consistently.
               </p>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+              <div className="mt-12 grid max-w-xl grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-3">
                 {workshopHighlights.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="border border-blue-500/20 bg-neutral-950/90 p-4 text-center backdrop-blur-sm"
-                  >
-                    <div className="mb-1 text-xl font-bold text-gradient">{stat.value}</div>
-                    <div className="text-sm text-white/45">{stat.label}</div>
+                  <div key={stat.label} className="bg-black px-5 py-4">
+                    <div className="font-heading text-xl font-black text-white">{stat.value}</div>
+                    <div className="label-mono mt-1 text-white/35">{stat.label}</div>
                   </div>
                 ))}
               </div>
-            </div>
+              <div className="mt-10">
+                <Magnetic>
+                  <Link
+                    href="https://calendly.com/henrybuisseret/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] transition-shadow duration-300 hover:shadow-[0_0_48px_-4px_rgba(37,99,235,0.65)]"
+                  >
+                    Book a workshop
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                </Magnetic>
+              </div>
+            </ScrollReveal>
 
-            <div className="flex flex-col items-center gap-5">
-              <div className="border border-white bg-white/5 p-3">
-                <div className="relative aspect-[3/4] w-full max-w-[280px] overflow-hidden sm:max-w-[320px]">
+            <ScrollReveal variant="fade-up" delay={0.12} className="lg:col-span-5">
+              <div className="relative mx-auto max-w-[340px]">
+                <div className="absolute -left-3 -top-3 h-full w-full border border-sky-400/40" aria-hidden />
+                <div className="relative aspect-[3/4] overflow-hidden border border-white/20">
                   <Image
                     src="/pp2.jpg"
                     alt="Henry Buisseret — workshop trainer"
@@ -179,191 +176,190 @@ export default function WorkshopPage() {
                     priority
                     sizes="(max-width: 768px) 100vw, 384px"
                   />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="label-mono text-white/80">Henry Buisseret</p>
+                    <p className="serif-accent mt-1 text-lg text-white">
+                      I deliver every workshop in person.
+                    </p>
+                  </div>
                 </div>
               </div>
-              <p className="text-center text-sm font-medium tracking-wide text-white/50">
-                I deliver every workshop in person.
-              </p>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
-      </RevealSection>
+      </section>
 
-      {/* Workshop tools */}
-      <RevealSection variant="fade-up" className="border-t border-white/10 bg-black py-14">
+      {/* Powered by */}
+      <RevealSection variant="fade-up" className="border-b border-white/10 bg-black py-12">
         <div className="editorial-max">
-          <p className="section-label mb-8 text-center text-white">Workshop Powered By</p>
-          <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-20">
-            <div className="flex items-center justify-center">
+          <div className="mb-8 flex items-center gap-6">
+            <p className="label-mono shrink-0 text-white/40">Workshop powered by</p>
+            <div className="h-px flex-1 bg-white/10" aria-hidden />
+          </div>
+          <div className="flex flex-wrap items-center gap-12 sm:gap-20">
+            {[
+              { name: 'Anthropic', src: '/anthropic.jpeg', w: 450 },
+              { name: 'Claude Cowork', src: '/ccowork2.jpeg', w: 480 },
+              { name: 'n8n', src: '/n8n_new.png', w: 360 },
+            ].map((logo) => (
               <Image
-                src="/anthropic.jpeg"
-                alt="Anthropic"
-                width={450}
+                key={logo.name}
+                src={logo.src}
+                alt={logo.name}
+                width={logo.w}
                 height={120}
-                className="h-14 w-auto object-contain sm:h-20"
+                className="h-12 w-auto object-contain opacity-85 transition-opacity duration-500 hover:opacity-100 sm:h-16"
               />
-            </div>
-            <div className="flex items-center justify-center">
-              <Image
-                src="/ccowork2.jpeg"
-                alt="Claude Cowork"
-                width={480}
-                height={120}
-                className="h-14 w-auto object-contain sm:h-20"
-              />
-            </div>
-            <div className="flex items-center justify-center">
-              <Image
-                src="/n8n_new.png"
-                alt="n8n"
-                width={360}
-                height={120}
-                className="h-14 w-auto object-contain sm:h-20"
-              />
-            </div>
+            ))}
           </div>
         </div>
       </RevealSection>
 
-      {/* Why this workshop */}
-      <RevealSection variant="fade-up" className="border-t border-black/10 bg-[#fcfcfc] py-24 text-black">
-        <div className="editorial-max max-w-4xl">
-          <div className="mb-16 text-center">
-            <p className="section-label mb-3 block text-black">The Problem</p>
-            <h2 className="mb-4 font-heading text-3xl font-bold sm:text-4xl">
-              AI Is Everywhere — But Most Teams Don&apos;t Know How to Use It
-            </h2>
-            <p className="mx-auto max-w-2xl text-black/60">
-              Your competitors are already using AI to move faster. The difference isn&apos;t access to the tools — it&apos;s
-              knowing how to use them properly.
-            </p>
-          </div>
-
-          <div className="border border-black/10 bg-white p-5 sm:p-8 lg:p-12">
-            <div className="grid grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-[1fr_280px]">
-              <div className="text-base leading-relaxed text-black/65 lg:text-lg">
-                <p className="mb-6">
-                  <strong className="text-black">Most people use AI like a search engine.</strong> They type a vague question,
-                  get a generic answer, and conclude it&apos;s not that useful. That&apos;s like buying a professional camera and
-                  only using auto mode.
-                </p>
-                <p className="mb-6">
-                  <strong className="text-black">This workshop changes that.</strong> In one day, your team will learn how to
-                  turn AI into a genuine colleague — one that knows your brand, understands your products, and produces work
-                  that&apos;s actually ready to use.
+      {/* The problem — paper */}
+      <RevealSection variant="fade-up" className="border-b border-black/10 bg-[#f5f3ef] py-24 text-black">
+        <div className="editorial-max">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <p className="label-mono mb-5 text-blue-600">The problem</p>
+              <h2 className="display-title text-[clamp(1.9rem,4.6vw,3.6rem)] text-black">
+                Everyone has AI.{' '}
+                <span className="serif-accent text-[1.04em] text-black/80">Few can use it.</span>
+              </h2>
+              <div className="mt-8 max-w-xl space-y-5 text-sm leading-relaxed text-black/65 sm:text-base">
+                <p>
+                  <strong className="text-black">Most people use AI like a search engine.</strong>{' '}
+                  They type a vague question, get a generic answer, and conclude it&apos;s not that
+                  useful. That&apos;s like buying a professional camera and only using auto mode.
                 </p>
                 <p>
-                  <strong className="text-black">The result?</strong> Tasks that used to take hours — writing product
-                  descriptions, drafting emails, analysing data — take minutes. And the quality is consistent, on-brand, and
-                  improving with every interaction.
+                  <strong className="text-black">This workshop changes that.</strong> In one day,
+                  your team will learn how to turn AI into a genuine colleague — one that knows
+                  your brand, understands your products, and produces work that&apos;s actually
+                  ready to use.
+                </p>
+                <p>
+                  <strong className="text-black">The result?</strong> Tasks that used to take
+                  hours — writing product descriptions, drafting emails, analysing data — take
+                  minutes. And the quality is consistent, on-brand, and improving with every
+                  interaction.
                 </p>
               </div>
-              <div className="relative mx-auto aspect-[4/3] w-full max-w-[280px] overflow-hidden lg:mx-0">
+            </div>
+            <div className="lg:col-span-5">
+              <div className="relative overflow-hidden border border-black/10">
                 <Image
                   src="/workshop.png"
                   alt="In-person AI workshop — small group training around a table with laptops"
-                  fill
-                  className="object-cover"
-                  sizes="280px"
+                  width={800}
+                  height={600}
+                  className="w-full object-cover"
                 />
               </div>
+              <p className="label-mono mt-4 text-black/40">A previous session — laptops open, slides closed</p>
             </div>
           </div>
         </div>
       </RevealSection>
 
-      {/* Day agenda */}
-      <RevealSection variant="bright" className="border-t border-white/10 bg-black py-24 text-white">
+      {/* Agenda */}
+      <RevealSection variant="fade-up" className="border-b border-white/10 bg-black py-24 text-white">
         <div className="editorial-max">
-          <div className="mb-16 text-center">
-            <p className="section-label mb-3 block text-white">The Day</p>
-            <h2 className="mb-4 font-heading text-3xl font-bold sm:text-4xl">What the Workshop Looks Like</h2>
-            <p className="mx-auto max-w-2xl text-white/55">
-              A structured, practical day — no slides-only presentations. Every concept is immediately put into practice
-              with your real business data.
+          <div className="mb-16">
+            <p className="label-mono mb-5 text-sky-400">The day</p>
+            <h2 className="display-title text-[clamp(2rem,5vw,3.8rem)] text-white">
+              One day,{' '}
+              <span className="serif-accent text-[1.04em] text-white/85">four movements</span>
+            </h2>
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/45">
+              A structured, practical day — no slides-only presentations. Every concept is
+              immediately put into practice with your real business data.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-px bg-white/10 md:grid-cols-2 lg:grid-cols-4">
-            {agenda.map((item) => {
-              const Icon = item.icon
-              return (
-                <div key={item.time} className="relative bg-black px-6 py-10">
-                  <span className="mb-4 block text-[0.6rem] font-medium uppercase tracking-widest text-white/30">
-                    {item.time}
+          <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
+            {agenda.map((item, index) => (
+              <div key={item.time} className="group bg-black px-7 py-10 transition-colors duration-300 hover:bg-neutral-950">
+                <div className="flex items-baseline justify-between">
+                  <span className="font-heading text-5xl font-black leading-none text-white/[0.13] transition-colors duration-300 group-hover:text-sky-400/25">
+                    {String(index + 1).padStart(2, '0')}
                   </span>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center border border-blue-500/30 bg-gradient-to-br from-blue-600/15 to-sky-400/10">
-                    <Icon className="h-6 w-6 text-sky-400" />
-                  </div>
-                  <h3 className="mb-2 text-base font-bold uppercase tracking-tight">{item.title}</h3>
-                  <p className="text-xs leading-relaxed text-white/45">{item.description}</p>
+                  <span className="label-mono text-sky-400/80">{item.time}</span>
                 </div>
-              )
-            })}
+                <h3 className="mt-6 font-heading text-lg font-black uppercase tracking-tight text-white">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-[0.82rem] leading-relaxed text-white/45">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </RevealSection>
 
-      {/* What you'll learn */}
-      <RevealSection variant="slide-left" className="border-t border-black/10 bg-[#fcfcfc] py-24 text-black">
+      {/* What you'll learn — paper */}
+      <RevealSection variant="fade-up" className="border-b border-black/10 bg-[#f5f3ef] py-24 text-black">
         <div className="editorial-max">
-          <div className="mb-16 text-center">
-            <p className="section-label mb-3 block text-black">What You&apos;ll Learn</p>
-            <h2 className="mb-4 font-heading text-3xl font-bold sm:text-4xl">
-              From Zero to AI-Powered Team in One Day
+          <div className="mb-14">
+            <p className="label-mono mb-5 text-blue-600">What you&apos;ll learn</p>
+            <h2 className="display-title max-w-4xl text-[clamp(2rem,5vw,3.8rem)] text-black">
+              Zero to AI-powered{' '}
+              <span className="serif-accent text-[1.04em] text-black/80">in one day</span>
             </h2>
-            <p className="mx-auto max-w-2xl text-black/60">
-              Every participant walks away with a fully configured AI workspace and the skills to use it daily.
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-black/55">
+              Every participant walks away with a fully configured AI workspace and the skills
+              to use it daily.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-px bg-black/10 sm:grid-cols-2 lg:grid-cols-3">
-            {whatYouLearn.map((item) => {
-              const Icon = item.icon
-              return (
-                <div key={item.title} className="bg-white p-8">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center bg-gradient-to-br from-blue-600 to-sky-400">
-                    <Icon className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="mb-2 text-lg font-semibold text-black">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-black/60">{item.description}</p>
-                </div>
-              )
-            })}
+          <div className="grid grid-cols-1 gap-px border border-black/10 bg-black/10 sm:grid-cols-2 lg:grid-cols-3">
+            {whatYouLearn.map((item, index) => (
+              <div key={item.title} className="bg-[#faf9f6] p-7">
+                <span className="label-mono text-black/30">{String(index + 1).padStart(2, '0')}</span>
+                <h3 className="mt-4 font-heading text-lg font-black uppercase tracking-tight text-black">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-black/55">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </RevealSection>
 
       {/* Ecommerce use cases */}
-      <RevealSection variant="bright" className="border-t border-white/10 bg-black py-24 text-white">
+      <RevealSection variant="fade-up" className="border-b border-white/10 bg-black py-24 text-white">
         <div className="editorial-max">
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
             <div>
-              <p className="section-label mb-3 block text-white">Ecommerce Focus</p>
-              <h2 className="mb-6 font-heading text-3xl font-bold sm:text-4xl">
-                Built for Online Stores, Not Generic Teams
+              <p className="label-mono mb-5 text-sky-400">Ecommerce focus</p>
+              <h2 className="display-title text-[clamp(1.9rem,4.4vw,3.4rem)] text-white">
+                Built for online stores,{' '}
+                <span className="serif-accent text-[1.04em] text-white/85">not generic teams</span>
               </h2>
-              <div className="space-y-4 text-sm leading-relaxed text-white/55">
+              <div className="mt-8 max-w-lg space-y-4 text-sm leading-relaxed text-white/50">
                 <p>
-                  This isn&apos;t a generic "intro to AI" course. Every example, every exercise, and every prompt template is
-                  designed around ecommerce workflows — the work your team actually does every day.
+                  This isn&apos;t a generic &quot;intro to AI&quot; course. Every example, every
+                  exercise, and every prompt template is designed around ecommerce workflows —
+                  the work your team actually does every day.
                 </p>
                 <p>
-                  Whether you&apos;re running a Shopify store, managing a catalogue of thousands of SKUs, or scaling customer
-                  support across time zones, the workshop is tailored to your reality.
+                  Whether you&apos;re running a Shopify store, managing a catalogue of thousands
+                  of SKUs, or scaling customer support across time zones, the workshop is
+                  tailored to your reality.
                 </p>
               </div>
             </div>
 
-            <div>
-              <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/50">
-                Tasks Your Team Will Master
-              </h4>
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {ecommerceUseCases.map((useCase) => (
-                  <div key={useCase} className="flex items-start gap-3">
-                    <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-400/70" />
+            <div className="lg:pt-14">
+              <h4 className="label-mono mb-6 text-white/40">Tasks your team will master</h4>
+              <div className="grid grid-cols-1 border-t border-white/10">
+                {ecommerceUseCases.map((useCase, index) => (
+                  <div
+                    key={useCase}
+                    className="flex items-center gap-4 border-b border-white/10 py-3.5"
+                  >
+                    <span className="label-mono w-7 shrink-0 text-white/30">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
                     <span className="text-sm text-white/70">{useCase}</span>
                   </div>
                 ))}
@@ -373,110 +369,98 @@ export default function WorkshopPage() {
         </div>
       </RevealSection>
 
-      {/* Workshop format details */}
-      <RevealSection variant="fade-up" className="border-t border-black/10 bg-[#fcfcfc] py-24 text-black">
+      {/* Format */}
+      <RevealSection variant="fade-up" className="border-b border-black/10 bg-[#f5f3ef] py-24 text-black">
         <div className="editorial-max">
-          <div className="border border-black/10 bg-white p-5 sm:p-8 lg:p-12">
-            <div className="grid grid-cols-1 items-center gap-10 sm:gap-12 lg:grid-cols-2">
-              <div>
-                <div className="mb-6 flex flex-wrap items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center bg-gradient-to-br from-blue-600 to-sky-400">
-                    <Users className="h-6 w-6 text-white" />
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+            <div>
+              <p className="label-mono mb-5 text-blue-600">How it works</p>
+              <h2 className="display-title text-[clamp(1.9rem,4.6vw,3.6rem)] text-black">
+                Small group,{' '}
+                <span className="serif-accent text-[1.04em] text-black/80">big impact</span>
+              </h2>
+              <p className="mt-6 max-w-lg text-sm leading-relaxed text-black/60">
+                I come to your office for one full day. The workshop is capped at 10 people so
+                everyone gets individual attention and leaves with a working setup — not just
+                theory.
+              </p>
+              <div className="mt-8 space-y-3">
+                {[
+                  'I travel to your location — no disruption to your team',
+                  'Every participant gets hands-on help with their own setup',
+                  'Exercises use your actual products and real store data',
+                  'Follow-up call included two weeks after the workshop',
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle className="h-4 w-4 flex-shrink-0 text-blue-600" />
+                    <span className="text-sm text-black/70">{item}</span>
                   </div>
-                  <p className="section-label text-black">How It Works</p>
-                </div>
-                <h2 className="mb-4 font-heading text-3xl font-bold sm:text-4xl">
-                  Small Group, Big Impact
-                </h2>
-                <p className="mb-6 text-sm leading-relaxed text-black/60">
-                  I come to your office for one full day. The workshop is capped at 10 people so everyone gets individual
-                  attention and leaves with a working setup — not just theory.
-                </p>
-                <div className="mb-8 space-y-3">
-                  {[
-                    'I travel to your location — no disruption to your team',
-                    'Every participant gets hands-on help with their own setup',
-                    'Exercises use your actual products and real store data',
-                    'Follow-up call included two weeks after the workshop',
-                  ].map((item) => (
-                    <div key={item} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-blue-600" />
-                      <span className="text-sm text-black/75">{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <Button asChild variant="gradient-blue" size="lg" className="rounded-none px-8">
+                ))}
+              </div>
+              <div className="mt-10">
+                <Magnetic>
                   <Link
                     href="https://calendly.com/henrybuisseret/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group"
+                    className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.35)] transition-shadow duration-300 hover:shadow-[0_0_48px_-4px_rgba(37,99,235,0.6)]"
                   >
-                    Book a Workshop
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                    Book a workshop
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
-                </Button>
+                </Magnetic>
               </div>
-              <div className="grid grid-cols-2 gap-px bg-black/10">
-                {[
-                  { title: 'Duration', desc: 'One full day (approx. 7 hours)' },
-                  { title: 'Group Size', desc: '5 to 10 participants' },
-                  { title: 'Location', desc: 'At your office, in person' },
-                  { title: 'Follow-Up', desc: 'Free call two weeks later' },
-                ].map((item) => (
-                  <Card key={item.title} className="rounded-none border-0 bg-[#fcfcfc] shadow-none">
-                    <CardContent className="p-5">
-                      <h4 className="mb-1 font-semibold text-black">{item.title}</h4>
-                      <p className="text-sm text-black/55">{item.desc}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-px border border-black/10 bg-black/10">
+              {[
+                { title: 'Duration', desc: 'One full day (approx. 7 hours)' },
+                { title: 'Group size', desc: '5 to 10 participants' },
+                { title: 'Location', desc: 'At your office, in person' },
+                { title: 'Follow-up', desc: 'Free call two weeks later' },
+              ].map((item) => (
+                <div key={item.title} className="bg-[#faf9f6] p-6">
+                  <h4 className="label-mono mb-2 text-black/40">{item.title}</h4>
+                  <p className="font-heading text-base font-black uppercase tracking-tight text-black">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </RevealSection>
 
       {/* FAQ */}
-      <RevealSection variant="bright" className="border-t border-white/10 bg-black py-24 text-white">
+      <RevealSection variant="fade-up" className="border-b border-white/10 bg-black py-24 text-white">
         <div className="editorial-max max-w-4xl">
-          <div className="mb-16 text-center">
-            <p className="section-label mb-3 block text-white">Questions</p>
-            <h2 className="mb-4 font-heading text-3xl font-bold sm:text-4xl">Frequently Asked Questions</h2>
+          <div className="mb-14">
+            <p className="label-mono mb-5 text-sky-400">Questions</p>
+            <h2 className="display-title text-[clamp(1.9rem,4.6vw,3.4rem)] text-white">
+              Before you{' '}
+              <span className="serif-accent text-[1.04em] text-white/85">ask</span>
+            </h2>
           </div>
 
-          <div className="space-y-px bg-white/10">
+          <div className="border-t border-white/10">
             {faqs.map((faq) => (
-              <div key={faq.q} className="bg-black p-6 lg:p-8">
-                <h3 className="mb-2 text-base font-semibold text-white">{faq.q}</h3>
-                <p className="text-sm leading-relaxed text-white/50">{faq.a}</p>
+              <div key={faq.q} className="border-b border-white/10 py-7">
+                <h3 className="mb-3 font-heading text-base font-bold uppercase tracking-tight text-white">
+                  {faq.q}
+                </h3>
+                <p className="max-w-2xl text-sm leading-relaxed text-white/50">{faq.a}</p>
               </div>
             ))}
           </div>
         </div>
       </RevealSection>
 
-      {/* Final CTA */}
-      <RevealSection variant="scale" className="border-t border-white/10 bg-black py-24 text-white">
-        <div className="editorial-max max-w-4xl text-center">
-          <h2 className="mb-4 font-heading text-3xl font-bold sm:text-4xl">
-            Ready to Transform How Your Team Works?
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-white/55">
-            One day. One workshop. A permanent shift in how your ecommerce team operates.
-            Let&apos;s talk about bringing this to your office.
+      {/* Statement */}
+      <RevealSection variant="fade-up" className="border-b border-white/10 bg-black py-24 text-center text-white">
+        <div className="editorial-max">
+          <p className="serif-accent mx-auto max-w-3xl text-[clamp(1.6rem,4vw,3rem)] leading-[1.3] text-white/85">
+            &ldquo;One day. One workshop. A permanent shift in how your ecommerce team operates.&rdquo;
           </p>
-          <Button asChild variant="gradient-blue" size="lg" className="rounded-none px-8">
-            <Link
-              href="https://calendly.com/henrybuisseret/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group"
-            >
-              Book a Free Consultation
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-            </Link>
-          </Button>
         </div>
       </RevealSection>
 

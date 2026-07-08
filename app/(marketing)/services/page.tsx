@@ -1,24 +1,12 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import {
-  MessageSquare,
-  HeadphonesIcon,
-  BarChart3,
-  Sparkles,
-  TrendingUp,
-  ArrowRight,
-  CheckCircle,
-  Clock,
-  Check
-} from 'lucide-react'
+import { ArrowRight, Check, Clock } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import { CTABanner } from '@/components/cta-banner'
-import { RevealSection } from '@/components/scroll-reveal'
+import { RevealSection, ScrollReveal } from '@/components/scroll-reveal'
+import { Magnetic } from '@/components/fx/magnetic'
 
 export const metadata: Metadata = createMetadata({
   title: 'AI Growth Systems for Ecommerce - Chatbots, Support, Analytics & Competitive Intelligence',
@@ -28,8 +16,8 @@ export const metadata: Metadata = createMetadata({
 
 const services = [
   {
-    icon: MessageSquare,
     title: 'AI Chatbot',
+    accent: 'that sells for you',
     description: 'Deploy intelligent chatbots trained on your FAQ, policies, and product catalog. Answer customer questions instantly, provide product recommendations, and drive conversions 24/7.',
     image: '/chatbot.png',
     features: [
@@ -45,13 +33,12 @@ const services = [
       '< 10 second response time',
       '30% increase in conversion rate'
     ],
-    pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
     technologies: ['OpenAI', 'n8n', 'Shopify', 'WooCommerce', 'Your existing tools']
   },
   {
-    icon: HeadphonesIcon,
-    title: 'AI Support Automation (Gorgias/Zendesk)',
+    title: 'Support Automation',
+    accent: 'for Gorgias & Zendesk',
     description: 'Integrate AI directly with your Gorgias or Zendesk account to draft intelligent responses. Reduce response time, improve support efficiency, and scale your customer service team.',
     image: '/support.png',
     features: [
@@ -67,13 +54,12 @@ const services = [
       '50% reduction in average handle time',
       'Improved customer satisfaction scores'
     ],
-    pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
     technologies: ['OpenAI', 'n8n', 'Gorgias', 'Zendesk', 'Your knowledge base']
   },
   {
-    icon: BarChart3,
-    title: 'Business Intelligence Dashboards',
+    title: 'Business Dashboards',
+    accent: 'that see everything',
     description: 'Custom analytics dashboards that visualize your key ecommerce metrics in real-time. Track sales, inventory, customer behavior, and marketing performance all in one place.',
     image: '/dashboard.png',
     features: [
@@ -89,15 +75,14 @@ const services = [
       'Identify trends and opportunities faster',
       'Unified view across all channels'
     ],
-    pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
     technologies: ['n8n', 'Shopify', 'Google Analytics', 'Meta Ads', 'Power BI', 'Looker']
   },
   {
-    icon: Sparkles,
-    title: 'AI Content Creation',
+    title: 'Content Creation',
+    accent: 'at machine scale',
     description: 'Generate high-converting product descriptions, email campaigns, blog posts, and social media content at scale. Maintain consistent brand voice while saving hours of writing time.',
-    image: '/rag.png',
+    image: null,
     features: [
       'AI-powered product descriptions',
       'Email marketing campaigns',
@@ -111,15 +96,14 @@ const services = [
       'Consistent brand messaging',
       'Improved SEO performance'
     ],
-    pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
     technologies: ['OpenAI', 'n8n', 'Anthropic', 'Your brand guidelines', 'Shopify API']
   },
   {
-    icon: TrendingUp,
-    title: 'Competitor Ad Intelligence',
+    title: 'Ad Intelligence',
+    accent: 'on your competitors',
     description: 'Automatically track, scrape, and analyze winning ads from your competitors. Get insights into their creative strategies, messaging, and offers to stay ahead of the competition.',
-    image: '/rag.png',
+    image: null,
     features: [
       'Automatic ad scraping and monitoring',
       'Creative performance tracking',
@@ -133,74 +117,108 @@ const services = [
       'Identify winning creative patterns',
       'Faster campaign iteration'
     ],
-    pricing: 'Custom pricing based on needs',
     timeline: '10 working days',
     technologies: ['n8n', 'Meta Ad Library', 'TikTok', 'Google Ads', 'AI Analysis'],
     highlight: true
   }
 ]
 
-const addOns = [
+const promises = [
   {
-    title: 'Custom-Built Solutions',
-    description: 'Every automation designed specifically for your workflows and tools',
-    included: true
+    title: 'Custom-built',
+    description: 'Every automation designed specifically for your workflows and tools. We don’t sell generic software.',
   },
   {
-    title: 'ROI-Focused Design',
-    description: 'We prioritize automations that deliver measurable business impact',
-    included: true
+    title: 'ROI-focused',
+    description: 'We prioritize automations that deliver measurable business impact — and tell you when one won’t.',
   },
   {
-    title: 'Fast Deployment',
-    description: 'Most projects delivered in 10 working days after kickoff call',
-    included: true
+    title: 'Fast deployment',
+    description: 'Most projects delivered in 10 working days after the kickoff call. Momentum matters.',
   },
   {
-    title: 'Ongoing Support',
-    description: 'Monthly retainer for updates, optimizations, and new features',
-    included: false,
-    price: 'Custom pricing based on needs'
-  }
+    title: 'Ongoing support',
+    description: '30 days free after every launch. Optional retainer for updates, optimizations, and new features.',
+  },
+]
+
+const process = [
+  {
+    step: '01',
+    title: 'Free Discovery Call',
+    accent: 'no pitch',
+    description: 'We chat about your biggest time-wasters and growth bottlenecks. No sales pitch — just an honest conversation about what automation could do for your business.',
+    duration: '30-45 minutes',
+  },
+  {
+    step: '02',
+    title: 'Custom Proposal',
+    accent: 'no surprises',
+    description: 'You get a detailed plan with custom pricing based on your needs, clear timelines, and projected ROI. No surprises, no hourly billing.',
+    duration: '2-3 days',
+  },
+  {
+    step: '03',
+    title: 'Build & Test',
+    accent: 'no black box',
+    description: 'We build your automation with regular check-ins so you can see progress and give feedback. Everything is tested before launch.',
+    duration: '10 working days',
+  },
+  {
+    step: '04',
+    title: 'Launch & Support',
+    accent: 'no goodbye',
+    description: 'We train your team, launch the system, and provide 30 days of free support to ensure everything runs smoothly.',
+    duration: 'Included',
+  },
 ]
 
 export default function ServicesPage() {
   return (
     <div>
-      {/* Hero Section */}
-      <RevealSection variant="fade-up" className="relative overflow-hidden border-b border-white/10 bg-black py-24">
-        <div className="editorial-max text-center">
-          <p className="section-label mb-4 block text-white">Our Services</p>
-          <h1 className="mb-6 font-heading text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-            AI Growth Systems for Ecommerce
-          </h1>
-          <p className="mx-auto mb-10 max-w-3xl text-lg text-white/60">
-            We build AI-powered systems that help fast-moving ecommerce brands scale smarter.
-            From AI chatbots to competitor intelligence, we deliver in 10 working days.
-          </p>
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-3">
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-white/10 bg-black pb-16 pt-20 sm:pb-20 sm:pt-28">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_45%_at_80%_10%,rgba(37,99,235,0.14),transparent_65%)]"
+          aria-hidden
+        />
+        <div className="editorial-max relative">
+          <ScrollReveal variant="fade-up">
+            <p className="label-mono mb-6 text-sky-400">Our services</p>
+            <h1 className="display-title max-w-5xl text-[clamp(2.6rem,7.5vw,6rem)] text-white">
+              AI growth systems
+              <br />
+              <span className="serif-accent text-[1.02em] text-white/85">for ecommerce.</span>
+            </h1>
+            <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
+              We build AI-powered systems that help fast-moving ecommerce brands scale smarter.
+              From AI chatbots to competitor intelligence, we deliver in 10 working days.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal variant="fade-up" delay={0.1} className="mt-14 grid max-w-3xl grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-3">
             {[
               { value: '10 days', label: 'After kickoff call' },
-              { value: 'Custom pricing', label: 'Based on your needs' },
+              { value: 'Fixed price', label: 'Based on your needs' },
               { value: '30 days', label: 'Free support' },
             ].map((stat) => (
-              <div
-                key={stat.label}
-                className="border border-blue-500/20 bg-neutral-950 p-4 text-center"
-              >
-                <div className="mb-1 text-xl font-bold text-gradient">{stat.value}</div>
-                <div className="text-sm text-white/45">{stat.label}</div>
+              <div key={stat.label} className="bg-black px-6 py-5">
+                <div className="font-heading text-2xl font-black text-white">{stat.value}</div>
+                <div className="label-mono mt-1.5 text-white/35">{stat.label}</div>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
-      </RevealSection>
+      </section>
 
-      {/* Technology logos */}
-      <RevealSection variant="fade-up" className="border-t border-white/10 bg-black py-14">
+      {/* Technologies */}
+      <RevealSection variant="fade-up" className="border-b border-white/10 bg-black py-14">
         <div className="editorial-max">
-          <p className="section-label mb-10 text-center text-white">Technologies We Use</p>
-          <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-20">
+          <div className="mb-10 flex items-center gap-6">
+            <p className="label-mono shrink-0 text-white/40">Technologies we use</p>
+            <div className="h-px flex-1 bg-white/10" aria-hidden />
+          </div>
+          <div className="flex flex-wrap items-center justify-between gap-10">
             {[
               { name: 'Shopify', src: '/shopify_logo.png' },
               { name: 'Gorgias', src: '/gorgias_logo.png' },
@@ -208,266 +226,199 @@ export default function ServicesPage() {
               { name: 'Anthropic', src: '/anthropic_logo.png' },
               { name: 'Zendesk', src: '/zendesk_logo.png' },
             ].map((logo) => (
-              <div key={logo.name} className="flex items-center justify-center">
-                <Image
-                  src={logo.src}
-                  alt={logo.name}
-                  width={800}
-                  height={240}
-                  quality={95}
-                  className="h-16 w-auto object-contain sm:h-24"
-                />
-              </div>
+              <Image
+                key={logo.name}
+                src={logo.src}
+                alt={logo.name}
+                width={800}
+                height={240}
+                quality={95}
+                className="h-12 w-auto object-contain opacity-80 transition-opacity duration-500 hover:opacity-100 sm:h-16"
+              />
             ))}
           </div>
         </div>
       </RevealSection>
 
-      {/* Services Grid */}
-      <RevealSection variant="bright" className="border-t border-white/10 bg-black py-24 text-white">
-        <div className="editorial-max max-w-7xl">
-          <div className="space-y-12">
-            {services.map((service, index) => {
-              const Icon = service.icon
-              const isHighlight = 'highlight' in service && service.highlight
-              return (
-                <Card
-                  key={service.title}
-                  className={`relative overflow-hidden rounded-none border-white/10 bg-neutral-950 shadow-none transition-all hover:border-white/20 ${
-                    isHighlight ? 'ring-1 ring-blue-500/30' : ''
-                  }`}
-                >
-                  {isHighlight && (
-                    <div className="absolute right-6 top-6">
-                      <div className="flex items-center gap-1.5 bg-gradient-to-r from-blue-600 to-sky-400 px-3 py-1 text-xs font-medium uppercase tracking-wider text-white">
-                        <Sparkles className="h-3 w-3" />
-                        New
-                      </div>
-                    </div>
-                  )}
-                  <div className="p-8 lg:p-10">
-                    {/* Header */}
-                    <div className="mb-8">
-                      <div className="mb-4 flex items-center space-x-4">
-                        <div
-                          className={`flex h-14 w-14 items-center justify-center border ${
-                            isHighlight ? 'border-blue-500/40 bg-gradient-to-br from-blue-600/20 to-sky-400/10' : 'border-blue-500/25 bg-gradient-to-br from-blue-600/10 to-sky-400/5'
-                          }`}
-                        >
-                          <Icon className={`h-7 w-7 ${isHighlight ? 'text-sky-400' : 'text-sky-400/80'}`} />
+      {/* Services as editorial chapters */}
+      <section className="bg-black">
+        {services.map((service, index) => {
+          const num = String(index + 1).padStart(2, '0')
+          return (
+            <RevealSection
+              key={service.title}
+              variant="fade-up"
+              className="border-b border-white/10 py-20"
+            >
+              <div className="editorial-max">
+                <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+                  {/* index + title */}
+                  <div className="lg:col-span-5">
+                    <div className="flex items-start gap-6">
+                      <span className="font-heading text-6xl font-black leading-none text-white/[0.13] sm:text-7xl">
+                        {num}
+                      </span>
+                      <div>
+                        {'highlight' in service && service.highlight && (
+                          <span className="label-mono mb-3 inline-block bg-gradient-to-r from-blue-600 to-sky-400 px-2.5 py-1 text-white">
+                            New
+                          </span>
+                        )}
+                        <h2 className="font-heading text-[clamp(1.8rem,3.4vw,2.8rem)] font-black uppercase leading-[0.95] tracking-[-0.02em] text-white">
+                          {service.title}
+                        </h2>
+                        <div className="serif-accent mt-2 text-[clamp(1.3rem,2.4vw,1.9rem)] text-sky-400/90">
+                          {service.accent}
                         </div>
-                        <h2 className="text-2xl font-semibold text-white lg:text-3xl">{service.title}</h2>
-                      </div>
-                      <p className="text-base leading-relaxed text-white/60">{service.description}</p>
-                    </div>
-
-                    <div className={`grid grid-cols-1 gap-8 ${['/chatbot.png', '/support.png', '/dashboard.png'].includes(service.image) ? 'lg:grid-cols-5' : 'md:grid-cols-2'}`}>
-                      <div className={`${['/chatbot.png', '/support.png', '/dashboard.png'].includes(service.image) ? 'lg:col-span-3' : ''}`}>
-                        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                          {/* Features */}
-                          <div>
-                            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">
-                              What&apos;s included
-                            </h3>
-                            <ul className="space-y-3">
-                              {service.features.map((feature, featureIndex) => (
-                                <li key={featureIndex} className="flex items-start space-x-2">
-                                  <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-400/70" />
-                                  <span className="text-sm text-white/60">{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Benefits */}
-                          <div>
-                            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">
-                              Expected results
-                            </h3>
-                            <ul className="mb-6 space-y-3">
-                              {service.benefits.map((benefit, benefitIndex) => (
-                                <li key={benefitIndex} className="flex items-start space-x-2">
-                                  <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sky-400" />
-                                  <span className="text-sm text-white/60">{benefit}</span>
-                                </li>
-                              ))}
-                            </ul>
-
-                            <div className="grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
-                              <div className="flex items-center space-x-2 text-white/45">
-                                <Clock className="h-4 w-4" />
-                                <span>{service.timeline}</span>
-                              </div>
-                              <div className="font-medium text-white/85">{service.pricing}</div>
-                            </div>
-                          </div>
+                        <p className="mt-5 max-w-md text-sm leading-relaxed text-white/50">
+                          {service.description}
+                        </p>
+                        <div className="label-mono mt-6 flex items-center gap-2 text-white/35">
+                          <Clock className="h-3.5 w-3.5" />
+                          {service.timeline}
                         </div>
                       </div>
+                    </div>
+                  </div>
 
-                      {['/chatbot.png', '/support.png', '/dashboard.png'].includes(service.image) && (
-                        <div className="flex items-center lg:col-span-2">
-                          <div className="relative w-full overflow-hidden border border-white/10">
+                  {/* details */}
+                  <div className="lg:col-span-7">
+                    <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+                      <div>
+                        <h3 className="label-mono mb-5 text-white/40">What&apos;s included</h3>
+                        <ul className="space-y-2.5">
+                          {service.features.map((feature) => (
+                            <li key={feature} className="flex items-start gap-2 text-sm text-white/55">
+                              <Check className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-sky-400/80" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h3 className="label-mono mb-5 text-white/40">Expected results</h3>
+                        <ul className="space-y-2.5">
+                          {service.benefits.map((benefit) => (
+                            <li key={benefit} className="flex items-start gap-2 text-sm text-white/70">
+                              <span className="mt-[7px] h-1 w-1 flex-shrink-0 bg-sky-400" />
+                              <span>{benefit}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        {service.image && (
+                          <div className="mt-8 overflow-hidden border border-white/10">
                             <Image
                               src={service.image}
                               alt={service.title}
                               width={600}
                               height={338}
                               quality={90}
-                              className="w-full object-cover"
+                              className="w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
                             />
                           </div>
-                        </div>
-                      )}
+                        )}
+                      </div>
                     </div>
 
-                    {/* Technologies */}
-                    <div className="mt-8 border-t border-white/10 pt-6">
-                      <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">
-                        Technologies
-                      </h3>
-                      <div className="mb-6 flex flex-wrap gap-2">
-                        {service.technologies.map((tech, techIndex) => (
-                          <Badge
-                            key={techIndex}
-                            variant="secondary"
-                            className="rounded-none border border-white/10 bg-white/5 text-white/70"
+                    <div className="mt-10 flex flex-wrap items-center justify-between gap-6 border-t border-white/10 pt-6">
+                      <div className="flex flex-wrap gap-2">
+                        {service.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="label-mono border border-white/10 px-2.5 py-1.5 text-white/45"
                           >
                             {tech}
-                          </Badge>
+                          </span>
                         ))}
                       </div>
-
-                      <Button asChild variant="gradient-blue" size="sm" className="rounded-none">
-                        <Link
-                          href="https://calendly.com/henrybuisseret/30min"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group"
-                        >
-                          Book a Free Call
-                          <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-                        </Link>
-                      </Button>
+                      <Link
+                        href="https://calendly.com/henrybuisseret/30min"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 border-b border-white/25 pb-1 text-xs font-medium uppercase tracking-[0.14em] text-white/70 transition-colors hover:border-sky-400 hover:text-sky-400"
+                      >
+                        Book a free call
+                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                      </Link>
                     </div>
                   </div>
-                </Card>
-              )
-            })}
-          </div>
-        </div>
-      </RevealSection>
+                </div>
+              </div>
+            </RevealSection>
+          )
+        })}
+      </section>
 
-      {/* Add-ons */}
-      <RevealSection variant="fade-up" className="border-t border-black/10 bg-[#fcfcfc] py-24 text-black">
-        <div className="editorial-max max-w-7xl">
-          <div className="mb-12 text-center">
-            <p className="section-label mb-3 block text-black">Why Choose Us</p>
-            <h2 className="mb-4 font-heading text-3xl font-bold sm:text-4xl">
-              Why Choose Our AI Automation Agency
+      {/* Why choose us — paper section */}
+      <RevealSection variant="fade-up" className="border-b border-black/10 bg-[#f5f3ef] py-24 text-black">
+        <div className="editorial-max">
+          <div className="mb-14">
+            <p className="label-mono mb-5 text-blue-600">The promise</p>
+            <h2 className="display-title max-w-3xl text-[clamp(2rem,5vw,3.8rem)] text-black">
+              No generic{' '}
+              <span className="serif-accent text-[1.04em] text-black/80">software.</span>
             </h2>
-            <p className="mx-auto max-w-2xl text-black/60">
-              We don&apos;t sell generic software. Every AI automation solution is custom-built for your specific
-              workflows, designed for maximum ROI, and deployed fast so you see results quickly.
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-black/55">
+              Every AI automation is custom-built for your specific workflows, designed for
+              maximum ROI, and deployed fast so you see results quickly.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {addOns.map((addOn) => (
-              <Card
-                key={addOn.title}
-                className="rounded-none border-black/10 bg-white shadow-none transition-all hover:border-black/20"
-              >
-                <CardHeader className="pb-4">
-                  <div className="flex items-start justify-between">
-                    <CardTitle className="text-lg text-black">{addOn.title}</CardTitle>
-                    {addOn.included ? (
-                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-blue-600" />
-                    ) : (
-                      <Badge variant="outline" className="rounded-none border-black/20 text-xs text-black/55">
-                        Optional
-                      </Badge>
-                    )}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="mb-3 text-black/60">{addOn.description}</CardDescription>
-                  {!addOn.included && addOn.price && (
-                    <p className="text-sm font-medium text-black">{addOn.price}</p>
-                  )}
-                </CardContent>
-              </Card>
+          <div className="grid grid-cols-1 gap-px border border-black/10 bg-black/10 sm:grid-cols-2 lg:grid-cols-4">
+            {promises.map((item, index) => (
+              <div key={item.title} className="bg-[#faf9f6] p-7">
+                <span className="label-mono text-black/30">{String(index + 1).padStart(2, '0')}</span>
+                <h3 className="mt-4 font-heading text-lg font-black uppercase tracking-tight text-black">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-black/55">{item.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </RevealSection>
 
       {/* Process */}
-      <RevealSection variant="slide-right" className="border-t border-white/10 bg-black py-24 text-white">
-        <div className="editorial-max max-w-4xl">
-          <div className="mb-16 text-center">
-            <p className="section-label mb-3 block text-white">Our Process</p>
-            <h2 className="mb-4 font-heading text-3xl font-bold sm:text-4xl">How we work</h2>
-            <p className="text-white/55">
-              Our proven process ensures your automation delivers results on time and within budget.
-            </p>
+      <RevealSection variant="fade-up" className="border-b border-white/10 bg-black py-24 text-white">
+        <div className="editorial-max">
+          <div className="mb-16">
+            <p className="label-mono mb-5 text-sky-400">How we work</p>
+            <h2 className="display-title text-[clamp(2rem,5vw,3.8rem)] text-white">
+              Four steps,{' '}
+              <span className="serif-accent text-[1.04em] text-white/85">zero drama</span>
+            </h2>
           </div>
 
-          <div className="space-y-8">
-            {[
-              {
-                step: '01',
-                title: 'Free Discovery Call',
-                description:
-                  'We chat about your biggest time-wasters and growth bottlenecks. No sales pitch — just an honest conversation about what automation could do for your business.',
-                duration: '30-45 minutes',
-              },
-              {
-                step: '02',
-                title: 'Custom Proposal',
-                description:
-                  'You get a detailed plan with custom pricing based on your needs, clear timelines, and projected ROI. No surprises, no hourly billing.',
-                duration: '2-3 days',
-              },
-              {
-                step: '03',
-                title: 'Build & Test',
-                description:
-                  'We build your automation with regular check-ins so you can see progress and give feedback. Everything is tested before launch.',
-                duration: '10 working days',
-              },
-              {
-                step: '04',
-                title: 'Launch & Support',
-                description:
-                  'We train your team, launch the system, and provide 30 days of free support to ensure everything runs smoothly.',
-                duration: 'Included',
-              },
-            ].map((phase) => (
-              <div key={phase.step} className="flex items-start space-x-6">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center border border-blue-500/30 bg-gradient-to-br from-blue-600/15 to-sky-400/10 text-sm font-bold text-sky-400">
-                  {phase.step}
+          <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
+            {process.map((phase) => (
+              <div key={phase.step} className="group bg-black p-7 transition-colors duration-300 hover:bg-neutral-950">
+                <div className="flex items-baseline justify-between">
+                  <span className="font-heading text-5xl font-black leading-none text-white/[0.13] transition-colors duration-300 group-hover:text-sky-400/25">
+                    {phase.step}
+                  </span>
+                  <span className="label-mono text-white/30">{phase.duration}</span>
                 </div>
-                <div className="flex-1">
-                  <h3 className="mb-2 text-xl font-semibold">{phase.title}</h3>
-                  <p className="mb-2 text-white/60">{phase.description}</p>
-                  <p className="text-sm text-white/40">Duration: {phase.duration}</p>
-                </div>
+                <h3 className="mt-6 font-heading text-lg font-black uppercase tracking-tight text-white">
+                  {phase.title}
+                </h3>
+                <div className="serif-accent mt-1 text-lg text-sky-400/80">{phase.accent}</div>
+                <p className="mt-4 text-sm leading-relaxed text-white/50">{phase.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <Button asChild variant="gradient-blue" size="lg" className="rounded-none px-8">
+          <div className="mt-14 text-center">
+            <Magnetic>
               <Link
                 href="https://calendly.com/henrybuisseret/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group"
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 px-8 py-4 text-sm font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_32px_-6px_rgba(37,99,235,0.5)] transition-shadow duration-300 hover:shadow-[0_0_56px_-6px_rgba(37,99,235,0.75)]"
               >
-                Book a Free Call
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                Book a free call
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-            </Button>
+            </Magnetic>
           </div>
         </div>
       </RevealSection>

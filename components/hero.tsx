@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import { ArrowRight } from 'lucide-react'
 
@@ -153,8 +154,17 @@ export function Hero() {
                   href="https://calendly.com/henrybuisseret/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 px-7 py-3.5 text-sm font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] transition-shadow duration-300 hover:shadow-[0_0_48px_-4px_rgba(37,99,235,0.65)]"
+                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 py-3 pl-3 pr-7 text-sm font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] transition-shadow duration-300 hover:shadow-[0_0_48px_-4px_rgba(37,99,235,0.65)]"
                 >
+                  <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-white/40">
+                    <Image
+                      src="/pp2.jpg"
+                      alt="Henry Buisseret"
+                      fill
+                      sizes="36px"
+                      className="scale-110 object-cover object-[center_30%]"
+                    />
+                  </span>
                   <span className="relative inline-flex h-[1.2em] items-center overflow-hidden">
                     <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
                       Let&apos;s talk

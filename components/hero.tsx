@@ -68,7 +68,7 @@ export function Hero() {
       ref={sectionRef}
       className="relative min-h-[calc(100dvh-var(--menu-height))] overflow-hidden bg-black"
     >
-      {/* particle pixel-M */}
+      {/* particle globe */}
       <div className="absolute inset-0 z-0 md:left-[42%]">
         <HeroParticles scrollRef={scrollRef} />
       </div>

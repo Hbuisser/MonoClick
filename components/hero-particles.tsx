@@ -9,19 +9,26 @@ import { decodeLandDots } from '@/components/globe-dots'
 const RADIUS = 1.8
 // faint ocean dots (as a fraction of land dots) that fill the sphere between continents
 const OCEAN_RATIO = 0.14
+// cursor attraction, in normalized-device (screen) units
+const CURSOR_RADIUS = 0.26
+const CURSOR_PULL = 0.45
 
 const VERT = /* glsl */ `
 uniform float uTime;
 uniform float uAssemble;   // 0 scattered -> 1 assembled
 uniform float uScatter;    // scroll-driven dissolve 0 -> 1
-uniform vec3 uMouse;       // pointer in the globe's local space
+uniform vec2 uMouse;       // pointer in normalized device coords (screen space)
+uniform float uMouseOn;    // 0..1 interaction strength (fades out when cursor leaves)
+uniform float uAspect;     // viewport width / height
+uniform float uRadius;
+uniform float uPull;
 attribute vec3 aScatter;
 attribute vec3 aTarget;
 attribute float aDelay;
 attribute float aSeed;
 attribute float aDim;
 varying float vSeed;
-varying float vDist;
+varying float vGlow;
 varying float vDim;
 varying float vFade;
 
@@ -49,23 +56,31 @@ void main() {
   vec3 dissolved = aScatter * 1.25;
   pos = mix(pos, dissolved, uScatter);
 
-  // mouse repulsion
-  vec3 toMouse = pos - uMouse;
-  float d = length(toMouse.xy);
-  float force = smoothstep(1.15, 0.0, d) * 0.55 * w;
-  pos.xy += normalize(toMouse.xy + 0.0001) * force;
-  vDist = force;
-
   vec4 mv = modelViewMatrix * vec4(pos, 1.0);
-  gl_Position = projectionMatrix * mv;
 
   // depth separation: the far hemisphere recedes hard so the near face of the
   // globe reads as continents rather than a superimposed blur of both sides
   vFade = pow(smoothstep(7.6, 5.0, -mv.z), 1.3);
 
+  vec4 clip = projectionMatrix * mv;
+
+  // cursor attraction + glow, computed in screen space so it stays centered
+  // under the pointer regardless of the globe's tilt/spin, and only affects the
+  // visible near face (vFade). Nearby dots drift a fraction of the way toward
+  // the pointer (never overshoot) and brighten into a soft luminous cluster.
+  vec2 aspect = vec2(uAspect, 1.0);
+  vec2 ndc = clip.xy / clip.w;
+  vec2 diff = (ndc - uMouse) * aspect;
+  float d = length(diff);
+  float infl = smoothstep(uRadius, 0.0, d) * uMouseOn * vFade * w;
+  vGlow = infl * infl;                  // concentrate the glow near the pointer
+  clip.xy += (uMouse - ndc) * (infl * uPull) * clip.w;
+  gl_Position = clip;
+
   float size = (0.9 + aSeed * 1.5) * (17.0 / -mv.z);
   size *= mix(0.5, 1.05, aDim);         // land dots larger than ocean
   size *= mix(0.55, 1.0, vFade);        // back-side dots shrink
+  size *= 1.0 + vGlow * 0.9;            // dots bloom as they gather at the cursor
   gl_PointSize = size * (0.65 + 0.35 * t) * (1.0 - uScatter * 0.55);
 }
 `
@@ -73,7 +88,7 @@ void main() {
 const FRAG = /* glsl */ `
 uniform float uScatter;
 varying float vSeed;
-varying float vDist;
+varying float vGlow;
 varying float vDim;
 varying float vFade;
 
@@ -91,7 +106,10 @@ void main() {
   vec3 sky = vec3(0.35, 0.78, 0.99);
   vec3 col = mix(white, blue, smoothstep(0.25, 0.85, vSeed));
   col = mix(col, sky, step(0.93, vSeed));
-  col += vDist * 0.8; // flare when pushed by the cursor
+
+  // dots gathered near the cursor light up: warmer toward sky/white + brighter
+  col += (sky * 0.7 + white * 0.5) * vGlow;
+  alpha *= 1.0 + vGlow * 2.0;
 
   gl_FragColor = vec4(col, alpha * (0.82 - uScatter * 0.6));
 }
@@ -150,21 +168,23 @@ function buildAttributes() {
 function ParticleGlobe({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
   const mat = useRef<THREE.ShaderMaterial>(null)
   const points = useRef<THREE.Points>(null)
-  const { viewport, pointer, gl } = useThree()
+  const { pointer, gl } = useThree()
   const assemble = useRef(0)
-  const mouse = useRef(new THREE.Vector3(999, 999, 0))
-  const smoothMouse = useRef(new THREE.Vector3(999, 999, 0))
-  const invMatrix = useRef(new THREE.Matrix4())
+  const mouse = useRef(new THREE.Vector2(0, 0))
+  const mouseTarget = useRef(new THREE.Vector2(0, 0))
+  const strength = useRef(0)
   const pointerActive = useRef(false)
+  const justEntered = useRef(false)
 
   // Track whether the cursor is actually over the canvas. r3f's `pointer` keeps
-  // its last value after the cursor leaves, which would freeze the repulsion
-  // "dent" in place — so we reset the target far away on leave and let the dots
-  // ease back to their positions.
+  // its last value after the cursor leaves, so we fade the repulsion out on
+  // leave (rather than freezing the dent) and snap to the entry point on
+  // re-entry so it doesn't swoop in from a stale position.
   useEffect(() => {
     const el = gl.domElement
     const enter = () => {
       pointerActive.current = true
+      justEntered.current = true
     }
     const leave = () => {
       pointerActive.current = false
@@ -186,7 +206,11 @@ function ParticleGlobe({ scrollRef }: { scrollRef: React.MutableRefObject<number
       uTime: { value: 0 },
       uAssemble: { value: 0 },
       uScatter: { value: 0 },
-      uMouse: { value: new THREE.Vector3(999, 999, 0) },
+      uMouse: { value: new THREE.Vector2(0, 0) },
+      uMouseOn: { value: 0 },
+      uAspect: { value: 1 },
+      uRadius: { value: CURSOR_RADIUS },
+      uPull: { value: CURSOR_PULL },
     }),
     []
   )
@@ -203,14 +227,26 @@ function ParticleGlobe({ scrollRef }: { scrollRef: React.MutableRefObject<number
       3,
       dt
     )
-    // follow the live pointer while it's over the canvas; park it far away
-    // otherwise so displaced dots relax back to the globe
-    if (pointerActive.current) {
-      mouse.current.set((pointer.x * viewport.width) / 2, (pointer.y * viewport.height) / 2, 0)
-    } else {
-      mouse.current.set(999, 999, 0)
+
+    // Cursor: follow the live pointer (screen NDC) while it's over the canvas,
+    // snapping on entry; fade strength out — not position — when it leaves, so
+    // the displaced dots relax back into place instead of chasing the cursor off.
+    mouseTarget.current.set(pointer.x, pointer.y)
+    if (pointerActive.current && justEntered.current) {
+      mouse.current.copy(mouseTarget.current)
+      justEntered.current = false
+    } else if (pointerActive.current) {
+      mouse.current.lerp(mouseTarget.current, Math.min(1, dt * 20))
     }
-    smoothMouse.current.lerp(mouse.current, 0.1)
+    strength.current = THREE.MathUtils.damp(
+      strength.current,
+      pointerActive.current ? 1 : 0,
+      pointerActive.current ? 14 : 7,
+      dt
+    )
+    uniforms.uMouse.value.copy(mouse.current)
+    uniforms.uMouseOn.value = strength.current
+    uniforms.uAspect.value = state.size.width / state.size.height
 
     if (points.current) {
       // slow earth spin; the shader layers per-dot breathing on top
@@ -219,10 +255,6 @@ function ParticleGlobe({ scrollRef }: { scrollRef: React.MutableRefObject<number
       const wide = state.size.width > 900
       const fit = (0.92 * Math.min(state.viewport.width, state.viewport.height)) / 2 / RADIUS
       points.current.scale.setScalar(Math.min(wide ? 1.16 : 1, fit))
-      // repulsion runs in the globe's local space — follow it as it spins
-      uniforms.uMouse.value
-        .copy(smoothMouse.current)
-        .applyMatrix4(invMatrix.current.copy(points.current.matrixWorld).invert())
     }
   })
 

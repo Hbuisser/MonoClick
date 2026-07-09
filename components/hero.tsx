@@ -184,7 +184,7 @@ export function Hero() {
             className="pointer-events-none hidden items-end gap-10 md:flex lg:mr-20"
           >
             {[
-              ['100+', 'Automations shipped'],
+              ['20+', 'Automations shipped'],
               ['50K+', 'Hours saved / month'],
               ['10', 'Days to delivery'],
             ].map(([stat, label]) => (

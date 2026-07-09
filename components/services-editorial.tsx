@@ -45,7 +45,7 @@ const services = [
   },
   {
     title: 'AI Design Agent',
-    accent: 'no templates',
+    accent: 'that builds stores',
     description:
       'Designs and builds complete, conversion-ready storefronts end-to-end — concept, art direction, copy, 3D, motion, AI-generated photography and film, code and deployment. No templates, no stock assets.',
     features: [

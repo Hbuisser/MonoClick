@@ -85,7 +85,7 @@ export default function WorkPage() {
           <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-white/45">
             <div className="flex items-center space-x-2">
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              <span>100+ automations deployed</span>
+              <span>20+ automations deployed</span>
             </div>
             <div className="flex items-center space-x-2">
               <span className="h-2 w-2 rounded-full bg-white/60" />

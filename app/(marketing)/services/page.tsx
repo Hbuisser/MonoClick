@@ -18,7 +18,7 @@ const services = [
   {
     title: 'AI Support Agent',
     accent: 'for Gorgias & Zendesk',
-    description: 'An always-on support agent that plugs into Gorgias or Zendesk, reads every ticket in context, and drafts — or fully resolves — replies grounded in your policies, orders, and product data. Scale your support team without hiring.',
+    description: 'An always-on support agent that plugs into Gorgias or Zendesk, reads every ticket in context, and drafts, or fully resolves, replies grounded in your policies, orders, and product data. Scale your support team without hiring.',
     image: '/support.png',
     features: [
       'Native Gorgias & Zendesk integration',
@@ -39,10 +39,10 @@ const services = [
   {
     title: 'AI Creative Agent',
     accent: 'that finds what works',
-    description: 'Analyzes your entire Meta ads history — ROAS, spend, copy, image and video — to learn what actually converts. Mines audience and market signal from Reddit, Trustpilot and the open web, teardowns competitor creative, then generates fresh ad concepts, copy, and image & video prompts ready to produce.',
+    description: 'Analyzes your entire Meta ads history, ROAS, spend, copy, image and video, to learn what actually converts. Mines audience and market signal from Reddit, Trustpilot and the open web, teardowns competitor creative, then generates fresh ad concepts, copy, and image & video prompts ready to produce.',
     image: null,
     features: [
-      'Meta ads history analysis — ROAS, spend, creative',
+      'Meta ads history analysis, ROAS, spend, creative',
       'Winning-pattern detection across copy, image & video',
       'Audience & market research (Reddit, Trustpilot, web)',
       'Competitor ad teardown and angle mapping',
@@ -61,7 +61,7 @@ const services = [
   {
     title: 'AI Content Agent',
     accent: 'shipped to social',
-    description: 'Turns the Creative Agent’s concepts into finished content — images, video, captions and hooks — on-brand and on-schedule, then publishes straight to your social channels. From idea to feed without the busywork.',
+    description: 'Turns the Creative Agent’s concepts into finished content, images, video, captions and hooks, on-brand and on-schedule, then publishes straight to your social channels. From idea to feed without the busywork.',
     image: null,
     features: [
       'Concept-to-content production (image, video, copy)',
@@ -82,10 +82,10 @@ const services = [
   {
     title: 'AI Design Agent',
     accent: 'that builds stores',
-    description: 'Designs and builds complete, conversion-ready storefronts end-to-end — concept, art direction, copy, 3D, motion, AI-generated photography and film, code and deployment. No templates, no stock assets. Every pixel bespoke to your brand.',
+    description: 'Designs and builds complete, conversion-ready storefronts end-to-end, concept, art direction, copy, 3D, motion, AI-generated photography and film, code and deployment. No templates, no stock assets. Every pixel bespoke to your brand.',
     image: null,
     features: [
-      'Bespoke design and art direction — zero templates',
+      'Bespoke design and art direction, zero templates',
       'AI-generated photography, video and 3D',
       'Scroll-driven storytelling and motion',
       'Conversion-focused product and cart flows',
@@ -126,7 +126,7 @@ const services = [
   {
     title: 'AI Chatbots',
     accent: 'that sell 24/7',
-    description: 'Customer-facing chatbots trained on your catalog, FAQ and policies. They answer instantly, recommend the right products, track orders, and turn browsers into buyers — day and night, across every channel.',
+    description: 'Customer-facing chatbots trained on your catalog, FAQ and policies. They answer instantly, recommend the right products, track orders, and turn browsers into buyers, day and night, across every channel.',
     image: '/chatbot.png',
     features: [
       'Trained on your entire product catalog',
@@ -153,7 +153,7 @@ const promises = [
   },
   {
     title: 'ROI-focused',
-    description: 'We prioritize automations that deliver measurable business impact — and tell you when one won’t.',
+    description: 'We prioritize automations that deliver measurable business impact, and tell you when one won’t.',
   },
   {
     title: 'Fast deployment',
@@ -170,7 +170,7 @@ const process = [
     step: '01',
     title: 'Free Discovery Call',
     accent: 'a real conversation',
-    description: 'We chat about your biggest time-wasters and growth bottlenecks — an honest, useful conversation about what automation could do for your business.',
+    description: 'We chat about your biggest time-wasters and growth bottlenecks, an honest, useful conversation about what automation could do for your business.',
     duration: '30-45 minutes',
   },
   {
@@ -382,7 +382,7 @@ export default function ServicesPage() {
                           <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10">
                             <Image
                               src={example.image}
-                              alt={`${example.name} — ${example.tagline}`}
+                              alt={`${example.name}, ${example.tagline}`}
                               fill
                               sizes="(max-width: 640px) 100vw, 33vw"
                               className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
@@ -409,7 +409,7 @@ export default function ServicesPage() {
         })}
       </section>
 
-      {/* Why choose us — paper section */}
+      {/* Why choose us, paper section */}
       <RevealSection variant="fade-up" className="border-b border-black/10 bg-[#f5f3ef] py-24 text-black">
         <div className="editorial-max">
           <div className="mb-14">

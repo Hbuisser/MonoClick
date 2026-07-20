@@ -39,6 +39,9 @@ lerna-debug.log*
 .env*.local
 .env.example
 
+# MCP config carries the Supabase access token; keep it local to this repo only
+.mcp.json
+
 # Vercel
 .vercel
 

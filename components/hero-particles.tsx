@@ -46,13 +46,13 @@ void main() {
 
   vec3 pos = mix(aScatter, aTarget, t);
 
-  // idle breathing / wobble once assembled — kept small so continents stay sharp
+  // idle breathing / wobble once assembled, kept small so continents stay sharp
   float w = t * (1.0 - uScatter);
   pos.x += sin(uTime * 0.5 + aSeed * 40.0) * 0.014 * w;
   pos.y += cos(uTime * 0.45 + aSeed * 60.0) * 0.014 * w;
   pos.z += sin(uTime * 0.4 + aSeed * 80.0) * 0.02 * w;
 
-  // scroll dissolve — drift back toward scatter + fall
+  // scroll dissolve, drift back toward scatter + fall
   vec3 dissolved = aScatter * 1.25;
   pos = mix(pos, dissolved, uScatter);
 
@@ -229,7 +229,7 @@ function ParticleGlobe({ scrollRef }: { scrollRef: React.MutableRefObject<number
     )
 
     // Cursor: follow the live pointer (screen NDC) while it's over the canvas,
-    // snapping on entry; fade strength out — not position — when it leaves, so
+    // snapping on entry; fade strength out, not position, when it leaves, so
     // the displaced dots relax back into place instead of chasing the cursor off.
     mouseTarget.current.set(pointer.x, pointer.y)
     if (pointerActive.current && justEntered.current) {

@@ -65,7 +65,7 @@ export default function ContactPage() {
           <ScrollReveal variant="fade-up" delay={0.12} className="mt-16 grid grid-cols-1 gap-px border border-white/10 bg-white/10 md:grid-cols-2">
             {/* Call */}
             <div className="group relative bg-black p-9 transition-colors duration-300 hover:bg-neutral-950">
-              <span className="label-mono text-white/30">01 — Fastest</span>
+              <span className="label-mono text-white/30">01 / Fastest</span>
               <h3 className="mt-5 font-heading text-2xl font-black uppercase tracking-tight text-white">
                 Book a discovery call
               </h3>
@@ -99,13 +99,13 @@ export default function ContactPage() {
 
             {/* Email */}
             <div className="group bg-black p-9 transition-colors duration-300 hover:bg-neutral-950">
-              <span className="label-mono text-white/30">02 — Classic</span>
+              <span className="label-mono text-white/30">02 / Classic</span>
               <h3 className="mt-5 font-heading text-2xl font-black uppercase tracking-tight text-white">
                 Send an email
               </h3>
               <div className="serif-accent mt-1 text-lg text-sky-400/80">with your project details</div>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/50">
-                Prefer email? Drop us a line — you&apos;ll hear back within a day.
+                Prefer email? Drop us a line, you&apos;ll hear back within a day.
               </p>
               <div className="mt-8">
                 <Link
@@ -121,7 +121,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* What happens next — paper */}
+      {/* What happens next, paper */}
       <RevealSection variant="fade-up" className="border-b border-black/10 bg-[#f5f3ef] py-24 text-black">
         <div className="editorial-max">
           <div className="mb-14">

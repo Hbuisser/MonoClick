@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, MapPin, Twitter, Linkedin, GraduationCap } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
+import { generatePersonSchema } from '@/lib/schema-org'
 import { CTABanner } from '@/components/cta-banner'
 import { RevealSection, ScrollReveal } from '@/components/scroll-reveal'
 import { Magnetic } from '@/components/fx/magnetic'
@@ -25,7 +26,7 @@ const values = [
     title: 'Ecommerce-focused',
     accent: 'not one-size-fits-all',
     description:
-      'We build custom AI systems tailored to fast-moving ecommerce brands. Every solution is designed for your specific products, customers, and workflows — not generic one-size-fits-all tools.',
+      'We build custom AI systems tailored to fast-moving ecommerce brands. Every solution is designed for your specific products, customers, and workflows, not generic one-size-fits-all tools.',
   },
   {
     title: 'AI-powered growth',
@@ -65,8 +66,15 @@ const differentiators = [
 ]
 
 export default function AboutPage() {
+  const personSchema = generatePersonSchema()
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-white/10 bg-black pb-16 pt-20 sm:pb-20 sm:pt-28">
         <div
@@ -99,7 +107,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission — paper */}
+      {/* Mission, paper */}
       <RevealSection variant="fade-up" className="border-b border-black/10 bg-[#f5f3ef] py-24 text-black">
         <div className="editorial-max">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
@@ -125,7 +133,7 @@ export default function AboutPage() {
                 <p>
                   Our clients include fast-moving ecommerce brands, DTC companies, and growing
                   online retailers across Europe and globally who need AI automation that
-                  delivers measurable ROI. We don&apos;t sell generic software — every system is
+                  delivers measurable ROI. We don&apos;t sell generic software, every system is
                   custom-built for your specific needs.
                 </p>
               </div>
@@ -134,14 +142,14 @@ export default function AboutPage() {
               <div className="overflow-hidden border border-black/10 bg-white p-3">
                 <Image
                   src="/dashboard.png"
-                  alt="AI support agent workspace — ticket triage, drafted replies, and resolution tracking"
+                  alt="AI support agent workspace, ticket triage, drafted replies, and resolution tracking"
                   width={800}
                   height={520}
                   className="w-full object-contain"
                 />
               </div>
               <p className="label-mono mt-4 text-black/40">
-                AI support agent dashboard — triage, drafts, resolution tracking
+                AI support agent dashboard, triage, drafts, resolution tracking
               </p>
             </div>
           </div>
@@ -176,7 +184,7 @@ export default function AboutPage() {
         </div>
       </RevealSection>
 
-      {/* Henry — paper */}
+      {/* Henry, paper */}
       <RevealSection variant="fade-up" className="border-b border-black/10 bg-[#f5f3ef] py-24 text-black">
         <div className="editorial-max">
           <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
@@ -211,11 +219,11 @@ export default function AboutPage() {
                   <MapPin className="h-3.5 w-3.5" /> Belgium
                 </div>
                 <div className="label-mono flex items-center gap-2 text-black/50">
-                  <GraduationCap className="h-3.5 w-3.5" /> School 42 — Software Engineering
+                  <GraduationCap className="h-3.5 w-3.5" /> School 42, Software Engineering
                 </div>
               </div>
               <div className="label-mono mt-4 space-y-1.5 text-black/40">
-                <p>Previous: Finance (KBC) — Payments (Worldline)</p>
+                <p>Previous: Finance (KBC), Payments (Worldline)</p>
                 <p>Built SaaS product: CartoonAI.io</p>
               </div>
               <div className="mt-8 flex gap-2">

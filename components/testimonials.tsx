@@ -22,7 +22,7 @@ const featured = [
   },
   {
     content:
-      'Not only an n8n expert, but with a strong software background that sets him apart. Strongly recommend hiring him now — his rates will only go up.',
+      'Not only an n8n expert, but with a strong software background that sets him apart. Strongly recommend hiring him now, his rates will only go up.',
     author: 'Dmitry G.',
     role: 'CEO, Vexa.ai',
   },
@@ -79,7 +79,7 @@ export function Testimonials() {
       <div className="editorial-max">
         <ScrollReveal variant="fade-up" className="mb-16 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <span className="label-mono mb-5 block text-blue-600">04 — Client stories</span>
+            <span className="label-mono mb-5 block text-blue-600">04 / Client stories</span>
             <h2 className="display-title max-w-4xl text-[clamp(2.25rem,6vw,5rem)] text-black">
               In their{' '}
               <span className="serif-accent text-[1.04em] text-black/80">own words</span>
@@ -111,7 +111,7 @@ export function Testimonials() {
               <figcaption className="mt-7 flex items-center gap-4">
                 <span className="h-px w-12 bg-blue-600" aria-hidden />
                 <span className="label-mono text-black/60">
-                  {featured[index].author} — {featured[index].role}
+                  {featured[index].author}, {featured[index].role}
                 </span>
               </figcaption>
             </motion.figure>
@@ -143,7 +143,7 @@ export function Testimonials() {
               >
                 <p className="mb-5 text-sm leading-relaxed text-black/60">&ldquo;{q.content}&rdquo;</p>
                 <div className="label-mono text-black/40">
-                  {q.author} — {q.role}
+                  {q.author}, {q.role}
                 </div>
               </article>
             ))}

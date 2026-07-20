@@ -93,7 +93,7 @@ export function Hero() {
         {/* <p className="label-mono text-white/40">
           AI Systems Studio
           <br />
-          EU — US
+          EU / US
         </p>
         <p className="label-mono text-right text-white/40">
           Shipped in 10 working days
@@ -141,7 +141,7 @@ export function Hero() {
                   transition={{ duration: 0.35 }}
                 >
                   <p className="label-mono mb-1.5 text-sky-400">
-                    {String(currentIndex + 1).padStart(2, '0')} — {useCases[currentIndex].industry}
+                    {String(currentIndex + 1).padStart(2, '0')} / {useCases[currentIndex].industry}
                   </p>
                   <p className="text-sm text-white/50">{useCases[currentIndex].example}</p>
                 </motion.div>

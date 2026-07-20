@@ -11,7 +11,7 @@ const services = [
     title: 'AI Support Agent',
     accent: 'on Gorgias & Zendesk',
     description:
-      'An always-on agent that plugs into Gorgias or Zendesk, reads every ticket in context, and drafts — or fully resolves — replies grounded in your policies, orders, and products.',
+      'An always-on agent that plugs into Gorgias or Zendesk, reads every ticket in context, and drafts, or fully resolves, replies grounded in your policies, orders, and products.',
     features: [
       'Native Gorgias & Zendesk integration',
       'Context-aware from your order data',
@@ -23,10 +23,10 @@ const services = [
     title: 'AI Creative Agent',
     accent: 'that finds what works',
     description:
-      'Analyzes your Meta ads history — ROAS, spend, copy, image and video — to learn what converts. Mines audience signal from Reddit, Trustpilot and the web, teardowns competitor ads, then generates fresh concepts, copy, and image & video prompts.',
+      'Analyzes your Meta ads history, ROAS, spend, copy, image and video, to learn what converts. Mines audience signal from Reddit, Trustpilot and the web, teardowns competitor ads, then generates fresh concepts, copy, and image & video prompts.',
     features: [
       'Meta ads history & ROAS analysis',
-      'Audience research — Reddit, Trustpilot, web',
+      'Audience research, Reddit, Trustpilot, web',
       'Competitor ad teardown & angle mapping',
       'New concepts, copy & image/video prompts',
     ],
@@ -35,7 +35,7 @@ const services = [
     title: 'AI Content Agent',
     accent: 'shipped to social',
     description:
-      'Turns the Creative Agent’s concepts into finished content — images, video, captions and hooks — on-brand and on-schedule, then publishes straight to your social channels.',
+      'Turns the Creative Agent’s concepts into finished content, images, video, captions and hooks, on-brand and on-schedule, then publishes straight to your social channels.',
     features: [
       'Concept-to-content production',
       'On-brand voice & visual consistency',
@@ -47,9 +47,9 @@ const services = [
     title: 'AI Design Agent',
     accent: 'that builds stores',
     description:
-      'Designs and builds complete, conversion-ready storefronts end-to-end — concept, art direction, copy, 3D, motion, AI-generated photography and film, code and deployment. No templates, no stock assets.',
+      'Designs and builds complete, conversion-ready storefronts end-to-end, concept, art direction, copy, 3D, motion, AI-generated photography and film, code and deployment. No templates, no stock assets.',
     features: [
-      'Bespoke design & art direction — zero templates',
+      'Bespoke design & art direction, zero templates',
       'AI-generated photography, video & 3D',
       'Scroll-driven storytelling & motion',
       'Shopify, headless or fully custom build',
@@ -59,7 +59,7 @@ const services = [
     title: 'AI Chatbots',
     accent: 'that sell',
     description:
-      'Customer-facing chatbots trained on your catalog, FAQ and policies. They answer instantly, recommend the right products, track orders, and turn browsers into buyers — 24/7.',
+      'Customer-facing chatbots trained on your catalog, FAQ and policies. They answer instantly, recommend the right products, track orders, and turn browsers into buyers, 24/7.',
     features: [
       'Trained on your product catalog',
       'FAQ & policy knowledge base',
@@ -76,7 +76,7 @@ export function ServicesEditorial() {
     <section className="border-t border-white/10 bg-black py-24" id="services">
       <div className="editorial-max">
         <ScrollReveal variant="slide-left" className="mb-4">
-          <span className="label-mono mb-5 block text-sky-400">01 — What we build</span>
+          <span className="label-mono mb-5 block text-sky-400">01 / What we build</span>
           <h2 className="display-title max-w-5xl text-[clamp(2.25rem,6vw,5rem)] text-white">
             AI systems that drive{' '}
             <span className="serif-accent text-[1.04em] text-white/85">growth</span>
@@ -88,7 +88,7 @@ export function ServicesEditorial() {
           delay={0.08}
           className="mb-14 max-w-2xl text-sm leading-relaxed text-white/45"
         >
-          From always-on support agents to AI-designed storefronts — systems built for
+          From always-on support agents to AI-designed storefronts, systems built for
           fast-moving ecommerce brands, shipped in ten working days.
         </ScrollReveal>
 

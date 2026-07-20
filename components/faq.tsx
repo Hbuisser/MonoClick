@@ -10,46 +10,14 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { ScrollReveal } from '@/components/scroll-reveal'
-
-const faqs = [
-  {
-    question: 'What are AI growth systems for ecommerce?',
-    answer:
-      'AI growth systems are automated workflows powered by AI that help ecommerce brands scale faster. This includes an AI support agent for Gorgias/Zendesk, an AI creative agent that analyzes your Meta ads and generates new concepts, an AI content agent that publishes to social, an AI design agent that builds your storefront, and AI chatbots trained on your products.',
-  },
-  {
-    question: 'How quickly can you build a custom AI system?',
-    answer:
-      'We deliver most projects within 10 working days after kickoff call. This includes discovery, build, testing, and deployment. We work fast without sacrificing quality.',
-  },
-  {
-    question: 'What ecommerce platforms do you integrate with?',
-    answer:
-      'We integrate with all major ecommerce platforms including Shopify, WooCommerce, BigCommerce, Magento, and support tools like Gorgias, Zendesk, and more. If you use it, we can probably connect to it.',
-  },
-  {
-    question: 'How much do AI growth systems cost?',
-    answer:
-      'Pricing is custom based on your specific needs and complexity. We offer transparent, fixed-price quotes with no surprises. Every project includes 30 days of free support after launch.',
-  },
-  {
-    question: 'Do you provide ongoing support?',
-    answer:
-      'Yes! Every project includes 30 days of free support. We also offer maintenance retainers for ongoing optimization, monitoring, and enhancements to keep your systems running at peak performance.',
-  },
-  {
-    question: 'How do I know if AI automation is right for my ecommerce store?',
-    answer:
-      "If you're spending hours on customer support, content creation, or analyzing competitors, AI automation can help. Book a free call and we'll assess your specific situation together.",
-  },
-]
+import { faqs } from '@/components/faq-data'
 
 export function FAQ() {
   return (
     <section className="border-t border-black/10 bg-[#fcfcfc] py-24 text-black">
       <div className="editorial-max max-w-4xl">
         <ScrollReveal variant="scale" className="mb-14 text-center">
-          <span className="label-mono mb-5 block text-blue-600">05 — FAQ</span>
+          <span className="label-mono mb-5 block text-blue-600">05 / FAQ</span>
           <h2 className="display-title text-[clamp(2.25rem,6vw,4rem)] text-black">
             Good{' '}
             <span className="serif-accent text-[1.04em] text-black/80">questions</span>

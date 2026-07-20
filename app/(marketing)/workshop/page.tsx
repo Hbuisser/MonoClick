@@ -48,7 +48,7 @@ const agenda = [
     no: '四',
     title: 'Real Ecommerce Workflows',
     description:
-      'Put it all together with hands-on exercises: product descriptions, customer emails, inventory analysis, ad copy, SEO content — all tailored to your actual store and products.',
+      'Put it all together with hands-on exercises: product descriptions, customer emails, inventory analysis, ad copy, SEO content, all tailored to your actual store and products.',
   },
 ]
 
@@ -66,7 +66,7 @@ const whatYouLearn = [
   {
     title: 'Build a Knowledge Base',
     description:
-      'Set up memory and rules so your AI assistant knows your brand guidelines, tone of voice, target audience, and product specifics — no repeating yourself every session.',
+      'Set up memory and rules so your AI assistant knows your brand guidelines, tone of voice, target audience, and product specifics, no repeating yourself every session.',
   },
   {
     title: 'Manage Tokens & Costs',
@@ -99,7 +99,7 @@ const ecommerceUseCases = [
 const faqs = [
   {
     q: 'Who is this workshop for?',
-    a: 'Ecommerce teams — founders, marketers, customer support leads, content creators, and operations managers. No technical background required.',
+    a: 'Ecommerce teams, founders, marketers, customer support leads, content creators, and operations managers. No technical background required.',
   },
   {
     q: 'Do participants need to know how to code?',
@@ -111,7 +111,7 @@ const faqs = [
   },
   {
     q: 'Where does the workshop take place?',
-    a: 'At your office or a venue of your choice. I travel to you — the workshop works best when your team is in their natural working environment.',
+    a: 'At your office or a venue of your choice. I travel to you, the workshop works best when your team is in their natural working environment.',
   },
   {
     q: 'What happens after the workshop?',
@@ -138,7 +138,7 @@ export default function WorkshopPage() {
               </h1>
               <p className="mt-8 max-w-xl text-sm leading-relaxed text-white/50 sm:text-base">
                 A one-day, hands-on workshop where I train your ecommerce team (5–10 people)
-                to use AI in their daily work. From installation to advanced prompting —
+                to use AI in their daily work. From installation to advanced prompting,
                 everyone leaves ready to work faster, smarter, and more consistently.
               </p>
               <div className="mt-12 grid max-w-xl grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-3">
@@ -170,7 +170,7 @@ export default function WorkshopPage() {
                 <div className="relative aspect-[3/4] overflow-hidden border border-white/20">
                   <Image
                     src="/pp2.jpg"
-                    alt="Henry Buisseret — workshop trainer"
+                    alt="Henry Buisseret, workshop trainer"
                     fill
                     className="object-cover"
                     priority
@@ -216,7 +216,7 @@ export default function WorkshopPage() {
         </div>
       </RevealSection>
 
-      {/* The problem — paper */}
+      {/* The problem, paper */}
       <RevealSection variant="fade-up" className="border-b border-black/10 bg-[#f5f3ef] py-24 text-black">
         <div className="editorial-max">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
@@ -234,13 +234,13 @@ export default function WorkshopPage() {
                 </p>
                 <p>
                   <strong className="text-black">This workshop changes that.</strong> In one day,
-                  your team will learn how to turn AI into a genuine colleague — one that knows
+                  your team will learn how to turn AI into a genuine colleague, one that knows
                   your brand, understands your products, and produces work that&apos;s actually
                   ready to use.
                 </p>
                 <p>
                   <strong className="text-black">The result?</strong> Tasks that used to take
-                  hours — writing product descriptions, drafting emails, analysing data — take
+                  hours, writing product descriptions, drafting emails, analysing data, take
                   minutes. And the quality is consistent, on-brand, and improving with every
                   interaction.
                 </p>
@@ -250,13 +250,13 @@ export default function WorkshopPage() {
               <div className="relative overflow-hidden border border-black/10">
                 <Image
                   src="/workshop.png"
-                  alt="In-person AI workshop — small group training around a table with laptops"
+                  alt="In-person AI workshop, small group training around a table with laptops"
                   width={800}
                   height={600}
                   className="w-full object-cover"
                 />
               </div>
-              <p className="label-mono mt-4 text-black/40">A previous session — laptops open, slides closed</p>
+              <p className="label-mono mt-4 text-black/40">A previous session, laptops open, slides closed</p>
             </div>
           </div>
         </div>
@@ -272,7 +272,7 @@ export default function WorkshopPage() {
               <span className="serif-accent text-[1.04em] text-white/85">four movements</span>
             </h2>
             <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/45">
-              A structured, practical day — no slides-only presentations. Every concept is
+              A structured, practical day, no slides-only presentations. Every concept is
               immediately put into practice with your real business data.
             </p>
           </div>
@@ -296,7 +296,7 @@ export default function WorkshopPage() {
         </div>
       </RevealSection>
 
-      {/* What you'll learn — paper */}
+      {/* What you'll learn, paper */}
       <RevealSection variant="fade-up" className="border-b border-black/10 bg-[#f5f3ef] py-24 text-black">
         <div className="editorial-max">
           <div className="mb-14">
@@ -338,7 +338,7 @@ export default function WorkshopPage() {
               <div className="mt-8 max-w-lg space-y-4 text-sm leading-relaxed text-white/50">
                 <p>
                   This isn&apos;t a generic &quot;intro to AI&quot; course. Every example, every
-                  exercise, and every prompt template is designed around ecommerce workflows —
+                  exercise, and every prompt template is designed around ecommerce workflows,
                   the work your team actually does every day.
                 </p>
                 <p>
@@ -381,12 +381,12 @@ export default function WorkshopPage() {
               </h2>
               <p className="mt-6 max-w-lg text-sm leading-relaxed text-black/60">
                 I come to your office for one full day. The workshop is capped at 10 people so
-                everyone gets individual attention and leaves with a working setup — not just
+                everyone gets individual attention and leaves with a working setup, not just
                 theory.
               </p>
               <div className="mt-8 space-y-3">
                 {[
-                  'I travel to your location — no disruption to your team',
+                  'I travel to your location, no disruption to your team',
                   'Every participant gets hands-on help with their own setup',
                   'Exercises use your actual products and real store data',
                   'Follow-up call included two weeks after the workshop',

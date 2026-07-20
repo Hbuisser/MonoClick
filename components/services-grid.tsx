@@ -16,7 +16,7 @@ const services = [
     icon: HeadphonesIcon,
     title: 'AI Support Agent',
     description:
-      'An always-on agent that plugs into Gorgias or Zendesk, reads every ticket in context, and drafts — or fully resolves — replies grounded in your policies and orders.',
+      'An always-on agent that plugs into Gorgias or Zendesk, reads every ticket in context, and drafts, or fully resolves, replies grounded in your policies and orders.',
     image: '/support.png',
     features: [
       'Native Gorgias & Zendesk integration',
@@ -29,11 +29,11 @@ const services = [
     icon: Wand2,
     title: 'AI Creative Agent',
     description:
-      'Analyzes your Meta ads history — ROAS, spend, copy and video — to learn what converts, mines audience data from Reddit, Trustpilot and the web, teardowns competitor ads, then generates new concepts and image/video prompts.',
+      'Analyzes your Meta ads history, ROAS, spend, copy and video, to learn what converts, mines audience data from Reddit, Trustpilot and the web, teardowns competitor ads, then generates new concepts and image/video prompts.',
     image: '/rag.png',
     features: [
       'Meta ads history & ROAS analysis',
-      'Audience research — Reddit, Trustpilot, web',
+      'Audience research, Reddit, Trustpilot, web',
       'Competitor ad teardown & angle mapping',
       'New concepts, copy & image/video prompts',
     ],
@@ -43,7 +43,7 @@ const services = [
     icon: Share2,
     title: 'AI Content Agent',
     description:
-      'Turns creative concepts into finished content — images, video, captions and hooks — on-brand and on-schedule, then publishes straight to your social channels.',
+      'Turns creative concepts into finished content, images, video, captions and hooks, on-brand and on-schedule, then publishes straight to your social channels.',
     image: '/rag.png',
     features: [
       'Concept-to-content production',
@@ -56,10 +56,10 @@ const services = [
     icon: Palette,
     title: 'AI Design Agent',
     description:
-      'Designs and builds complete, conversion-ready storefronts end-to-end — concept, art direction, copy, 3D, motion, AI-generated photography and film. No templates, no stock assets.',
+      'Designs and builds complete, conversion-ready storefronts end-to-end, concept, art direction, copy, 3D, motion, AI-generated photography and film. No templates, no stock assets.',
     image: '/showcase/cendre.jpg',
     features: [
-      'Bespoke design & art direction — zero templates',
+      'Bespoke design & art direction, zero templates',
       'AI-generated photography, video & 3D',
       'Scroll-driven storytelling & motion',
       'Shopify, headless or fully custom build',

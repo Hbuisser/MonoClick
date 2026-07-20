@@ -11,7 +11,7 @@ const navigation = {
   company: [
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Workshop', href: '/workshop' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ],
   legal: [
@@ -44,7 +44,7 @@ export function SiteFooter() {
             </Link>
             <p className="mb-8 max-w-md text-sm leading-relaxed text-white/45">
               Custom AI growth systems for ecommerce brands. A support agent, a creative agent for
-              your Meta ads, a content agent, a design agent, and chatbots — delivered in 10
+              your Meta ads, a content agent, a design agent, and chatbots, delivered in 10
               working days.
             </p>
             <div className="space-y-3">
@@ -140,7 +140,7 @@ export function SiteFooter() {
 
         <div className="flex flex-col items-start justify-between gap-3 border-t border-white/10 py-7 sm:flex-row sm:items-center">
           <p className="label-mono text-white/25">
-            © {new Date().getFullYear()} MonoClick — All rights reserved
+            © {new Date().getFullYear()} MonoClick, All rights reserved
           </p>
           <p className="label-mono text-white/25">
             Designed &amp; rebuilt live by{' '}

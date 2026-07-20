@@ -79,7 +79,7 @@
     @apply mx-auto w-full max-w-[1400px] px-6;
   }
 
-  /* mono kicker label — the technical voice */
+  /* mono kicker label, the technical voice */
   .label-mono {
     font-family: var(--font-plex-mono), ui-monospace, monospace;
     font-size: 0.62rem;
@@ -165,6 +165,10 @@
   border-color: rgba(56, 189, 248, 0.9);
   background: rgba(56, 189, 248, 0.08);
 }
+/* Light variant (case-study funnel): brand-blue ring stays visible on white. */
+.fx-cursor--light .fx-cursor-ring {
+  border-color: rgba(37, 99, 235, 0.75);
+}
 @media (hover: none), (pointer: coarse) {
   .fx-cursor { display: none; }
 }
@@ -185,7 +189,7 @@
 }
 .animate-marquee:hover { animation-play-state: paused; }
 
-/* Blue gradient accent — 10% of the palette */
+/* Blue gradient accent, 10% of the palette */
 .bg-gradient-brand {
   background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
 }

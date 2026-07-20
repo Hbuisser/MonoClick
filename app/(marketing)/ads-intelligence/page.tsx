@@ -33,7 +33,7 @@ const adsSeo = createMetadata({
   description: HERO_SUBHEAD,
   path: '/ads-intelligence',
 })
-const fullTitle = 'Ads Intelligence for Ecommerce — Monoclick.ai'
+const fullTitle = 'Ads Intelligence for Ecommerce, Monoclick.ai'
 export const metadata: Metadata = {
   ...adsSeo,
   title: { absolute: fullTitle },

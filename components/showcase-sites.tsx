@@ -12,7 +12,7 @@ const sites = [
     tagline: 'Parisian fragrance house',
     image: '/showcase/cendre.jpg',
     description:
-      'Dark cinematic luxury — a real-time 3D glass flacon with light refraction, scroll-driven storytelling, AI-generated campaign photography and a living smoke film.',
+      'Dark cinematic luxury, a real-time 3D glass flacon with light refraction, scroll-driven storytelling, AI-generated campaign photography and a living smoke film.',
     tags: ['Three.js / WebGL', 'GSAP scroll narrative', 'AI photography + video'],
   },
   {
@@ -21,7 +21,7 @@ const sites = [
     tagline: 'Brutalist streetwear drop',
     image: '/showcase/crude.jpg',
     description:
-      'Industrial brutalism — kinetic typography, custom WebGL glitch shaders on every product, velocity-reactive marquees and a full-screen cart takeover.',
+      'Industrial brutalism, kinetic typography, custom WebGL glitch shaders on every product, velocity-reactive marquees and a full-screen cart takeover.',
     tags: ['Custom GLSL shaders', 'Kinetic type', 'Drag lookbook'],
   },
   {
@@ -30,7 +30,7 @@ const sites = [
     tagline: 'Japanese ceramics studio',
     image: '/showcase/tsuchi.jpg',
     description:
-      'Wabi-sabi calm — washi paper textures, ink-brush animations that draw themselves, an AI-animated pottery wheel film and museum-grade product imagery.',
+      'Wabi-sabi calm, washi paper textures, ink-brush animations that draw themselves, an AI-animated pottery wheel film and museum-grade product imagery.',
     tags: ['Editorial motion', 'AI cinemagraph', 'Bilingual typography'],
   },
 ]
@@ -41,7 +41,7 @@ export function ShowcaseSites() {
       <div className="editorial-max">
         <ScrollReveal variant="slide-right" className="mb-14">
           <span className="label-mono mb-5 block text-sky-400">
-            02 — AI Design Agent · Shopify &amp; custom builds
+            02 / AI Design Agent · Shopify &amp; custom builds
           </span>
           <h2 className="display-title max-w-4xl text-[clamp(2.25rem,6vw,5rem)] text-white">
             We design and build storefronts that look like nothing else.{' '}
@@ -51,7 +51,7 @@ export function ShowcaseSites() {
           </h2>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/50">
             The AI Design Agent is how MonoClick ships custom Shopify and headless stores end
-            to end — concept, copy, AI-generated photography and film, 3D, code and
+            to end, concept, copy, AI-generated photography and film, 3D, code and
             deployment. No templates, no stock assets. Each store below was built from a
             single brief, so you can judge the craft before we point it at yours.
           </p>
@@ -74,7 +74,7 @@ export function ShowcaseSites() {
                   <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10">
                     <Image
                       src={site.image}
-                      alt={`${site.name} — ${site.tagline}`}
+                      alt={`${site.name}, ${site.tagline}`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 33vw"
                       className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
@@ -110,7 +110,7 @@ export function ShowcaseSites() {
 
         <ScrollReveal variant="fade-up" delay={0.3} className="mt-10">
           <p className="text-xs leading-relaxed text-white/30">
-            Live demonstration stores — every pixel, asset and line of code produced
+            Live demonstration stores, every pixel, asset and line of code produced
             autonomously by our AI design agent, directed by MonoClick. Imagine what this
             does for your brand.
           </p>

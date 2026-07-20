@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 export const siteConfig = {
   name: 'MonoClick',
   description:
-    'AI growth partner for ecommerce brands. We build an AI support agent for Gorgias & Zendesk, an AI creative agent that analyzes your Meta ads and generates new concepts, an AI content agent that publishes to social, an AI design agent that builds your storefront, and AI chatbots — delivered in 10 working days.',
+    'AI growth partner for ecommerce brands. We build an AI support agent for Gorgias & Zendesk, an AI creative agent that analyzes your Meta ads and generates new concepts, an AI content agent that publishes to social, an AI design agent that builds your storefront, and AI chatbots, delivered in 10 working days.',
   url: 'https://monoclick.ai',
   ogImage: 'https://monoclick.ai/logo.png',
   creator: '@monoclick_ai',

@@ -19,7 +19,7 @@ export function CTABanner() {
       <div className="editorial-max relative">
         <div className="mx-auto max-w-4xl text-center">
           <ScrollReveal variant="fade-up">
-            <span className="label-mono mb-8 block text-sky-400">06 — Get started</span>
+            <span className="label-mono mb-8 block text-sky-400">06 / Get started</span>
             <h2 className="display-title text-[clamp(2.6rem,8vw,6.5rem)] text-white">
               One click
               <br />

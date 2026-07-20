@@ -2,8 +2,20 @@
 
 import { useEffect, useRef } from 'react'
 
-/** Custom cursor + film grain — mounted once in the marketing layout. */
-export function SiteFX() {
+/**
+ * Custom cursor (dot + ring) and optional film grain.
+ * Mounted in the marketing layout with grain, and in the case-study funnel
+ * without grain so the cursor stays consistent while the funnel stays minimal.
+ * `theme="light"` switches the ring to brand blue so it stays visible on the
+ * funnel's white backgrounds (the default white ring only reads on dark pages).
+ */
+export function SiteFX({
+  grain = true,
+  theme = 'dark',
+}: {
+  grain?: boolean
+  theme?: 'dark' | 'light'
+}) {
   const cursor = useRef<HTMLDivElement>(null)
 
   // Custom cursor
@@ -28,8 +40,12 @@ export function SiteFX() {
 
   return (
     <>
-      <div className="fx-grain" aria-hidden />
-      <div className="fx-cursor" ref={cursor} aria-hidden>
+      {grain ? <div className="fx-grain" aria-hidden /> : null}
+      <div
+        className={`fx-cursor${theme === 'light' ? ' fx-cursor--light' : ''}`}
+        ref={cursor}
+        aria-hidden
+      >
         <div className="fx-cursor-dot" />
         <div className="fx-cursor-ring" />
       </div>

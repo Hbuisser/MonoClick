@@ -7,8 +7,10 @@ import { ProcessSteps } from '@/components/process-steps'
 import { CaseHighlights } from '@/components/case-highlights'
 import { Testimonials } from '@/components/testimonials'
 import { FAQ } from '@/components/faq'
+import { faqs } from '@/components/faq-data'
 import { CTABanner } from '@/components/cta-banner'
 import { createMetadata } from '@/lib/seo'
+import { generateFAQSchema } from '@/lib/schema-org'
 
 export const metadata: Metadata = createMetadata({
   title: 'AI Growth Partner for Fast-Moving Ecommerce - Support Agent, Creative Agent, Content Agent, Design Agent, Chatbots',
@@ -16,8 +18,14 @@ export const metadata: Metadata = createMetadata({
 })
 
 export default function HomePage() {
+  const faqSchema = generateFAQSchema(faqs)
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Hero />
       <LogoStrip />
       <ServicesEditorial />

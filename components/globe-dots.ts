@@ -1,4 +1,4 @@
-// Auto-generated — do not edit by hand.
+// Auto-generated, do not edit by hand.
 // Dots on Earth's landmasses (Natural Earth 110m land), sampled on a fibonacci
 // sphere lattice. Packed as Int16 [lng * 100, lat * 100] pairs, base64-encoded.
 // Regenerate with scripts/gen-land-dots.mjs if the sampling ever needs to change.

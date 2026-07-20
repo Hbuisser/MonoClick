@@ -111,12 +111,12 @@ export function Hero() {
         <h1 className="font-heading text-[13.5vw] font-black uppercase leading-[0.86] tracking-[-0.06em] text-white sm:text-[11vw] lg:text-[min(9.5rem,10.2vw)]">
           <span className="block overflow-hidden pb-[0.06em]">
             <motion.span variants={lineReveal} className="block">
-              AI Growth
+              Your store
             </motion.span>
           </span>
           <span className="block overflow-hidden pb-[0.06em]">
             <motion.span variants={lineReveal} className="display-outline block">
-              Partner
+              scales.
             </motion.span>
           </span>
           <span className="block overflow-hidden pb-[0.12em]">
@@ -124,10 +124,18 @@ export function Hero() {
               variants={lineReveal}
               className="serif-accent block text-[0.62em] leading-[1.02] text-white/90"
             >
-              for ecommerce brands<span className="text-sky-400">.</span>
+              Your operation doesn&apos;t<span className="text-sky-400">.</span>
             </motion.span>
           </span>
         </h1>
+
+        <motion.p
+          variants={fadeItem}
+          className="mt-7 max-w-lg text-sm leading-relaxed text-white/55 sm:text-[0.95rem]"
+        >
+          Custom AI agents for eight and nine-figure ecommerce brands, built to run the
+          work you&apos;d otherwise hire for. Live in 10 working days.
+        </motion.p>
 
         <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-md">
@@ -167,10 +175,10 @@ export function Hero() {
                   </span>
                   <span className="relative inline-flex h-[1.2em] items-center overflow-hidden">
                     <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
-                      Let&apos;s talk
+                      Book an audit call
                     </span>
                     <span className="absolute top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full">
-                      Let&apos;s talk
+                      Book an audit call
                     </span>
                   </span>
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />

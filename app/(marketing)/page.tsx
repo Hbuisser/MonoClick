@@ -1,9 +1,12 @@
 import { Metadata } from 'next'
 import { Hero } from '@/components/hero'
 import { LogoStrip, PoweredBy } from '@/components/logo-strip'
+import { Problem } from '@/components/problem'
 import { ServicesEditorial } from '@/components/services-editorial'
 import { ShowcaseSites } from '@/components/showcase-sites'
 import { ProcessSteps } from '@/components/process-steps'
+import { Ownership } from '@/components/ownership'
+import { Pricing } from '@/components/pricing'
 import { CaseHighlights } from '@/components/case-highlights'
 import { Testimonials } from '@/components/testimonials'
 import { FAQ } from '@/components/faq'
@@ -28,11 +31,14 @@ export default function HomePage() {
       />
       <Hero />
       <LogoStrip />
+      <Problem />
       <ServicesEditorial />
       <ShowcaseSites />
       <PoweredBy />
       <Testimonials />
       <ProcessSteps />
+      <Ownership />
+      <Pricing />
       {/* <CaseHighlights /> */}
       <FAQ />
       <CTABanner />

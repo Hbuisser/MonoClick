@@ -16,7 +16,7 @@ const services = [
       'Native Gorgias & Zendesk integration',
       'Context-aware from your order data',
       'Auto-triage, tagging & escalation',
-      '70% faster ticket resolution',
+      'From 200 to 1,500 tickets a day',
     ],
   },
   {
@@ -76,7 +76,7 @@ export function ServicesEditorial() {
     <section className="border-t border-white/10 bg-black py-24" id="services">
       <div className="editorial-max">
         <ScrollReveal variant="slide-left" className="mb-4">
-          <span className="label-mono mb-5 block text-sky-400">01 / What we build</span>
+          <span className="label-mono mb-5 block text-sky-400">02 / What we build</span>
           <h2 className="display-title max-w-5xl text-[clamp(2.25rem,6vw,5rem)] text-white">
             AI systems that drive{' '}
             <span className="serif-accent text-[1.04em] text-white/85">growth</span>

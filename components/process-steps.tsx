@@ -59,7 +59,7 @@ export function ProcessSteps() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-[calc(var(--menu-height)+3rem)]">
               <ScrollReveal variant="slide-right">
-                <span className="label-mono mb-5 block text-sky-400">03 / The process</span>
+                <span className="label-mono mb-5 block text-sky-400">05 / The process</span>
                 <h2 className="display-title text-[clamp(2.25rem,5.4vw,4.4rem)] text-white">
                   How we{' '}
                   <span className="serif-accent text-[1.04em] text-white/85">deliver</span>

@@ -19,15 +19,15 @@ export function CTABanner() {
       <div className="editorial-max relative">
         <div className="mx-auto max-w-4xl text-center">
           <ScrollReveal variant="fade-up">
-            <span className="label-mono mb-8 block text-sky-400">06 / Get started</span>
+            <span className="label-mono mb-8 block text-sky-400">09 / Get started</span>
             <h2 className="display-title text-[clamp(2.6rem,8vw,6.5rem)] text-white">
               One click
               <br />
               <span className="serif-accent text-[1.02em] text-white/90">ahead.</span>
             </h2>
             <p className="mx-auto mt-8 max-w-xl text-sm leading-relaxed text-white/50">
-              Stop losing hours to repetitive tasks. Let&apos;s build custom AI automation
-              that scales your revenue while you focus on growth.
+              Book a 30-minute audit. We&apos;ll find your biggest bottleneck, map the system
+              that fixes it, and hand you a rough ROI and timeline. No obligation.
             </p>
           </ScrollReveal>
 
@@ -49,9 +49,9 @@ export function CTABanner() {
                   />
                 </span>
                 <span className="text-left leading-tight">
-                  Book a free call with Henry
+                  Book an audit call
                   <span className="block text-[0.6rem] font-normal normal-case tracking-normal text-white/70">
-                    30 minutes
+                    Leave with a build plan + ROI
                   </span>
                 </span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -68,7 +68,7 @@ export function CTABanner() {
           </ScrollReveal>
 
           <ScrollReveal variant="fade" delay={0.18} className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-10">
-            {['Free discovery call', 'Fixed-price quotes', '30-day guarantee'].map((item) => (
+            {['30 minutes, no obligation', 'A build plan you keep', 'Fixed-price, no surprises'].map((item) => (
               <div key={item} className="label-mono flex items-center gap-2.5 text-white/35">
                 <span className="h-1 w-1 bg-sky-400" aria-hidden />
                 {item}

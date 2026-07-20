@@ -66,6 +66,13 @@ const marqueeQuotes = [
   },
 ]
 
+const stats: [string, string][] = [
+  ['1,500', 'Support tickets a day, up from 200'],
+  ['9 → 5', 'Smaller team, more coverage'],
+  ['10 days', 'From brief to live system'],
+  ['5/5', 'Average client rating'],
+]
+
 export function Testimonials() {
   const [index, setIndex] = useState(0)
 
@@ -93,6 +100,23 @@ export function Testimonials() {
             </div>
             <span className="label-mono text-black/40">5/5 on Upwork</span>
           </div>
+        </ScrollReveal>
+
+        {/* results strip */}
+        <ScrollReveal variant="fade-up" className="mb-16">
+          <div className="grid grid-cols-2 gap-px border border-black/10 bg-black/10 sm:grid-cols-4">
+            {stats.map(([value, label]) => (
+              <div key={label} className="bg-[#f5f3ef] p-6 sm:p-7">
+                <div className="font-heading text-3xl font-black text-black sm:text-4xl">
+                  {value}
+                </div>
+                <div className="label-mono mt-2.5 text-black/45">{label}</div>
+              </div>
+            ))}
+          </div>
+          <p className="label-mono mt-4 text-black/35">
+            Real numbers from a recent MonoClick support build
+          </p>
         </ScrollReveal>
 
         {/* featured rotating quote */}

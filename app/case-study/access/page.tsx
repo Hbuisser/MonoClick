@@ -50,7 +50,7 @@ export default function CaseStudyAccessPage() {
               <video
                 controls
                 playsInline
-                poster="/henry-case-study.jpg"
+                poster="/support_demo.png"
                 className="aspect-video w-full bg-zinc-900"
               >
                 <source src="/case-study.mp4" type="video/mp4" />

@@ -42,20 +42,16 @@ export default function CaseStudyAccessPage() {
               </div>
             </div>
 
-            {/*
-              Video placeholder, drop your recording at `public/case-study.mp4`
-              (and optionally a poster frame). The player below picks it up automatically.
-            */}
             <div className="mt-5 overflow-hidden border border-zinc-200 bg-zinc-100">
-              <video
-                controls
-                playsInline
-                poster="/support_demo.png"
-                className="aspect-video w-full bg-zinc-900"
-              >
-                <source src="/case-study.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <div className="relative aspect-video w-full bg-zinc-900">
+                <iframe
+                  src="https://www.loom.com/embed/a983d918af0c4a9ba101217a1fb655fb"
+                  title="AI Support Agent case study"
+                  allow="fullscreen; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
+                />
+              </div>
             </div>
 
             {/* Takeaways: shown on desktop only, so mobile keeps the Apply CTA high. */}

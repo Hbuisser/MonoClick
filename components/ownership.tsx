@@ -23,19 +23,19 @@ const points = [
 
 export function Ownership() {
   return (
-    <section className="border-t border-white/10 bg-black py-24">
+    <section className="border-t border-black/10 bg-[#f5f3ef] py-24 text-black">
       <div className="editorial-max">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12">
           {/* sticky intro */}
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-[calc(var(--menu-height)+3rem)]">
               <ScrollReveal variant="slide-right">
-                <span className="label-mono mb-5 block text-sky-400">06 / Ownership</span>
-                <h2 className="display-title text-[clamp(2.25rem,5.4vw,4.4rem)] text-white">
+                <span className="label-mono mb-5 block text-blue-600">06 / Ownership</span>
+                <h2 className="display-title text-[clamp(2.25rem,5.4vw,4.4rem)] text-black">
                   You own it.{' '}
-                  <span className="serif-accent text-[1.04em] text-white/85">All of it.</span>
+                  <span className="serif-accent text-[1.04em] text-black/80">All of it.</span>
                 </h2>
-                <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/45">
+                <p className="mt-6 max-w-sm text-sm leading-relaxed text-black/55">
                   This is not software you rent. When we are done, the system, the code and
                   the automations are yours, running inside your own stack, with nothing
                   holding you hostage.
@@ -46,17 +46,17 @@ export function Ownership() {
 
           {/* points grid */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-px border border-black/10 bg-black/10 sm:grid-cols-2">
               {points.map((point, index) => (
                 <ScrollReveal key={point.title} variant="fade-up" delay={index * 0.06}>
-                  <div className="group h-full bg-black p-7 transition-colors duration-300 hover:bg-neutral-950">
-                    <span className="label-mono text-white/25 transition-colors duration-300 group-hover:text-sky-400">
+                  <div className="group h-full bg-[#f5f3ef] p-7 transition-colors duration-300 hover:bg-white">
+                    <span className="label-mono text-black/30 transition-colors duration-300 group-hover:text-blue-600">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <h3 className="mb-3 mt-4 font-heading text-lg font-black uppercase tracking-tight text-white">
+                    <h3 className="mb-3 mt-4 font-heading text-lg font-black uppercase tracking-tight text-black">
                       {point.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-white/50">{point.body}</p>
+                    <p className="text-sm leading-relaxed text-black/55">{point.body}</p>
                   </div>
                 </ScrollReveal>
               ))}

@@ -165,9 +165,272 @@ function buildAttributes() {
   return { scatter, target, delay, seed, dim }
 }
 
+// International ecommerce trade web: a curated set of real shipping lanes
+// between the world's major container ports, so every arc starts and ends at
+// an actual hub instead of fanning into a hairball. Trans-Pacific lanes
+// (including China down to South America) carry the most traffic, matching
+// reality and filling the otherwise empty ocean.
+type Hub = [number, number] // [lat, lng]
+
+const HUBS: Record<string, Hub> = {
+  shanghai: [31.23, 121.47],
+  shenzhen: [22.54, 114.06],
+  ningbo: [29.87, 121.55],
+  hongkong: [22.32, 114.17],
+  busan: [35.18, 129.08],
+  tokyo: [35.65, 139.84],
+  singapore: [1.29, 103.85],
+  mumbai: [19.08, 72.88],
+  dubai: [25.27, 55.3],
+  piraeus: [37.94, 23.65],
+  rotterdam: [51.95, 4.14],
+  hamburg: [53.55, 9.99],
+  felixstowe: [51.96, 1.35],
+  algeciras: [36.13, -5.44],
+  losangeles: [33.74, -118.27],
+  oakland: [37.8, -122.3],
+  seattle: [47.6, -122.33],
+  vancouver: [49.29, -123.12],
+  newyork: [40.67, -74.04],
+  savannah: [32.08, -81.1],
+  miami: [25.77, -80.19],
+  manzanillo: [19.05, -104.31],
+  callao: [-12.05, -77.14],
+  valparaiso: [-33.05, -71.61],
+  santos: [-23.96, -46.33],
+  buenosaires: [-34.6, -58.4],
+  durban: [-29.87, 31.02],
+  lagos: [6.45, 3.39],
+  sydney: [-33.87, 151.21],
+  auckland: [-36.84, 174.76],
+}
+
+const ROUTES: [string, string][] = [
+  // trans-Pacific: Asia -> North America
+  ['shanghai', 'losangeles'],
+  ['shenzhen', 'losangeles'],
+  ['ningbo', 'oakland'],
+  ['shanghai', 'seattle'],
+  ['busan', 'vancouver'],
+  ['tokyo', 'losangeles'],
+  ['hongkong', 'oakland'],
+  ['busan', 'losangeles'],
+  ['tokyo', 'seattle'],
+  ['shanghai', 'manzanillo'],
+  // trans-Pacific: Asia -> South America
+  ['shanghai', 'callao'],
+  ['ningbo', 'valparaiso'],
+  ['shenzhen', 'callao'],
+  ['hongkong', 'valparaiso'],
+  ['busan', 'callao'],
+  // Asia -> Europe
+  ['shanghai', 'rotterdam'],
+  ['shenzhen', 'hamburg'],
+  ['singapore', 'rotterdam'],
+  ['ningbo', 'felixstowe'],
+  ['singapore', 'piraeus'],
+  // Asia / Middle East / Africa
+  ['singapore', 'sydney'],
+  ['shanghai', 'sydney'],
+  ['singapore', 'durban'],
+  ['mumbai', 'dubai'],
+  ['dubai', 'piraeus'],
+  ['dubai', 'singapore'],
+  // trans-Atlantic
+  ['rotterdam', 'newyork'],
+  ['hamburg', 'savannah'],
+  ['felixstowe', 'miami'],
+  ['algeciras', 'santos'],
+  ['rotterdam', 'buenosaires'],
+  ['lagos', 'newyork'],
+  // Americas
+  ['manzanillo', 'callao'],
+  ['losangeles', 'valparaiso'],
+  ['miami', 'santos'],
+  ['newyork', 'savannah'],
+  // South Atlantic / Oceania
+  ['durban', 'santos'],
+  ['durban', 'lagos'],
+  ['losangeles', 'auckland'],
+  ['sydney', 'auckland'],
+]
+
+function buildRoutes(): [Hub, Hub][] {
+  return ROUTES.map(([from, to]) => [HUBS[from], HUBS[to]])
+}
+
+// deterministic per-route pseudo-random so pulses stagger instead of blinking
+// in unison, and so speeds/hues vary lane to lane
+function rand(n: number): number {
+  const x = Math.sin(n * 127.1 + 311.7) * 43758.5453
+  return x - Math.floor(x)
+}
+
+function latLngToVec3(latDeg: number, lngDeg: number): THREE.Vector3 {
+  const lat = (latDeg * Math.PI) / 180
+  const lng = (lngDeg * Math.PI) / 180
+  // matches decodeLandDots() so arcs land exactly on the continents
+  return new THREE.Vector3(
+    Math.cos(lat) * Math.sin(lng),
+    Math.sin(lat),
+    Math.cos(lat) * Math.cos(lng)
+  )
+}
+
+function buildTradeGeometry() {
+  const SEG = 64
+  // several arc strands per route: same hubs, slightly different bow and
+  // height, each with its own pulse timing — a busy lane, not one lone line
+  const STRANDS = 3
+  const routes = buildRoutes()
+  const positions: number[] = []
+  const aT: number[] = []
+  const aOffset: number[] = []
+  const aSpeed: number[] = []
+  const aHue: number[] = []
+
+  routes.forEach(([from, to], routeIdx) => {
+    const a = latLngToVec3(from[0], from[1])
+    const b = latLngToVec3(to[0], to[1])
+    const angle = a.angleTo(b)
+    const sinA = Math.sin(angle)
+    // sideways direction (perpendicular to the great-circle plane) used to
+    // splay the strands apart; ends stay pinned to the hubs
+    const side = new THREE.Vector3().crossVectors(a, b).normalize()
+
+    for (let s = 0; s < STRANDS; s++) {
+      const idx = routeIdx * STRANDS + s
+      // longer lanes arch higher off the surface, but stay close so the web
+      // hugs the globe rather than ballooning into a dome
+      const arcHeight = (0.08 + 0.14 * (angle / Math.PI)) * (0.8 + rand(idx + 200) * 0.5)
+      const lateral = (s - (STRANDS - 1) / 2) * (0.02 + rand(idx + 300) * 0.025)
+      const off = rand(idx)
+      const spd = 0.7 + rand(idx + 50) * 0.8
+      const hue = rand(idx + 100)
+
+      const pts: THREE.Vector3[] = []
+      for (let i = 0; i <= SEG; i++) {
+        const t = i / SEG
+        // great-circle slerp between the two surface points
+        const w0 = sinA < 1e-5 ? 1 - t : Math.sin((1 - t) * angle) / sinA
+        const w1 = sinA < 1e-5 ? t : Math.sin(t * angle) / sinA
+        const p = new THREE.Vector3(
+          a.x * w0 + b.x * w1,
+          a.y * w0 + b.y * w1,
+          a.z * w0 + b.z * w1
+        )
+        // bow this strand sideways, most at mid-arc, none at the hubs
+        p.addScaledVector(side, lateral * Math.sin(Math.PI * t)).normalize()
+        const lift = 1 + arcHeight * Math.sin(Math.PI * t)
+        p.multiplyScalar(RADIUS * lift)
+        pts.push(p)
+      }
+
+      // emit as line segments (vertex pairs) so it renders without <line>
+      for (let i = 0; i < SEG; i++) {
+        const p = pts[i]
+        const q = pts[i + 1]
+        positions.push(p.x, p.y, p.z, q.x, q.y, q.z)
+        aT.push(i / SEG, (i + 1) / SEG)
+        aOffset.push(off, off)
+        aSpeed.push(spd, spd)
+        aHue.push(hue, hue)
+      }
+    }
+  })
+
+  const geo = new THREE.BufferGeometry()
+  geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(positions), 3))
+  geo.setAttribute('aT', new THREE.BufferAttribute(new Float32Array(aT), 1))
+  geo.setAttribute('aOffset', new THREE.BufferAttribute(new Float32Array(aOffset), 1))
+  geo.setAttribute('aSpeed', new THREE.BufferAttribute(new Float32Array(aSpeed), 1))
+  geo.setAttribute('aHue', new THREE.BufferAttribute(new Float32Array(aHue), 1))
+  return geo
+}
+
+const ARC_VERT = /* glsl */ `
+attribute float aT;
+attribute float aOffset;
+attribute float aSpeed;
+attribute float aHue;
+varying float vFade;
+varying float vT;
+varying float vOffset;
+varying float vSpeed;
+varying float vHue;
+void main() {
+  vT = aT;
+  vOffset = aOffset;
+  vSpeed = aSpeed;
+  vHue = aHue;
+  vec4 mv = modelViewMatrix * vec4(position, 1.0);
+  // hide the lanes running across the far hemisphere, matching the dots
+  vFade = pow(smoothstep(7.8, 5.0, -mv.z), 1.3);
+  gl_Position = projectionMatrix * mv;
+}
+`
+
+const ARC_FRAG = /* glsl */ `
+uniform float uTime;
+uniform float uSpeed;
+uniform float uRepeat;
+varying float vFade;
+varying float vT;
+varying float vOffset;
+varying float vSpeed;
+varying float vHue;
+void main() {
+  // shipments streaming from origin (t=0) toward market (t=1); each lane
+  // staggered by its own offset and speed so the web pulses organically
+  float phase = vT * uRepeat - uTime * uSpeed * vSpeed + vOffset;
+  float comet = pow(fract(phase), 5.0);       // sharp head, fading tail
+  vec3 amber = vec3(1.0, 0.55, 0.18);
+  vec3 gold = vec3(1.0, 0.82, 0.36);
+  vec3 sky = vec3(0.35, 0.78, 0.99);          // a few cool lanes echo the brand
+  vec3 base = mix(amber, gold, vHue);
+  base = mix(base, sky, step(0.9, vHue) * 0.7);
+  vec3 hot = vec3(1.0, 0.95, 0.82);           // bright core of each pulse
+  vec3 col = mix(base, hot, comet);
+  float alpha = (0.06 + comet * 0.75) * vFade;
+  gl_FragColor = vec4(col, alpha);
+}
+`
+
+function TradeArcs() {
+  const mat = useRef<THREE.ShaderMaterial>(null)
+  const geometry = useMemo(buildTradeGeometry, [])
+  const uniforms = useMemo(
+    () => ({
+      uTime: { value: 0 },
+      uSpeed: { value: 0.3 },
+      uRepeat: { value: 1.5 },
+    }),
+    []
+  )
+
+  useFrame((state) => {
+    if (mat.current) uniforms.uTime.value = state.clock.elapsedTime
+  })
+
+  return (
+    <lineSegments geometry={geometry}>
+      <shaderMaterial
+        ref={mat}
+        vertexShader={ARC_VERT}
+        fragmentShader={ARC_FRAG}
+        uniforms={uniforms}
+        transparent
+        depthWrite={false}
+        blending={THREE.AdditiveBlending}
+      />
+    </lineSegments>
+  )
+}
+
 function ParticleGlobe({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
   const mat = useRef<THREE.ShaderMaterial>(null)
   const points = useRef<THREE.Points>(null)
+  const spin = useRef<THREE.Group>(null)
   const { pointer, gl } = useThree()
   const assemble = useRef(0)
   const mouse = useRef(new THREE.Vector2(0, 0))
@@ -248,37 +511,41 @@ function ParticleGlobe({ scrollRef }: { scrollRef: React.MutableRefObject<number
     uniforms.uMouseOn.value = strength.current
     uniforms.uAspect.value = state.size.width / state.size.height
 
-    if (points.current) {
-      // slow earth spin; the shader layers per-dot breathing on top
-      points.current.rotation.y += dt * 0.1
+    if (spin.current) {
+      // slow earth spin; the shader layers per-dot breathing on top. Both the
+      // dots and the trade arcs live under this group so they turn together.
+      spin.current.rotation.y += dt * 0.1
       // fill the right column on wide screens, but never overflow the canvas
       const wide = state.size.width > 900
-      const fit = (0.92 * Math.min(state.viewport.width, state.viewport.height)) / 2 / RADIUS
-      points.current.scale.setScalar(Math.min(wide ? 1.16 : 1, fit))
+      const fit = (0.72 * Math.min(state.viewport.width, state.viewport.height)) / 2 / RADIUS
+      spin.current.scale.setScalar(Math.min(wide ? 0.9 : 0.78, fit))
     }
   })
 
   return (
-    <group rotation={[0.22, 0, -0.16]}>
-      <points ref={points}>
-        <bufferGeometry>
-          <bufferAttribute attach="attributes-position" args={[scatter, 3]} />
-          <bufferAttribute attach="attributes-aScatter" args={[scatter, 3]} />
-          <bufferAttribute attach="attributes-aTarget" args={[target, 3]} />
-          <bufferAttribute attach="attributes-aDelay" args={[delay, 1]} />
-          <bufferAttribute attach="attributes-aSeed" args={[seed, 1]} />
-          <bufferAttribute attach="attributes-aDim" args={[dim, 1]} />
-        </bufferGeometry>
-        <shaderMaterial
-          ref={mat}
-          vertexShader={VERT}
-          fragmentShader={FRAG}
-          uniforms={uniforms}
-          transparent
-          depthWrite={false}
-          blending={THREE.AdditiveBlending}
-        />
-      </points>
+    <group position={[0.45, 0.28, 0]} rotation={[0.22, 0, -0.16]}>
+      <group ref={spin}>
+        <points ref={points}>
+          <bufferGeometry>
+            <bufferAttribute attach="attributes-position" args={[scatter, 3]} />
+            <bufferAttribute attach="attributes-aScatter" args={[scatter, 3]} />
+            <bufferAttribute attach="attributes-aTarget" args={[target, 3]} />
+            <bufferAttribute attach="attributes-aDelay" args={[delay, 1]} />
+            <bufferAttribute attach="attributes-aSeed" args={[seed, 1]} />
+            <bufferAttribute attach="attributes-aDim" args={[dim, 1]} />
+          </bufferGeometry>
+          <shaderMaterial
+            ref={mat}
+            vertexShader={VERT}
+            fragmentShader={FRAG}
+            uniforms={uniforms}
+            transparent
+            depthWrite={false}
+            blending={THREE.AdditiveBlending}
+          />
+        </points>
+        <TradeArcs />
+      </group>
     </group>
   )
 }

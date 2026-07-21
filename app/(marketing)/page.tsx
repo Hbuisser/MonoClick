@@ -3,6 +3,7 @@ import { Hero } from '@/components/hero'
 import { LogoStrip, PoweredBy } from '@/components/logo-strip'
 import { Problem } from '@/components/problem'
 import { ServicesEditorial } from '@/components/services-editorial'
+import { SupportDemo } from '@/components/support-demo'
 import { ShowcaseSites } from '@/components/showcase-sites'
 import { ProcessSteps } from '@/components/process-steps'
 import { Ownership } from '@/components/ownership'
@@ -33,6 +34,7 @@ export default function HomePage() {
       <LogoStrip />
       <Problem />
       <ServicesEditorial />
+      <SupportDemo />
       <ShowcaseSites />
       <PoweredBy />
       <Testimonials />

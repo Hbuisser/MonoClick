@@ -203,9 +203,12 @@ const HUBS: Record<string, Hub> = {
   lagos: [6.45, 3.39],
   sydney: [-33.87, 151.21],
   auckland: [-36.84, 174.76],
+  // mid-Pacific waypoint (not an endpoint) used to bow the China -> South
+  // America lanes south across the open ocean instead of hugging the north
+  hawaii: [21.3, -157.86],
 }
 
-const ROUTES: [string, string][] = [
+const ROUTES: ([string, string] | [string, string, string])[] = [
   // trans-Pacific: Asia -> North America
   ['shanghai', 'losangeles'],
   ['shenzhen', 'losangeles'],
@@ -217,12 +220,12 @@ const ROUTES: [string, string][] = [
   ['busan', 'losangeles'],
   ['tokyo', 'seattle'],
   ['shanghai', 'manzanillo'],
-  // trans-Pacific: Asia -> South America
-  ['shanghai', 'callao'],
-  ['ningbo', 'valparaiso'],
-  ['shenzhen', 'callao'],
-  ['hongkong', 'valparaiso'],
-  ['busan', 'callao'],
+  // trans-Pacific: Asia -> South America, bowed south over Hawaii
+  ['shanghai', 'callao', 'hawaii'],
+  ['ningbo', 'valparaiso', 'hawaii'],
+  ['shenzhen', 'callao', 'hawaii'],
+  ['hongkong', 'valparaiso', 'hawaii'],
+  ['busan', 'callao', 'hawaii'],
   // Asia -> Europe
   ['shanghai', 'rotterdam'],
   ['shenzhen', 'hamburg'],
@@ -255,8 +258,18 @@ const ROUTES: [string, string][] = [
   ['sydney', 'auckland'],
 ]
 
-function buildRoutes(): [Hub, Hub][] {
-  return ROUTES.map(([from, to]) => [HUBS[from], HUBS[to]])
+interface Route {
+  a: Hub
+  b: Hub
+  via?: Hub
+}
+
+function buildRoutes(): Route[] {
+  return ROUTES.map((r) => ({
+    a: HUBS[r[0]],
+    b: HUBS[r[1]],
+    via: r[2] ? HUBS[r[2]] : undefined,
+  }))
 }
 
 // deterministic per-route pseudo-random so pulses stagger instead of blinking
@@ -289,14 +302,18 @@ function buildTradeGeometry() {
   const aSpeed: number[] = []
   const aHue: number[] = []
 
-  routes.forEach(([from, to], routeIdx) => {
-    const a = latLngToVec3(from[0], from[1])
-    const b = latLngToVec3(to[0], to[1])
-    const angle = a.angleTo(b)
+  routes.forEach(({ a: from, b: to, via }, routeIdx) => {
+    const aV = latLngToVec3(from[0], from[1])
+    const bV = latLngToVec3(to[0], to[1])
+    const angle = aV.angleTo(bV)
     const sinA = Math.sin(angle)
     // sideways direction (perpendicular to the great-circle plane) used to
     // splay the strands apart; ends stay pinned to the hubs
-    const side = new THREE.Vector3().crossVectors(a, b).normalize()
+    const side = new THREE.Vector3().crossVectors(aV, bV).normalize()
+    // optional mid-ocean waypoint: a control point that bows the whole arc
+    // toward it (e.g. China -> South America sweeping south over Hawaii) while
+    // the endpoints stay pinned to the two hubs
+    const control = via ? latLngToVec3(via[0], via[1]).multiplyScalar(1.9) : null
 
     for (let s = 0; s < STRANDS; s++) {
       const idx = routeIdx * STRANDS + s
@@ -311,14 +328,25 @@ function buildTradeGeometry() {
       const pts: THREE.Vector3[] = []
       for (let i = 0; i <= SEG; i++) {
         const t = i / SEG
-        // great-circle slerp between the two surface points
-        const w0 = sinA < 1e-5 ? 1 - t : Math.sin((1 - t) * angle) / sinA
-        const w1 = sinA < 1e-5 ? t : Math.sin(t * angle) / sinA
-        const p = new THREE.Vector3(
-          a.x * w0 + b.x * w1,
-          a.y * w0 + b.y * w1,
-          a.z * w0 + b.z * w1
-        )
+        let p: THREE.Vector3
+        if (control) {
+          // quadratic Bézier through the waypoint, projected onto the sphere
+          const u = 1 - t
+          p = new THREE.Vector3()
+            .addScaledVector(aV, u * u)
+            .addScaledVector(control, 2 * u * t)
+            .addScaledVector(bV, t * t)
+            .normalize()
+        } else {
+          // great-circle slerp between the two surface points
+          const w0 = sinA < 1e-5 ? 1 - t : Math.sin((1 - t) * angle) / sinA
+          const w1 = sinA < 1e-5 ? t : Math.sin(t * angle) / sinA
+          p = new THREE.Vector3(
+            aV.x * w0 + bV.x * w1,
+            aV.y * w0 + bV.y * w1,
+            aV.z * w0 + bV.z * w1
+          )
+        }
         // bow this strand sideways, most at mid-arc, none at the hubs
         p.addScaledVector(side, lateral * Math.sin(Math.PI * t)).normalize()
         const lift = 1 + arcHeight * Math.sin(Math.PI * t)
@@ -349,6 +377,7 @@ function buildTradeGeometry() {
 }
 
 const ARC_VERT = /* glsl */ `
+uniform float uScatter;   // scroll-driven dissolve 0 -> 1, matches the dots
 attribute float aT;
 attribute float aOffset;
 attribute float aSpeed;
@@ -363,7 +392,12 @@ void main() {
   vOffset = aOffset;
   vSpeed = aSpeed;
   vHue = aHue;
-  vec4 mv = modelViewMatrix * vec4(position, 1.0);
+  // on scroll, blow the lanes outward off the globe and let them fall — the
+  // web breaks apart and drifts away rather than just dimming in place, so it
+  // dissolves in step with the dots
+  vec3 pos = position * (1.0 + uScatter * 1.4);
+  pos.y -= uScatter * uScatter * 1.3;
+  vec4 mv = modelViewMatrix * vec4(pos, 1.0);
   // hide the lanes running across the far hemisphere, matching the dots
   vFade = pow(smoothstep(7.8, 5.0, -mv.z), 1.3);
   gl_Position = projectionMatrix * mv;
@@ -374,6 +408,7 @@ const ARC_FRAG = /* glsl */ `
 uniform float uTime;
 uniform float uSpeed;
 uniform float uRepeat;
+uniform float uScatter;   // scroll-driven dissolve 0 -> 1, matches the dots
 varying float vFade;
 varying float vT;
 varying float vOffset;
@@ -391,12 +426,12 @@ void main() {
   base = mix(base, sky, step(0.9, vHue) * 0.7);
   vec3 hot = vec3(1.0, 0.95, 0.82);           // bright core of each pulse
   vec3 col = mix(base, hot, comet);
-  float alpha = (0.06 + comet * 0.75) * vFade;
+  float alpha = (0.06 + comet * 0.75) * vFade * (1.0 - uScatter);
   gl_FragColor = vec4(col, alpha);
 }
 `
 
-function TradeArcs() {
+function TradeArcs({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
   const mat = useRef<THREE.ShaderMaterial>(null)
   const geometry = useMemo(buildTradeGeometry, [])
   const uniforms = useMemo(
@@ -404,12 +439,21 @@ function TradeArcs() {
       uTime: { value: 0 },
       uSpeed: { value: 0.3 },
       uRepeat: { value: 1.5 },
+      uScatter: { value: 0 },
     }),
     []
   )
 
-  useFrame((state) => {
-    if (mat.current) uniforms.uTime.value = state.clock.elapsedTime
+  useFrame((state, dt) => {
+    if (!mat.current) return
+    uniforms.uTime.value = state.clock.elapsedTime
+    // dissolve on scroll in lockstep with the dots
+    uniforms.uScatter.value = THREE.MathUtils.damp(
+      uniforms.uScatter.value,
+      Math.min(1, scrollRef.current * 1.35),
+      3,
+      dt
+    )
   })
 
   return (
@@ -548,7 +592,7 @@ function ParticleGlobe({ scrollRef }: { scrollRef: React.MutableRefObject<number
             blending={THREE.AdditiveBlending}
           />
         </points>
-        <TradeArcs />
+        <TradeArcs scrollRef={scrollRef} />
       </group>
     </group>
   )

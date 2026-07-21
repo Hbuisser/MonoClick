@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, ArrowUpRight, Check, Clock } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
 import { CTABanner } from '@/components/cta-banner'
@@ -33,7 +33,6 @@ const services = [
       '50% reduction in average handle time',
       'Higher CSAT, around the clock'
     ],
-    timeline: '10 working days',
     technologies: ['OpenAI', 'Anthropic', 'n8n', 'Gorgias', 'Zendesk']
   },
   {
@@ -54,7 +53,6 @@ const services = [
       'A pipeline of tested creative angles',
       'Faster concept-to-launch cycles'
     ],
-    timeline: '10 working days',
     technologies: ['Meta Ads API', 'Anthropic', 'n8n', 'Reddit', 'Trustpilot'],
     highlight: true
   },
@@ -76,7 +74,6 @@ const services = [
       'An always-full content calendar',
       'Consistent brand presence across channels'
     ],
-    timeline: '10 working days',
     technologies: ['Anthropic', 'n8n', 'Image & video AI', 'Meta', 'TikTok']
   },
   {
@@ -97,7 +94,6 @@ const services = [
       'Launch in a fraction of agency time and cost',
       'Craft that turns browsers into buyers'
     ],
-    timeline: '10 working days',
     technologies: ['Three.js / WebGL', 'React', 'Shopify', 'AI photography & video', 'Vercel'],
     examples: [
       {
@@ -141,7 +137,6 @@ const services = [
       '< 10 second response time',
       '30% increase in conversion rate'
     ],
-    timeline: '10 working days',
     technologies: ['OpenAI', 'n8n', 'Shopify', 'WooCommerce', 'Anthropic']
   }
 ]
@@ -207,7 +202,7 @@ export default function ServicesPage() {
         />
         <div className="editorial-max relative">
           <ScrollReveal variant="fade-up">
-            <p className="label-mono mb-6 text-sky-400">Our services</p>
+            <p className="label-mono mb-6 text-sky-400">Our solutions</p>
             <h1 className="display-title max-w-5xl text-[clamp(2.6rem,7.5vw,6rem)] text-white">
               AI growth systems
               <br />
@@ -267,11 +262,17 @@ export default function ServicesPage() {
       <section className="bg-black">
         {services.map((service, index) => {
           const num = String(index + 1).padStart(2, '0')
+          const slug = service.title
+            .toLowerCase()
+            .replace(/^ai /, '')
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/(^-|-$)/g, '')
           return (
             <RevealSection
               key={service.title}
+              id={slug}
               variant="fade-up"
-              className="border-b border-white/10 py-20"
+              className="scroll-mt-[var(--menu-height)] border-b border-white/10 py-20"
             >
               <div className="editorial-max">
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
@@ -296,10 +297,6 @@ export default function ServicesPage() {
                         <p className="mt-5 max-w-md text-sm leading-relaxed text-white/50">
                           {service.description}
                         </p>
-                        <div className="label-mono mt-6 flex items-center gap-2 text-white/35">
-                          <Clock className="h-3.5 w-3.5" />
-                          {service.timeline}
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -343,26 +340,15 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    <div className="mt-10 flex flex-wrap items-center justify-between gap-6 border-t border-white/10 pt-6">
-                      <div className="flex flex-wrap gap-2">
-                        {service.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="label-mono border border-white/10 px-2.5 py-1.5 text-white/45"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      <Link
-                        href="https://calendly.com/henrybuisseret/30min"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-2 border-b border-white/25 pb-1 text-xs font-medium uppercase tracking-[0.14em] text-white/70 transition-colors hover:border-sky-400 hover:text-sky-400"
-                      >
-                        Book a free call
-                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-                      </Link>
+                    <div className="mt-10 flex flex-wrap items-center gap-2 border-t border-white/10 pt-6">
+                      {service.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="label-mono border border-white/10 px-2.5 py-1.5 text-white/45"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>

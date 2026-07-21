@@ -8,11 +8,25 @@ import { MonoClickLogoMark } from '@/components/MonoClickLogoMark'
 import { ScrollReveal } from '@/components/scroll-reveal'
 
 const navigation = {
+  systems: [
+    { name: 'AI Support Agent', href: '/services#support-agent' },
+    { name: 'AI Creative Agent', href: '/services#creative-agent' },
+    { name: 'AI Content Agent', href: '/services#content-agent' },
+    { name: 'AI Design Agent', href: '/services#design-agent' },
+    { name: 'AI Chatbots', href: '/services#chatbots' },
+  ],
   company: [
     { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
+    { name: 'Solutions', href: '/services' },
+    { name: 'Work', href: '/work' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
+  ],
+  builtFor: [
+    { name: 'Eight & nine-figure brands', href: '/about' },
+    { name: 'DTC & supplements', href: '/services' },
+    { name: 'Fashion & apparel', href: '/work' },
+    { name: 'Book an audit call', href: '/contact' },
   ],
   legal: [
     { name: 'Privacy Policy', href: '/privacy' },
@@ -28,12 +42,18 @@ const navigation = {
   ],
 }
 
+const linkColumns = [
+  { heading: 'Systems', links: navigation.systems },
+  { heading: 'Company', links: navigation.company },
+  { heading: 'Built for', links: navigation.builtFor },
+]
+
 export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-black px-6 pt-16">
       <div className="editorial-max">
-        <div className="grid grid-cols-1 gap-12 pb-16 lg:grid-cols-12 lg:gap-8">
-          <ScrollReveal variant="fade-up" className="lg:col-span-5">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 pb-16 lg:grid-cols-12 lg:gap-8">
+          <ScrollReveal variant="fade-up" className="col-span-2 lg:col-span-4">
             <Link href="/" className="mb-6 flex items-center gap-2.5">
               <motion.div whileHover={{ scale: 1.03 }}>
                 <MonoClickLogoMark />
@@ -43,9 +63,9 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="mb-8 max-w-md text-sm leading-relaxed text-white/45">
-              Custom AI growth systems for ecommerce brands. A support agent, a creative agent for
-              your Meta ads, a content agent, a design agent, and chatbots, delivered in 10
-              working days.
+              Custom AI systems for eight and nine-figure ecommerce brands. A team of AI agents
+              for support, creative, content, and retention, built around your stack, owned by
+              your brand, and live in 10 working days.
             </p>
             <div className="space-y-3">
               <a
@@ -57,34 +77,41 @@ export function SiteFooter() {
               </a>
               <div className="flex items-center gap-3 text-sm text-white/50">
                 <MapPin className="h-4 w-4 text-sky-400/70" />
-                <span>EU &amp; US</span>
+                <span>Belgium, Brussels</span>
               </div>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal variant="fade-up" delay={0.06} className="lg:col-span-3">
-            <h3 className="label-mono mb-6 text-white/35">Company</h3>
-            <ul className="space-y-3">
-              {navigation.company.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="inline-block text-sm text-white/50 transition-colors hover:text-white"
-                  >
-                    <motion.span
-                      className="inline-block"
-                      whileHover={{ x: 4 }}
-                      transition={{ duration: 0.2 }}
+          {linkColumns.map((column, colIndex) => (
+            <ScrollReveal
+              key={column.heading}
+              variant="fade-up"
+              delay={0.06 + colIndex * 0.04}
+              className="col-span-1 lg:col-span-2"
+            >
+              <h3 className="label-mono mb-6 text-white/35">{column.heading}</h3>
+              <ul className="space-y-3">
+                {column.links.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="inline-block text-sm text-white/50 transition-colors hover:text-white"
                     >
-                      {item.name}
-                    </motion.span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </ScrollReveal>
+                      <motion.span
+                        className="inline-block"
+                        whileHover={{ x: 4 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {item.name}
+                      </motion.span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+          ))}
 
-          <ScrollReveal variant="fade-up" delay={0.1} className="lg:col-span-4">
+          <ScrollReveal variant="fade-up" delay={0.18} className="col-span-1 lg:col-span-2">
             <h3 className="label-mono mb-6 text-white/35">Legal</h3>
             <ul className="mb-10 space-y-3">
               {navigation.legal.map((item) => (
@@ -142,7 +169,7 @@ export function SiteFooter() {
           <p className="label-mono text-white/25">
             © {new Date().getFullYear()} MonoClick, All rights reserved
           </p>
-          <p className="label-mono text-white/25">
+          {/* <p className="label-mono text-white/25">
             Designed &amp; rebuilt live by{' '}
             <a
               href="https://www.anthropic.com/claude"
@@ -153,7 +180,7 @@ export function SiteFooter() {
               Claude (Fable 5)
             </a>{' '}
             × MonoClick
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

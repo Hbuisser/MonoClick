@@ -11,14 +11,14 @@ import { Magnetic } from '@/components/fx/magnetic'
 
 export const metadata: Metadata = createMetadata({
   title: 'About Our AI Automation Agency for Ecommerce',
-  description: 'MonoClick is an AI automation agency specializing in ecommerce growth systems. We deliver an AI support agent, an AI creative agent for your Meta ads, an AI content agent, an AI design agent, and AI chatbots for fast-moving ecommerce brands.',
+  description: 'MonoClick is an AI automation agency building custom AI systems for eight and nine-figure ecommerce brands. AI agents for support, creative, content, and retention, custom-built, owned by your brand, and measured in ROI.',
   path: '/about'
 })
 
 const stats = [
-  { label: 'Clients served', value: '10+' },
-  { label: 'Custom automations', value: '10+' },
-  { label: 'Hours saved weekly', value: '50+' },
+  { label: 'Ecommerce brands served', value: '20+' },
+  { label: 'Custom automations shipped', value: '20+' },
+  { label: 'Hours saved weekly', value: '100+' },
 ]
 
 const values = [
@@ -26,19 +26,19 @@ const values = [
     title: 'Ecommerce-focused',
     accent: 'not one-size-fits-all',
     description:
-      'We build custom AI systems tailored to fast-moving ecommerce brands. Every solution is designed for your specific products, customers, and workflows, not generic one-size-fits-all tools.',
+      'We build for eight and nine-figure ecommerce brands. Every system is designed around your specific products, customers, and workflows, never a generic tool bent to fit.',
   },
   {
     title: 'AI-powered growth',
     accent: 'sell more, work less',
     description:
-      'We leverage AI support agents, AI ad creative, content automation, AI-designed storefronts, and chatbots to help ecommerce brands scale smarter and sell more.',
+      'AI agents run the repetitive work across support, creative, content, and retention, so your team scales output without scaling headcount.',
   },
   {
     title: 'ROI-driven',
     accent: 'measured in revenue',
     description:
-      'Every AI system is built to save time, reduce support costs, or increase conversions. We focus on delivering measurable business impact that drives revenue growth.',
+      'Every system is built to save time, cut support cost, or lift conversion. If it does not move a number that matters to your P&L, we do not ship it.',
   },
 ]
 
@@ -46,17 +46,17 @@ const differentiators = [
   {
     title: 'No generic tools',
     description:
-      'We build custom automations that fit your specific workflows and tech stack. Every solution is tailored to your business needs.',
+      'We build custom automations wired into your exact workflows and tech stack. You own the system, not a seat in someone else’s software.',
   },
   {
     title: 'Proven results',
     description:
-      'Our automations save time, reduce costs, and generate revenue. We focus on delivering measurable ROI for your business.',
+      'Real outcomes, not demos. A recent support build scaled from 200 to 1,500 tickets a day handled, while the team shrank from nine people to five.',
   },
   {
     title: 'Ecommerce-native AI',
     description:
-      'We leverage cutting-edge AI to build support agents, ad creative, content automation, entire storefronts, and chatbots tailored for fast-moving ecommerce brands.',
+      'We build for the way eight and nine-figure ecommerce brands actually operate: high volume, fast moving, and running on Shopify, Gorgias, Meta, and the rest of your stack.',
   },
   {
     title: 'End-to-end service',
@@ -89,10 +89,10 @@ export default function AboutPage() {
               <span className="serif-accent text-[1.02em] text-white/85">studio.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
-              MonoClick is a specialized AI automation agency delivering custom AI growth
-              systems for fast-moving ecommerce brands. We build an AI support agent, an AI
-              creative agent for your Meta ads, an AI content agent, an AI design agent, and AI
-              chatbots.
+              MonoClick builds custom AI systems for eight and nine-figure ecommerce brands.
+              Not another tool to rent, a team of AI agents built around your products and your
+              stack, running support, creative, content, and retention so your operation scales
+              as fast as your revenue.
             </p>
           </ScrollReveal>
 
@@ -119,22 +119,21 @@ export default function AboutPage() {
               </h2>
               <div className="mt-8 max-w-xl space-y-5 text-sm leading-relaxed text-black/65">
                 <p>
-                  MonoClick is an AI automation agency founded to help ecommerce brands scale
-                  smarter with AI-powered growth systems. We specialize in done-for-you AI
-                  solutions that save time, reduce costs, and drive revenue growth.
+                  MonoClick is an AI automation agency built for one problem: eight and
+                  nine-figure ecommerce brands whose revenue scales faster than their operation.
+                  More orders, more tickets, more creative, more tools, none of them talking to
+                  each other.
                 </p>
                 <p>
-                  From an AI support agent for Gorgias/Zendesk to an AI creative agent that
-                  analyzes your Meta ads and generates new concepts, an AI content agent that
-                  publishes to social, an AI design agent that builds your storefront, and AI
-                  chatbots trained on your products, we build custom systems that integrate
-                  seamlessly with your ecommerce stack.
+                  We fix that with custom AI systems, not generic software. AI agents that
+                  resolve support tickets, analyze and generate Meta ad creative, publish
+                  content, and win back customers, all built around your products and wired into
+                  the stack you already run.
                 </p>
                 <p>
-                  Our clients include fast-moving ecommerce brands, DTC companies, and growing
-                  online retailers across Europe and globally who need AI automation that
-                  delivers measurable ROI. We don&apos;t sell generic software, every system is
-                  custom-built for your specific needs.
+                  Our clients are fast-moving DTC and ecommerce brands across Europe and beyond
+                  that have outgrown off-the-shelf tools. Every system we ship is custom-built,
+                  owned by your brand, and measured on one thing: the time and revenue it returns.
                 </p>
               </div>
             </div>

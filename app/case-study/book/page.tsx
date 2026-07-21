@@ -43,7 +43,7 @@ export default async function BookPage() {
         </h1>
         <p className="mt-4 max-w-xl text-zinc-500">
           A {BOOKING_CONFIG.callLabel.toLowerCase()} to look at your support volume together and see
-          if an AI Support Agent is worth it for your brand. No obligation.
+          if an AI Support Agent is worth it for your brand.
         </p>
 
         <div className="mt-9">

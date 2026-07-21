@@ -27,7 +27,7 @@ export function CTABanner() {
             </h2>
             <p className="mx-auto mt-8 max-w-xl text-sm leading-relaxed text-white/50">
               Book a 30-minute audit. We&apos;ll find your biggest bottleneck, map the system
-              that fixes it, and hand you a rough ROI and timeline. No obligation.
+              that fixes it, and hand you a rough ROI and timeline.
             </p>
           </ScrollReveal>
 

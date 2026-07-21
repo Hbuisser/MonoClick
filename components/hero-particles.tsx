@@ -430,6 +430,7 @@ function TradeArcs() {
 function ParticleGlobe({ scrollRef }: { scrollRef: React.MutableRefObject<number> }) {
   const mat = useRef<THREE.ShaderMaterial>(null)
   const points = useRef<THREE.Points>(null)
+  const root = useRef<THREE.Group>(null)
   const spin = useRef<THREE.Group>(null)
   const { pointer, gl } = useThree()
   const assemble = useRef(0)
@@ -519,11 +520,14 @@ function ParticleGlobe({ scrollRef }: { scrollRef: React.MutableRefObject<number
       const wide = state.size.width > 900
       const fit = (0.72 * Math.min(state.viewport.width, state.viewport.height)) / 2 / RADIUS
       spin.current.scale.setScalar(Math.min(wide ? 0.9 : 0.78, fit))
+      // the rightward nudge suits the desktop split layout only; on mobile the
+      // canvas spans the full hero, so keep the globe centered
+      if (root.current) root.current.position.x = wide ? 0.45 : 0
     }
   })
 
   return (
-    <group position={[0.45, 0.28, 0]} rotation={[0.22, 0, -0.16]}>
+    <group ref={root} position={[0.45, 0.28, 0]} rotation={[0.22, 0, -0.16]}>
       <group ref={spin}>
         <points ref={points}>
           <bufferGeometry>

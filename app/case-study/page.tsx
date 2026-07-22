@@ -44,7 +44,7 @@ export default function CaseStudyLandingPage() {
           <ScrollReveal variant="fade-up" className="order-1">
             <div className="group relative aspect-video overflow-hidden border border-zinc-200">
               <Image
-                src="/support_demo.png"
+                src="/new_case_study.png"
                 alt="AI Support Agent case study, live ticket resolution demo"
                 fill
                 priority

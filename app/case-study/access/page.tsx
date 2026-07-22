@@ -45,7 +45,7 @@ export default function CaseStudyAccessPage() {
             <div className="mt-5 overflow-hidden border border-zinc-200 bg-zinc-100">
               <div className="relative aspect-video w-full bg-zinc-900">
                 <iframe
-                  src="https://www.loom.com/embed/a983d918af0c4a9ba101217a1fb655fb"
+                  src="https://www.loom.com/embed/9b49b4dee5e845fb9dfd5911715dbcd3"
                   title="AI Support Agent case study"
                   allow="fullscreen; picture-in-picture"
                   allowFullScreen

@@ -5,6 +5,7 @@ import { Problem } from '@/components/problem'
 import { ServicesEditorial } from '@/components/services-editorial'
 import { SupportDemo } from '@/components/support-demo'
 import { ShowcaseSites } from '@/components/showcase-sites'
+import { ShowcaseReel } from '@/components/showcase-reel'
 import { ProcessSteps } from '@/components/process-steps'
 import { Ownership } from '@/components/ownership'
 import { Pricing } from '@/components/pricing'
@@ -36,6 +37,7 @@ export default function HomePage() {
       <ServicesEditorial />
       <SupportDemo />
       <ShowcaseSites />
+      <ShowcaseReel />
       <PoweredBy />
       <Testimonials />
       <ProcessSteps />

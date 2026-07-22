@@ -65,7 +65,11 @@
       "Bash(git push *)",
       "Bash(xargs kill)",
       "Bash(git commit -m 'feat: rebalance hero composition + redesign services, workshop, about, contact pages *)",
-      "Bash(node cue-check.mjs)"
+      "Bash(node cue-check.mjs)",
+      "mcp__claude_ai_Higgs__generate_image",
+      "mcp__claude_ai_Higgs__models_explore",
+      "Bash(cd /Users/henrybuisseret/Code/fable-showcase/meridian && npm run build 2>&1 | tail -12)",
+      "Read(//Users/henrybuisseret/Code/fable-showcase/meridian/**)"
     ],
     "additionalDirectories": [
       "/Users/henrybuisseret/Code/fable-showcase/cendre/src",

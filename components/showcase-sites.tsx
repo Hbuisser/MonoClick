@@ -33,6 +33,33 @@ const sites = [
       'Wabi-sabi calm, washi paper textures, ink-brush animations that draw themselves, an AI-animated pottery wheel film and museum-grade product imagery.',
     tags: ['Editorial motion', 'AI cinemagraph', 'Bilingual typography'],
   },
+  {
+    name: 'MERIDIAN',
+    url: 'https://fable-meridian-watches.vercel.app',
+    tagline: 'Independent horology maison',
+    image: '/showcase/meridian.jpg',
+    description:
+      'Blueprint minimalism on drafting paper, a procedural 3D watch calibre that disassembles as you scroll, engineering annotations, and technical drawings that draw themselves in SVG.',
+    tags: ['Scroll-driven 3D', 'Procedural WebGL', 'AI macro photography'],
+  },
+  {
+    name: 'SOLEA',
+    url: 'https://fable-solea.vercel.app',
+    tagline: 'Riviera eyewear in living color',
+    image: '/showcase/solea.jpg',
+    description:
+      'A gradient sky painted live in a custom WebGL shader, four lens tints that recolor the entire site in real time, kinetic marquees and AI photography soaked in 1970s sun.',
+    tags: ['Live theming', 'Custom shader sky', 'Kinetic type'],
+  },
+  {
+    name: 'VOLTA',
+    url: 'https://fable-volta.vercel.app',
+    tagline: 'Analog synthesizers you can play',
+    image: '/showcase/volta.jpg',
+    description:
+      'A store that makes sound: a playable synth keyboard, drum pads and a live oscilloscope, every tone synthesized in the browser with WebAudio. No samples, no recordings.',
+    tags: ['WebAudio synthesis', 'Live oscilloscope', 'AI film loop'],
+  },
 ]
 
 export function ShowcaseSites() {

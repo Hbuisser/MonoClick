@@ -5,6 +5,7 @@ import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
 import { CTABanner } from '@/components/cta-banner'
+import { ReelExamples } from '@/components/reel-examples'
 import { RevealSection, ScrollReveal } from '@/components/scroll-reveal'
 import { Magnetic } from '@/components/fx/magnetic'
 
@@ -116,6 +117,27 @@ const services = [
         url: 'https://fable-tsuchi.vercel.app',
         image: '/showcase/tsuchi.jpg',
         note: 'Washi textures, self-drawing ink-brush motion, AI cinemagraph.',
+      },
+      {
+        name: 'MERIDIAN',
+        tagline: 'Independent horology maison',
+        url: 'https://fable-meridian-watches.vercel.app',
+        image: '/showcase/meridian.jpg',
+        note: 'Procedural 3D calibre that disassembles on scroll, animated technical drawings.',
+      },
+      {
+        name: 'SOLEA',
+        tagline: 'Riviera eyewear in living color',
+        url: 'https://fable-solea.vercel.app',
+        image: '/showcase/solea.jpg',
+        note: 'Live WebGL gradient sky, four lens tints that recolor the entire site.',
+      },
+      {
+        name: 'VOLTA',
+        tagline: 'Analog synthesizers you can play',
+        url: 'https://fable-volta.vercel.app',
+        image: '/showcase/volta.jpg',
+        note: 'Playable keys and drum pads, every sound synthesized live in WebAudio.',
       },
     ],
   },
@@ -352,6 +374,8 @@ export default function ServicesPage() {
                     </div>
                   </div>
                 </div>
+
+                {service.title === 'AI Content Agent' && <ReelExamples />}
 
                 {'examples' in service && service.examples && (
                   <div className="mt-14 border-t border-white/10 pt-10">

@@ -32,6 +32,30 @@ const films = [
       'A nebula of gold dust collapses into gears; a skeleton watch assembles itself in zero gravity and settles over liquid chrome.',
     tags: ['Otherworldly animation', 'Zero-g assembly', 'Liquid chrome'],
   },
+  {
+    id: 'ember',
+    name: 'EMBER',
+    tagline: 'Small CPG · hot sauce',
+    description:
+      'A chili hits the pot, sauce hits the fried chicken, flames hit the bottle. A 1974 TV spot that never existed, wah-wah guitar included.',
+    tags: ['Retro 16mm look', 'Kodachrome grade', '70s funk type'],
+  },
+  {
+    id: 'nimbus',
+    name: 'NIMBUS',
+    tagline: 'Footwear · sneakers',
+    description:
+      'A sneaker falls through cotton-candy clouds and lands like a pillow. The whole film breathes at 60 bpm. Walk on air.',
+    tags: ['Pastel dream 3D', 'Cloud physics', 'Soft motion design'],
+  },
+  {
+    id: 'morrow',
+    name: 'MORROW',
+    tagline: 'Lifestyle CPG · coffee',
+    description:
+      'Golden morning light, blooming grounds, cream folding like weather, two hands around a warm mug while it snows outside.',
+    tags: ['Natural light film', 'Human warmth', 'Macro steam'],
+  },
 ]
 
 export function ShowcaseReel() {
@@ -65,11 +89,11 @@ export function ShowcaseReel() {
           <h2 className="display-title max-w-4xl text-[clamp(2.25rem,6vw,5rem)] text-white">
             The same agent shoots films.{' '}
             <span className="serif-accent text-[1.04em] text-white/70">
-              Three spots, thirty seconds, zero cameras.
+              Six spots, sixty seconds, zero cameras.
             </span>
           </h2>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/50">
-            Three 10 second commercials for three invented brands. Product design,
+            Six 10 second commercials for six invented brands. Product design,
             cinematography, animation, edit, color grade, typography, music and sound,
             produced end to end by our AI Film Studio. This is the engine the Content
             Agent points at your catalog. Sound on.

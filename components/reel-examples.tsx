@@ -24,6 +24,24 @@ const films = [
     tagline: 'High-ticket · watches',
     note: 'A skeleton watch assembles itself in zero gravity over liquid chrome.',
   },
+  {
+    id: 'ember',
+    name: 'EMBER',
+    tagline: 'Small CPG · hot sauce',
+    note: 'A 1974 TV spot that never existed: 16mm grain, flames, funk.',
+  },
+  {
+    id: 'nimbus',
+    name: 'NIMBUS',
+    tagline: 'Footwear · sneakers',
+    note: 'A sneaker falls through pastel clouds and lands like a pillow.',
+  },
+  {
+    id: 'morrow',
+    name: 'MORROW',
+    tagline: 'Lifestyle · coffee',
+    note: 'Golden morning light, blooming grounds, warm hands, quiet snow.',
+  },
 ]
 
 export function ReelExamples() {

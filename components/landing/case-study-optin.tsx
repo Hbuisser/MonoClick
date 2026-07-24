@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { ArrowRight, Loader2, Lock } from 'lucide-react'
 
@@ -15,21 +15,19 @@ import { Magnetic } from '@/components/fx/magnetic'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-type CaseStudyOptinProps = {
-  /** Overrides the CTA button label. */
-  label?: string
-  className?: string
-}
+const OptinContext = createContext<(() => void) | null>(null)
 
 /**
- * "Get Your Case Study Now" CTA. Opens a modal that captures the visitor's
- * email, forwards it to the lead webhook, then sends them to the case-study
- * video page (`/case-study/access`).
+ * Provides a single shared email-capture modal. Any descendant trigger
+ * (the CTA button, the video thumbnail, …) opens the same dialog, which
+ * forwards the email to the lead webhook then sends the visitor to the
+ * case-study video page (`/case-study/access`).
  */
-export function CaseStudyOptin({
-  label = 'Get Your Case Study Now',
-  className,
-}: CaseStudyOptinProps) {
+export function CaseStudyOptinProvider({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [email, setEmail] = useState('')
@@ -71,17 +69,8 @@ export function CaseStudyOptin({
   }
 
   return (
-    <>
-      <Magnetic className={className}>
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="group inline-flex items-center gap-3 bg-blue-600 px-7 py-4 text-sm font-semibold text-white transition-colors duration-200 hover:bg-blue-700"
-        >
-          {label}
-          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-        </button>
-      </Magnetic>
+    <OptinContext.Provider value={() => setOpen(true)}>
+      {children}
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="border-zinc-200 bg-white text-zinc-900 shadow-2xl">
@@ -92,9 +81,9 @@ export function CaseStudyOptin({
             <DialogTitle className="font-heading text-2xl font-black uppercase tracking-tight text-zinc-900">
               Enter your email to get instant access to the case study
             </DialogTitle>
-            <DialogDescription className="text-zinc-500">
+            {/* <DialogDescription className="text-zinc-500">
               We&apos;ll send you the case study and unlock it right now, no waiting.
-            </DialogDescription>
+            </DialogDescription> */}
           </DialogHeader>
 
           <form onSubmit={handleSubmit} className="mt-2 space-y-3">
@@ -134,11 +123,68 @@ export function CaseStudyOptin({
 
             <p className="flex items-center justify-center gap-1.5 text-center text-xs text-zinc-400">
               <Lock className="h-3 w-3" />
-              Your email is safe. No spam, unsubscribe anytime.
+              Your email is safe. Unsubscribe anytime.
             </p>
           </form>
         </DialogContent>
       </Dialog>
-    </>
+    </OptinContext.Provider>
+  )
+}
+
+type CaseStudyOptinProps = {
+  /** Overrides the CTA button label. */
+  label?: string
+  className?: string
+}
+
+/**
+ * "Get Your Case Study Now" CTA. Opens the shared email-capture modal
+ * provided by {@link CaseStudyOptinProvider}.
+ */
+export function CaseStudyOptin({
+  label = 'Get Your Case Study Now',
+  className,
+}: CaseStudyOptinProps) {
+  const openOptin = useContext(OptinContext)
+
+  return (
+    <Magnetic className={className}>
+      <button
+        type="button"
+        onClick={() => openOptin?.()}
+        className="group inline-flex items-center gap-3 bg-blue-600 px-7 py-4 text-sm font-semibold text-white transition-colors duration-200 hover:bg-blue-700"
+      >
+        {label}
+        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+      </button>
+    </Magnetic>
+  )
+}
+
+/**
+ * Wraps arbitrary content (e.g. the video thumbnail) so clicking it opens
+ * the same email-capture modal as the CTA button.
+ */
+export function CaseStudyOptinTrigger({
+  children,
+  className,
+  'aria-label': ariaLabel,
+}: {
+  children: React.ReactNode
+  className?: string
+  'aria-label'?: string
+}) {
+  const openOptin = useContext(OptinContext)
+
+  return (
+    <button
+      type="button"
+      onClick={() => openOptin?.()}
+      aria-label={ariaLabel}
+      className={className}
+    >
+      {children}
+    </button>
   )
 }

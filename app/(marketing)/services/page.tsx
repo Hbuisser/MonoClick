@@ -98,6 +98,13 @@ const services = [
     technologies: ['Three.js / WebGL', 'React', 'Shopify', 'AI photography & video', 'Vercel'],
     examples: [
       {
+        name: 'Casa Padoula',
+        tagline: 'Clifftop retreat in the Azores',
+        url: 'https://casapadoula.com',
+        image: '/showcase/casapadoula.jpg',
+        note: 'A real, live rental on São Miguel, booked out at 4.9 stars. Editorial serif, cinematic scroll, film shot from the house itself.',
+      },
+      {
         name: 'CENDRE',
         tagline: 'Parisian fragrance house',
         url: 'https://fable-cendre.vercel.app',
@@ -379,9 +386,42 @@ export default function ServicesPage() {
 
                 {'examples' in service && service.examples && (
                   <div className="mt-14 border-t border-white/10 pt-10">
-                    <h3 className="label-mono mb-6 text-white/40">Stores built &amp; designed by AI</h3>
+                    <h3 className="label-mono mb-6 text-white/40">Sites built &amp; designed by AI</h3>
+
+                    {/* Featured: a real, live site */}
+                    <a
+                      href={service.examples[0].url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group mb-6 grid grid-cols-1 overflow-hidden border border-white/10 bg-white/[0.02] transition-colors duration-300 hover:border-white/30 sm:grid-cols-2"
+                    >
+                      <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10 sm:aspect-auto sm:h-full sm:border-b-0 sm:border-r">
+                        <Image
+                          src={service.examples[0].image}
+                          alt={`${service.examples[0].name}, ${service.examples[0].tagline}`}
+                          fill
+                          sizes="(max-width: 640px) 100vw, 50vw"
+                          className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                        />
+                        <span className="label-mono absolute left-4 top-4 flex items-center gap-1.5 bg-black/60 px-2.5 py-1 text-[0.6rem] text-sky-300 backdrop-blur-sm">
+                          <span className="h-1.5 w-1.5 rounded-full bg-sky-400" aria-hidden />
+                          Real, live site
+                        </span>
+                      </div>
+                      <div className="flex flex-col justify-center p-6 sm:p-8">
+                        <div className="mb-2 flex items-center justify-between">
+                          <h4 className="font-heading text-xl font-bold uppercase tracking-wide text-white">
+                            {service.examples[0].name}
+                          </h4>
+                          <ArrowUpRight className="h-5 w-5 text-white/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white" />
+                        </div>
+                        <div className="label-mono mb-3 text-sky-400/80">{service.examples[0].tagline}</div>
+                        <p className="max-w-md text-sm leading-relaxed text-white/55">{service.examples[0].note}</p>
+                      </div>
+                    </a>
+
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-                      {service.examples.map((example) => (
+                      {service.examples.slice(1).map((example) => (
                         <a
                           key={example.name}
                           href={example.url}

@@ -62,6 +62,16 @@ const sites = [
   },
 ]
 
+const featured = {
+  name: 'Casa Padoula',
+  url: 'https://casapadoula.com',
+  tagline: 'Clifftop retreat in the Azores',
+  image: '/showcase/casapadoula.jpg',
+  description:
+    'A real, live property on São Miguel, booked out at 4.9 stars. Editorial serif art direction, cinematic scroll, and volcanic-island photography and film shot from the house itself. Not a demo, a site guests use every day.',
+  tags: ['Editorial art direction', 'Cinematic scroll', 'AI photography + film'],
+}
+
 export function ShowcaseSites() {
   return (
     <section className="border-t border-white/10 bg-black py-24" id="ai-showcase">
@@ -77,15 +87,67 @@ export function ShowcaseSites() {
             </span>
           </h2>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/50">
-            The AI Design Agent is how MonoClick ships custom Shopify and headless stores end
+            The AI Design Agent is how MonoClick ships custom storefronts and brand sites end
             to end, concept, copy, AI-generated photography and film, 3D, code and
-            deployment. No templates, no stock assets. Each store below was built from a
-            single brief, so you can judge the craft before we point it at yours.
+            deployment. No templates, no stock assets. Every build below, from a real live
+            property to invented demo stores, so you can judge the craft before we point it
+            at yours.
           </p>
         </ScrollReveal>
 
         <ScrollReveal variant="fade-up" className="mb-6 border-t border-white/10 pt-6">
-          <span className="label-mono block text-white/40">Portfolio</span>
+          <span className="label-mono block text-white/40">Featured build · live in production</span>
+        </ScrollReveal>
+
+        <ScrollReveal variant="fade-up" className="mb-14">
+          <HoverSurface className="h-full">
+            <a
+              href={featured.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group grid grid-cols-1 overflow-hidden border border-white/10 bg-white/[0.02] transition-colors duration-300 hover:border-white/30 lg:grid-cols-2"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10 lg:aspect-auto lg:h-full lg:border-b-0 lg:border-r">
+                <Image
+                  src={featured.image}
+                  alt={`${featured.name}, ${featured.tagline}`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+                <span className="label-mono absolute left-4 top-4 flex items-center gap-1.5 bg-black/60 px-2.5 py-1 text-[0.6rem] text-sky-300 backdrop-blur-sm">
+                  <span className="h-1.5 w-1.5 rounded-full bg-sky-400" aria-hidden />
+                  Real, live site
+                </span>
+              </div>
+              <div className="flex flex-col justify-center p-8 sm:p-10 lg:p-12">
+                <div className="mb-3 flex items-center justify-between">
+                  <h3 className="font-heading text-2xl font-bold uppercase tracking-wide text-white sm:text-3xl">
+                    {featured.name}
+                  </h3>
+                  <ArrowUpRight className="h-6 w-6 text-white/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white" />
+                </div>
+                <div className="section-label mb-5 text-white">{featured.tagline}</div>
+                <p className="mb-7 max-w-md text-sm leading-relaxed text-white/55">
+                  {featured.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {featured.tags.map(tag => (
+                    <span
+                      key={tag}
+                      className="border border-white/10 px-2.5 py-1 text-[0.6rem] uppercase tracking-[0.08em] text-white/40"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          </HoverSurface>
+        </ScrollReveal>
+
+        <ScrollReveal variant="fade-up" className="mb-6 border-t border-white/10 pt-6">
+          <span className="label-mono block text-white/40">Portfolio · demonstration stores</span>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -137,9 +199,9 @@ export function ShowcaseSites() {
 
         <ScrollReveal variant="fade-up" delay={0.3} className="mt-10">
           <p className="text-xs leading-relaxed text-white/30">
-            Live demonstration stores, every pixel, asset and line of code produced
-            autonomously by our AI design agent, directed by MonoClick. Imagine what this
-            does for your brand.
+            Real, live sites and demonstration stores, every pixel, asset and line of code
+            produced autonomously by our AI design agent, directed by MonoClick. Imagine what
+            this does for your brand.
           </p>
         </ScrollReveal>
       </div>

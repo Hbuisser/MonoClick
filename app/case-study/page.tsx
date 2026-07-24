@@ -4,7 +4,11 @@ import { Check, Play } from 'lucide-react'
 
 import { createMetadata } from '@/lib/seo'
 import { ScrollReveal } from '@/components/scroll-reveal'
-import { CaseStudyOptin } from '@/components/landing/case-study-optin'
+import {
+  CaseStudyOptin,
+  CaseStudyOptinProvider,
+  CaseStudyOptinTrigger,
+} from '@/components/landing/case-study-optin'
 
 export const metadata: Metadata = createMetadata({
   title: 'FREE Case Study, The AI Support Agent for Ecommerce Brands',
@@ -39,53 +43,60 @@ export default function CaseStudyLandingPage() {
         </ScrollReveal>
 
         {/* Video preview + bullets */}
-        <div className="mt-14 grid grid-cols-1 items-center gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-16">
-          {/* Preview thumbnail */}
-          <ScrollReveal variant="fade-up" className="order-1">
-            <div className="group relative aspect-video overflow-hidden border border-zinc-200">
-              <Image
-                src="/new_case_study.png"
-                alt="AI Support Agent case study, live ticket resolution demo"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 640px"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-              {/* play badge */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 shadow-lg transition-transform duration-300 group-hover:scale-110">
-                  <Play className="ml-0.5 h-6 w-6 fill-blue-600 text-blue-600" />
-                </span>
-              </div>
-              <p className="absolute bottom-4 left-4 text-xs font-medium uppercase tracking-wider text-white/90">
-                Case study · 6 min watch
-              </p>
-            </div>
-          </ScrollReveal>
-
-          {/* Reveals + CTA */}
-          <ScrollReveal variant="fade-up" delay={0.1} className="order-2">
-            <p className="font-heading text-lg font-black uppercase tracking-tight text-zinc-900">
-              This free case study reveals:
-            </p>
-            <ul className="mt-6 space-y-4">
-              {reveals.map((item) => (
-                <li key={item} className="flex items-start gap-3.5">
-                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-50">
-                    <Check className="h-3.5 w-3.5 text-blue-600" />
+        <CaseStudyOptinProvider>
+          <div className="mt-14 grid grid-cols-1 items-center gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-16">
+            {/* Preview thumbnail */}
+            <ScrollReveal variant="fade-up" className="order-1">
+              <CaseStudyOptinTrigger
+                aria-label="Get instant access to the case study"
+                className="group relative block aspect-video w-full overflow-hidden border border-zinc-200"
+              >
+                <Image
+                  src="/new_case_study.png"
+                  alt="AI Support Agent case study, live ticket resolution demo"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 640px"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                {/* play badge */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/95 shadow-lg transition-transform duration-300 group-hover:scale-110">
+                    <Play className="ml-0.5 h-6 w-6 fill-blue-600 text-blue-600" />
                   </span>
-                  <span className="text-sm leading-relaxed text-zinc-600 sm:text-base">{item}</span>
-                </li>
-              ))}
-            </ul>
+                </div>
+                <p className="absolute bottom-4 left-4 text-xs font-medium uppercase tracking-wider text-white/90">
+                  Case study · 6 min watch
+                </p>
+              </CaseStudyOptinTrigger>
+            </ScrollReveal>
 
-            <div className="mt-10">
-              <CaseStudyOptin />
-            </div>
-            <p className="mt-4 text-xs text-zinc-400">100% free · Instant access.</p>
-          </ScrollReveal>
-        </div>
+            {/* Reveals + CTA */}
+            <ScrollReveal variant="fade-up" delay={0.1} className="order-2">
+              <p className="font-heading text-lg font-black uppercase tracking-tight text-zinc-900">
+                This free case study reveals:
+              </p>
+              <ul className="mt-6 space-y-4">
+                {reveals.map((item) => (
+                  <li key={item} className="flex items-start gap-3.5">
+                    <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-50">
+                      <Check className="h-3.5 w-3.5 text-blue-600" />
+                    </span>
+                    <span className="text-sm leading-relaxed text-zinc-600 sm:text-base">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-10">
+                <CaseStudyOptin />
+              </div>
+              <p className="mt-4 text-xs text-zinc-400">100% free · Instant access.</p>
+            </ScrollReveal>
+          </div>
+        </CaseStudyOptinProvider>
       </div>
     </section>
   )

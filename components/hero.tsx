@@ -46,12 +46,13 @@ export function Hero() {
   const scrollRef = useRef(0)
   const sectionRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % useCases.length)
-    }, 3200)
-    return () => clearInterval(interval)
-  }, [])
+  // Rotation for the agent carousel, paused while that block is hidden.
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentIndex((prev) => (prev + 1) % useCases.length)
+  //   }, 3200)
+  //   return () => clearInterval(interval)
+  // }, [])
 
   useEffect(() => {
     const onScroll = () => {
@@ -138,8 +139,11 @@ export function Hero() {
         </motion.p>
 
         <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-md">
-            <motion.div variants={fadeItem} className="h-16 overflow-hidden border-l border-sky-400/60 pl-4">
+          <div>
+            {/* Agent carousel, hidden for now. Restore this block (and the
+                `useCases` array + rotation interval above) to bring it back,
+                wrapping this column in `max-w-md` again. */}
+            {/* <motion.div variants={fadeItem} className="h-16 overflow-hidden border-l border-sky-400/60 pl-4">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
@@ -154,34 +158,42 @@ export function Hero() {
                   <p className="text-sm text-white/50">{useCases[currentIndex].example}</p>
                 </motion.div>
               </AnimatePresence>
-            </motion.div>
+            </motion.div> */}
 
-            <motion.div variants={fadeItem} className="mt-8">
+            <motion.div variants={fadeItem} className="flex flex-wrap items-center gap-5 sm:gap-6">
+              <div className="relative shrink-0">
+                <span
+                  className="absolute -inset-2 rounded-full border border-sky-400/25"
+                  aria-hidden
+                />
+                <span className="relative block h-[82px] w-[82px] overflow-hidden rounded-full border border-white/25 shadow-[0_0_30px_-8px_rgba(56,189,248,0.7)] sm:h-24 sm:w-24">
+                  <Image
+                    src="/pp2026.png"
+                    alt="Henry Buisseret, founder of MonoClick"
+                    fill
+                    sizes="96px"
+                    priority
+                    className="object-cover object-[center_20%]"
+                  />
+                </span>
+              </div>
+
               <Magnetic className="pointer-events-auto">
                 <Link
                   href="https://calendly.com/henrybuisseret/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 py-3 pl-3 pr-7 text-sm font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] transition-shadow duration-300 hover:shadow-[0_0_48px_-4px_rgba(37,99,235,0.65)]"
+                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 px-6 py-3.5 text-[0.7rem] font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] transition-shadow duration-300 hover:shadow-[0_0_48px_-4px_rgba(37,99,235,0.65)] sm:px-7 sm:text-sm"
                 >
-                  <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-white/40">
-                    <Image
-                      src="/pp2.jpg"
-                      alt="Henry Buisseret"
-                      fill
-                      sizes="36px"
-                      className="scale-110 object-cover object-[center_30%]"
-                    />
-                  </span>
-                  <span className="relative inline-flex h-[1.2em] items-center overflow-hidden">
+                  <span className="relative inline-flex h-[1.2em] items-center overflow-hidden whitespace-nowrap">
                     <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
-                      Book an audit call
+                      Book an audit call with me
                     </span>
                     <span className="absolute top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full">
-                      Book an audit call
+                      Book an audit call with me
                     </span>
                   </span>
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1" />
                 </Link>
               </Magnetic>
             </motion.div>
@@ -192,7 +204,7 @@ export function Hero() {
             className="pointer-events-none hidden items-end gap-10 md:flex lg:mr-20"
           >
             {[
-              ['20+', 'Automations shipped'],
+              ['20+', 'Systems shipped'],
               ['50K+', 'Hours saved / month'],
               ['10', 'Days to delivery'],
             ].map(([stat, label]) => (

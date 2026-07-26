@@ -41,7 +41,7 @@ export function CTABanner() {
               >
                 <span className="relative h-9 w-9 overflow-hidden rounded-full border border-white/40">
                   <Image
-                    src="/pp2.jpg"
+                    src="/pp2026.png"
                     alt="Henry Buisseret"
                     fill
                     sizes="36px"

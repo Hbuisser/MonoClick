@@ -192,7 +192,7 @@ export default function AboutPage() {
                 <div className="absolute -left-3 -top-3 h-full w-full border border-blue-600/40" aria-hidden />
                 <div className="relative aspect-[3/4] overflow-hidden border border-black/15">
                   <Image
-                    src="/pp2.jpg"
+                    src="/pp2026.png"
                     alt="Henry Buisseret profile picture"
                     fill
                     className="object-cover"

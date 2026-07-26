@@ -170,7 +170,7 @@ export function generateAuthorSchema(author: { name: string; role: string }) {
     name: author.name,
     jobTitle: author.role,
     url: `${siteConfig.url}/about`,
-    image: `${siteConfig.url}/pp2.jpg`,
+    image: `${siteConfig.url}/pp2026.png`,
     sameAs: PERSON_SAME_AS,
     worksFor: {
       '@type': 'Organization',
@@ -199,7 +199,7 @@ export function generatePersonSchema() {
     description:
       'Belgian software engineer specializing in AI automation for ecommerce and founder of MonoClick. Background in finance (KBC) and payments (Worldline), building custom AI support, creative, content, and design agents for ecommerce brands.',
     url: `${siteConfig.url}/about`,
-    image: `${siteConfig.url}/pp2.jpg`,
+    image: `${siteConfig.url}/pp2026.png`,
     email: 'henry@monoclick.ai',
     nationality: 'Belgian',
     alumniOf: {

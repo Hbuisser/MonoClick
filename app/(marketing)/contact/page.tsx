@@ -83,7 +83,7 @@ export default function ContactPage() {
                   >
                     <span className="relative h-8 w-8 overflow-hidden rounded-full border border-white/40">
                       <Image
-                        src="/pp2.jpg"
+                        src="/pp2026.png"
                         alt="Henry Buisseret"
                         fill
                         sizes="32px"

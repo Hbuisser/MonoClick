@@ -53,7 +53,7 @@ export function Pricing() {
     <section className="border-t border-white/10 bg-black py-24" id="pricing">
       <div className="editorial-max">
         <ScrollReveal variant="slide-left" className="mb-4">
-          <span className="label-mono mb-5 block text-sky-400">07 / Pricing</span>
+          <span className="label-mono mb-5 block text-sky-400">08 / Pricing</span>
           <h2 className="display-title max-w-5xl text-[clamp(2.25rem,6vw,5rem)] text-white">
             Less than a hire.{' '}
             <span className="serif-accent text-[1.04em] text-white/85">Paid once.</span>

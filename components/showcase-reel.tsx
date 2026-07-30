@@ -84,10 +84,10 @@ export function ShowcaseReel() {
       <div className="editorial-max">
         <ScrollReveal variant="slide-right" className="mb-14">
           <span className="label-mono mb-5 block text-sky-400">
-            03 / AI Film Studio · Commercials &amp; content
+            04 / AI Content Agent · Commercials &amp; content
           </span>
           <h2 className="display-title max-w-4xl text-[clamp(2.25rem,6vw,5rem)] text-white">
-            The same agent shoots films.{' '}
+            The Content Agent shoots films.{' '}
             <span className="serif-accent text-[1.04em] text-white/70">
               Six spots, sixty seconds, zero cameras.
             </span>
@@ -95,8 +95,8 @@ export function ShowcaseReel() {
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/50">
             Six 10 second commercials for six invented brands. Product design,
             cinematography, animation, edit, color grade, typography, music and sound,
-            produced end to end by our AI Film Studio. This is the engine the Content
-            Agent points at your catalog. Sound on.
+            produced end to end by the AI Content Agent. This is what it looks like
+            pointed at an invented catalog. Sound on.
           </p>
         </ScrollReveal>
 
@@ -174,8 +174,8 @@ export function ShowcaseReel() {
           className="mt-10 flex flex-wrap items-baseline justify-between gap-4"
         >
           <p className="max-w-xl text-xs leading-relaxed text-white/30">
-            Every frame, cut and note above was produced autonomously by our AI Film
-            Studio, directed by MonoClick. Imagine this pointed at your products, every
+            Every frame, cut and note above was produced autonomously by the AI Content
+            Agent, directed by MonoClick. Imagine this pointed at your products, every
             week.
           </p>
           <a

@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
@@ -10,14 +10,6 @@ import { ArrowRight } from 'lucide-react'
 import { Magnetic } from '@/components/fx/magnetic'
 
 const HeroParticles = dynamic(() => import('@/components/hero-particles'), { ssr: false })
-
-const useCases = [
-  { industry: 'AI Support Agent', example: 'Resolves tickets in context on Gorgias & Zendesk' },
-  { industry: 'AI Creative Agent', example: 'Analyzes your Meta ads, generates new concepts' },
-  { industry: 'AI Content Agent', example: 'Turns concepts into content, publishes to social' },
-  { industry: 'AI Design Agent', example: 'Storefronts designed & shipped by AI, zero templates' },
-  { industry: 'AI Chatbots', example: 'Trained on your FAQ, policies, and products' },
-]
 
 const heroStagger = {
   hidden: {},
@@ -42,17 +34,8 @@ const fadeItem = {
 }
 
 export function Hero() {
-  const [currentIndex, setCurrentIndex] = useState(0)
   const scrollRef = useRef(0)
   const sectionRef = useRef<HTMLElement>(null)
-
-  // Rotation for the agent carousel, paused while that block is hidden.
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentIndex((prev) => (prev + 1) % useCases.length)
-  //   }, 3200)
-  //   return () => clearInterval(interval)
-  // }, [])
 
   useEffect(() => {
     const onScroll = () => {
@@ -84,25 +67,6 @@ export function Hero() {
         aria-hidden
       />
 
-      {/* top meta row */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-        className="pointer-events-none absolute left-5 right-6 top-8 z-10 hidden items-start justify-between sm:left-8 lg:left-12 md:flex"
-      >
-        {/* <p className="label-mono text-white/40">
-          AI Systems Studio
-          <br />
-          EU / US
-        </p>
-        <p className="label-mono text-right text-white/40">
-          Shipped in 10 working days
-          <br />
-          Fixed-price, no surprises
-        </p> */}
-      </motion.div>
-
       <motion.div
         variants={heroStagger}
         initial="hidden"
@@ -125,7 +89,7 @@ export function Hero() {
               variants={lineReveal}
               className="serif-accent block text-[0.62em] leading-[1.02] text-white/90"
             >
-              Your operation doesn&apos;t<span className="text-sky-400">.</span>
+              Your support doesn&apos;t<span className="text-sky-400">.</span>
             </motion.span>
           </span>
         </h1>
@@ -134,32 +98,13 @@ export function Hero() {
           variants={fadeItem}
           className="mt-7 max-w-lg text-sm leading-relaxed text-white/55 sm:text-[0.95rem]"
         >
-          Custom AI agents for eight and nine-figure ecommerce brands, built to run the
-          work you&apos;d otherwise hire for. Live in 10 working days.
+          I build a support system inside Gorgias or Zendesk that drafts every ticket
+          reply in your tone and on your policy. Live in 30 days. At least 3 in 10
+          replies go out exactly as written, guaranteed.
         </motion.p>
 
         <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            {/* Agent carousel, hidden for now. Restore this block (and the
-                `useCases` array + rotation interval above) to bring it back,
-                wrapping this column in `max-w-md` again. */}
-            {/* <motion.div variants={fadeItem} className="h-16 overflow-hidden border-l border-sky-400/60 pl-4">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentIndex}
-                  initial={{ y: 24, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -24, opacity: 0 }}
-                  transition={{ duration: 0.35 }}
-                >
-                  <p className="label-mono mb-1.5 text-sky-400">
-                    {String(currentIndex + 1).padStart(2, '0')} / {useCases[currentIndex].industry}
-                  </p>
-                  <p className="text-sm text-white/50">{useCases[currentIndex].example}</p>
-                </motion.div>
-              </AnimatePresence>
-            </motion.div> */}
-
             <motion.div variants={fadeItem} className="flex flex-wrap items-center gap-5 sm:gap-6">
               <div className="relative shrink-0">
                 <span
@@ -180,17 +125,15 @@ export function Hero() {
 
               <Magnetic className="pointer-events-auto">
                 <Link
-                  href="https://calendly.com/henrybuisseret/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/audit"
                   className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 px-6 py-3.5 text-[0.7rem] font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] transition-shadow duration-300 hover:shadow-[0_0_48px_-4px_rgba(37,99,235,0.65)] sm:px-7 sm:text-sm"
                 >
                   <span className="relative inline-flex h-[1.2em] items-center overflow-hidden whitespace-nowrap">
                     <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
-                      Book an audit call with me
+                      Get your free ticket audit
                     </span>
                     <span className="absolute top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full">
-                      Book an audit call with me
+                      Get your free ticket audit
                     </span>
                   </span>
                   <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1" />
@@ -204,9 +147,9 @@ export function Hero() {
             className="pointer-events-none hidden items-end gap-10 md:flex lg:mr-20"
           >
             {[
-              ['20+', 'Systems shipped'],
-              ['50K+', 'Hours saved / month'],
-              ['10', 'Days to delivery'],
+              ['30%', 'Replies sent as written, minimum'],
+              ['1,500+', 'Tickets a day, same team'],
+              ['30', 'Days to live'],
             ].map(([stat, label]) => (
               <div key={label}>
                 <div className="font-heading text-3xl font-black text-white">

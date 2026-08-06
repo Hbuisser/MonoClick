@@ -8,17 +8,17 @@ import { Magnetic } from '@/components/fx/magnetic'
 
 // Gated content, keep it out of search results.
 export const metadata: Metadata = createMetadata({
-  title: 'Your Case Study, The AI Support Agent for Ecommerce',
+  title: 'Your Case Study, The AI Support System for Ecommerce',
   description:
-    'Watch the AI Support Agent case study, then apply to see if it is the right fit for your brand.',
+    'Watch the AI support system case study, then apply to see if it is the right fit for your brand.',
   path: '/case-study/access',
   noIndex: true,
 })
 
 const takeaways = [
-  'How the agent resolves tickets end-to-end on Gorgias & Zendesk',
-  'The guardrails that keep it on-brand and escalate the hard cases',
-  'The real numbers: resolution rate, response time, and hours saved',
+  'How the system works tickets end-to-end on Gorgias & Zendesk',
+  'The Gate that keeps it on policy and escalates the hard cases',
+  'The real numbers: 90% sent as written, 200-300 tickets a day to 1,500+, the team from 9 to 5',
 ]
 
 export default function CaseStudyAccessPage() {
@@ -46,7 +46,7 @@ export default function CaseStudyAccessPage() {
               <div className="relative aspect-video w-full bg-zinc-900">
                 <iframe
                   src="https://www.loom.com/embed/9b49b4dee5e845fb9dfd5911715dbcd3"
-                  title="AI Support Agent case study"
+                  title="AI support system case study"
                   allow="fullscreen; picture-in-picture"
                   allowFullScreen
                   className="absolute inset-0 h-full w-full"
@@ -84,7 +84,7 @@ export default function CaseStudyAccessPage() {
 
               <p className="mt-4 text-sm leading-relaxed text-zinc-600">
                 If what you saw makes sense for your brand, book a short call. We&apos;ll look at
-                your support volume together and tell you, honestly, whether an AI Support Agent is
+                your support volume together and tell you, honestly, whether the support system is
                 worth it for you.
               </p>
 

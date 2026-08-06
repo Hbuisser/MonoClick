@@ -8,9 +8,9 @@ import { RevealSection, ScrollReveal } from '@/components/scroll-reveal'
 import { BlogCard } from '@/components/blog-card'
 
 export const metadata: Metadata = createMetadata({
-  title: 'Blog, AI for Ecommerce, Support Agents & Content',
+  title: 'Blog, AI for Ecommerce, Support Systems & Content',
   description:
-    'Field notes from MonoClick on building AI systems for ecommerce: retrieval-augmented support agents, context engineering, and terminal-native content creation.',
+    'Field notes from MonoClick on building AI systems for ecommerce: retrieval-augmented support systems, context engineering, and terminal-native content creation.',
   path: '/blog',
 })
 
@@ -49,7 +49,7 @@ export default function BlogPage() {
               <span className="serif-accent text-[1.02em] text-white/85">notes.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
-              How we build AI systems for ecommerce brands, grounded support agents,
+              How we build AI systems for ecommerce brands, grounded support systems,
               context engineering, and content pipelines that ship from the terminal. No fluff,
               just what actually works.
             </p>

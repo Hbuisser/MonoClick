@@ -77,7 +77,7 @@ export default async function Image() {
             maxWidth: '900px',
           }}
         >
-          AI growth systems for ecommerce brands.
+          Two systems for ecommerce brands.
         </h1>
 
         {/* Subtitle */}
@@ -90,7 +90,8 @@ export default async function Image() {
             lineHeight: 1.4,
           }}
         >
-          AI support agent, creative agent, content agent, design agent, and chatbots
+          An AI support system for Gorgias, Zendesk and Freshdesk, and an AI phone
+          system that answers every call. Both guaranteed, live in 30 days.
         </p>
 
         {/* Bottom gradient */}

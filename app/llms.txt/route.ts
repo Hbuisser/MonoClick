@@ -18,36 +18,34 @@ export function GET() {
 
   const body = `# ${siteConfig.name}
 
-> AI growth partner for ecommerce and DTC brands. We design and build custom AI systems, a support agent for Gorgias & Zendesk, a creative agent that analyzes Meta ads and generates new concepts, a content agent that publishes to social, a design agent that builds conversion-ready storefronts, and AI chatbots, delivered in about 10 working days.
+> Two systems for ecommerce brands: an AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply in the brand's tone and on its policy, and an AI phone system that answers every call on the brand's own accounts. Both guaranteed, live in 30 days.
 
-MonoClick works exclusively with ecommerce brands. Everything below is built for online stores running on Shopify, WooCommerce, BigCommerce, or Magento, with support on Gorgias and Zendesk. Contact: henry@monoclick.ai. Book a call: https://calendly.com/henrybuisseret/30min.
+MonoClick works exclusively with ecommerce brands, typically $1M+ operators on Shopify with support teams of 3 to 10 handling 50 to 500 tickets a day on Gorgias, Zendesk or Freshdesk. Contact: henry@monoclick.ai. Book a call: https://calendly.com/henrybuisseret/30min.
 
-## Services
+## The two systems
 
-- [AI Support Agent](${siteConfig.url}/services): Always-on support for Gorgias and Zendesk that resolves tickets in full context, live order data, your policies, and your brand voice, cutting resolution time and deflecting up to ~60% of tickets without new hires.
-- [AI Creative Agent](${siteConfig.url}/services): Analyzes your Meta ads history and competitor creative, then generates new ad concepts, copy, and image/video prompts at test velocity.
-- [AI Content Agent](${siteConfig.url}/services): Turns concepts into finished images, video, and copy and publishes them to your social channels.
-- [AI Design Agent](${siteConfig.url}/services): Conversion-ready ecommerce storefronts designed and built end-to-end by AI, art direction, 3D, motion, AI photography, code, and deployment, with zero templates.
-- [AI Chatbots](${siteConfig.url}/services): Chatbots trained on your FAQ, policies, and product catalog for 24/7 support and conversion.
+- [The 30-Day Ecom Support Standard](${siteConfig.url}/): An AI support system for Gorgias and Zendesk (and Freshdesk) that drafts every ticket reply, gates refunds to a human, and earns auto-send category by category. Guaranteed by The Send-As-Written Standard: at least 3 in 10 replies go out exactly as written, or the work continues free until they do. Proof from one US health-products brand: 200-300 tickets a day to 1,500+ with the same team, support from 9 people to 5 with nobody fired, 90% of replies sent without a human touching them.
+- [The 30-Day Ecom Phone Standard](${siteConfig.url}/phone): An inbound AI phone system on the brand's own accounts (ElevenLabs, Claude, Twilio) with Shopify order lookup, SMS checkout links, and Gorgias or Zendesk sync. About $0.12 an AI minute on the brand's own stack against about $0.40 on a per-minute vendor. Guaranteed by Nothing Moves Until It Passes: the current provider keeps every live call until six checks pass on real parallel traffic, and half of today's bill is the guaranteed floor.
+- [Free ticket audit](${siteConfig.url}/audit): Send 60 days of tickets as a CSV, get a free written report within three working days: ticket categories ranked by volume, which ones a system can draft today, and the estimated send-as-written rate. No call needed.
 
 ## Key pages
 
-- [Home](${siteConfig.url}/): Overview of MonoClick's AI growth systems for ecommerce.
-- [Services](${siteConfig.url}/services): Full breakdown of each AI agent and how it's built.
-- [Work](${siteConfig.url}/work): Case studies and shipped projects.
-- [Case study](${siteConfig.url}/case-study): How ecommerce brands automate a large share of support tickets with an AI Support Agent.
-- [About](${siteConfig.url}/about): Who we are and how we work.
+- [Home](${siteConfig.url}/): The 30-Day Ecom Support Standard, the guarantee, and the process.
+- [Phone](${siteConfig.url}/phone): The 30-Day Ecom Phone Standard.
+- [Free audit](${siteConfig.url}/audit): How to export tickets from Gorgias, Zendesk or Freshdesk and get the free report.
+- [Case study](${siteConfig.url}/case-study): How ecommerce brands send up to 90% of support replies automatically with an AI support system.
+- [About](${siteConfig.url}/about): Who is behind MonoClick and how the work is done.
 - [Contact](${siteConfig.url}/contact): Get in touch or book a call.
 
 ## Blog
 
-Field notes on building AI systems for ecommerce, grounded support agents, context engineering, RAG, and terminal-native content creation.
+Field notes on building AI systems for ecommerce, grounded support systems, context engineering, RAG, and terminal-native content creation.
 
 ${postLines}
 
 ## About
 
-MonoClick is an AI automation agency focused entirely on ecommerce growth. Founded 2024. We build production AI systems, not demos, that save time, cut support costs, and increase conversions for fast-moving online brands.
+MonoClick is an AI automation agency focused entirely on ecommerce. Founded 2024. It builds production AI support and phone systems that run on the client's own accounts: their code, their knowledge base, their keys.
 `
 
   return new Response(body, {

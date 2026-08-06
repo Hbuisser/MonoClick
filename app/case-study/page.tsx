@@ -11,16 +11,16 @@ import {
 } from '@/components/landing/case-study-optin'
 
 export const metadata: Metadata = createMetadata({
-  title: 'FREE Case Study, The AI Support Agent for Ecommerce Brands',
+  title: 'FREE Case Study, The AI Support System for Ecommerce Brands',
   description:
-    'Watch how ecommerce brands resolve up to 90% of support tickets automatically with an AI Support Agent on Gorgias & Zendesk, without hiring a single new agent. Get instant access.',
+    'Watch how ecommerce brands send up to 90% of support replies without a human touching them, with an AI support system on Gorgias & Zendesk. From 200-300 tickets a day to 1,500+ with the same team. Get instant access.',
   path: '/case-study',
 })
 
 const reveals = [
   'Why most ecommerce support teams drown in repetitive tickets, and the one shift that fixes it.',
-  'The AI Support Agent that answers in full context: live orders, your policies, and your brand voice.',
-  'The exact 10-day rollout to go live on Gorgias or Zendesk, with zero disruption to your team.',
+  'The support system that drafts every reply in full context: live orders, your policies, and your brand voice.',
+  'The rollout that took one brand from 200-300 tickets a day to 1,500+, with the team going from 9 to 5, nobody fired.',
 ]
 
 export default function CaseStudyLandingPage() {
@@ -33,11 +33,11 @@ export default function CaseStudyLandingPage() {
             Free case study for ecommerce &amp; DTC brands
           </p>
           <h1 className="text-balance font-heading text-[clamp(1.9rem,4.6vw,3.5rem)] font-black uppercase leading-[0.98] tracking-tight text-zinc-900">
-            How Ecommerce Brands Resolve Up To{' '}
-            <span className="text-gradient">90% Of Support Tickets</span>{' '}
+            How Ecommerce Brands Send Up To{' '}
+            <span className="text-gradient">90% Of Support Replies</span>{' '}
             Automatically,{' '}
             <span className="serif-accent text-[1.04em] text-zinc-500">
-              without hiring a single new agent
+              without adding a single hire
             </span>
           </h1>
         </ScrollReveal>
@@ -53,7 +53,7 @@ export default function CaseStudyLandingPage() {
               >
                 <Image
                   src="/new_case_study.png"
-                  alt="AI Support Agent case study, live ticket resolution demo"
+                  alt="AI support system case study, live ticket resolution demo"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 640px"

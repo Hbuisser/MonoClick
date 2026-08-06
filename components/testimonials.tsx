@@ -86,7 +86,7 @@ export function Testimonials() {
       <div className="editorial-max">
         <ScrollReveal variant="fade-up" className="mb-16 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <span className="label-mono mb-5 block text-blue-600">05 / Client stories</span>
+            <span className="label-mono mb-5 block text-blue-600">04 / Client stories</span>
             <h2 className="display-title max-w-4xl text-[clamp(2.25rem,6vw,5rem)] text-black">
               In their{' '}
               <span className="serif-accent text-[1.04em] text-black/80">own words</span>

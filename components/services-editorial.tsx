@@ -1,71 +1,40 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowUpRight, Check } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
 
 import { ScrollReveal } from '@/components/scroll-reveal'
 
 const services = [
   {
-    title: 'AI Support Agent',
-    accent: 'on Gorgias & Zendesk',
+    title: 'The 30-Day Ecom Support Standard',
+    accent: 'on Gorgias, Zendesk & Freshdesk',
     description:
-      'An always-on agent that plugs into Gorgias or Zendesk, reads every ticket in context, and drafts, or fully resolves, replies grounded in your policies, orders, and products.',
+      'A system inside Gorgias, Zendesk or Freshdesk that works your real tickets. It learns from your ticket history, follows your tone and policy, drafts or auto-sends, gates refunds and disputes to a human, and escalates exceptions. Guaranteed by The Send-As-Written Standard: at least 3 in 10 replies go out exactly as written, or I keep working for free until they do.',
     features: [
-      'Native Gorgias & Zendesk integration',
-      'Context-aware from your order data',
-      'Auto-triage, tagging & escalation',
-      'From 200 to 1,500 tickets a day',
+      'Every ticket arrives with the reply drafted',
+      'Your tone, your policy, your order data',
+      'The Gate holds refunds for a human',
+      'Live in 30 days, guaranteed floor of 3 in 10',
     ],
+    href: '/audit',
+    cta: 'Get your free ticket audit',
   },
   {
-    title: 'AI Creative Agent',
-    accent: 'that finds what works',
+    title: 'The 30-Day Ecom Phone Standard',
+    accent: 'answers every call',
     description:
-      'Analyzes your Meta ads history, ROAS, spend, copy, image and video, to learn what converts. Mines audience signal from Reddit, Trustpilot and the web, teardowns competitor ads, then generates fresh concepts, copy, and image & video prompts.',
+      'An inbound voice system on your own accounts that answers every call, looks up orders in Shopify, and opens a ticket in Gorgias or Zendesk only when a call is unresolved. It runs at about $0.12 a minute on your own stack against about $0.40 on a per-minute vendor. Guaranteed by Nothing Moves Until It Passes: your current provider keeps every live call until six checks pass on real traffic.',
     features: [
-      'Meta ads history & ROAS analysis',
-      'Audience research, Reddit, Trustpilot, web',
-      'Competitor ad teardown & angle mapping',
-      'New concepts, copy & image/video prompts',
+      'Answers every call on your own accounts',
+      'Shopify lookup, tracking, returns, SMS links',
+      'Every closed call is one less email ticket',
+      'Half your current bill is the guaranteed floor',
     ],
-  },
-  {
-    title: 'AI Content Agent',
-    accent: 'shipped to social',
-    description:
-      'Turns the Creative Agent’s concepts into finished content, images, video, captions and hooks, on-brand and on-schedule, then publishes straight to your social channels.',
-    features: [
-      'Concept-to-content production',
-      'On-brand voice & visual consistency',
-      'Content calendar & scheduling',
-      'Auto-publishing to social channels',
-    ],
-  },
-  {
-    title: 'AI Design Agent',
-    accent: 'that builds stores',
-    description:
-      'Designs and builds complete, conversion-ready storefronts end-to-end, concept, art direction, copy, 3D, motion, AI-generated photography and film, code and deployment. No templates, no stock assets.',
-    features: [
-      'Bespoke design & art direction, zero templates',
-      'AI-generated photography, video & 3D',
-      'Scroll-driven storytelling & motion',
-      'Shopify, headless or fully custom build',
-    ],
-  },
-  {
-    title: 'AI Chatbots',
-    accent: 'that sell',
-    description:
-      'Customer-facing chatbots trained on your catalog, FAQ and policies. They answer instantly, recommend the right products, track orders, and turn browsers into buyers, 24/7.',
-    features: [
-      'Trained on your product catalog',
-      'FAQ & policy knowledge base',
-      'Order tracking & recommendations',
-      'Seamless handoff to human support',
-    ],
+    href: '/phone',
+    cta: 'See the Phone Standard',
   },
 ]
 
@@ -76,10 +45,10 @@ export function ServicesEditorial() {
     <section className="border-t border-white/10 bg-black py-24" id="services">
       <div className="editorial-max">
         <ScrollReveal variant="slide-left" className="mb-4">
-          <span className="label-mono mb-5 block text-sky-400">02 / What we build</span>
+          <span className="label-mono mb-5 block text-sky-400">02 / What I build</span>
           <h2 className="display-title max-w-5xl text-[clamp(2.25rem,6vw,5rem)] text-white">
-            AI systems that drive{' '}
-            <span className="serif-accent text-[1.04em] text-white/85">growth</span>
+            Two systems,{' '}
+            <span className="serif-accent text-[1.04em] text-white/85">both guaranteed</span>
           </h2>
         </ScrollReveal>
 
@@ -88,8 +57,9 @@ export function ServicesEditorial() {
           delay={0.08}
           className="mb-14 max-w-2xl text-sm leading-relaxed text-white/45"
         >
-          From always-on support agents to AI-designed storefronts, systems built for
-          fast-moving ecommerce brands, shipped in ten working days.
+          A system that works your tickets and a system that answers your phone. Each one
+          runs on your own accounts, ships in 30 days, and carries a named guarantee with
+          a number I am held to.
         </ScrollReveal>
 
         <div className="border-t border-white/10">
@@ -110,7 +80,7 @@ export function ServicesEditorial() {
                     </span>
                     <span className="flex-1">
                       <span
-                        className={`font-heading text-[clamp(1.5rem,4.2vw,3.2rem)] font-black uppercase leading-none tracking-[-0.03em] transition-all duration-300 ${
+                        className={`font-heading text-[clamp(1.3rem,3.4vw,2.6rem)] font-black uppercase leading-none tracking-[-0.03em] transition-all duration-300 ${
                           isOpen ? 'text-white' : 'text-white/55 group-hover:text-white'
                         }`}
                       >
@@ -142,21 +112,30 @@ export function ServicesEditorial() {
                         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="grid grid-cols-1 gap-8 pb-10 pl-0 sm:pl-[calc(2rem+2.5ch)] md:grid-cols-2 md:gap-16">
-                          <p className="max-w-md text-sm leading-relaxed text-white/50">
-                            {service.description}
-                          </p>
-                          <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                            {service.features.map((feature) => (
-                              <li
-                                key={feature}
-                                className="flex items-start gap-2 text-[0.8rem] text-white/55"
-                              >
-                                <Check className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-sky-400/80" />
-                                <span>{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
+                        <div className="pb-10 pl-0 sm:pl-[calc(2rem+2.5ch)]">
+                          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
+                            <p className="max-w-md text-sm leading-relaxed text-white/50">
+                              {service.description}
+                            </p>
+                            <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                              {service.features.map((feature) => (
+                                <li
+                                  key={feature}
+                                  className="flex items-start gap-2 text-[0.8rem] text-white/55"
+                                >
+                                  <Check className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-sky-400/80" />
+                                  <span>{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <Link
+                            href={service.href}
+                            className="group/link mt-8 inline-flex items-center gap-2 border-b border-white/25 pb-1 text-xs font-medium uppercase tracking-[0.14em] text-white/70 transition-colors hover:border-sky-400 hover:text-sky-400"
+                          >
+                            {service.cta}
+                            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-1" />
+                          </Link>
                         </div>
                       </motion.div>
                     )}

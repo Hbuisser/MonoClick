@@ -20,6 +20,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${siteConfig.url}/phone`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${siteConfig.url}/audit`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${siteConfig.url}/blog`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
@@ -42,13 +54,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteConfig.url}/workshop`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.5,
     },
     {
       url: `${siteConfig.url}/ads-intelligence`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.85,
+      priority: 0.5,
     },
     {
       url: `${siteConfig.url}/case-study`,

@@ -30,7 +30,7 @@ export function Ownership() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-[calc(var(--menu-height)+3rem)]">
               <ScrollReveal variant="slide-right">
-                <span className="label-mono mb-5 block text-blue-600">07 / Ownership</span>
+                <span className="label-mono mb-5 block text-blue-600">06 / Ownership</span>
                 <h2 className="display-title text-[clamp(2.25rem,5.4vw,4.4rem)] text-black">
                   You own it.{' '}
                   <span className="serif-accent text-[1.04em] text-black/80">All of it.</span>

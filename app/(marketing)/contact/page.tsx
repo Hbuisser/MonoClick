@@ -16,7 +16,7 @@ export const metadata: Metadata = createMetadata({
 const faqs = [
   {
     question: 'How quickly can we get started?',
-    answer: 'We can typically begin discovery within 1-2 business days, with delivery in 10 working days after kickoff call.'
+    answer: 'The free ticket audit takes three working days from the day your CSV arrives. A full build is live in 30 days.'
   },
   {
     question: 'Do you offer free consultations?',

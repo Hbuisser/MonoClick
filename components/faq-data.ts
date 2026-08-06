@@ -7,33 +7,48 @@ export type FaqItem = { question: string; answer: string }
 
 export const faqs: FaqItem[] = [
   {
-    question: 'What are AI growth systems for ecommerce?',
+    question: 'How does the guarantee work?',
     answer:
-      'AI growth systems are automated workflows powered by AI that help ecommerce brands scale faster. This includes an AI support agent for Gorgias/Zendesk, an AI creative agent that analyzes your Meta ads and generates new concepts, an AI content agent that publishes to social, an AI design agent that builds your storefront, and AI chatbots trained on your products.',
+      'The support system carries The Send-As-Written Standard: at least 3 in 10 drafts go out exactly as written, measured 60 days after go-live. If the floor is missed, I keep working for free until it is cleared. No new invoice, no hourly. The number itself is set by the Ticket Teardown before you buy the build, and if the teardown says the system will not clear the floor, you keep the analysis and stop there.',
   },
   {
-    question: 'How quickly can you build a custom AI system?',
+    question: 'What is the free ticket audit and what does the report contain?',
     answer:
-      'We deliver most projects within 10 working days after kickoff call. This includes discovery, build, testing, and deployment. We work fast without sacrificing quality.',
+      'You export your last 60 days of tickets to a CSV and email it to me. Within three working days you get a free written report: your ticket categories ranked by volume, which ones a system can draft today, and your estimated send-as-written rate. Free, and no call needed.',
   },
   {
-    question: 'What ecommerce platforms do you integrate with?',
+    question: 'How do I export my tickets from Gorgias, Zendesk or Freshdesk?',
     answer:
-      'We integrate with all major ecommerce platforms including Shopify, WooCommerce, BigCommerce, Magento, and support tools like Gorgias, Zendesk, and more. If you use it, we can probably connect to it.',
+      'In Gorgias, open Settings, then Data export, and request a ticket export for the last 60 days; the CSV arrives by email. In Zendesk, open Admin Center, go to Account, then Tools, then Reports, and request the CSV export; Zendesk emails a download link. In Freshdesk, open the Tickets list, filter to the last 60 days, click Export, and pick CSV. Step-by-step instructions for each helpdesk are on the audit page.',
   },
   {
-    question: 'How much do AI growth systems cost?',
+    question: 'What happens to my team?',
     answer:
-      'Pricing is custom based on your specific needs and complexity. We offer transparent, fixed-price quotes with no surprises. Every project includes 30 days of free support after launch.',
+      'The team runs the exceptions and approves what the Gate holds back, like refunds and disputes. In the build behind our case numbers, support went from 9 people to 5, nobody fired: the brand grew from 200-300 tickets a day to 1,500+ and moved people onto that growth.',
   },
   {
-    question: 'Do you provide ongoing support?',
+    question: 'Which helpdesks do you support?',
     answer:
-      'Yes! Every project includes 30 days of free support. We also offer maintenance retainers for ongoing optimization, monitoring, and enhancements to keep your systems running at peak performance.',
+      'Gorgias, Zendesk and Freshdesk. The system works inside your existing helpdesk, on your real queue. Order data comes from Shopify.',
   },
   {
-    question: 'How do I know if AI automation is right for my ecommerce store?',
+    question: 'Who owns the system?',
     answer:
-      "If you're spending hours on customer support, content creation, or analyzing competitors, AI automation can help. Book a free call and we'll assess your specific situation together.",
+      'You do. Everything runs on your own accounts: your code, your knowledge base, your keys. A monthly retainer covers monitoring, knowledge base freshness and gate tuning, and the guarantee runs while it runs. No subscription, no lock-in.',
+  },
+  {
+    question: 'How fast is it live?',
+    answer:
+      '30 days from the start of the build to a system working your real tickets. The build starts with the Ticket Teardown, then the Brain, shadow mode on your live queue, the Gate, and the Auto-Send Ratchet turning auto-send on category by category.',
+  },
+  {
+    question: 'Does the phone system replace my current provider?',
+    answer:
+      'Only once it has proven itself. Under Nothing Moves Until It Passes, your current provider keeps every live call until six checks pass on real parallel traffic: answer rate at or above today, correct order data every time, escalation connects every time, tickets where due, attributed revenue matching Shopify, and run cost under the teardown number. If any check fails, nothing switches and I keep working at no extra cost.',
+  },
+  {
+    question: 'What happens to my ticket data?',
+    answer:
+      'Your export is read on my own accounts, never used to train anything, and deleted after the report is delivered. Once a system is built, it runs on your accounts and your keys, so your ticket data stays with you.',
   },
 ]

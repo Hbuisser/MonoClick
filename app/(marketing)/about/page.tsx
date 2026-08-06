@@ -11,7 +11,7 @@ import { Magnetic } from '@/components/fx/magnetic'
 
 export const metadata: Metadata = createMetadata({
   title: 'About Our AI Automation Agency for Ecommerce',
-  description: 'MonoClick is an AI automation agency building custom AI systems for eight and nine-figure ecommerce brands. AI agents for support, creative, content, and retention, custom-built, owned by your brand, and measured in ROI.',
+  description: 'MonoClick is an AI automation agency building two systems for ecommerce brands: an AI support system for Gorgias, Zendesk and Freshdesk, and an AI phone system that answers every call. Custom-built, owned by your brand, and measured in ROI.',
   path: '/about'
 })
 
@@ -32,7 +32,7 @@ const values = [
     title: 'AI-powered growth',
     accent: 'sell more, work less',
     description:
-      'AI agents run the repetitive work across support, creative, content, and retention, so your team scales output without scaling headcount.',
+      'AI systems run the repetitive work across your support queue and your phone line, so your team scales output without scaling headcount.',
   },
   {
     title: 'ROI-driven',
@@ -90,9 +90,8 @@ export default function AboutPage() {
             </h1>
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
               MonoClick builds custom AI systems for eight and nine-figure ecommerce brands.
-              Not another tool to rent, a team of AI agents built around your products and your
-              stack, running support, creative, content, and retention so your operation scales
-              as fast as your revenue.
+              Each one is built around your products and your stack, working your tickets and
+              answering your phone, so your operation scales as fast as your revenue.
             </p>
           </ScrollReveal>
 
@@ -125,10 +124,10 @@ export default function AboutPage() {
                   each other.
                 </p>
                 <p>
-                  We fix that with custom AI systems, not generic software. AI agents that
-                  resolve support tickets, analyze and generate Meta ad creative, publish
-                  content, and win back customers, all built around your products and wired into
-                  the stack you already run.
+                  We fix that with custom AI systems built around your products and wired
+                  into the stack you already run: a support system that drafts every ticket
+                  reply inside Gorgias, Zendesk or Freshdesk, and a phone system that answers
+                  every call on your own accounts.
                 </p>
                 <p>
                   Our clients are fast-moving DTC and ecommerce brands across Europe and beyond
@@ -141,14 +140,14 @@ export default function AboutPage() {
               <div className="overflow-hidden border border-black/10 bg-white p-3">
                 <Image
                   src="/dashboard.png"
-                  alt="AI support agent workspace, ticket triage, drafted replies, and resolution tracking"
+                  alt="AI support system workspace, ticket triage, drafted replies, and resolution tracking"
                   width={800}
                   height={520}
                   className="w-full object-contain"
                 />
               </div>
               <p className="label-mono mt-4 text-black/40">
-                AI support agent dashboard, triage, drafts, resolution tracking
+                AI support system dashboard, triage, drafts, resolution tracking
               </p>
             </div>
           </div>

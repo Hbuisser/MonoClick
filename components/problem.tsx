@@ -5,15 +5,15 @@ import { ScrollReveal } from '@/components/scroll-reveal'
 const pains = [
   {
     title: 'Support drowns',
-    body: 'Tickets pile up, first response drags into hours, and every new product and promo adds more volume than the team can clear.',
+    body: 'Tickets pile up, first response drags into hours, and every new store and promo adds more volume than the team can clear.',
   },
   {
-    title: 'Creative runs dry',
-    body: 'Winning ads fatigue faster than anyone can test new angles, so ROAS slips while you scramble for the next concept.',
+    title: 'The phone bill scales',
+    body: 'A per-minute voice vendor runs about $0.40 a minute, so the bill climbs with every call. Unresolved calls come back as duplicate email tickets, and your team answers the same question twice.',
   },
   {
     title: 'Everything needs a hire',
-    body: 'More volume, more headcount, thinner margins. Growth quietly turns into an operations problem you keep paying for.',
+    body: 'A support seat runs around $27,000 a year offshore. More volume means more seats, thinner margins, and a bigger team to manage.',
   },
 ]
 
@@ -24,9 +24,9 @@ export function Problem() {
         <ScrollReveal variant="slide-left" className="mb-4">
           <span className="label-mono mb-5 block text-sky-400">01 / The problem</span>
           <h2 className="display-title max-w-5xl text-[clamp(2.25rem,6vw,5rem)] text-white">
-            You don&apos;t have a growth problem.{' '}
+            More stores, more tickets.{' '}
             <span className="serif-accent text-[1.04em] text-white/85">
-              You have a bandwidth one.
+              Same team.
             </span>
           </h2>
         </ScrollReveal>
@@ -36,9 +36,9 @@ export function Problem() {
           delay={0.08}
           className="mb-16 max-w-2xl text-sm leading-relaxed text-white/45"
         >
-          Revenue climbs and the work climbs with it. Off-the-shelf tools rent you a
-          generic chatbot that breaks the moment your process gets specific, so the real
-          work still lands on people, and the only lever left is another hire.
+          Every launch adds ticket volume and phone minutes. Rented tools stay generic
+          and break the moment your policy gets specific, so the real work lands on your
+          team, and the only lever left is another hire.
         </ScrollReveal>
 
         <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 md:grid-cols-3">
@@ -61,8 +61,8 @@ export function Problem() {
 
         <ScrollReveal variant="fade-up" delay={0.1} className="mt-10">
           <p className="max-w-2xl text-sm leading-relaxed text-white/40">
-            The fix isn&apos;t another tool or another hire. It&apos;s a system that owns the
-            repetitive work end to end, so your team runs the exceptions, not the queue.
+            A system built on your own tickets and your own policy takes the repetitive
+            work end to end. Your team runs the exceptions.
           </p>
         </ScrollReveal>
       </div>

@@ -9,24 +9,19 @@ import { ScrollReveal } from '@/components/scroll-reveal'
 
 const navigation = {
   systems: [
-    { name: 'AI Support Agent', href: '/services#support-agent' },
-    { name: 'AI Creative Agent', href: '/services#creative-agent' },
-    { name: 'AI Content Agent', href: '/services#content-agent' },
-    { name: 'AI Design Agent', href: '/services#design-agent' },
-    { name: 'AI Chatbots', href: '/services#chatbots' },
+    { name: 'The 30-Day Ecom Support Standard', href: '/' },
+    { name: 'The 30-Day Ecom Phone Standard', href: '/phone' },
+    { name: 'Free ticket audit', href: '/audit' },
   ],
   company: [
     { name: 'About', href: '/about' },
-    { name: 'Solutions', href: '/services' },
-    { name: 'Work', href: '/work' },
+    { name: 'Case Study', href: '/case-study' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ],
-  builtFor: [
-    { name: 'Eight & nine-figure brands', href: '/about' },
-    { name: 'DTC & supplements', href: '/services' },
-    { name: 'Fashion & apparel', href: '/work' },
-    { name: 'Book an audit call', href: '/contact' },
+  getStarted: [
+    { name: 'Get your free ticket audit', href: '/audit' },
+    { name: 'henry@monoclick.ai', href: 'mailto:henry@monoclick.ai' },
   ],
   legal: [
     { name: 'Privacy Policy', href: '/privacy' },
@@ -43,9 +38,9 @@ const navigation = {
 }
 
 const linkColumns = [
-  { heading: 'Systems', links: navigation.systems },
+  { heading: 'The systems', links: navigation.systems },
   { heading: 'Company', links: navigation.company },
-  { heading: 'Built for', links: navigation.builtFor },
+  { heading: 'Get started', links: navigation.getStarted },
 ]
 
 export function SiteFooter() {
@@ -63,9 +58,9 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="mb-8 max-w-md text-sm leading-relaxed text-white/45">
-              Custom AI systems for eight and nine-figure ecommerce brands. A team of AI agents
-              for support, creative, content, and retention, built around your stack, owned by
-              your brand, and live in 10 working days.
+              Two systems for ecommerce brands: a support system inside Gorgias, Zendesk
+              or Freshdesk that drafts every ticket reply, and a phone system that
+              answers every call on your own accounts. Both guaranteed, live in 30 days.
             </p>
             <div className="space-y-3">
               <a

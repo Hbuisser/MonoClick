@@ -4,12 +4,9 @@ import { LogoStrip, PoweredBy } from '@/components/logo-strip'
 import { Problem } from '@/components/problem'
 import { ServicesEditorial } from '@/components/services-editorial'
 import { SupportDemo } from '@/components/support-demo'
-import { ShowcaseSites } from '@/components/showcase-sites'
-import { ShowcaseReel } from '@/components/showcase-reel'
 import { ProcessSteps } from '@/components/process-steps'
 import { Ownership } from '@/components/ownership'
 import { Pricing } from '@/components/pricing'
-import { CaseHighlights } from '@/components/case-highlights'
 import { Testimonials } from '@/components/testimonials'
 import { FAQ } from '@/components/faq'
 import { faqs } from '@/components/faq-data'
@@ -18,8 +15,8 @@ import { createMetadata } from '@/lib/seo'
 import { generateFAQSchema } from '@/lib/schema-org'
 
 export const metadata: Metadata = createMetadata({
-  title: 'AI Growth Partner for Fast-Moving Ecommerce - Support Agent, Creative Agent, Content Agent, Design Agent, Chatbots',
-  description: 'AI-powered growth systems for fast-moving ecommerce. We build an AI support agent for Gorgias/Zendesk, an AI creative agent that analyzes your Meta ads and generates new concepts, an AI content agent that publishes to social, an AI design agent that builds your storefront, and AI chatbots. Delivered in 10 working days.',
+  title: 'AI Support System for Gorgias, Zendesk & Freshdesk - The 30-Day Ecom Support Standard',
+  description: 'An AI support system for Gorgias and Zendesk that drafts every ticket reply in your tone and on your policy, live in 30 days. At least 3 in 10 replies go out exactly as written, guaranteed. Start with a free audit of your last 60 days of tickets.',
 })
 
 export default function HomePage() {
@@ -36,14 +33,11 @@ export default function HomePage() {
       <Problem />
       <ServicesEditorial />
       <SupportDemo />
-      <ShowcaseSites />
-      <ShowcaseReel />
       <PoweredBy />
       <Testimonials />
       <ProcessSteps />
       <Ownership />
       <Pricing />
-      {/* <CaseHighlights /> */}
       <FAQ />
       <CTABanner />
     </>

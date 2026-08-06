@@ -11,11 +11,11 @@ import { cn } from '@/lib/utils'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Solutions', href: '/services' },
-  // { name: 'Workshop', href: '/workshop' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Phone', href: '/phone' },
+  { name: 'Free Audit', href: '/audit' },
   { name: 'Case Study', href: '/case-study' },
   { name: 'About', href: '/about' },
+  { name: 'Blog', href: '/blog' },
 ]
 
 const MotionLink = motion(Link)
@@ -83,7 +83,7 @@ export function SiteHeader() {
             rel="noopener noreferrer"
             className="group nav-link-editorial hidden items-center gap-2 bg-gradient-to-r from-blue-600 to-sky-400 px-3.5 py-1.5 text-white shadow-blue-glow-sm transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.05] hover:shadow-blue-glow hover:brightness-110 active:scale-[0.97] active:translate-y-0 md:inline-flex"
           >
-            Let&apos;s talk
+            Book a call
             <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5" />
           </Link>
 
@@ -127,7 +127,7 @@ export function SiteHeader() {
                 rel="noopener noreferrer"
                 className="nav-link-editorial mt-2 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-sky-400 px-4 py-3 text-white shadow-blue-glow-sm"
               >
-                Let&apos;s talk
+                Book a call
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>

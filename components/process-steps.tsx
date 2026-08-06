@@ -11,35 +11,51 @@ import { Magnetic } from '@/components/fx/magnetic'
 const steps = [
   {
     number: '01',
-    title: 'Analyze',
-    accent: 'listen first',
+    title: 'Free audit',
+    accent: 'no call needed',
     description:
-      'We analyze your business, pain points, and growth goals to identify automation opportunities.',
-    duration: '30 min call',
+      'You send your last 60 days of tickets as a CSV. I send back a free report: your categories ranked by volume, what a system can draft today, and your estimated send-as-written rate.',
+    duration: 'Free, 3 working days',
   },
   {
     number: '02',
-    title: 'Research',
-    accent: 'then design',
+    title: 'Teardown',
+    accent: 'locks the number',
     description:
-      'We design and prototype your custom automation system with clear ROI projections.',
-    duration: '10 working days',
+      'The paid deep analysis of your real tickets that sets the guaranteed number. If the system will not clear the floor, you keep the analysis and stop there. Credited in full against the build.',
+    duration: 'Paid, credited in full',
   },
   {
     number: '03',
-    title: 'Build',
-    accent: 'and ship',
+    title: 'Brain',
+    accent: 'one knowledge base',
     description:
-      'We build, test, and deploy your automation with comprehensive training for your team.',
-    duration: 'Included',
+      'Your policies, products and ticket history become one knowledge base, with a daily catalogue sync.',
+    duration: 'Build phase',
   },
   {
     number: '04',
-    title: 'Scale',
-    accent: 'forever',
+    title: 'Shadow mode',
+    accent: 'drafts, never sends',
     description:
-      'Continuous optimization and scaling as your business grows and requirements evolve.',
-    duration: 'Ongoing',
+      'The system drafts on live tickets while your team keeps sending. Every draft is measured against what your team actually sent.',
+    duration: 'On your real queue',
+  },
+  {
+    number: '05',
+    title: 'Gate',
+    accent: 'blocks what fails',
+    description:
+      'A second model scores every draft and blocks what fails. Refunds and disputes never leave without a human.',
+    duration: 'Always on',
+  },
+  {
+    number: '06',
+    title: 'Ratchet',
+    accent: 'earns auto-send',
+    description:
+      'Auto-send turns on category by category, once the Gate scores that category clean.',
+    duration: 'Category by category',
   },
 ]
 
@@ -59,24 +75,23 @@ export function ProcessSteps() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-[calc(var(--menu-height)+3rem)]">
               <ScrollReveal variant="slide-right">
-                <span className="label-mono mb-5 block text-sky-400">06 / The process</span>
+                <span className="label-mono mb-5 block text-sky-400">05 / The process</span>
                 <h2 className="display-title text-[clamp(2.25rem,5.4vw,4.4rem)] text-white">
-                  How we{' '}
-                  <span className="serif-accent text-[1.04em] text-white/85">deliver</span>
+                  Six steps{' '}
+                  <span className="serif-accent text-[1.04em] text-white/85">to guaranteed</span>
                 </h2>
                 <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/45">
-                  From discovery to deployment, a proven process that turns a 30-minute
-                  call into a working AI system in ten days.
+                  From a free audit of your tickets to auto-send earned category by
+                  category. The whole path runs on your real queue, inside your own
+                  helpdesk.
                 </p>
                 <div className="mt-10">
                   <Magnetic>
                     <Link
-                      href="https://calendly.com/henrybuisseret/30min"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="/audit"
                       className="group inline-flex items-center gap-3 border border-white/25 px-6 py-3 text-xs font-medium uppercase tracking-[0.12em] text-white transition-colors duration-300 hover:border-sky-400 hover:text-sky-400"
                     >
-                      Start with step 01
+                      Start with the free audit
                       <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                     </Link>
                   </Magnetic>

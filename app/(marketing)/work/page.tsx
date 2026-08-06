@@ -11,7 +11,7 @@ import { RevealSection } from '@/components/scroll-reveal'
 
 export const metadata: Metadata = createMetadata({
   title: 'Case Studies',
-  description: 'See how MonoClick has helped ecommerce brands scale with AI support agents, AI ad creative, content automation, and chatbots.',
+  description: 'See how MonoClick has helped ecommerce brands scale with AI support systems and automation built on their own stack.',
   path: '/work'
 })
 
@@ -21,7 +21,7 @@ const caseStudies = [
     client: 'Welzo',
     industry: 'Health & Wellness Ecommerce',
     timeline: '10 working days',
-    teamSize: '6 support agents',
+    teamSize: '6 support people',
     challenge: 'Support team overwhelmed with repetitive order and product queries, 48-hour response times during peak sales',
     solution: 'Deployed AI-powered support automation with Gorgias, trained on product catalog, FAQs, and order data',
     results: [

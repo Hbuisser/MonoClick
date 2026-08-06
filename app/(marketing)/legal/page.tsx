@@ -28,18 +28,16 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          MonoClick provides AI-powered growth systems for ecommerce brands including but not
+          MonoClick provides AI-powered systems for ecommerce brands including but not
           limited to:
         </p>
         <ul>
-          <li>AI support agents for Gorgias and Zendesk</li>
+          <li>AI support systems for Gorgias, Zendesk and Freshdesk that draft and send ticket replies</li>
           <li>
-            AI creative agents that analyze ad performance and generate ad concepts, copy, and
-            image/video prompts
+            AI phone systems that answer inbound calls on the client&apos;s own accounts, with
+            order lookup and helpdesk sync
           </li>
-          <li>AI content agents that produce content and publish to social media</li>
-          <li>AI design agents that design and build ecommerce storefronts end-to-end</li>
-          <li>AI chatbots trained on product catalogs, FAQs, and policies</li>
+          <li>Ticket and phone line audits and teardowns</li>
         </ul>
       </>
     ),

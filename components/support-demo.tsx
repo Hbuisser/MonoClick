@@ -14,14 +14,19 @@ type Ticket = {
 }
 
 const tickets: Ticket[] = [
-  { q: "Where's my order #4821?", tags: ['WISMO', 'Order lookup'], outcome: 'Auto-resolved' },
-  { q: 'Refund request, wrong size', tags: ['Policy check', 'Shopify'], outcome: 'Refund issued' },
-  { q: 'Do you ship to Canada?', tags: ['FAQ', 'Shipping zones'], outcome: 'Auto-resolved' },
-  { q: 'Change my delivery address', tags: ['Order update', 'Gorgias'], outcome: 'Auto-resolved' },
+  { q: "Where's my order #4821?", tags: ['WISMO', 'Order lookup'], outcome: 'Sent as written' },
+  {
+    q: 'Refund request, wrong size',
+    tags: ['Refund', 'Gate check'],
+    outcome: 'Blocked by the Gate, human approves',
+    escalate: true,
+  },
+  { q: 'Do you ship to Canada?', tags: ['FAQ', 'Shipping zones'], outcome: 'Sent as written' },
+  { q: 'Change my delivery address', tags: ['Order update', 'Gorgias'], outcome: 'Sent as written' },
   {
     q: 'Wholesale / bulk pricing?',
     tags: ['High intent'],
-    outcome: 'Routed to your team',
+    outcome: 'Escalated to your team',
     escalate: true,
   },
 ]
@@ -50,18 +55,20 @@ export function SupportDemo() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-[calc(var(--menu-height)+3rem)]">
               <ScrollReveal variant="slide-right">
-                <span className="label-mono mb-5 block text-sky-400">Live · AI Support Agent</span>
+                <span className="label-mono mb-5 block text-sky-400">03 / The system, live</span>
                 <h2 className="display-title text-[clamp(2.25rem,5.4vw,4.4rem)] text-white">
                   Watch it clear{' '}
                   <span className="serif-accent text-[1.04em] text-white/85">the queue.</span>
                 </h2>
                 <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/45">
-                  Every ticket read in context, checked against your policies and order data,
-                  then resolved or routed in seconds. Your team only ever sees the exceptions.
+                  Every ticket arrives with the reply already drafted, checked against your
+                  policies and order data. The Gate scores each draft and blocks what fails.
+                  Refunds never leave without a human. Your team runs the exceptions.
                 </p>
                 <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">
-                  In a recent build this took one brand from 200 to 1,500 tickets a day, with
-                  the team cut from 9 to 5.
+                  One US health-products brand went from 200-300 tickets a day to 1,500+
+                  with the same team. Support went from 9 people to 5, nobody fired. 90% of
+                  replies went out without a human touching them.
                 </p>
               </ScrollReveal>
             </div>
@@ -78,13 +85,13 @@ export function SupportDemo() {
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400/70" />
                       <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-400" />
                     </span>
-                    <span className="label-mono text-white/50">Live · AI Support Agent</span>
+                    <span className="label-mono text-white/50">Live · The support system</span>
                   </div>
                   <span className="label-mono text-white/40">
                     <span className="tabular-nums text-white/80">
                       {resolvedTotal.toLocaleString('en-US')}
                     </span>{' '}
-                    resolved today
+                    drafted today
                   </span>
                 </div>
 
@@ -159,17 +166,17 @@ export function SupportDemo() {
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 border-t border-white/10 px-4 py-3 sm:px-5">
                   <span className="label-mono flex items-center gap-2 text-white/45">
                     <span className="h-1 w-1 bg-sky-400" aria-hidden />
-                    Resolved in seconds
+                    Drafted in seconds
                   </span>
                   <span className="label-mono flex items-center gap-2 text-white/45">
                     <span className="h-1 w-1 bg-sky-400" aria-hidden />
-                    Exceptions routed to your team
+                    Refunds held for a human
                   </span>
                 </div>
               </div>
 
               <p className="label-mono mt-4 text-white/30">
-                Illustrative interface, wired to Gorgias, Zendesk, Shopify and your order data
+                Illustrative interface, wired to Gorgias, Zendesk, Freshdesk, Shopify and your order data
               </p>
             </ScrollReveal>
           </div>

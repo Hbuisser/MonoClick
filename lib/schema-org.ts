@@ -43,12 +43,12 @@ export function generateOrganizationSchema() {
       value: '5-10',
     },
     knowsAbout: [
-      'AI Automation for Ecommerce',
-      'AI Support Agents for Gorgias & Zendesk',
-      'AI Creative Agents for Meta Ads',
-      'AI Content Agent for Social Media',
-      'AI Design Agents for Ecommerce Stores',
-      'AI Chatbots for Online Stores',
+      'AI support systems for Gorgias',
+      'AI support systems for Zendesk',
+      'AI support systems for Freshdesk',
+      'AI phone systems for ecommerce',
+      'Ecommerce support automation',
+      'Inbound voice AI on ElevenLabs and Twilio',
     ],
   }
 }
@@ -72,9 +72,9 @@ export function generateServiceSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'AI Growth Systems for Ecommerce',
+    name: 'AI Systems for Ecommerce',
     description:
-      'Custom AI-powered growth systems for ecommerce brands, an AI support agent, an AI creative agent for Meta ads, an AI content agent, an AI design agent that builds your storefront, and AI chatbots.',
+      'Two systems for ecommerce brands: an AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply, and an AI phone system that answers every call on the brand’s own accounts. Both guaranteed, live in 30 days.',
     provider: {
       '@type': 'Organization',
       name: siteConfig.name,
@@ -84,51 +84,33 @@ export function generateServiceSchema() {
     areaServed: ['United States', 'European Union'],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'AI Growth Systems for Ecommerce',
+      name: 'AI Systems for Ecommerce',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'AI Support Agent',
+            name: 'The 30-Day Ecom Support Standard',
             description:
-              'An always-on support agent for Gorgias and Zendesk that resolves tickets in context and cuts resolution time by 70%',
+              'An AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply in the brand’s tone and on its policy, live in 30 days. At least 3 in 10 replies go out exactly as written, guaranteed by The Send-As-Written Standard.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'AI Creative Agent',
+            name: 'The 30-Day Ecom Phone Standard',
             description:
-              'Analyzes your Meta ads history, mines audience and competitor data, and generates new ad concepts, copy, and image & video prompts',
+              'An inbound AI phone system on the brand’s own accounts (ElevenLabs, Claude, Twilio) with Shopify order lookup and Gorgias or Zendesk sync, at half the current per-minute voice bill or less, guaranteed by Nothing Moves Until It Passes.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'AI Content Agent',
+            name: 'Free Ticket Audit',
             description:
-              'Turns creative concepts into finished content, images, video, and copy, and publishes to your social channels',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'AI Design Agent',
-            description:
-              'Conversion-ready ecommerce storefronts designed and built end-to-end by AI, art direction, 3D, motion, AI-generated photography and film, code and deployment, with zero templates',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'AI Chatbots',
-            description:
-              'Chatbots trained on your FAQ, policies, and product catalog for 24/7 customer support and conversions',
+              'Send 60 days of helpdesk tickets as a CSV and receive a free written report: ticket categories ranked by volume, which ones a system can draft today, and the estimated send-as-written rate. Delivered within three working days, no call needed.',
           },
         },
       ],
@@ -197,7 +179,7 @@ export function generatePersonSchema() {
     familyName: 'Buisseret',
     jobTitle: 'AI Automation Engineer',
     description:
-      'Belgian software engineer specializing in AI automation for ecommerce and founder of MonoClick. Background in finance (KBC) and payments (Worldline), building custom AI support, creative, content, and design agents for ecommerce brands.',
+      'Belgian software engineer specializing in AI automation for ecommerce and founder of MonoClick. Background in finance (KBC) and payments (Worldline), building AI support systems for Gorgias, Zendesk and Freshdesk, and AI phone systems for ecommerce brands.',
     url: `${siteConfig.url}/about`,
     image: `${siteConfig.url}/pp2026.png`,
     email: 'henry@monoclick.ai',
@@ -214,10 +196,10 @@ export function generatePersonSchema() {
     },
     knowsAbout: [
       'AI automation for ecommerce',
-      'AI support agents for Gorgias and Zendesk',
+      'AI support systems for Gorgias and Zendesk',
+      'AI phone systems for ecommerce',
       'Retrieval-augmented generation (RAG)',
       'Context engineering',
-      'Meta ads creative analysis',
       'n8n workflow automation',
       'Large language models',
     ],

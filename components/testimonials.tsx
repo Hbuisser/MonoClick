@@ -73,9 +73,9 @@ export function Testimonials() {
             </h2>
           </div>
           <div className="flex items-center gap-5">
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2.5">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                <Star key={i} className="h-8 w-8 fill-amber-400 text-amber-400" />
               ))}
             </div>
             <span className="label-mono text-black/40">14 reviews, all 5 stars</span>

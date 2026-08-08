@@ -155,9 +155,9 @@ export function Hero() {
             className="pointer-events-none hidden items-end gap-10 md:flex lg:mr-20"
           >
             {[
-              ['30%', 'Replies sent as written, minimum'],
-              ['1,500+', 'Tickets a day, same team'],
-              ['20', 'Working days to live'],
+              ['30%', 'Auto-send minimum'],
+              ['1,500+', 'Tickets/day'],
+              ['20', 'Days to live'],
             ].map(([stat, label]) => (
               <div key={label}>
                 <div className="font-heading text-3xl font-black text-white">

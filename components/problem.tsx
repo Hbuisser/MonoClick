@@ -9,7 +9,7 @@ const pains = [
   },
   {
     title: 'So you hire, again',
-    body: 'A support seat runs about $27,000 a year offshore, and the money is the easy part. Weeks go into finding them, training them on your products and your policy, and managing them after that. Time you wanted to spend growing the business.',
+    body: 'A support seat runs about $27,000 a year offshore, and the money is the easy part. Weeks go into finding them, training them, and managing them after that.',
   },
   {
     title: 'And they leave',
@@ -57,13 +57,6 @@ export function Problem() {
             </ScrollReveal>
           ))}
         </div>
-
-        <ScrollReveal variant="fade-up" delay={0.1} className="mt-10">
-          <p className="max-w-2xl text-sm leading-relaxed text-white/40">
-            A system built on your own tickets and your own policy takes the repetitive
-            work end to end. Your team runs the exceptions.
-          </p>
-        </ScrollReveal>
       </div>
     </section>
   )

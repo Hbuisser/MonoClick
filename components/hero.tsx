@@ -104,10 +104,9 @@ export function Hero() {
 
         <motion.p
           variants={fadeItem}
-          className="mt-7 max-w-lg text-sm leading-relaxed text-white/55 sm:text-[0.95rem]"
+          className="mt-7 max-w-2xl text-lg leading-snug text-white/70 sm:text-xl lg:text-2xl"
         >
-          I build an AI support system inside Gorgias or Zendesk that drafts every ticket
-          reply in your tone and on your policy.
+          Fix that in ONE click with the 20-Day Ecom Support Standard
         </motion.p>
 
         <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">

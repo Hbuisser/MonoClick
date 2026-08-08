@@ -1,40 +1,33 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, ArrowUpRight, Check } from 'lucide-react'
+import { ArrowUpRight, Check } from 'lucide-react'
 
 import { ScrollReveal } from '@/components/scroll-reveal'
 
 const services = [
   {
-    title: 'The 30-Day Ecom Support Standard',
+    title: 'The 20-Day Ecom Support Standard',
     accent: 'on Gorgias, Zendesk & Freshdesk',
-    description:
-      'A system inside Gorgias, Zendesk or Freshdesk that works your real tickets. It learns from your ticket history, follows your tone and policy, drafts or auto-sends, gates refunds and disputes to a human, and escalates exceptions. Guaranteed by The Send-As-Written Standard: at least 3 in 10 replies go out exactly as written, or I keep working for free until they do.',
     features: [
-      'Every ticket arrives with the reply drafted',
+      'Every ticket arrives with the reply already drafted',
       'Your tone, your policy, your order data',
-      'The Gate holds refunds for a human',
-      'Live in 30 days, guaranteed floor of 3 in 10',
+      'Refunds and disputes held back for a human',
+      'Auto-send earned one category at a time',
+      'Live in 20 working days',
     ],
-    href: '/audit',
-    cta: 'Get your free ticket audit',
   },
   {
-    title: 'The 30-Day Ecom Phone Standard',
+    title: 'The 20-Day Ecom Phone Standard',
     accent: 'answers every call',
-    description:
-      'An inbound voice system on your own accounts that answers every call, looks up orders in Shopify, and opens a ticket in Gorgias or Zendesk only when a call is unresolved. It runs at about $0.12 a minute on your own stack against about $0.40 on a per-minute vendor. Guaranteed by Nothing Moves Until It Passes: your current provider keeps every live call until six checks pass on real traffic.',
     features: [
       'Answers every call on your own accounts',
-      'Shopify lookup, tracking, returns, SMS links',
-      'Every closed call is one less email ticket',
-      'Half your current bill is the guaranteed floor',
+      'Shopify order lookup, tracking, returns, SMS links',
+      'Opens a ticket only when a call goes unresolved',
+      'About $0.12 a minute, not $0.40 on a voice vendor',
+      'Nothing switches until six checks pass on real calls',
     ],
-    href: '/phone',
-    cta: 'See the Phone Standard',
   },
 ]
 
@@ -55,11 +48,10 @@ export function ServicesEditorial() {
         <ScrollReveal
           variant="fade"
           delay={0.08}
-          className="mb-14 max-w-2xl text-sm leading-relaxed text-white/45"
+          className="mb-14 max-w-2xl text-base leading-relaxed text-white/50 sm:text-lg"
         >
-          A system that works your tickets and a system that answers your phone. Each one
-          runs on your own accounts, ships in 30 days, and carries a named guarantee with
-          a number I am held to.
+          One system works your tickets, one answers your phone. Both run on your own
+          accounts.
         </ScrollReveal>
 
         <div className="border-t border-white/10">
@@ -112,30 +104,18 @@ export function ServicesEditorial() {
                         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-10 pl-0 sm:pl-[calc(2rem+2.5ch)]">
-                          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
-                            <p className="max-w-md text-sm leading-relaxed text-white/50">
-                              {service.description}
-                            </p>
-                            <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                              {service.features.map((feature) => (
-                                <li
-                                  key={feature}
-                                  className="flex items-start gap-2 text-[0.8rem] text-white/55"
-                                >
-                                  <Check className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-sky-400/80" />
-                                  <span>{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <Link
-                            href={service.href}
-                            className="group/link mt-8 inline-flex items-center gap-2 border-b border-white/25 pb-1 text-xs font-medium uppercase tracking-[0.14em] text-white/70 transition-colors hover:border-sky-400 hover:text-sky-400"
-                          >
-                            {service.cta}
-                            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-1" />
-                          </Link>
+                        <div className="pb-12 pl-0 sm:pl-[calc(2rem+2.5ch)]">
+                          <ul className="grid max-w-3xl grid-cols-1 gap-4 sm:gap-5">
+                            {service.features.map((feature) => (
+                              <li
+                                key={feature}
+                                className="flex items-start gap-4 text-lg leading-snug text-white/75 sm:text-xl"
+                              >
+                                <Check className="mt-1 h-5 w-5 flex-shrink-0 text-sky-400" />
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </motion.div>
                     )}

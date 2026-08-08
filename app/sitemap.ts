@@ -19,18 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
-    {
-      url: `${siteConfig.url}/phone`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${siteConfig.url}/audit`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
+    // /phone is offline while the Phone Standard page is reworked; restore this
+    // entry when the page is back. /audit is gone for good: the free audit is a call.
     {
       url: `${siteConfig.url}/blog`,
       lastModified: currentDate,

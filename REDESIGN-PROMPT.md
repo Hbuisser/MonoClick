@@ -4,7 +4,7 @@ Refocus monoclick.ai on the two systems Monoclick sells to ecommerce: the suppor
 
 ## Language rule that drives everything
 
-The word is SYSTEM, never agent. Not "AI Support Agent", not "agent suite", not "chatbot". A system that works tickets, a system that answers the phone. Replace the word everywhere: metadata, hero, services, FAQ, schema-org, alt texts. The two offer names are "The 30-Day Ecom Support Standard" and "The 30-Day Ecom Phone Standard".
+The word is SYSTEM, never agent. Not "AI Support Agent", not "agent suite", not "chatbot". A system that works tickets, a system that answers the phone. Replace the word everywhere: metadata, hero, services, FAQ, schema-org, alt texts. The two offer names are "The 20-Day Ecom Support Standard" and "The 20-Day Ecom Phone Standard".
 
 Name the helpdesks, always and in this order: Gorgias, Zendesk, then Freshdesk. They appear in the hero subline, page metadata, the FAQ and the audit page. SEO should carry "AI support system for Gorgias" and "AI support system for Zendesk" as phrases. Wordmarks only if official assets already exist in /public; never draw a logo.
 
@@ -27,9 +27,9 @@ Build it as a page at /audit:
 
 The free audit and the paid teardown are two different things and the site must keep them apart: the audit is a free report that estimates the number, the teardown is the paid first step of the build that locks the number the guarantee is held to, and it is credited in full against the build.
 
-## Offer 1, the homepage: The 30-Day Ecom Support Standard
+## Offer 1, the homepage: The 20-Day Ecom Support Standard
 
-Promise: your team stops writing replies from scratch. Every ticket arrives with the answer already drafted, in your tone and on your policy, in 30 days. At least 3 in 10 go out exactly as written, guaranteed.
+Promise: your team stops writing replies from scratch. Every ticket arrives with the answer already drafted, in your tone and on your policy, in 20 working days. At least 3 in 10 go out exactly as written, guaranteed.
 
 What it is: a system inside Gorgias, Zendesk or Freshdesk, working real tickets. It learns from their ticket history, follows their tone and policy, drafts or auto-sends, gates refunds and disputes to a human, escalates exceptions.
 
@@ -44,9 +44,9 @@ What ships, a named list, no prices: the Ticket Teardown; the Brain (policies, p
 
 A monthly retainer covers monitoring, knowledge base freshness and gate tuning. The guarantee runs while it runs. Everything runs on the client's own accounts: their code, their knowledge base, their keys. No subscription, no lock-in.
 
-## Offer 2, new page at /phone: The 30-Day Ecom Phone Standard
+## Offer 2, new page at /phone: The 20-Day Ecom Phone Standard
 
-Promise: your phone line answers every call on your own accounts, at half what you pay now or less, live in 30 days. Every call it closes is an email that never arrives, so the support queue drops at the same time.
+Promise: your phone line answers every call on your own accounts, at half what you pay now or less, live in 20 working days. Every call it closes is an email that never arrives, so the support queue drops at the same time.
 
 What it is: an inbound voice system on ElevenLabs, Claude and Twilio, in the client's name. Shopify lookup by phone and by order number, tracking, returns, SMS checkout links. A dashboard on their stack: call history, transcripts, attributed revenue, per-phone-number ROAS. Gorgias or Zendesk sync that opens a ticket only when a call is unresolved. A compliance layer: calling hours in the customer's local time, DNC scrub, recording and AI disclosure, checkout consent.
 

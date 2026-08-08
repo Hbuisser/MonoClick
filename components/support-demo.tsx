@@ -65,11 +65,6 @@ export function SupportDemo() {
                   policies and order data. The Gate scores each draft and blocks what fails.
                   Refunds never leave without a human. Your team runs the exceptions.
                 </p>
-                <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">
-                  One US health-products brand went from 200-300 tickets a day to 1,500+
-                  with the same team. Support went from 9 people to 5, nobody fired. 90% of
-                  replies went out without a human touching them.
-                </p>
               </ScrollReveal>
             </div>
           </div>

@@ -13,7 +13,7 @@ import { RevealSection, ScrollReveal } from '@/components/scroll-reveal'
 export const metadata: Metadata = createMetadata({
   title: 'The Two Systems - AI Support System for Gorgias, Zendesk & Freshdesk, and the AI Phone System',
   description:
-    'Two systems for ecommerce brands. The 30-Day Ecom Support Standard: an AI support system for Gorgias and Zendesk that drafts every ticket reply, at least 3 in 10 sent exactly as written, guaranteed. The 30-Day Ecom Phone Standard: an AI phone system on your own accounts at half your current bill or less.',
+    'Two systems for ecommerce brands. The 20-Day Ecom Support Standard: an AI support system for Gorgias and Zendesk that drafts every ticket reply, at least 3 in 10 sent exactly as written, guaranteed. The 20-Day Ecom Phone Standard: an AI phone system on your own accounts at half your current bill or less.',
   path: '/services',
 })
 
@@ -38,14 +38,14 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
               I build two systems for ecommerce brands on Gorgias, Zendesk or Freshdesk.
-              Each runs on your own accounts, ships in 30 days, and carries a named
+              Each runs on your own accounts, ships in 20 working days, and carries a named
               guarantee with a number I am held to.
             </p>
           </ScrollReveal>
 
           <ScrollReveal variant="fade-up" delay={0.1} className="mt-14 grid max-w-3xl grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-3">
             {[
-              { value: '30 days', label: 'To live on your queue' },
+              { value: '20 days', label: 'Working days to live' },
               { value: '3 in 10', label: 'Sent as written, the floor' },
               { value: 'Half', label: 'Your voice bill, the floor' },
             ].map((stat) => (

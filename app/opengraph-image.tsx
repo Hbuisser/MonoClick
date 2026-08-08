@@ -91,7 +91,7 @@ export default async function Image() {
           }}
         >
           An AI support system for Gorgias, Zendesk and Freshdesk, and an AI phone
-          system that answers every call. Both guaranteed, live in 30 days.
+          system that answers every call. Both guaranteed, live in 20 working days.
         </p>
 
         {/* Bottom gradient */}

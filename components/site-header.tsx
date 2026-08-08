@@ -11,8 +11,7 @@ import { cn } from '@/lib/utils'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Phone', href: '/phone' },
-  { name: 'Free Audit', href: '/audit' },
+  // { name: 'Phone', href: '/phone' }, // restore when the Phone Standard page is back
   { name: 'Case Study', href: '/case-study' },
   { name: 'About', href: '/about' },
   { name: 'Blog', href: '/blog' },

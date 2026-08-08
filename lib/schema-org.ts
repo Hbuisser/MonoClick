@@ -74,7 +74,7 @@ export function generateServiceSchema() {
     '@type': 'Service',
     name: 'AI Systems for Ecommerce',
     description:
-      'Two systems for ecommerce brands: an AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply, and an AI phone system that answers every call on the brand’s own accounts. Both guaranteed, live in 30 days.',
+      'Two systems for ecommerce brands: an AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply, and an AI phone system that answers every call on the brand’s own accounts. Both guaranteed, live in 20 working days.',
     provider: {
       '@type': 'Organization',
       name: siteConfig.name,
@@ -90,16 +90,16 @@ export function generateServiceSchema() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'The 30-Day Ecom Support Standard',
+            name: 'The 20-Day Ecom Support Standard',
             description:
-              'An AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply in the brand’s tone and on its policy, live in 30 days. At least 3 in 10 replies go out exactly as written, guaranteed by The Send-As-Written Standard.',
+              'An AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply in the brand’s tone and on its policy, live in 20 working days. At least 3 in 10 replies go out exactly as written, guaranteed by The Send-As-Written Standard.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'The 30-Day Ecom Phone Standard',
+            name: 'The 20-Day Ecom Phone Standard',
             description:
               'An inbound AI phone system on the brand’s own accounts (ElevenLabs, Claude, Twilio) with Shopify order lookup and Gorgias or Zendesk sync, at half the current per-minute voice bill or less, guaranteed by Nothing Moves Until It Passes.',
           },
@@ -108,9 +108,9 @@ export function generateServiceSchema() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Free Ticket Audit',
+            name: 'Free Support Audit Call',
             description:
-              'Send 60 days of helpdesk tickets as a CSV and receive a free written report: ticket categories ranked by volume, which ones a system can draft today, and the estimated send-as-written rate. Delivered within three working days, no call needed.',
+              'A free 30 minute call that goes through how support runs today: the helpdesk, the ticket volume, the questions that repeat every week, and which of them a system would take over. The way into both systems.',
           },
         },
       ],

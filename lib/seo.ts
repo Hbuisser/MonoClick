@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 export const siteConfig = {
   name: 'MonoClick',
   description:
-    'Two systems for ecommerce brands: an AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply in your tone and on your policy, and an AI phone system that answers every call on your own accounts. Both guaranteed, live in 30 days.',
+    'Two systems for ecommerce brands: an AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply in your tone and on your policy, and an AI phone system that answers every call on your own accounts. Both guaranteed, live in 20 working days.',
   url: 'https://monoclick.ai',
   ogImage: 'https://monoclick.ai/logo.png',
   creator: '@monoclick_ai',
@@ -24,8 +24,8 @@ export const siteConfig = {
     'AI phone support',
     'DTC support automation',
     'ecommerce customer support AI',
-    'The 30-Day Ecom Support Standard',
-    'The 30-Day Ecom Phone Standard',
+    'The 20-Day Ecom Support Standard',
+    'The 20-Day Ecom Phone Standard',
   ],
 }
 

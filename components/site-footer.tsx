@@ -9,9 +9,9 @@ import { ScrollReveal } from '@/components/scroll-reveal'
 
 const navigation = {
   systems: [
-    { name: 'The 30-Day Ecom Support Standard', href: '/' },
-    { name: 'The 30-Day Ecom Phone Standard', href: '/phone' },
-    { name: 'Free ticket audit', href: '/audit' },
+    { name: 'The 20-Day Ecom Support Standard', href: '/' },
+    // { name: 'The 20-Day Ecom Phone Standard', href: '/phone' }, // restore when the Phone Standard page is back
+    { name: 'Free audit call', href: 'https://calendly.com/henrybuisseret/30min' },
   ],
   company: [
     { name: 'About', href: '/about' },
@@ -20,7 +20,7 @@ const navigation = {
     { name: 'Contact', href: '/contact' },
   ],
   getStarted: [
-    { name: 'Get your free ticket audit', href: '/audit' },
+    { name: 'Get your free audit', href: 'https://calendly.com/henrybuisseret/30min' },
     { name: 'henry@monoclick.ai', href: 'mailto:henry@monoclick.ai' },
   ],
   legal: [
@@ -60,7 +60,7 @@ export function SiteFooter() {
             <p className="mb-8 max-w-md text-sm leading-relaxed text-white/45">
               Two systems for ecommerce brands: a support system inside Gorgias, Zendesk
               or Freshdesk that drafts every ticket reply, and a phone system that
-              answers every call on your own accounts. Both guaranteed, live in 30 days.
+              answers every call on your own accounts. Both guaranteed, live in 20 working days.
             </p>
             <div className="space-y-3">
               <a
@@ -90,6 +90,9 @@ export function SiteFooter() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
+                      {...(item.href.startsWith('http')
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {})}
                       className="inline-block text-sm text-white/50 transition-colors hover:text-white"
                     >
                       <motion.span

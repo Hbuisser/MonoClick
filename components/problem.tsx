@@ -4,16 +4,16 @@ import { ScrollReveal } from '@/components/scroll-reveal'
 
 const pains = [
   {
-    title: 'Support drowns',
-    body: 'Tickets pile up, first response drags into hours, and every new store and promo adds more volume than the team can clear.',
+    title: 'Growth adds tickets',
+    body: 'More ad spend, more sales, a new store, a new country. Every one lands in the same inbox, and the team that was already full gets more work.',
   },
   {
-    title: 'The phone bill scales',
-    body: 'A per-minute voice vendor runs about $0.40 a minute, so the bill climbs with every call. Unresolved calls come back as duplicate email tickets, and your team answers the same question twice.',
+    title: 'So you hire, again',
+    body: 'A support seat runs about $27,000 a year offshore, and the money is the easy part. Weeks go into finding them, training them on your products and your policy, and managing them after that. Time you wanted to spend growing the business.',
   },
   {
-    title: 'Everything needs a hire',
-    body: 'A support seat runs around $27,000 a year offshore. More volume means more seats, thinner margins, and a bigger team to manage.',
+    title: 'And they leave',
+    body: 'People quit a few months in, sometimes right after they are fully trained, and everything you taught them walks out with them. You start the same process over.',
   },
 ]
 
@@ -24,9 +24,9 @@ export function Problem() {
         <ScrollReveal variant="slide-left" className="mb-4">
           <span className="label-mono mb-5 block text-sky-400">01 / The problem</span>
           <h2 className="display-title max-w-5xl text-[clamp(2.25rem,6vw,5rem)] text-white">
-            More stores, more tickets.{' '}
+            Growing means hiring.{' '}
             <span className="serif-accent text-[1.04em] text-white/85">
-              Same team.
+              Hiring is the slow part.
             </span>
           </h2>
         </ScrollReveal>
@@ -36,9 +36,8 @@ export function Problem() {
           delay={0.08}
           className="mb-16 max-w-2xl text-sm leading-relaxed text-white/45"
         >
-          Every launch adds ticket volume and phone minutes. Rented tools stay generic
-          and break the moment your policy gets specific, so the real work lands on your
-          team, and the only lever left is another hire.
+          You are ready to grow. More ad spend, more sales, a new store, a new market.
+          Each one adds tickets, and the only answer available is another seat.
         </ScrollReveal>
 
         <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 md:grid-cols-3">

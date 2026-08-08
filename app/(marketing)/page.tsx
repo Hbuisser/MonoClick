@@ -15,8 +15,8 @@ import { createMetadata } from '@/lib/seo'
 import { generateFAQSchema } from '@/lib/schema-org'
 
 export const metadata: Metadata = createMetadata({
-  title: 'AI Support System for Gorgias, Zendesk & Freshdesk - The 30-Day Ecom Support Standard',
-  description: 'An AI support system for Gorgias and Zendesk that drafts every ticket reply in your tone and on your policy, live in 30 days. At least 3 in 10 replies go out exactly as written, guaranteed. Start with a free audit of your last 60 days of tickets.',
+  title: 'AI Support System for Gorgias, Zendesk & Freshdesk - The 20-Day Ecom Support Standard',
+  description: 'An AI support system for Gorgias and Zendesk that drafts every ticket reply in your tone and on your policy, live in 20 working days. At least 3 in 10 replies go out exactly as written, guaranteed. Start with a free 30 minute audit call.',
 })
 
 export default function HomePage() {

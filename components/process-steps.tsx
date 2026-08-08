@@ -8,37 +8,52 @@ import { ArrowRight } from 'lucide-react'
 import { ScrollReveal } from '@/components/scroll-reveal'
 import { Magnetic } from '@/components/fx/magnetic'
 
-const steps = [
+type Step = {
+  number: string
+  title: string
+  accent: string
+  description: string
+  duration: string
+  bullets?: string[]
+}
+
+const steps: Step[] = [
   {
     number: '01',
     title: 'Free audit',
-    accent: 'no call needed',
+    accent: 'the call',
     description:
-      'You send your last 60 days of tickets as a CSV. I send back a free report: your categories ranked by volume, what a system can draft today, and your estimated send-as-written rate.',
-    duration: 'Free, 3 working days',
+      'A free call where we look at how your support runs today: your helpdesk, how tickets get handled, and what a system could take over.',
+    duration: 'Free, 30 minutes',
   },
   {
     number: '02',
-    title: 'Teardown',
-    accent: 'locks the number',
+    title: 'Report',
+    accent: 'sets the number',
     description:
-      'The paid deep analysis of your real tickets that sets the guaranteed number. If the system will not clear the floor, you keep the analysis and stop there. Credited in full against the build.',
-    duration: 'Paid, credited in full',
+      'You send your last 60 days of tickets as a CSV. I send back the full analysis. If it says the system will not clear the number, you keep the report and stop there.',
+    bullets: [
+      'Every ticket category, ranked by volume',
+      'What the system can draft today',
+      'The number I will be held to',
+      'A cost estimation for the build',
+    ],
+    duration: 'Credited in full against the build',
   },
   {
     number: '03',
     title: 'Brain',
     accent: 'one knowledge base',
     description:
-      'Your policies, products and ticket history become one knowledge base, with a daily catalogue sync.',
+      'Your policies, products and ticket history become one knowledge base: Notion docs, product descriptions and prices, refund policies, SOPs, macros, your tone and your niche vocabulary.',
     duration: 'Build phase',
   },
   {
     number: '04',
     title: 'Shadow mode',
-    accent: 'drafts, never sends',
+    accent: '100% drafts',
     description:
-      'The system drafts on live tickets while your team keeps sending. Every draft is measured against what your team actually sent.',
+      'The system drafts on live tickets while your team keeps sending. Each draft comes with a confidence score for auto-send and a one-sentence explanation. Your team reviews the drafts, and their feedback drives the fine tuning in the next phase.',
     duration: 'On your real queue',
   },
   {
@@ -46,15 +61,15 @@ const steps = [
     title: 'Gate',
     accent: 'blocks what fails',
     description:
-      'A second model scores every draft and blocks what fails. Refunds and disputes never leave without a human.',
-    duration: 'Always on',
+      "A second model scores every draft and blocks what fails. Refunds and disputes never leave without a human. Includes 10 working days of support where I fine tune the Gate on your team's feedback from the drafts.",
+    duration: '10 working days of tuning included',
   },
   {
     number: '06',
-    title: 'Ratchet',
-    accent: 'earns auto-send',
+    title: 'Live auto-send',
+    accent: '30% minimum',
     description:
-      'Auto-send turns on category by category, once the Gate scores that category clean.',
+      'Auto-send turns on one category at a time, once the Gate has scored that category clean. At least 3 in 10 answers go out exactly as written. That is the floor I guarantee, or I keep working for free until it is met.',
     duration: 'Category by category',
   },
 ]
@@ -81,14 +96,16 @@ export function ProcessSteps() {
                   <span className="serif-accent text-[1.04em] text-white/85">to guaranteed</span>
                 </h2>
                 <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/45">
-                  From a free audit of your tickets to auto-send earned category by
-                  category. The whole path runs on your real queue, inside your own
-                  helpdesk.
+                  It starts with a free call about how your support runs today and ends
+                  with auto-send turned on one category at a time. The whole path runs
+                  on your real queue, inside your own helpdesk.
                 </p>
                 <div className="mt-10">
                   <Magnetic>
                     <Link
-                      href="/audit"
+                      href="https://calendly.com/henrybuisseret/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="group inline-flex items-center gap-3 border border-white/25 px-6 py-3 text-xs font-medium uppercase tracking-[0.12em] text-white transition-colors duration-300 hover:border-sky-400 hover:text-sky-400"
                     >
                       Start with the free audit
@@ -108,29 +125,42 @@ export function ProcessSteps() {
               style={{ scaleY: progress, height: 'calc(100% - 2rem)' }}
               aria-hidden
             />
-            <div className="space-y-14">
+            <div className="space-y-16">
               {steps.map((step, index) => (
                 <ScrollReveal key={step.number} variant="fade-up" delay={index * 0.06}>
                   <div className="relative pl-12">
                     <span
-                      className="absolute left-0 top-2 h-[15px] w-[15px] border border-sky-400/60 bg-black"
+                      className="absolute left-0 top-3 h-[15px] w-[15px] border border-sky-400/60 bg-black"
                       aria-hidden
                     >
                       <span className="absolute inset-[3px] bg-sky-400/70" />
                     </span>
                     <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                      <span className="font-heading text-5xl font-black leading-none text-white/[0.13] sm:text-6xl">
+                      <span className="font-heading text-6xl font-black leading-none text-white/[0.15] sm:text-7xl">
                         {step.number}
                       </span>
-                      <h3 className="font-heading text-2xl font-black uppercase tracking-[-0.02em] text-white">
+                      <h3 className="font-heading text-3xl font-black uppercase tracking-[-0.02em] text-white sm:text-4xl">
                         {step.title}
                       </h3>
-                      <span className="serif-accent text-xl text-sky-400/80">{step.accent}</span>
+                      <span className="serif-accent text-2xl text-sky-400/80">{step.accent}</span>
                     </div>
-                    <p className="mt-3 max-w-md text-sm leading-relaxed text-white/45">
+                    <p className="mt-4 max-w-lg text-[0.95rem] leading-relaxed text-white/55 sm:text-base">
                       {step.description}
                     </p>
-                    <div className="label-mono mt-3 text-white/30">{step.duration}</div>
+                    {step.bullets && (
+                      <ul className="mt-4 max-w-lg space-y-2">
+                        {step.bullets.map((bullet) => (
+                          <li
+                            key={bullet}
+                            className="flex items-start gap-2.5 text-[0.95rem] leading-relaxed text-white/55 sm:text-base"
+                          >
+                            <span className="mt-[9px] h-1 w-1 flex-shrink-0 bg-sky-400" aria-hidden />
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    <div className="label-mono mt-4 text-[0.72rem] text-white/40">{step.duration}</div>
                   </div>
                 </ScrollReveal>
               ))}

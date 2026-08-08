@@ -169,6 +169,20 @@
 .fx-cursor--light .fx-cursor-ring {
   border-color: rgba(37, 99, 235, 0.75);
 }
+/* Pixel-arrow cursor (MonoClick mark); grows over links, dips while pressed.
+   The dot + ring rules above are kept for reference but no longer rendered. */
+.fx-cursor-arrow {
+  display: block;
+  filter: drop-shadow(0 2px 10px rgba(56, 189, 248, 0.55));
+  transform-origin: 2px 2px;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fx-cursor.is-hover .fx-cursor-arrow {
+  transform: scale(1.45);
+}
+.fx-cursor.is-pressed .fx-cursor-arrow {
+  transform: scale(0.78);
+}
 @media (hover: none), (pointer: coarse) {
   .fx-cursor { display: none; }
 }

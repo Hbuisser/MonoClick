@@ -9,7 +9,9 @@ import { ArrowRight } from 'lucide-react'
 
 import { Magnetic } from '@/components/fx/magnetic'
 
-const HeroParticles = dynamic(() => import('@/components/hero-particles'), { ssr: false })
+// Globe visual, parked but kept around in case we want it back.
+// const HeroParticles = dynamic(() => import('@/components/hero-particles'), { ssr: false })
+const HeroCursor = dynamic(() => import('@/components/hero-cursor'), { ssr: false })
 
 const heroStagger = {
   hidden: {},
@@ -52,9 +54,15 @@ export function Hero() {
       ref={sectionRef}
       className="relative min-h-[calc(100dvh-var(--menu-height))] overflow-hidden bg-black"
     >
-      {/* particle globe */}
+      {/* particle globe (replaced by the cursor, kept for reference)
       <div className="absolute inset-0 z-0 md:left-[42%]">
         <HeroParticles scrollRef={scrollRef} />
+      </div>
+      */}
+
+      {/* MONO click: one pixel-built cursor, one click, rippling outward */}
+      <div className="absolute inset-x-0 top-[4%] z-0 h-[46%] md:inset-y-0 md:left-[40%] md:h-auto">
+        <HeroCursor />
       </div>
 
       {/* atmosphere */}
@@ -98,9 +106,8 @@ export function Hero() {
           variants={fadeItem}
           className="mt-7 max-w-lg text-sm leading-relaxed text-white/55 sm:text-[0.95rem]"
         >
-          I build a support system inside Gorgias or Zendesk that drafts every ticket
-          reply in your tone and on your policy. Live in 30 days. At least 3 in 10
-          replies go out exactly as written, guaranteed.
+          I build an AI support system inside Gorgias or Zendesk that drafts every ticket
+          reply in your tone and on your policy.
         </motion.p>
 
         <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
@@ -125,15 +132,17 @@ export function Hero() {
 
               <Magnetic className="pointer-events-auto">
                 <Link
-                  href="/audit"
+                  href="https://calendly.com/henrybuisseret/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 px-6 py-3.5 text-[0.7rem] font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] transition-shadow duration-300 hover:shadow-[0_0_48px_-4px_rgba(37,99,235,0.65)] sm:px-7 sm:text-sm"
                 >
                   <span className="relative inline-flex h-[1.2em] items-center overflow-hidden whitespace-nowrap">
                     <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
-                      Get your free ticket audit
+                      Get your free audit
                     </span>
                     <span className="absolute top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full">
-                      Get your free ticket audit
+                      Get your free audit
                     </span>
                   </span>
                   <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1" />
@@ -149,7 +158,7 @@ export function Hero() {
             {[
               ['30%', 'Replies sent as written, minimum'],
               ['1,500+', 'Tickets a day, same team'],
-              ['30', 'Days to live'],
+              ['20', 'Working days to live'],
             ].map(([stat, label]) => (
               <div key={label}>
                 <div className="font-heading text-3xl font-black text-white">

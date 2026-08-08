@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Star, ExternalLink } from 'lucide-react'
-import Link from 'next/link'
+import { Star } from 'lucide-react'
 
 import { ScrollReveal } from '@/components/scroll-reveal'
 
@@ -70,8 +69,18 @@ const stats: [string, string][] = [
   ['1,500', 'Support tickets a day, up from 200'],
   ['9 → 5', 'Smaller team, more coverage'],
   ['10 days', 'From brief to live system'],
-  ['5/5', 'Average client rating'],
+  ['5/5', 'Across 14 client reviews'],
 ]
+
+function Stars({ className = '' }: { className?: string }) {
+  return (
+    <div className={`flex items-center gap-1 ${className}`} aria-label="Rated 5 out of 5">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" aria-hidden />
+      ))}
+    </div>
+  )
+}
 
 export function Testimonials() {
   const [index, setIndex] = useState(0)
@@ -98,7 +107,7 @@ export function Testimonials() {
                 <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
               ))}
             </div>
-            <span className="label-mono text-black/40">5/5 on Upwork</span>
+            <span className="label-mono text-black/40">14 reviews, all 5 stars</span>
           </div>
         </ScrollReveal>
 
@@ -129,6 +138,7 @@ export function Testimonials() {
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
+              <Stars className="mb-5" />
               <blockquote className="serif-accent max-w-5xl text-[clamp(1.5rem,3.6vw,2.9rem)] leading-[1.25] text-black/85">
                 &ldquo;{featured[index].content}&rdquo;
               </blockquote>
@@ -140,19 +150,6 @@ export function Testimonials() {
               </figcaption>
             </motion.figure>
           </AnimatePresence>
-          <div className="mt-8 flex gap-2">
-            {featured.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                aria-label={`Show quote ${i + 1}`}
-                onClick={() => setIndex(i)}
-                className={`h-[3px] transition-all duration-500 ${
-                  i === index ? 'w-10 bg-blue-600' : 'w-4 bg-black/15 hover:bg-black/30'
-                }`}
-              />
-            ))}
-          </div>
         </ScrollReveal>
 
         {/* marquee of shorter quotes */}
@@ -165,6 +162,7 @@ export function Testimonials() {
                 key={i}
                 className="w-[320px] shrink-0 border border-black/10 bg-white p-6 sm:w-[380px]"
               >
+                <Stars className="mb-4" />
                 <p className="mb-5 text-sm leading-relaxed text-black/60">&ldquo;{q.content}&rdquo;</p>
                 <div className="label-mono text-black/40">
                   {q.author}, {q.role}
@@ -172,18 +170,6 @@ export function Testimonials() {
               </article>
             ))}
           </div>
-        </ScrollReveal>
-
-        <ScrollReveal variant="fade" delay={0.1} className="mt-12 text-center">
-          <Link
-            href="https://www.upwork.com/freelancers/~013c83e6e4d55ef2e3?viewMode=1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 border-b border-black/25 pb-1 text-xs font-medium uppercase tracking-[0.14em] text-black/60 transition-colors hover:border-blue-600 hover:text-blue-600"
-          >
-            View all reviews on Upwork
-            <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-          </Link>
         </ScrollReveal>
       </div>
     </section>

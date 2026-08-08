@@ -12,14 +12,9 @@ export const faqs: FaqItem[] = [
       'The support system carries The Send-As-Written Standard: at least 3 in 10 drafts go out exactly as written, measured 60 days after go-live. If the floor is missed, I keep working for free until it is cleared. No new invoice, no hourly. The number itself is set by the Ticket Teardown before you buy the build, and if the teardown says the system will not clear the floor, you keep the analysis and stop there.',
   },
   {
-    question: 'What is the free ticket audit and what does the report contain?',
+    question: 'What is the free audit?',
     answer:
-      'You export your last 60 days of tickets to a CSV and email it to me. Within three working days you get a free written report: your ticket categories ranked by volume, which ones a system can draft today, and your estimated send-as-written rate. Free, and no call needed.',
-  },
-  {
-    question: 'How do I export my tickets from Gorgias, Zendesk or Freshdesk?',
-    answer:
-      'In Gorgias, open Settings, then Data export, and request a ticket export for the last 60 days; the CSV arrives by email. In Zendesk, open Admin Center, go to Account, then Tools, then Reports, and request the CSV export; Zendesk emails a download link. In Freshdesk, open the Tickets list, filter to the last 60 days, click Export, and pick CSV. Step-by-step instructions for each helpdesk are on the audit page.',
+      'A free 30 minute call. We go through how your support runs today: your helpdesk, your ticket volume, the questions that come back every week, and where your team loses the most time. You leave knowing what a system would take over, what it would not, and whether it is worth building at your volume. If it is, the next step is the paid Ticket Teardown, which sets the number I am held to and is credited in full against the build.',
   },
   {
     question: 'What happens to my team?',
@@ -39,7 +34,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'How fast is it live?',
     answer:
-      '30 days from the start of the build to a system working your real tickets. The build starts with the Ticket Teardown, then the Brain, shadow mode on your live queue, the Gate, and the Auto-Send Ratchet turning auto-send on category by category.',
+      '20 working days from the start of the build to a system working your real tickets: 10 working days to build it, then 10 working days of support where I tune the Gate on your team\'s feedback. The build starts with the ticket analysis, then the Brain, shadow mode on your live queue, the Gate, and auto-send turned on one category at a time.',
   },
   {
     question: 'Does the phone system replace my current provider?',
@@ -49,6 +44,6 @@ export const faqs: FaqItem[] = [
   {
     question: 'What happens to my ticket data?',
     answer:
-      'Your export is read on my own accounts, never used to train anything, and deleted after the report is delivered. Once a system is built, it runs on your accounts and your keys, so your ticket data stays with you.',
+      'The export you send for the teardown is read on my own accounts, never used to train anything, and deleted once the analysis is delivered. Once a system is built, it runs on your accounts and your keys, so your ticket data stays with you.',
   },
 ]

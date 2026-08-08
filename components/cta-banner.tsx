@@ -26,16 +26,18 @@ export function CTABanner() {
               <span className="serif-accent text-[1.02em] text-white/90">ahead.</span>
             </h2>
             <p className="mx-auto mt-8 max-w-xl text-sm leading-relaxed text-white/50">
-              Send your last 60 days of tickets. I send back a free report: your
-              categories ranked by volume, what a system can draft today, and your
-              estimated send-as-written rate. No call needed.
+              Book a free call. We go through how your support runs today, your
+              helpdesk, your volume, the tickets that eat the most time, and I tell you
+              what a system would take over and what it would not.
             </p>
           </ScrollReveal>
 
           <ScrollReveal variant="fade-up" delay={0.1} className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <Magnetic>
               <Link
-                href="/audit"
+                href="https://calendly.com/henrybuisseret/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-4 bg-gradient-to-r from-blue-600 to-sky-400 py-4 pl-4 pr-7 text-sm font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_32px_-6px_rgba(37,99,235,0.5)] transition-shadow duration-300 hover:shadow-[0_0_56px_-6px_rgba(37,99,235,0.75)]"
               >
                 <span className="relative h-9 w-9 overflow-hidden rounded-full border border-white/40">
@@ -48,9 +50,9 @@ export function CTABanner() {
                   />
                 </span>
                 <span className="text-left leading-tight">
-                  Get your free ticket audit
+                  Get your free audit
                   <span className="block text-[0.6rem] font-normal normal-case tracking-normal text-white/70">
-                    Free report, three working days
+                    A 30 minute call, free
                   </span>
                 </span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -59,7 +61,7 @@ export function CTABanner() {
           </ScrollReveal>
 
           <ScrollReveal variant="fade" delay={0.18} className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-10">
-            {['Free, no call needed', 'Report in 3 working days', 'Your file deleted after'].map((item) => (
+            {['Free, 30 minutes', 'On your helpdesk and your volume', 'No commitment'].map((item) => (
               <div key={item} className="label-mono flex items-center gap-2.5 text-white/35">
                 <span className="h-1 w-1 bg-sky-400" aria-hidden />
                 {item}

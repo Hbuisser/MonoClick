@@ -1,37 +1,15 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Star } from 'lucide-react'
 
 import { ScrollReveal } from '@/components/scroll-reveal'
 
-const featured = [
-  {
-    content:
-      "By far the best AI developer I've ever worked with, and I've worked with many. He doesn't just deliver what's asked; he thinks ahead, anticipates challenges, and actively aligns his work with our broader business goals.",
-    author: 'Fabien',
-    role: 'CEO, HearWell',
-  },
-  {
-    content:
-      "A truly fascinating skillset when it comes to AI automations. I haven't been that impressed in quite some time!",
-    author: 'Kai',
-    role: 'CEO, theanxietysupporthub.com',
-  },
-  {
-    content:
-      'Not only an n8n expert, but with a strong software background that sets him apart. Strongly recommend hiring him now, his rates will only go up.',
-    author: 'Dmitry G.',
-    role: 'CEO, Vexa.ai',
-  },
-  {
-    content:
-      'Superstar, great work. Extremely fast and very knowledgeable. Highly recommended.',
-    author: 'Adonis',
-    role: 'CEO, welzo.com',
-  },
-]
+const featured = {
+  content:
+    "By far the best AI developer I've ever worked with, and I've worked with many. He doesn't just deliver what's asked; he thinks ahead, anticipates challenges, and actively aligns his work with our broader business goals.",
+  author: 'Fabien',
+  role: 'CEO, HearWell',
+}
 
 const marqueeQuotes = [
   {
@@ -83,13 +61,6 @@ function Stars({ className = '' }: { className?: string }) {
 }
 
 export function Testimonials() {
-  const [index, setIndex] = useState(0)
-
-  useEffect(() => {
-    const t = setInterval(() => setIndex((i) => (i + 1) % featured.length), 5200)
-    return () => clearInterval(t)
-  }, [])
-
   return (
     <section className="border-t border-black/10 bg-[#f5f3ef] py-24 text-black">
       <div className="editorial-max">
@@ -128,28 +99,20 @@ export function Testimonials() {
           </p>
         </ScrollReveal>
 
-        {/* featured rotating quote */}
-        <ScrollReveal variant="fade-up" className="mb-16 min-h-[16rem] sm:min-h-[15rem]">
-          <AnimatePresence mode="wait">
-            <motion.figure
-              key={index}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <Stars className="mb-5" />
-              <blockquote className="serif-accent max-w-5xl text-[clamp(1.5rem,3.6vw,2.9rem)] leading-[1.25] text-black/85">
-                &ldquo;{featured[index].content}&rdquo;
-              </blockquote>
-              <figcaption className="mt-7 flex items-center gap-4">
-                <span className="h-px w-12 bg-blue-600" aria-hidden />
-                <span className="label-mono text-black/60">
-                  {featured[index].author}, {featured[index].role}
-                </span>
-              </figcaption>
-            </motion.figure>
-          </AnimatePresence>
+        {/* featured quote */}
+        <ScrollReveal variant="fade-up" className="mb-16">
+          <figure>
+            <Stars className="mb-5" />
+            <blockquote className="serif-accent max-w-5xl text-[clamp(1.5rem,3.6vw,2.9rem)] leading-[1.25] text-black/85">
+              &ldquo;{featured.content}&rdquo;
+            </blockquote>
+            <figcaption className="mt-7 flex items-center gap-4">
+              <span className="h-px w-12 bg-blue-600" aria-hidden />
+              <span className="label-mono text-black/60">
+                {featured.author}, {featured.role}
+              </span>
+            </figcaption>
+          </figure>
         </ScrollReveal>
 
         {/* marquee of shorter quotes */}

@@ -45,7 +45,7 @@ const steps: Step[] = [
     title: 'Brain',
     accent: 'one knowledge base',
     description:
-      'Your policies, products and ticket history become one knowledge base: Notion docs, product descriptions and prices, refund policies, SOPs, macros, your tone and your niche vocabulary.',
+      'Your policies, products and ticket history become one knowledge base: Notion docs, product descriptions and prices, refund policies, SOPs, macros, your tone and your niche vocabulary. Each ticket category then gets its own flow, written from your own tickets.',
     duration: 'Build phase',
   },
   {

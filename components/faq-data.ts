@@ -12,6 +12,11 @@ export const faqs: FaqItem[] = [
       'The support system carries The Send-As-Written Standard: at least 3 in 10 drafts go out exactly as written, measured 60 days after go-live. If the floor is missed, I keep working for free until it is cleared. No new invoice, no hourly. The number itself is set by the Ticket Teardown before you buy the build, and if the teardown says the system will not clear the floor, you keep the analysis and stop there.',
   },
   {
+    question: 'Why not the built-in AI in my helpdesk?',
+    answer:
+      'Built-in AI works from preset intent categories. This system is built from your own tickets and policies, with one custom flow per ticket category. It is wired to your live stock, per market. A second model call scores every draft and writes the reason into the ticket. The Send-As-Written Standard holds it to at least 3 in 10 replies going out exactly as written. It runs at about $0.10 a ticket on accounts you own, where built-in AI bills $0.90 to $1.00 per resolution and each resolution also counts as a billable ticket. Setup, tuning and watching it in production are included in the build.',
+  },
+  {
     question: 'What is the free audit?',
     answer:
       'A free 30 minute call. We go through how your support runs today: your helpdesk, your ticket volume, the questions that come back every week, and where your team loses the most time. You leave knowing what a system would take over, what it would not, and whether it is worth building at your volume. If it is, the next step is the paid Ticket Teardown, which sets the number I am held to and is credited in full against the build.',

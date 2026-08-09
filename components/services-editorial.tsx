@@ -12,6 +12,7 @@ const services = [
     accent: 'on Gorgias, Zendesk & Freshdesk',
     features: [
       'Every ticket arrives with the reply already drafted',
+      'One custom flow per ticket category, built from your own tickets',
       'Your tone, your policy, your order data',
       'Refunds and disputes held back for a human',
       'Auto-send earned one category at a time',

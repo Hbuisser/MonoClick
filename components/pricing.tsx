@@ -19,7 +19,7 @@ const offers = [
       'The Ticket Teardown, credited in full',
       'The Brain: your policies, products and ticket history',
       'The Gate: refunds wait for a human',
-      'Photo diagnosis for damage and fitment',
+      'Photos: the system asks, reads, asks again if unclear, and any decision that costs money goes to a human',
       'Auto-send, one category at a time',
       '10 working days of tuning, then the Handover Pack',
     ],

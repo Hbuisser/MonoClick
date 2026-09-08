@@ -1,21 +1,16 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
 import { ArrowRight } from 'lucide-react'
 
 import { Magnetic } from '@/components/fx/magnetic'
-
-// Globe visual, parked but kept around in case we want it back.
-// const HeroParticles = dynamic(() => import('@/components/hero-particles'), { ssr: false })
-const HeroCursor = dynamic(() => import('@/components/hero-cursor'), { ssr: false })
+import { HeroSystems } from '@/components/hero-systems'
 
 const heroStagger = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.5 } },
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.3 } },
 }
 
 const lineReveal = {
@@ -36,42 +31,15 @@ const fadeItem = {
 }
 
 export function Hero() {
-  const scrollRef = useRef(0)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const onScroll = () => {
-      const h = sectionRef.current?.offsetHeight || window.innerHeight
-      scrollRef.current = Math.min(1.5, Math.max(0, window.scrollY / h))
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll()
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative min-h-[calc(100dvh-var(--menu-height))] overflow-hidden bg-black"
-    >
-      {/* particle globe (replaced by the cursor, kept for reference)
-      <div className="absolute inset-0 z-0 md:left-[42%]">
-        <HeroParticles scrollRef={scrollRef} />
-      </div>
-      */}
-
-      {/* MONO click: one pixel-built cursor, one click, rippling outward */}
-      <div className="absolute inset-x-0 top-[4%] z-0 h-[46%] md:inset-y-0 md:left-[40%] md:h-auto">
-        <HeroCursor />
-      </div>
-
+    <section className="relative overflow-hidden bg-black">
       {/* atmosphere */}
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_60%_50%_at_68%_42%,rgba(37,99,235,0.14),transparent_65%)]"
+        className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_55%_50%_at_72%_45%,rgba(37,99,235,0.16),transparent_65%)]"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/60 via-transparent to-black"
+        className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-black/50 via-transparent to-black"
         aria-hidden
       />
 
@@ -79,93 +47,75 @@ export function Hero() {
         variants={heroStagger}
         initial="hidden"
         animate="show"
-        className="pointer-events-none relative z-10 flex min-h-[calc(100dvh-var(--menu-height))] flex-col justify-end pb-10 pl-5 pr-6 pt-10 sm:pl-8 lg:pb-12 lg:pl-12"
+        className="editorial-max relative z-10 grid min-h-[calc(100dvh-var(--menu-height))] grid-cols-1 content-center gap-10 py-14 lg:grid-cols-2 lg:grid-rows-[auto_auto] lg:items-center lg:gap-x-10 lg:gap-y-8 lg:py-20"
       >
-        <h1 className="font-heading text-[13.5vw] font-black uppercase leading-[0.86] tracking-[-0.06em] text-white sm:text-[11vw] lg:text-[min(9.5rem,10.2vw)]">
-          <span className="block overflow-hidden pb-[0.06em]">
-            <motion.span variants={lineReveal} className="block">
-              Your store
-            </motion.span>
-          </span>
-          <span className="block overflow-hidden pb-[0.06em]">
-            <motion.span variants={lineReveal} className="display-outline block">
-              scales.
-            </motion.span>
-          </span>
-          <span className="block overflow-hidden pb-[0.12em]">
-            <motion.span
-              variants={lineReveal}
-              className="serif-accent block text-[0.62em] leading-[1.02] text-white/90"
-            >
-              Your support doesn&apos;t<span className="text-sky-400">.</span>
-            </motion.span>
-          </span>
-        </h1>
+        {/* the pitch */}
+        <div className="lg:col-start-1 lg:row-start-1 lg:self-end">
+          <h1 className="font-heading text-[12vw] font-black uppercase leading-[0.88] tracking-[-0.05em] text-white sm:text-[9.4vw] lg:text-[min(5.7rem,6.1vw)]">
+            <span className="block overflow-hidden pb-[0.06em]">
+              <motion.span variants={lineReveal} className="block">
+                You don&apos;t need
+              </motion.span>
+            </span>
+            <span className="block overflow-hidden pb-[0.06em]">
+              <motion.span variants={lineReveal} className="display-outline block">
+                a new hire
+              </motion.span>
+            </span>
+            <span className="block overflow-hidden pb-[0.12em]">
+              <motion.span
+                variants={lineReveal}
+                className="serif-accent block text-[0.78em] leading-[1.02] text-white/90"
+              >
+                to scale your business<span className="text-sky-400">.</span>
+              </motion.span>
+            </span>
+          </h1>
 
-        <motion.p
-          variants={fadeItem}
-          className="mt-7 max-w-2xl text-lg leading-snug text-white/70 sm:text-xl lg:text-2xl"
-        >
-          Fix that in ONE click with the 20-Day Ecom Support Standard
-        </motion.p>
-
-        <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <div>
-            <motion.div variants={fadeItem} className="flex flex-wrap items-center gap-5 sm:gap-6">
-              <div className="relative shrink-0">
-                <span
-                  className="absolute -inset-2 rounded-full border border-sky-400/25"
-                  aria-hidden
-                />
-                <span className="relative block h-[82px] w-[82px] overflow-hidden rounded-full border border-white/25 shadow-[0_0_30px_-8px_rgba(56,189,248,0.7)] sm:h-24 sm:w-24">
-                  <Image
-                    src="/pp2026.png"
-                    alt="Henry Buisseret, founder of MonoClick"
-                    fill
-                    sizes="96px"
-                    priority
-                    className="object-cover object-[center_20%]"
-                  />
-                </span>
-              </div>
-
-              <Magnetic className="pointer-events-auto">
-                <Link
-                  href="https://calendly.com/henrybuisseret/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 px-6 py-3.5 text-[0.7rem] font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] transition-shadow duration-300 hover:shadow-[0_0_48px_-4px_rgba(37,99,235,0.65)] sm:px-7 sm:text-sm"
-                >
-                  <span className="relative inline-flex h-[1.2em] items-center overflow-hidden whitespace-nowrap">
-                    <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
-                      Get your free audit
-                    </span>
-                    <span className="absolute top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full">
-                      Get your free audit
-                    </span>
-                  </span>
-                  <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1" />
-                </Link>
-              </Magnetic>
-            </motion.div>
-          </div>
-
-          <motion.div
+          <motion.p
             variants={fadeItem}
-            className="pointer-events-none hidden items-end gap-10 md:flex lg:mr-20"
+            className="mt-7 max-w-2xl text-lg leading-snug text-white/70 sm:text-xl lg:text-[1.35rem]"
           >
-            {[
-              ['30%', 'Auto-send minimum'],
-              ['1,500+', 'Tickets/day'],
-              ['20', 'Days to live'],
-            ].map(([stat, label]) => (
-              <div key={label}>
-                <div className="font-heading text-3xl font-black text-white">
-                  {stat}
-                </div>
-                <div className="label-mono mt-1.5 text-white/35">{label}</div>
-              </div>
-            ))}
+            3 systems on your own accounts.
+          </motion.p>
+        </div>
+
+        {/* the three systems, around the store */}
+        <motion.div
+          variants={fadeItem}
+          className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:pl-6"
+        >
+          <HeroSystems />
+        </motion.div>
+
+        {/* the ask, and the proof */}
+        <div className="lg:col-start-1 lg:row-start-2 lg:self-start">
+          <motion.div variants={fadeItem} className="flex flex-wrap items-center gap-5">
+            <div className="relative shrink-0">
+              <span className="absolute -inset-2 rounded-full border border-sky-400/25" aria-hidden />
+              <span className="relative block h-20 w-20 overflow-hidden rounded-full border border-white/25 shadow-[0_0_30px_-8px_rgba(56,189,248,0.7)] sm:h-24 sm:w-24">
+                <Image
+                  src="/pp2026.png"
+                  alt="Henry Buisseret, founder of MonoClick"
+                  fill
+                  sizes="96px"
+                  priority
+                  className="object-cover object-[center_20%]"
+                />
+              </span>
+            </div>
+
+            <Magnetic>
+              <Link
+                href="https://calendly.com/henrybuisseret/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 px-7 py-4 text-[0.8rem] font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] transition-shadow duration-300 hover:shadow-[0_0_48px_-4px_rgba(37,99,235,0.65)] sm:px-9 sm:py-5 sm:text-base"
+              >
+                <span className="whitespace-nowrap">Get your free audit</span>
+                <ArrowRight className="h-5 w-5 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1" />
+              </Link>
+            </Magnetic>
           </motion.div>
         </div>
       </motion.div>
@@ -174,7 +124,7 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 2 }}
+        transition={{ duration: 1, delay: 1.8 }}
         className="pointer-events-none absolute bottom-10 right-6 z-10 hidden flex-col items-center gap-3 lg:flex"
       >
         <span className="label-mono text-white/30" style={{ writingMode: 'vertical-rl' }}>

@@ -74,7 +74,7 @@ export function generateServiceSchema() {
     '@type': 'Service',
     name: 'AI Systems for Ecommerce',
     description:
-      'Two systems for ecommerce brands: an AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply, and an AI phone system that answers every call on the brand’s own accounts. Both guaranteed, live in 20 working days.',
+      'Three systems for ecommerce brands, all on the brand’s own accounts: an AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply, an AI phone system that answers every call, and a creative system that turns winning Meta ads into the next batch of concepts, scripts and visuals. Live in 20 working days.',
     provider: {
       '@type': 'Organization',
       name: siteConfig.name,
@@ -90,18 +90,27 @@ export function generateServiceSchema() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'The 20-Day Ecom Support Standard',
+            name: 'The 20-Day Ecom Support System',
             description:
-              'An AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply in the brand’s tone and on its policy, live in 20 working days. At least 3 in 10 replies go out exactly as written, guaranteed by The Send-As-Written Standard.',
+              'An AI support system for Gorgias, Zendesk and Freshdesk that drafts every ticket reply in the brand’s tone and on its policy, live in 20 working days. At least 30% of the brand’s tickets are sent automatically, guaranteed.',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'The 20-Day Ecom Phone Standard',
+            name: 'The 20-Day Ecom Phone System',
             description:
-              'An inbound AI phone system on the brand’s own accounts (ElevenLabs, Claude, Twilio) with Shopify order lookup and Gorgias or Zendesk sync, at half the current per-minute voice bill or less, guaranteed by Nothing Moves Until It Passes.',
+              'An inbound AI phone system on the brand’s own accounts (ElevenLabs, Claude, Twilio) with Shopify order lookup and Gorgias or Zendesk sync. At least $2,000 a month in extra revenue, guaranteed.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'The 20-Day Ecom Creative System',
+            description:
+              'A creative system for ecommerce brands spending on Meta. It reads the brand’s own ad account for what converts, pulls competitor ads from the Meta Ads Library, mines reviews, Reddit and Trustpilot for pain points, objections and desires, and writes the next batch of concepts, ad copy, script variations, editor briefs and image prompts. At least 1 of every 5 ad copies signed off by the brand as good, guaranteed.',
           },
         },
         {
@@ -110,7 +119,7 @@ export function generateServiceSchema() {
             '@type': 'Service',
             name: 'Free Support Audit Call',
             description:
-              'A free 30 minute call that goes through how support runs today: the helpdesk, the ticket volume, the questions that repeat every week, and which of them a system would take over. The way into both systems.',
+              'A free 30 minute call that goes through how support runs today: the helpdesk, the ticket volume, the questions that repeat every week, and which of them a system would take over. The way into all three systems.',
           },
         },
       ],

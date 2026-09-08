@@ -69,7 +69,7 @@ export default function ContactPage() {
               <h3 className="mt-5 font-heading text-2xl font-black uppercase tracking-tight text-white">
                 Book a discovery call
               </h3>
-              <div className="serif-accent mt-1 text-lg text-sky-400/80">thirty minutes, zero pitch</div>
+              <div className="serif-accent mt-1 text-lg text-sky-400/80">30 minutes, zero pitch</div>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/50">
                 Schedule a 30-minute call to discuss your automation needs.
               </p>
@@ -127,7 +127,7 @@ export default function ContactPage() {
           <div className="mb-14">
             <p className="label-mono mb-5 text-blue-600">What happens next</p>
             <h2 className="display-title max-w-4xl text-[clamp(1.9rem,4.6vw,3.6rem)] text-black">
-              Three steps to{' '}
+              3 steps to{' '}
               <span className="serif-accent text-[1.04em] text-black/80">kickoff</span>
             </h2>
           </div>

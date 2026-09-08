@@ -17,13 +17,13 @@ export function FAQ() {
     <section className="border-t border-black/10 bg-[#fcfcfc] py-24 text-black">
       <div className="editorial-max max-w-4xl">
         <ScrollReveal variant="scale" className="mb-14 text-center">
-          <span className="label-mono mb-5 block text-blue-600">08 / FAQ</span>
+          <span className="label-mono mb-5 block text-blue-600">07 / FAQ</span>
           <h2 className="display-title text-[clamp(2.25rem,6vw,4rem)] text-black">
             Good{' '}
             <span className="serif-accent text-[1.04em] text-black/80">questions</span>
           </h2>
           <p className="mt-6 text-sm leading-relaxed text-black/55">
-            How the two systems, the guarantees and the free audit work.
+            How the 3 systems, the guarantees and the free audit work.
           </p>
         </ScrollReveal>
 

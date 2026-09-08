@@ -19,17 +19,12 @@ export function CTABanner() {
       <div className="editorial-max relative">
         <div className="mx-auto max-w-4xl text-center">
           <ScrollReveal variant="fade-up">
-            <span className="label-mono mb-8 block text-sky-400">09 / Get started</span>
+            <span className="label-mono mb-8 block text-sky-400">08 / Get started</span>
             <h2 className="display-title text-[clamp(2.6rem,8vw,6.5rem)] text-white">
               One click
               <br />
               <span className="serif-accent text-[1.02em] text-white/90">ahead.</span>
             </h2>
-            <p className="mx-auto mt-8 max-w-xl text-sm leading-relaxed text-white/50">
-              Book a free call. We go through how your support runs today, your
-              helpdesk, your volume, the tickets that eat the most time, and I tell you
-              what a system would take over and what it would not.
-            </p>
           </ScrollReveal>
 
           <ScrollReveal variant="fade-up" delay={0.1} className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
@@ -58,15 +53,6 @@ export function CTABanner() {
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Magnetic>
-          </ScrollReveal>
-
-          <ScrollReveal variant="fade" delay={0.18} className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-10">
-            {['Free, 30 minutes', 'On your helpdesk and your volume', 'No commitment'].map((item) => (
-              <div key={item} className="label-mono flex items-center gap-2.5 text-white/35">
-                <span className="h-1 w-1 bg-sky-400" aria-hidden />
-                {item}
-              </div>
-            ))}
           </ScrollReveal>
         </div>
       </div>

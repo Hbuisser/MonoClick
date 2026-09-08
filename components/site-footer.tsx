@@ -9,8 +9,9 @@ import { ScrollReveal } from '@/components/scroll-reveal'
 
 const navigation = {
   systems: [
-    { name: 'The 20-Day Ecom Support Standard', href: '/' },
-    // { name: 'The 20-Day Ecom Phone Standard', href: '/phone' }, // restore when the Phone Standard page is back
+    { name: 'The 20-Day Ecom Support System', href: '/#support' },
+    { name: 'The 20-Day Ecom Phone System', href: '/#phone' },
+    { name: 'The 20-Day Ecom Creative System', href: '/#creative' },
     { name: 'Free audit call', href: 'https://calendly.com/henrybuisseret/30min' },
   ],
   company: [
@@ -57,11 +58,6 @@ export function SiteFooter() {
                 MonoClick
               </span>
             </Link>
-            <p className="mb-8 max-w-md text-sm leading-relaxed text-white/45">
-              Two systems for ecommerce brands: a support system inside Gorgias, Zendesk
-              or Freshdesk that drafts every ticket reply, and a phone system that
-              answers every call on your own accounts. Both guaranteed, live in 20 working days.
-            </p>
             <div className="space-y-3">
               <a
                 href="mailto:henry@monoclick.ai"

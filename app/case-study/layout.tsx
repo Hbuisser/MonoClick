@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 import { MonoClickLogoMark } from '@/components/MonoClickLogoMark'
-import { SiteFX } from '@/components/fx/site-fx'
 
 /**
  * Minimal, distraction-free shell for the case-study funnel.
@@ -15,7 +14,6 @@ export default function CaseStudyLayout({
 }) {
   return (
     <div className="flex min-h-screen flex-col bg-white text-zinc-900">
-      <SiteFX grain={false} theme="light" />
       <header className="flex h-[var(--menu-height)] items-center justify-center border-b border-white/10 bg-black px-6">
         <Link href="/" className="flex items-center gap-2.5" aria-label="MonoClick home">
           <MonoClickLogoMark frameClassName="size-8 p-1.5" />

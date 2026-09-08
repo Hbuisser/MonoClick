@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 
-// TEMPORARILY OFFLINE: Henry is reworking the Phone Standard page.
+// TEMPORARILY OFFLINE: Henry is reworking the Phone System page.
 // The full implementation is preserved, line-commented, below.
 // To restore: delete this stub (this import + PhonePage) and uncomment the rest.
 export default function PhonePage() {
@@ -16,7 +16,7 @@ export default function PhonePage() {
 // import { Magnetic } from '@/components/fx/magnetic'
 //
 // export const metadata: Metadata = createMetadata({
-//   title: 'The 20-Day Ecom Phone Standard - AI Phone System for Ecommerce',
+//   title: 'The 20-Day Ecom Phone System - AI Phone System for Ecommerce',
 //   description:
 //     'An inbound AI phone system on your own accounts: ElevenLabs, Claude and Twilio in your name, Shopify order lookup, Gorgias or Zendesk sync. It answers every call at half what a per-minute voice vendor bills you, or less, live in 20 working days. Nothing switches until six checks pass on real traffic.',
 //   path: '/phone',
@@ -64,7 +64,7 @@ export default function PhonePage() {
 //         />
 //         <div className="editorial-max relative">
 //           <ScrollReveal variant="fade-up">
-//             <p className="label-mono mb-6 text-sky-400">The 20-Day Ecom Phone Standard</p>
+//             <p className="label-mono mb-6 text-sky-400">The 20-Day Ecom Phone System</p>
 //             <h1 className="display-title max-w-5xl text-[clamp(2.6rem,7.5vw,6rem)] text-white">
 //               Every call answered.
 //               <br />

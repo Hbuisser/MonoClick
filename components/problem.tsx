@@ -5,15 +5,27 @@ import { ScrollReveal } from '@/components/scroll-reveal'
 const pains = [
   {
     title: 'Growth adds tickets',
-    body: 'More ad spend, more sales, a new store, a new country. Every one lands in the same inbox, and the team that was already full gets more work.',
+    points: [
+      'More ad spend, more sales',
+      'A new store, a new country',
+      'All of it lands on a team that is already full',
+    ],
   },
   {
     title: 'So you hire, again',
-    body: 'A support seat runs about $27,000 a year offshore, and the money is the easy part. Weeks go into finding them, training them, and managing them after that.',
+    points: [
+      'About $27,000 a year for 1 offshore seat',
+      'Weeks to find them, weeks to train them',
+      'Someone has to manage them after that',
+    ],
   },
   {
     title: 'And they leave',
-    body: 'People quit a few months in, sometimes right after they are fully trained, and everything you taught them walks out with them. You start the same process over.',
+    points: [
+      'People quit a few months in, often right after training',
+      'What you taught them walks out too',
+      'You start the whole thing over',
+    ],
   },
 ]
 
@@ -21,7 +33,7 @@ export function Problem() {
   return (
     <section className="border-t border-white/10 bg-black py-24">
       <div className="editorial-max">
-        <ScrollReveal variant="slide-left" className="mb-4">
+        <ScrollReveal variant="slide-left" className="mb-14">
           <span className="label-mono mb-5 block text-sky-400">01 / The problem</span>
           <h2 className="display-title max-w-5xl text-[clamp(2.25rem,6vw,5rem)] text-white">
             Growing means hiring.{' '}
@@ -29,15 +41,6 @@ export function Problem() {
               Hiring is the slow part.
             </span>
           </h2>
-        </ScrollReveal>
-
-        <ScrollReveal
-          variant="fade"
-          delay={0.08}
-          className="mb-16 max-w-2xl text-sm leading-relaxed text-white/45"
-        >
-          You are ready to grow. More ad spend, more sales, a new store, a new market.
-          Each one adds tickets, and the only answer available is another seat.
         </ScrollReveal>
 
         <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 md:grid-cols-3">
@@ -52,7 +55,17 @@ export function Problem() {
                     {String(index + 1).padStart(2, '0')}
                   </span>
                 </div>
-                <p className="text-sm leading-relaxed text-white/50">{pain.body}</p>
+                <ul className="space-y-2.5">
+                  {pain.points.map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-start gap-2.5 text-sm leading-snug text-white/50"
+                    >
+                      <span className="mt-[7px] h-1 w-1 flex-shrink-0 bg-sky-400" aria-hidden />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </ScrollReveal>
           ))}

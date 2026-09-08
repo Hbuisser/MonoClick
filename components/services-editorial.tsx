@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowUpRight, Check } from 'lucide-react'
 
@@ -8,7 +8,8 @@ import { ScrollReveal } from '@/components/scroll-reveal'
 
 const services = [
   {
-    title: 'The 20-Day Ecom Support Standard',
+    id: 'support',
+    title: 'The 20-Day Ecom Support System',
     accent: 'on Gorgias, Zendesk & Freshdesk',
     features: [
       'Every ticket arrives with the reply already drafted',
@@ -16,18 +17,29 @@ const services = [
       'Your tone, your policy, your order data',
       'Refunds and disputes held back for a human',
       'Auto-send earned one category at a time',
-      'Live in 20 working days',
     ],
   },
   {
-    title: 'The 20-Day Ecom Phone Standard',
+    id: 'phone',
+    title: 'The 20-Day Ecom Phone System',
     accent: 'answers every call',
     features: [
       'Answers every call on your own accounts',
       'Shopify order lookup, tracking, returns, SMS links',
       'Opens a ticket only when a call goes unresolved',
       'About $0.12 a minute, not $0.40 on a voice vendor',
-      'Nothing switches until six checks pass on real calls',
+    ],
+  },
+  {
+    id: 'creative',
+    title: 'The 20-Day Ecom Creative System',
+    accent: 'from your winning ads',
+    features: [
+      'Reads your own Meta account for what converts: hooks, angles, formats, products',
+      'Pulls competitor ads from the Meta Ads Library',
+      'Mines reviews, Reddit and Trustpilot for pain points, objections and desires',
+      'Writes concepts, ad copy, script variations and editor briefs',
+      'Writes the image and video prompts and generates the visuals',
     ],
   },
 ]
@@ -35,24 +47,28 @@ const services = [
 export function ServicesEditorial() {
   const [open, setOpen] = useState<number>(0)
 
+  // /#support, /#phone and /#creative open the matching row (footer links)
+  useEffect(() => {
+    const openFromHash = () => {
+      const i = services.findIndex((s) => s.id === window.location.hash.slice(1))
+      if (i !== -1) setOpen(i)
+    }
+    openFromHash()
+    window.addEventListener('hashchange', openFromHash)
+    return () => window.removeEventListener('hashchange', openFromHash)
+  }, [])
+
   return (
     <section className="border-t border-white/10 bg-black py-24" id="services">
       <div className="editorial-max">
         <ScrollReveal variant="slide-left" className="mb-4">
           <span className="label-mono mb-5 block text-sky-400">02 / What I build</span>
           <h2 className="display-title max-w-5xl text-[clamp(2.25rem,6vw,5rem)] text-white">
-            Two systems,{' '}
-            <span className="serif-accent text-[1.04em] text-white/85">both guaranteed</span>
+            3 systems,{' '}
+            <span className="serif-accent text-[1.04em] text-white/85">
+              on your own accounts
+            </span>
           </h2>
-        </ScrollReveal>
-
-        <ScrollReveal
-          variant="fade"
-          delay={0.08}
-          className="mb-14 max-w-2xl text-base leading-relaxed text-white/50 sm:text-lg"
-        >
-          One system works your tickets, one answers your phone. Both run on your own
-          accounts.
         </ScrollReveal>
 
         <div className="border-t border-white/10">
@@ -61,7 +77,7 @@ export function ServicesEditorial() {
             const num = String(index + 1).padStart(2, '0')
             return (
               <ScrollReveal key={service.title} variant="fade-up" delay={index * 0.05}>
-                <div className="border-b border-white/10">
+                <div id={service.id} className="scroll-mt-[calc(var(--menu-height)+2rem)] border-b border-white/10">
                   <button
                     type="button"
                     onClick={() => setOpen(isOpen ? -1 : index)}

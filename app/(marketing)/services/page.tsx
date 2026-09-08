@@ -3,7 +3,6 @@ import Image from 'next/image'
 
 import { createMetadata } from '@/lib/seo'
 import { ServicesEditorial } from '@/components/services-editorial'
-import { SupportDemo } from '@/components/support-demo'
 import { ProcessSteps } from '@/components/process-steps'
 import { Ownership } from '@/components/ownership'
 import { Pricing } from '@/components/pricing'
@@ -11,9 +10,9 @@ import { CTABanner } from '@/components/cta-banner'
 import { RevealSection, ScrollReveal } from '@/components/scroll-reveal'
 
 export const metadata: Metadata = createMetadata({
-  title: 'The Two Systems - AI Support System for Gorgias, Zendesk & Freshdesk, and the AI Phone System',
+  title: 'The Three Systems - AI Support, Phone and Creative Systems for Ecommerce Brands',
   description:
-    'Two systems for ecommerce brands. The 20-Day Ecom Support Standard: an AI support system for Gorgias and Zendesk that drafts every ticket reply, at least 3 in 10 sent exactly as written, guaranteed. The 20-Day Ecom Phone Standard: an AI phone system on your own accounts at half your current bill or less.',
+    'Three systems for ecommerce brands, each with one guaranteed number. The 20-Day Ecom Support System drafts every ticket reply in Gorgias, Zendesk or Freshdesk, at least 30% sent automatically. The 20-Day Ecom Phone System answers every call on your own accounts, at least $2,000 a month in extra revenue. The 20-Day Ecom Creative System turns your winning Meta ads into the next batch, at least 1 of every 5 ad copies signed off as good.',
   path: '/services',
 })
 
@@ -28,26 +27,28 @@ export default function ServicesPage() {
         />
         <div className="editorial-max relative">
           <ScrollReveal variant="fade-up">
-            <p className="label-mono mb-6 text-sky-400">The two systems</p>
-            <h1 className="display-title max-w-5xl text-[clamp(2.6rem,7.5vw,6rem)] text-white">
+            <p className="label-mono mb-6 text-sky-400">The 3 systems</p>
+            <h1 className="display-title max-w-5xl text-[clamp(2.4rem,6.6vw,5.2rem)] text-white">
               One works your tickets.
               <br />
+              One answers your phone.
+              <br />
               <span className="serif-accent text-[1.02em] text-white/85">
-                One answers your phone.
+                One writes your next ads.
               </span>
             </h1>
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
-              I build two systems for ecommerce brands on Gorgias, Zendesk or Freshdesk.
-              Each runs on your own accounts, ships in 20 working days, and carries a named
-              guarantee with a number I am held to.
+              3 systems for ecommerce brands. Each one runs on your own accounts, goes
+              live in 20 working days, and carries a floor I am held to. Miss it and I
+              keep working free until it clears.
             </p>
           </ScrollReveal>
 
           <ScrollReveal variant="fade-up" delay={0.1} className="mt-14 grid max-w-3xl grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-3">
             {[
-              { value: '20 days', label: 'Working days to live' },
-              { value: '3 in 10', label: 'Sent as written, the floor' },
-              { value: 'Half', label: 'Your voice bill, the floor' },
+              { value: '30%', label: 'Tickets sent automatically' },
+              { value: '$2k a month', label: 'Extra revenue on the phone' },
+              { value: '1 of 5', label: 'Ad copies you sign off' },
             ].map((stat) => (
               <div key={stat.label} className="bg-black px-6 py-5">
                 <div className="font-heading text-2xl font-black text-white">{stat.value}</div>
@@ -71,6 +72,7 @@ export default function ServicesPage() {
               { name: 'Gorgias', src: '/gorgias_logo.png' },
               { name: 'Zendesk', src: '/zendesk_logo.png' },
               { name: 'Anthropic', src: '/anthropic_logo.png' },
+              { name: 'Meta', src: '/meta_logo.png' },
             ].map((logo) => (
               <Image
                 key={logo.name}
@@ -87,7 +89,6 @@ export default function ServicesPage() {
       </RevealSection>
 
       <ServicesEditorial />
-      <SupportDemo />
       <ProcessSteps />
       <Ownership />
       <Pricing />

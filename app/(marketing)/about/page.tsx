@@ -11,7 +11,7 @@ import { Magnetic } from '@/components/fx/magnetic'
 
 export const metadata: Metadata = createMetadata({
   title: 'About Our AI Automation Agency for Ecommerce',
-  description: 'MonoClick is an AI automation agency building two systems for ecommerce brands: an AI support system for Gorgias, Zendesk and Freshdesk, and an AI phone system that answers every call. Custom-built, owned by your brand, and measured in ROI.',
+  description: 'MonoClick is an AI automation agency building three systems for ecommerce brands: an AI support system for Gorgias, Zendesk and Freshdesk, an AI phone system that answers every call, and a creative system for brands spending on Meta. Custom-built, owned by your brand, and measured in ROI.',
   path: '/about'
 })
 
@@ -51,7 +51,7 @@ const differentiators = [
   {
     title: 'Proven results',
     description:
-      'Real outcomes, not demos. A recent support build scaled from 200 to 1,500 tickets a day handled, while the team shrank from nine people to five.',
+      'Real outcomes, not demos. A recent support build scaled from 200 to 1,500 tickets a day handled, while the team went from 9 people to 5.',
   },
   {
     title: 'Ecommerce-native AI',

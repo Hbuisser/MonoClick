@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
-    // /phone is offline while the Phone Standard page is reworked; restore this
+    // /phone is offline while the Phone System page is reworked; restore this
     // entry when the page is back. /audit is gone for good: the free audit is a call.
     {
       url: `${siteConfig.url}/blog`,

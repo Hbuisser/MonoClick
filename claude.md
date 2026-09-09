@@ -36,7 +36,7 @@ A **Next.js 14 (App Router)** marketing website for **MonoClick** (AI automation
 - **Naming:** Kebab-case for non-component files; **PascalCase** for component files; exported components often prefixed by role (e.g. `ButtonEditorial` patterns where used).
 - **Client vs server:** Add `'use client'` only when needed (hooks, Framer Motion, browser APIs, tsparticles, D3 canvas). Keep pages as **Server Components** when possible; pull interactive pieces into small client components.
 - **Sections:** Long pages wrap major blocks with `RevealSection` from `@/components/scroll-reveal` for scroll-in animations.
-- **Brand mark:** `MonoClickLogoMark` — pixel “M” (7 squares) in a square frame; used in header/footer.
+- **Brand mark:** `MonoClickLogoMark`, the pixel “M” from the Facebook profile picture: 7 squares on a 3x3 grid, centre square `blue-600`, no frame, on the page's black ground. Used in header, footer and case-study. Note `public/logo.png` (manifest, Organization schema, OG card) is still the older gradient-disc lockup and does not match.
 
 ## Notable components
 

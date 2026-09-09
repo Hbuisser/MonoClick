@@ -16,7 +16,7 @@ export default function CaseStudyLayout({
     <div className="flex min-h-screen flex-col bg-white text-zinc-900">
       <header className="flex h-[var(--menu-height)] items-center justify-center border-b border-white/10 bg-black px-6">
         <Link href="/" className="flex items-center gap-2.5" aria-label="MonoClick home">
-          <MonoClickLogoMark frameClassName="size-8 p-1.5" />
+          <MonoClickLogoMark className="size-8" />
           <span className="font-heading text-lg font-semibold tracking-tight text-white">
             MonoClick
           </span>

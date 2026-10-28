@@ -44,12 +44,7 @@ export function CTABanner() {
                     className="scale-110 object-cover object-[center_30%]"
                   />
                 </span>
-                <span className="text-left leading-tight">
-                  Get your free audit
-                  <span className="block text-[0.6rem] font-normal normal-case tracking-normal text-white/70">
-                    A 30 minute call, free
-                  </span>
-                </span>
+                Book a call
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Magnetic>

@@ -1,18 +1,44 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 import { RevealSection, ScrollReveal } from '@/components/scroll-reveal'
+import { cn } from '@/lib/utils'
 
+/**
+ * The files' real pixel sizes, plus a height per logo: they carry very different
+ * amounts of empty space, so one shared height leaves some looking tiny. The
+ * dark green and navy ones are flipped light, same hue, so they show on black.
+ */
 const trustedLogos = [
-  { name: 'Vexa', src: '/vexa.png', width: 400, height: 120 },
-  { name: 'Worldwide Quality Control', src: '/worldwide2.png', width: 480, height: 120 },
-  { name: 'Stoltzfus Structures', src: '/mysheds.png', width: 400, height: 120 },
-  { name: 'KIA', src: '/kia.png', width: 240, height: 96 },
-  { name: 'Utiligize', src: '/utiligize_logo.jpeg', width: 360, height: 120 },
-  { name: 'Welzo', src: '/welzo_good.avif', width: 360, height: 120 },
+  { name: 'Vexa', src: '/vexa.png', width: 234, height: 100, className: 'h-10 lg:h-14' },
+  {
+    name: 'Worldwide Quality Control',
+    src: '/worldwide2.png',
+    width: 668,
+    height: 188,
+    className: 'h-11 lg:h-[3.75rem]',
+  },
+  {
+    name: 'Stoltzfus Structures',
+    src: '/mysheds.png',
+    width: 548,
+    height: 200,
+    className: 'h-11 hue-rotate-180 invert lg:h-[3.75rem]',
+  },
+  { name: 'Kia Ora Kahi', src: '/kia.png', width: 124, height: 126, className: 'h-10 lg:h-[3.25rem]' },
+  { name: 'Utiligize', src: '/utiligize_logo.jpeg', width: 200, height: 200, className: 'h-11 lg:h-14' },
+  {
+    name: 'Welzo',
+    src: '/welzo_good.avif',
+    width: 256,
+    height: 256,
+    // a square file with the wordmark in a thin band across the middle, cropped to that band
+    className: 'aspect-[3/1] h-11 object-cover hue-rotate-180 invert lg:h-[3.25rem]',
+  },
 ]
+
+const logoImage = 'w-auto object-contain opacity-80 transition-opacity duration-500 hover:opacity-100'
 
 const serviceLogos = [
   { name: 'Shopify', src: '/shopify.jpeg', role: 'Storefront & checkout' },
@@ -25,9 +51,39 @@ const serviceLogos = [
   { name: 'n8n', src: '/n8n_tile.png', role: 'Workflow orchestration' },
 ]
 
-export function LogoStrip() {
+/** The client logos on an endless scroll. Used in the hero and in LogoStrip. */
+export function LogoMarquee() {
   const duplicatedLogos = [...trustedLogos, ...trustedLogos]
 
+  return (
+    <div className="relative overflow-hidden">
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-black to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-black to-transparent" />
+
+      {/* no fade-in: in the hero the logos must show before the JavaScript loads */}
+      <div className="flex animate-scroll-left">
+        {duplicatedLogos.map((logo, index) => (
+          <div
+            key={`${logo.name}-${index}`}
+            className="flex flex-shrink-0 items-center justify-center px-8 sm:px-12"
+          >
+            <div className="flex items-center justify-center">
+              <Image
+                src={logo.src}
+                alt={logo.name}
+                width={logo.width}
+                height={logo.height}
+                className={cn(logoImage, logo.className)}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export function LogoStrip() {
   return (
     <RevealSection variant="bright" className="border-t border-white/10 bg-black py-16">
       <div className="editorial-max">
@@ -36,35 +92,7 @@ export function LogoStrip() {
           <div className="h-px flex-1 bg-white/10" aria-hidden />
         </ScrollReveal>
 
-        <div className="relative overflow-hidden">
-          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-black to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-black to-transparent" />
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="flex animate-scroll-left"
-          >
-            {duplicatedLogos.map((logo, index) => (
-              <div
-                key={`${logo.name}-${index}`}
-                className="flex flex-shrink-0 items-center justify-center px-8 sm:px-12"
-              >
-                <div className="flex items-center justify-center">
-                  <Image
-                    src={logo.src}
-                    alt={logo.name}
-                    width={logo.width}
-                    height={logo.height}
-                    className="h-10 w-auto object-contain opacity-80 transition-opacity duration-500 hover:opacity-100 sm:h-14"
-                  />
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        <LogoMarquee />
       </div>
     </RevealSection>
   )

@@ -12,17 +12,13 @@ const navigation = {
     { name: 'The 20-Day Ecom Support System', href: '/#support' },
     { name: 'The 20-Day Ecom Phone System', href: '/#phone' },
     { name: 'The 20-Day Ecom Creative System', href: '/#creative' },
-    { name: 'Free audit call', href: 'https://calendly.com/henrybuisseret/30min' },
   ],
+  // the header carries only the booking button, so the pages live here
   company: [
     { name: 'About', href: '/about' },
     { name: 'Case Study', href: '/case-study' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
-  ],
-  getStarted: [
-    { name: 'Get your free audit', href: 'https://calendly.com/henrybuisseret/30min' },
-    { name: 'henry@monoclick.ai', href: 'mailto:henry@monoclick.ai' },
   ],
   legal: [
     { name: 'Privacy Policy', href: '/privacy' },
@@ -41,7 +37,6 @@ const navigation = {
 const linkColumns = [
   { heading: 'The systems', links: navigation.systems },
   { heading: 'Company', links: navigation.company },
-  { heading: 'Get started', links: navigation.getStarted },
 ]
 
 export function SiteFooter() {
@@ -78,7 +73,7 @@ export function SiteFooter() {
               key={column.heading}
               variant="fade-up"
               delay={0.06 + colIndex * 0.04}
-              className="col-span-1 lg:col-span-2"
+              className="col-span-1 lg:col-span-3"
             >
               <h3 className="label-mono mb-6 text-white/35">{column.heading}</h3>
               <ul className="space-y-3">

@@ -69,7 +69,8 @@
       "mcp__claude_ai_Higgs__generate_image",
       "mcp__claude_ai_Higgs__models_explore",
       "Bash(cd /Users/henrybuisseret/Code/fable-showcase/meridian && npm run build 2>&1 | tail -12)",
-      "Read(//Users/henrybuisseret/Code/fable-showcase/meridian/**)"
+      "Read(//Users/henrybuisseret/Code/fable-showcase/meridian/**)",
+      "ClaudeInChromeDomain(localhost:3000)"
     ],
     "additionalDirectories": [
       "/Users/henrybuisseret/Code/fable-showcase/cendre/src",

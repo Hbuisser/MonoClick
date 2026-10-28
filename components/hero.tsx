@@ -1,139 +1,119 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ShieldCheck, Star } from 'lucide-react'
 
-import { Magnetic } from '@/components/fx/magnetic'
-import { HeroSystems } from '@/components/hero-systems'
+import { LogoMarquee } from '@/components/logo-strip'
 
-const heroStagger = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.3 } },
-}
+/** delay for the CSS entrance (hero-line, hero-rise in globals.css) */
+const after = (seconds: number) => ({ animationDelay: `${seconds}s` })
 
-const lineReveal = {
-  hidden: { y: '110%' },
-  show: {
-    y: '0%',
-    transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1] as const },
-  },
-}
+const points = [
+  { emoji: '☎️', text: 'Answers every call, 24/7' },
+  { emoji: '💸', text: 'Texts a checkout link to close the sale' },
+  { emoji: '🚀', text: 'Set up for you in 20 working days' },
+]
 
-const fadeItem = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
-  },
-}
-
+/**
+ * The first screen for ad traffic, centred and built on the phone system: the
+ * promise, one button with my photo to the calendar just below (#book), the
+ * reviews and the guarantee, then the client logos, all in view without
+ * scrolling on a laptop. The entrance runs in CSS rather than framer-motion,
+ * so the screen shows before the page's JavaScript arrives on a slow phone
+ * connection.
+ */
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-black">
       {/* atmosphere */}
       <div
-        className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_55%_50%_at_72%_45%,rgba(37,99,235,0.16),transparent_65%)]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-black/50 via-transparent to-black"
+        className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_70%_45%_at_50%_0%,rgba(37,99,235,0.2),transparent_70%)]"
         aria-hidden
       />
 
-      <motion.div
-        variants={heroStagger}
-        initial="hidden"
-        animate="show"
-        className="editorial-max relative z-10 grid min-h-[calc(100dvh-var(--menu-height))] grid-cols-1 content-center gap-10 py-14 lg:grid-cols-2 lg:grid-rows-[auto_auto] lg:items-center lg:gap-x-10 lg:gap-y-8 lg:py-20"
-      >
-        {/* the pitch */}
-        <div className="lg:col-start-1 lg:row-start-1 lg:self-end">
-          <h1 className="font-heading text-[12vw] font-black uppercase leading-[0.88] tracking-[-0.05em] text-white sm:text-[9.4vw] lg:text-[min(5.7rem,6.1vw)]">
+      <div className="relative z-10 flex min-h-[calc(100svh-var(--menu-height))] flex-col">
+        <div className="editorial-max flex flex-1 flex-col items-center justify-center py-5 text-center">
+          {/* on a laptop the size also follows the screen height, faster on short screens, so the logos stay in view */}
+          <h1 className="font-heading text-[clamp(2.5rem,12.5vw,6rem)] font-black uppercase leading-[0.9] tracking-[-0.05em] text-white lg:text-[clamp(3.5rem,min(9vw,12svh,calc(22svh_-_75px)),8rem)]">
             <span className="block overflow-hidden pb-[0.06em]">
-              <motion.span variants={lineReveal} className="block">
-                You don&apos;t need
-              </motion.span>
+              <span className="hero-line block" style={after(0.2)}>
+                Up to <span className="text-gradient">10%</span>
+              </span>
             </span>
             <span className="block overflow-hidden pb-[0.06em]">
-              <motion.span variants={lineReveal} className="display-outline block">
-                a new hire
-              </motion.span>
+              <span className="hero-line block" style={after(0.32)}>
+                more revenue
+              </span>
             </span>
             <span className="block overflow-hidden pb-[0.12em]">
-              <motion.span
-                variants={lineReveal}
-                className="serif-accent block text-[0.78em] leading-[1.02] text-white/90"
+              <span
+                className="hero-line serif-accent text-balance block text-[0.5em] leading-[1.1] text-white/90"
+                style={after(0.44)}
               >
-                to scale your business<span className="text-sky-400">.</span>
-              </motion.span>
+                with an AI phone agent for your store<span className="text-sky-400">.</span>
+              </span>
             </span>
           </h1>
 
-          <motion.p
-            variants={fadeItem}
-            className="mt-7 max-w-2xl text-lg leading-snug text-white/70 sm:text-xl lg:text-[1.35rem]"
-          >
-            3 systems on your own accounts.
-          </motion.p>
-        </div>
-
-        {/* the three systems, around the store */}
-        <motion.div
-          variants={fadeItem}
-          className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:pl-6"
-        >
-          <HeroSystems />
-        </motion.div>
-
-        {/* the ask, and the proof */}
-        <div className="lg:col-start-1 lg:row-start-2 lg:self-start">
-          <motion.div variants={fadeItem} className="flex flex-wrap items-center gap-5">
-            <div className="relative shrink-0">
-              <span className="absolute -inset-2 rounded-full border border-sky-400/25" aria-hidden />
-              <span className="relative block h-20 w-20 overflow-hidden rounded-full border border-white/25 shadow-[0_0_30px_-8px_rgba(56,189,248,0.7)] sm:h-24 sm:w-24">
-                <Image
-                  src="/pp2026.png"
-                  alt="Henry Buisseret, founder of MonoClick"
-                  fill
-                  sizes="96px"
-                  priority
-                  className="object-cover object-[center_20%]"
-                />
-              </span>
-            </div>
-
-            <Magnetic>
-              <Link
-                href="https://calendly.com/henrybuisseret/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-400 px-7 py-4 text-[0.8rem] font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] transition-shadow duration-300 hover:shadow-[0_0_48px_-4px_rgba(37,99,235,0.65)] sm:px-9 sm:py-5 sm:text-base"
+          {/* a centred block, one point per line */}
+          <ul className="hero-rise mt-5 space-y-2 text-left lg:mt-6" style={after(0.56)}>
+            {points.map((point) => (
+              <li
+                key={point.text}
+                className="flex items-start gap-3 text-base leading-snug text-white/75 sm:text-lg"
               >
-                <span className="whitespace-nowrap">Get your free audit</span>
-                <ArrowRight className="h-5 w-5 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1" />
-              </Link>
-            </Magnetic>
-          </motion.div>
-        </div>
-      </motion.div>
+                <span className="shrink-0 text-[1.15em] leading-none" aria-hidden>
+                  {point.emoji}
+                </span>
+                {point.text}
+              </li>
+            ))}
+          </ul>
 
-      {/* scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.8 }}
-        className="pointer-events-none absolute bottom-10 right-6 z-10 hidden flex-col items-center gap-3 lg:flex"
-      >
-        <span className="label-mono text-white/30" style={{ writingMode: 'vertical-rl' }}>
-          Scroll
-        </span>
-        <div className="relative h-12 w-px overflow-hidden bg-white/15">
-          <span className="absolute left-0 top-[-50%] h-1/2 w-full animate-[cue-drop_2.2s_cubic-bezier(0.16,1,0.3,1)_infinite] bg-sky-400" />
+          <a
+            href="#book"
+            className="hero-rise group mt-6 flex w-full items-center justify-center gap-4 bg-gradient-to-r from-blue-600 to-sky-400 py-2.5 pl-2.5 pr-9 text-base font-medium uppercase tracking-[0.06em] text-white shadow-[0_0_32px_-6px_rgba(37,99,235,0.5)] transition-shadow duration-300 hover:shadow-[0_0_56px_-6px_rgba(37,99,235,0.75)] sm:inline-flex sm:w-auto lg:mt-7"
+            style={after(0.68)}
+          >
+            <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-white/40">
+              <Image
+                src="/pp2026.png"
+                alt=""
+                fill
+                sizes="44px"
+                priority
+                className="scale-[1.35] object-cover object-top"
+              />
+            </span>
+            Book a call
+            <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+          </a>
+
+          {/* the reviews and the guarantee, as plain text so neither reads as a button */}
+          <div
+            className="hero-rise mt-5 flex flex-col items-center gap-2.5 sm:flex-row sm:gap-6 lg:mt-6"
+            style={after(0.8)}
+          >
+            <p className="flex items-center gap-2">
+              <span className="font-heading text-lg font-bold leading-none text-white">15</span>
+              <span className="flex gap-0.5" role="img" aria-label="five-star">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden />
+                ))}
+              </span>
+              <span className="font-semibold leading-none text-white">reviews</span>
+            </p>
+            <span className="hidden h-6 w-px bg-white/15 sm:block" aria-hidden />
+            <p className="flex items-center gap-2 font-semibold text-white">
+              <ShieldCheck className="h-6 w-6 shrink-0 text-sky-400" aria-hidden />
+              +$2,000 a month, guaranteed
+            </p>
+          </div>
         </div>
-      </motion.div>
+
+        <div className="editorial-max pb-5">
+          <p className="label-mono mb-4 text-center text-white/40">Trusted by</p>
+          <LogoMarquee />
+        </div>
+      </div>
     </section>
   )
 }

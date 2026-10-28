@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --menu-height: 56px;
+    --menu-height: 64px;
     --tracking-display: -0.05em;
     --tracking-display-tight: -0.075em;
     /* Light mode - with original indigo/cyan accent */
@@ -28,6 +28,13 @@
     --input: 214 32% 91%;
     --ring: 238 75% 59%;
     --radius: 0;
+  }
+
+  /* room for the larger logo in the header on a laptop */
+  @media (min-width: 1024px) {
+    :root {
+      --menu-height: 76px;
+    }
   }
 }
 
@@ -142,6 +149,22 @@
   animation: marquee-x 36s linear infinite;
 }
 .animate-marquee:hover { animation-play-state: paused; }
+
+/* ---------- hero entrance ---------- */
+/* Plain CSS so the first screen paints without waiting for JavaScript.
+   The reduced-motion block below ends these at once. */
+@keyframes hero-line {
+  from { transform: translateY(110%); }
+}
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(20px); }
+}
+.hero-line {
+  animation: hero-line 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-rise {
+  animation: hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
 /* Blue gradient accent, 10% of the palette */
 .bg-gradient-brand {

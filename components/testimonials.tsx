@@ -47,7 +47,7 @@ const stats: [string, string][] = [
   ['1,500', 'Support tickets a day, up from 200'],
   ['9 → 5', 'Smaller team, more coverage'],
   ['10 days', 'From brief to live system'],
-  ['5/5', 'Across 14 client reviews'],
+  ['5/5', 'Across 15 client reviews'],
 ]
 
 function Stars({ className = '' }: { className?: string }) {
@@ -66,7 +66,7 @@ export function Testimonials() {
       <div className="editorial-max">
         <ScrollReveal variant="fade-up" className="mb-16 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <span className="label-mono mb-5 block text-blue-600">03 / Client stories</span>
+            <span className="label-mono mb-5 block text-blue-600">Client stories</span>
             <h2 className="display-title max-w-4xl text-[clamp(2.25rem,6vw,5rem)] text-black">
               In their{' '}
               <span className="serif-accent text-[1.04em] text-black/80">own words</span>
@@ -78,7 +78,7 @@ export function Testimonials() {
                 <Star key={i} className="h-8 w-8 fill-amber-400 text-amber-400" />
               ))}
             </div>
-            <span className="label-mono text-black/40">14 reviews, all 5 stars</span>
+            <span className="label-mono text-black/40">15 reviews, all 5 stars</span>
           </div>
         </ScrollReveal>
 
